@@ -12,7 +12,7 @@ Read [CLAUDE.md](../../CLAUDE.md) first, then [ACTIVE.md](ACTIVE.md).
 
 | ID | Status | Epic | Outcome |
 | --- | --- | --- | --- |
-| PB-E00 | IN_PROGRESS | [Repository foundation](epics/E00-repository-foundation/README.md) | The former Suna docs repository works as the shared playbook |
+| PB-E00 | BLOCKED | [Repository foundation](epics/E00-repository-foundation/README.md) | The former Suna docs repository works as the shared playbook |
 | PB-E01 | IN_PROGRESS | [Project migration](epics/E01-project-migration/README.md) | Design system, Kaizen, and Suna roadmaps live here |
 | PB-E02 | READY | [Shared standards](epics/E02-shared-standards/README.md) | Architecture and organization rules shared across projects |
 | PB-E03 | PLANNED | [Roadmap viewer](epics/E03-roadmap-viewer/README.md) | The interactive viewer reads every project from this repository |
@@ -22,7 +22,7 @@ Read [CLAUDE.md](../../CLAUDE.md) first, then [ACTIVE.md](ACTIVE.md).
 | ID | Status | Task | Depends on |
 | --- | --- | --- | --- |
 | PB-E00-T01 | DONE | [Create the playbook structure](epics/E00-repository-foundation/T01-create-playbook-structure.md) | — |
-| PB-E00-T02 | IN_PROGRESS | [Retire Jira and legacy Sandicts routing](epics/E00-repository-foundation/T02-retire-jira-and-legacy-routing.md) | PB-E00-T01 |
+| PB-E00-T02 | DONE | [Retire Jira and legacy Sandicts routing](epics/E00-repository-foundation/T02-retire-jira-and-legacy-routing.md) | PB-E00-T01 |
 | PB-E00-T03 | BLOCKED | [Relocate Suna product documentation](epics/E00-repository-foundation/T03-relocate-suna-product-docs.md) | PB-E00-T01, Owner decides the repository for Suna business rules |
 | PB-E00-T04 | DONE | [Create the roadmap check](epics/E00-repository-foundation/T04-create-roadmap-check.md) | PB-E00-T01 |
 | PB-E01-T01 | DONE | [Import the design system roadmap](epics/E01-project-migration/T01-import-design-system-roadmap.md) | PB-E00-T01 |
