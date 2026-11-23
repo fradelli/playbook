@@ -31,8 +31,8 @@ Jira is no longer used. The audit of 2026-11-23 on `main` (`145bb6e`) produced t
 
 - [x] Mirror the Kaizen roadmap structure in American English.
 - [x] Register the audit findings as epics and tasks with dependencies.
-- [ ] Review and approve the task list with the maintainer.
-- [ ] Merge the roadmap through a pull request.
+- [x] Review and approve the task list with the maintainer.
+- [x] Merge the roadmap through a pull request.
 
 ## Validation
 
@@ -41,9 +41,9 @@ Jira is no longer used. The audit of 2026-11-23 on `main` (`145bb6e`) produced t
 
 ## Acceptance criteria
 
-- [ ] The maintainer approved the epics and tasks.
-- [ ] `roadmap/ACTIVE.md` points to the next task to start.
+- [x] The maintainer approved the epics and tasks.
+- [x] `roadmap/ACTIVE.md` points to the next task to start (now `fradelli/playbook: projects/design-system/ACTIVE.md`).
 
 ## Result
 
-Not finished.
+Done in a different form on 2026-11-23: the roadmap was not merged into this repository. It was imported into the shared playbook (`fradelli/playbook: projects/design-system/`) by PB-E01-T01, PR fradelli/playbook#16, which the maintainer approved and merged. Pointing this repository to the playbook is DS-E00-T08.

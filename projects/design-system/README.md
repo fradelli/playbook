@@ -24,13 +24,13 @@ Imported on 2026-11-23 by [PB-E01-T01](../playbook/epics/E01-project-migration/T
 
 | ID | Status | Task | Depends on |
 | --- | --- | --- | --- |
-| DS-E00-T01 | IN_PROGRESS | [Create the roadmap system](epics/E00-repository-governance/T01-create-roadmap-system.md) | — |
+| DS-E00-T01 | DONE | [Create the roadmap system](epics/E00-repository-governance/T01-create-roadmap-system.md) | — |
 | DS-E00-T02 | READY | [Ignore local agent artifacts](epics/E00-repository-governance/T02-ignore-local-agent-artifacts.md) | — |
-| DS-E00-T03 | PLANNED | [Migrate agent governance to Claude](epics/E00-repository-governance/T03-migrate-agent-governance-to-claude.md) | DS-E00-T01 |
+| DS-E00-T03 | READY | [Migrate agent governance to Claude](epics/E00-repository-governance/T03-migrate-agent-governance-to-claude.md) | DS-E00-T01 |
 | DS-E00-T04 | READY | [Update stale documentation](epics/E00-repository-governance/T04-update-stale-documentation.md) | — |
 | DS-E00-T05 | PLANNED | [Reorganize documentation for Claude](epics/E00-repository-governance/T05-reorganize-documentation-for-claude.md) | DS-E00-T03, DS-E00-T04 |
 | DS-E00-T06 | READY | [Streamline the quality gates](epics/E00-repository-governance/T06-streamline-quality-gates.md) | — |
-| DS-E00-T07 | PLANNED | [Validate the roadmap by script](epics/E00-repository-governance/T07-validate-roadmap-by-script.md) | DS-E00-T01 |
+| DS-E00-T07 | CANCELLED | [Validate the roadmap by script](epics/E00-repository-governance/T07-validate-roadmap-by-script.md) | DS-E00-T01 |
 | DS-E00-T08 | READY | [Point the repository to the playbook](epics/E00-repository-governance/T08-point-repository-to-playbook.md) | PB-E01-T01 |
 | DS-E01-T01 | READY | [Require the Tailwind CSS peer dependency](epics/E01-package-contract/T01-require-tailwind-peer.md) | — |
 | DS-E01-T02 | READY | [Derive export lists from one source](epics/E01-package-contract/T02-derive-export-lists-from-one-source.md) | — |

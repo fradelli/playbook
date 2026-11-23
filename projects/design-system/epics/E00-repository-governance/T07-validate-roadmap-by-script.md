@@ -40,4 +40,4 @@ Detect roadmap inconsistencies automatically instead of relying on manual review
 
 ## Result
 
-Not started.
+Cancelled on 2026-11-23: the roadmap moved to the shared playbook, where PB-E00-T04 creates `npm run roadmap:check` for every project.
