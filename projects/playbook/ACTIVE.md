@@ -1,9 +1,9 @@
 # Active task
 
-- **Task:** No task selected
-- **Status:** —
-- **Main input:** —
-- **Next action:** start [PB-E01-T01](epics/E01-project-migration/T01-import-design-system-roadmap.md). The design system audit tasks exist only as untracked files in a local clone of `fradelli/design-system`, so saving them comes first.
+- **Task:** [PB-E01-T01](epics/E01-project-migration/T01-import-design-system-roadmap.md) — Import the design system roadmap
+- **Status:** IN_PROGRESS
+- **Main input:** `fradelli/design-system: roadmap/` (local, untracked): 5 epics and 30 tasks.
+- **Next action:** copy the epics and tasks into `projects/design-system/` with `DS-` IDs and the playbook frontmatter, on branch `claude/PB-E01-T01-import-design-system-roadmap`.
 
 ## Resumption and parallel work
 
