@@ -1,9 +1,9 @@
 # Active task
 
-- **Task:** No task selected
-- **Status:** —
-- **Main input:** —
-- **Next action:** start [PB-E00-T02](epics/E00-repository-foundation/T02-retire-jira-and-legacy-routing.md), which removes the Jira fields still present in the pull request template, or [PB-E01-T02](epics/E01-project-migration/T02-migrate-kaizen-roadmap.md) to bring the Kaizen roadmap here.
+- **Task:** [PB-E00-T02](epics/E00-repository-foundation/T02-retire-jira-and-legacy-routing.md) — Retire Jira and legacy Sandicts routing
+- **Status:** IN_PROGRESS
+- **Main input:** the Inputs of PB-E00-T02 (`.codex/skills/`, `.github/pull_request_template.md`, `docs/ai/`, the Jira planning workflow, `.gitignore`).
+- **Next action:** remove or rewrite each input on branch `claude/PB-E00-T02-retire-jira-and-legacy-routing`.
 
 ## Resumption and parallel work
 
