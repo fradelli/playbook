@@ -45,7 +45,7 @@ Replace the native and hand-built AlertDialog, Sheet, and Popover with the offic
 
 ## Acceptance criteria
 
-- [ ] No overlay manages focus with custom effects.
+- [ ] No `useEffect` in `src/components/alert-dialog/`, `sheet/`, or `popover/` handles focus or positioning.
 - [ ] Consumers have a migration guide for every changed prop.
 
 ## Result

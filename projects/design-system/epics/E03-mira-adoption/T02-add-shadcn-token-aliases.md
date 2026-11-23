@@ -41,7 +41,7 @@ Recipes use shadcn semantic names (`accent`, `secondary`, `card`, `popover`, `ri
 
 ## Acceptance criteria
 
-- [ ] A recipe can be adopted without changing its class names.
+- [ ] Each shadcn semantic color named in Context (`accent`, `secondary`, `card`, `popover`, `ring`, `muted`, `destructive`) resolves to a `--fd-*` token.
 
 ## Result
 
