@@ -27,11 +27,11 @@ Bring the Kaizen roadmap into `projects/kaizen/`, translated to English, with `K
 
 ## Subtasks
 
-- [ ] Prefix every ID, dependency, table row, link, and text reference with `KZ-`.
-- [ ] Add `project: kaizen` and `repository: fradelli/nextjs-kaizen-app`.
-- [ ] Translate titles and sections to English, keeping the seven required sections.
-- [ ] Keep statuses exactly as in the source.
-- [ ] Register the Kaizen repository follow-up task.
+- [x] Prefix every ID, dependency, table row, link, and text reference with `KZ-`.
+- [x] Add `project: kaizen` and `repository: fradelli/nextjs-kaizen-app`.
+- [x] Translate titles and sections to English, keeping the seven required sections.
+- [x] Keep statuses exactly as in the source.
+- [x] Register the Kaizen repository follow-up task.
 
 ## Validation
 
@@ -41,9 +41,19 @@ Bring the Kaizen roadmap into `projects/kaizen/`, translated to English, with `K
 
 ## Acceptance criteria
 
-- [ ] `projects/kaizen/ACTIVE.md` points to the same task as the source.
-- [ ] Kaizen keeps its own `roadmap/` until the follow-up task lands, so its CI keeps working.
+- [x] `projects/kaizen/ACTIVE.md` points to the same task as the source.
+- [x] Kaizen keeps its own `roadmap/` until the follow-up task lands, so its CI keeps working.
 
 ## Result
 
-Not started.
+Migrated 13 epics and 125 tasks from `fradelli/nextjs-kaizen-app: roadmap/` at `developer` `1c3dd48`. Evidence:
+
+- Conversion by script: `KZ-` prefix, `project` and `repository`, English required headings, the two external conditions ("Diet provided", "Decisions approved"), and 88 links outside the roadmap pointed to the Kaizen repository on GitHub.
+- Translation by seven parallel agents, one group of epics each, with shared rules: frontmatter, IDs, links, code, and Order dependency cells unchanged; quoted end-user interface text kept in Portuguese with the English meaning.
+- Checks after translation: frontmatter identical in all 125 tasks; headings, list items, table rows, checkboxes, and numbered items match the converted source in all 141 files; no Portuguese prose left in task files; statuses and dependencies of all 125 tasks match the source index; spot-checked one task per epic against the source.
+- Source inconsistencies fixed: a missing external condition (KZ-E02-T04) and dependency order (KZ-E06-T02, KZ-E07-T02) in epic tables, and Validation placed after Acceptance criteria in the eight KZ-E11 tasks (lines unchanged, only moved).
+- The script-wide replacement of "decisões aprovadas" also hit body text; three sentences were corrected by hand.
+- Registered KZ-E00-T17 (point Kaizen to the playbook) and KZ-E00-T18 (English-only rule in Kaizen).
+- `npm run roadmap:check` passed with 169 tasks; the Kaizen `developer` had no roadmap change after `1c3dd48` when checked.
+
+Known gaps: some tasks quote Portuguese headings and file names of Kaizen documents (for example sections of `docs/architecture/TARGET-ARCHITECTURE.md`); KZ-E00-T18 updates them when those documents are translated. A few translated tables are not re-padded; they render correctly.
