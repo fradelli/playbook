@@ -3,7 +3,7 @@ id: KZ-E00-T17
 epic: KZ-E00
 project: kaizen
 repository: fradelli/nextjs-kaizen-app
-depends_on: [PB-E01-T02]
+depends_on: [PB-E01-T02, PB-E01-T04]
 ---
 
 # Point the repository to the playbook
@@ -27,6 +27,7 @@ The pull request of this task changes the governance check that validates its ow
 - `AGENTS.md` and `CLAUDE.md` — reading order that starts at `roadmap/ACTIVE.md`.
 - `.github/pull_request_template.md` and `docs/delivery/PULL-REQUEST-STANDARD.md` — title and branch format.
 - `fradelli/playbook: standards/general/pull-requests.md` — the shared standard to adopt.
+- `fradelli/playbook: standards/general/playbook-integration.md` — the `Playbook` section, reading order, and local setup to apply.
 
 ## Deliverables
 

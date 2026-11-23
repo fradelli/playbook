@@ -3,7 +3,7 @@ id: DS-E00-T08
 epic: DS-E00
 project: design-system
 repository: fradelli/design-system
-depends_on: [PB-E01-T01]
+depends_on: [PB-E01-T01, PB-E01-T04]
 ---
 
 # Point the repository to the playbook
@@ -21,6 +21,7 @@ The roadmap of this project was planned under `roadmap/` in this repository but 
 - `AGENTS.md` — current agent contract.
 - `CLAUDE.md` — created by DS-E00-T03, if it already exists.
 - `fradelli/playbook: CLAUDE.md` — sections "Reading order" and "Branches, commits, and PRs".
+- `fradelli/playbook: standards/general/playbook-integration.md` — the `Playbook` section, reading order, and local setup to apply.
 
 ## Deliverables
 
