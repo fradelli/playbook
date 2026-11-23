@@ -3,7 +3,7 @@
 - **Task:** No task selected
 - **Status:** —
 - **Main input:** —
-- **Next action:** start [PB-E02-T01](epics/E02-shared-standards/T01-inventory-kaizen-rules.md) to inventory the Kaizen rules. In Kaizen, [KZ-E00-T17](../kaizen/epics/E00-repository-governance/T17-point-repository-to-playbook.md) is ready to point the repository to the playbook.
+- **Next action:** start [PB-E02-T04](epics/E02-shared-standards/T04-create-writing-standard.md), the writing standard, before PB-E02-T01 to T03 write more standards. In Kaizen, [KZ-E00-T17](../kaizen/epics/E00-repository-governance/T17-point-repository-to-playbook.md) is ready to point the repository to the playbook.
 
 ## Resumption and parallel work
 
