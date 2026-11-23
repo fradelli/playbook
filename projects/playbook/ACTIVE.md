@@ -1,9 +1,9 @@
 # Active task
 
-- **Task:** No task selected
-- **Status:** —
-- **Main input:** —
-- **Next action:** start [PB-E02-T05](epics/E02-shared-standards/T05-apply-writing-standard-to-open-tasks.md) to rewrite open tasks to the writing standard and empty `scripts/writing-baseline.json`. In Kaizen, [KZ-E00-T17](../kaizen/epics/E00-repository-governance/T17-point-repository-to-playbook.md) is ready to point the repository to the playbook.
+- **Task:** [PB-E02-T05](epics/E02-shared-standards/T05-apply-writing-standard-to-open-tasks.md) — Apply the writing standard to open tasks
+- **Status:** IN_PROGRESS
+- **Main input:** `standards/general/writing.md` and `scripts/writing-baseline.json`.
+- **Next action:** rewrite the 91 open tasks of the three projects on branch `claude/PB-E02-T05-apply-writing-standard`, then empty the baseline. In Kaizen, [KZ-E00-T17](../kaizen/epics/E00-repository-governance/T17-point-repository-to-playbook.md) is ready to point the repository to the playbook.
 
 ## Resumption and parallel work
 
