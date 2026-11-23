@@ -1,9 +1,9 @@
 # Active task
 
-- **Task:** No task selected
-- **Status:** —
-- **Main input:** —
-- **Next action:** start [DS-E02-T01](epics/E02-component-quality/T01-fix-menu-shortcut-highlight.md), the first correction of the corrective release.
+- **Task:** [DS-E02-T01](epics/E02-component-quality/T01-fix-menu-shortcut-highlight.md) — Fix the menu shortcut highlight
+- **Status:** IN_PROGRESS
+- **Main input:** `epics/E02-component-quality/T01-fix-menu-shortcut-highlight.md`
+- **Next action:** point the dropdown and context menu shortcuts to the `group/menu-item` group declared in `src/lib/menu-styles.ts`, assert the focused color in Storybook, and add a patch Changeset on `claude/DS-E02-T01-fix-menu-shortcut-highlight`.
 
 ## Resumption and parallel work
 
