@@ -14,7 +14,7 @@ Read [CLAUDE.md](../../CLAUDE.md) first, then [ACTIVE.md](ACTIVE.md).
 | --- | --- | --- | --- |
 | PB-E00 | BLOCKED | [Repository foundation](epics/E00-repository-foundation/README.md) | The former Suna docs repository works as the shared playbook |
 | PB-E01 | IN_PROGRESS | [Project migration](epics/E01-project-migration/README.md) | Design system, Kaizen, and Suna roadmaps live here |
-| PB-E02 | READY | [Shared standards](epics/E02-shared-standards/README.md) | Architecture and organization rules shared across projects |
+| PB-E02 | IN_PROGRESS | [Shared standards](epics/E02-shared-standards/README.md) | Architecture and organization rules shared across projects |
 | PB-E03 | PLANNED | [Roadmap viewer](epics/E03-roadmap-viewer/README.md) | The interactive viewer reads every project from this repository |
 
 ## Tasks
@@ -31,6 +31,6 @@ Read [CLAUDE.md](../../CLAUDE.md) first, then [ACTIVE.md](ACTIVE.md).
 | PB-E02-T01 | READY | [Inventory the Kaizen rules](epics/E02-shared-standards/T01-inventory-kaizen-rules.md) | PB-E00-T01 |
 | PB-E02-T02 | PLANNED | [Define the stack profiles](epics/E02-shared-standards/T02-define-stack-profiles.md) | PB-E02-T01 |
 | PB-E02-T03 | PLANNED | [Migrate the general standards](epics/E02-shared-standards/T03-migrate-general-standards.md) | PB-E02-T02 |
-| PB-E02-T04 | READY | [Create the writing standard](epics/E02-shared-standards/T04-create-writing-standard.md) | PB-E00-T04 |
+| PB-E02-T04 | IN_PROGRESS | [Create the writing standard](epics/E02-shared-standards/T04-create-writing-standard.md) | PB-E00-T04 |
 | PB-E02-T05 | PLANNED | [Apply the writing standard to open tasks](epics/E02-shared-standards/T05-apply-writing-standard-to-open-tasks.md) | PB-E02-T04 |
 | PB-E03-T01 | PLANNED | [Move the roadmap viewer](epics/E03-roadmap-viewer/T01-move-roadmap-viewer.md) | PB-E01-T01, PB-E01-T02 |

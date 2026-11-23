@@ -1,9 +1,9 @@
 # Active task
 
-- **Task:** No task selected
-- **Status:** —
-- **Main input:** —
-- **Next action:** start [PB-E02-T04](epics/E02-shared-standards/T04-create-writing-standard.md), the writing standard, before PB-E02-T01 to T03 write more standards. In Kaizen, [KZ-E00-T17](../kaizen/epics/E00-repository-governance/T17-point-repository-to-playbook.md) is ready to point the repository to the playbook.
+- **Task:** [PB-E02-T04](epics/E02-shared-standards/T04-create-writing-standard.md) — Create the writing standard
+- **Status:** IN_PROGRESS
+- **Main input:** `CLAUDE.md`, the templates, and `scripts/roadmap-check.mjs`.
+- **Next action:** write `standards/general/writing.md`, update the templates, and extend `roadmap:check` on branch `claude/PB-E02-T04-create-writing-standard`. In Kaizen, [KZ-E00-T17](../kaizen/epics/E00-repository-governance/T17-point-repository-to-playbook.md) is ready to point the repository to the playbook.
 
 ## Resumption and parallel work
 
