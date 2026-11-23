@@ -1,54 +1,48 @@
+<!--
+Title: [<task ID>] <type>(<scope>): <short summary>
+Standard: standards/general/pull-requests.md
+Keep the headings and their order. Replace every example.
+-->
+
 ## Summary
 
-Describe clearly what this pull request changes and the intended scope.
+Describe what this pull request delivers and where it stops.
 
 ## Problem
 
-Explain the issue, need, or workflow gap this pull request addresses.
+Explain the need or gap it addresses.
 
 ## Root cause
 
-Explain the cause identified in code, flow, documentation, or configuration.
-For docs-only or setup work, describe why the repository needed this change.
+Explain why the repository needed this change.
 
 ## Changes
 
-- item 1
-- item 2
-- item 3
+- replace with the real changes
 
 ## Files added or updated
 
-- `path/to/file`
-- `path/to/file`
+- `replace/with/real/path`
 
 ## Impact
 
 ### Fixed
 
-- item
-- item
+- replace with the real result
 
 ### Not changed
 
-- item
-- item
+- replace with what stayed out of scope
 
 ## Validation
 
-- [ ] branch governance (CI: Governance)
-- [ ] lint (CI: Quality)
-- [ ] typecheck (CI: Quality)
-- [ ] tests (CI: Test)
-- [ ] build (CI: Build)
-- [ ] dependency audit (CI: Dependency audit)
+- [ ] roadmap check (CI: Roadmap check)
+- [ ] `git diff --check`
 - [ ] manual validation completed
 
 ## Notes
 
-- Primary Jira: `KAN-123` or not applicable (`NO-JIRA` documentation-only change)
-- Related Jira: none
-- Jira status: move delivered issue(s) to `In Review` or not applicable
-- Tracking exception: none or no Jira task exists; PR contains documentation only
+- Task: `XX-E00-T00`
+- Related tasks: none
 - Branch cleanup: delete branch after merge enabled
 - Known gaps or skipped validation: none
