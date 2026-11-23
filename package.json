@@ -1,0 +1,13 @@
+{
+  "name": "fradelli-playbook",
+  "private": true,
+  "type": "module",
+  "description": "Roadmap and shared standards of every Fradelli project.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "roadmap:check": "node scripts/roadmap-check.mjs",
+    "test": "node --test scripts/roadmap-check.test.mjs"
+  }
+}

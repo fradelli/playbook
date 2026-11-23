@@ -25,10 +25,10 @@ Automate the validation rules in `CLAUDE.md` with `npm run roadmap:check`, run l
 
 ## Subtasks
 
-- [ ] Parse frontmatter, project indexes, epic order tables, and `ACTIVE.md` files.
-- [ ] Implement every rule in "Validation", including cross-project dependencies.
-- [ ] Add tests with valid and invalid fixtures.
-- [ ] Run the check in CI.
+- [x] Parse frontmatter, project indexes, epic order tables, and `ACTIVE.md` files.
+- [x] Implement every rule in "Validation", including cross-project dependencies.
+- [x] Add tests with valid and invalid fixtures.
+- [x] Run the check in CI.
 
 ## Validation
 
@@ -37,8 +37,10 @@ Automate the validation rules in `CLAUDE.md` with `npm run roadmap:check`, run l
 
 ## Acceptance criteria
 
-- [ ] A pull request with a broken dependency, a missing section, or two `IN_PROGRESS` tasks in one project fails CI.
+- [x] A pull request with a broken dependency, a missing section, or two `IN_PROGRESS` tasks in one project fails CI.
 
 ## Result
 
-Not started.
+`scripts/roadmap-check.mjs` checks every rule in `CLAUDE.md` with Node.js only, no packages. `npm run roadmap:check` passed on the tree with 42 tasks (design system and playbook). `npm test` runs 20 cases: one valid roadmap, wrapped frontmatter lists, and one failing fixture per rule. `.github/workflows/roadmap-check.yml` runs the tests, the check, and `git diff --check` on pull requests and on pushes to `main`, with the same pinned actions and Node.js version as the Kaizen CI.
+
+Links under `docs/` stay unchecked until PB-E00-T03 moves the legacy Suna documents. The Kaizen scripts listed in Inputs were not reused: their rules are Kaizen-specific (Portuguese headings, a single project, the `codex/` branch format).
