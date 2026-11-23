@@ -1,0 +1,38 @@
+# KZ-E10 — Alinhamento visual com o portfólio
+
+## Expected outcome
+O Kaizen parece uma extensão do portfólio, com a mesma linguagem visual estática e
+sem alterar conteúdo, funcionalidades ou regras de negócio. Animações, estrelas e
+partículas ficam fora da experiência.
+
+## Sequência
+
+O resultado e os limites abaixo descrevem a referência histórica do portfólio.
+A KZ-E10-T09 segue o guia Mira aprovado, com aparência e primitivas no design system;
+não autoriza recriar estilos genéricos localmente quando faltar um export.
+
+| Tarefa | Depende de | Resultado |
+| --- | --- | --- |
+| KZ-E10-T01 | KZ-E06-T25 | Integrar referência visual, catálogo de ícones e estados genéricos do DS |
+| KZ-E10-T02 | KZ-E10-T01 | Player no card, dicas coerentes e encerramento em modal com rascunho |
+| KZ-E10-T09 | KZ-E10-T08 | Concluir adoção Mira após as entregas históricas KZ-E10-T01 a KZ-E10-T08 |
+
+## Limites
+
+- O portfólio publicado é a referência final; `@fradelli/ui` fornece os tokens e primitives disponíveis.
+- Complementos locais reproduzem estilos estáticos do portfólio quando não houver contrato público equivalente.
+- Conteúdo e comportamento de Dieta/Treino permanecem próprios do Kaizen.
+- Não copiar animações, fundo estrelado, partículas ou ilustrações.
+
+## Tarefas complementares registradas
+
+Status canônico no [roadmap](../../README.md). Esta tabela completa a navegação sem alterar prioridade ou dependências.
+
+| Tarefa | Depende de | Resultado |
+| --- | --- | --- |
+| [KZ-E10-T03](T03-dialog-actions.md) | KZ-E10-T02 | Corrigir navegação e padronizar ações dos diálogos |
+| [KZ-E10-T04](T04-dialog-structure.md) | KZ-E10-T03 | Uniformizar estrutura visual dos diálogos |
+| [KZ-E10-T05](T05-unify-dialog-behavior.md) | KZ-E10-T04 | Unificar comportamento dos diálogos |
+| [KZ-E10-T06](T06-session-form-drafts.md) | KZ-E10-T05 | Rascunhos de formulário por sessão |
+| [KZ-E10-T07](T07-fix-draft-review.md) | KZ-E10-T06 | Corrigir achados da revisão de rascunhos |
+| [KZ-E10-T08](T08-today-navigation.md) | KZ-E10-T07 | Ajustar Hoje e entrada do aplicativo |
