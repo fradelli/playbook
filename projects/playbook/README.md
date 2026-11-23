@@ -26,7 +26,7 @@ Read [CLAUDE.md](../../CLAUDE.md) first, then [ACTIVE.md](ACTIVE.md).
 | PB-E00-T03 | BLOCKED | [Relocate Suna product documentation](epics/E00-repository-foundation/T03-relocate-suna-product-docs.md) | PB-E00-T01, Owner decides the repository for Suna business rules |
 | PB-E00-T04 | DONE | [Create the roadmap check](epics/E00-repository-foundation/T04-create-roadmap-check.md) | PB-E00-T01 |
 | PB-E01-T01 | DONE | [Import the design system roadmap](epics/E01-project-migration/T01-import-design-system-roadmap.md) | PB-E00-T01 |
-| PB-E01-T02 | IN_PROGRESS | [Migrate the Kaizen roadmap](epics/E01-project-migration/T02-migrate-kaizen-roadmap.md) | PB-E00-T01 |
+| PB-E01-T02 | DONE | [Migrate the Kaizen roadmap](epics/E01-project-migration/T02-migrate-kaizen-roadmap.md) | PB-E00-T01 |
 | PB-E01-T03 | PLANNED | [Create the Suna roadmap](epics/E01-project-migration/T03-create-suna-roadmap.md) | PB-E00-T03 |
 | PB-E02-T01 | READY | [Inventory the Kaizen rules](epics/E02-shared-standards/T01-inventory-kaizen-rules.md) | PB-E00-T01 |
 | PB-E02-T02 | PLANNED | [Define the stack profiles](epics/E02-shared-standards/T02-define-stack-profiles.md) | PB-E02-T01 |
