@@ -88,11 +88,13 @@ external: [Maintainer merges the version PR]   # conditions that are not tasks; 
 - Status and `ACTIVE.md` updates go straight to `main` as small commits titled with the task ID, for example `KZ-E10-T09: start` or `KZ-E10-T09: done`. This keeps status independent from the code branch where the task is being built.
 - Planning changes (new epics or tasks, dependencies, scope, standards) go through a pull request with a `claude/<ID>-<description>` branch.
 
-## Branches, commits, and PRs in code repositories
+## Branches, commits, and PRs
+
+Every repository, this one included, follows the [pull request standard](standards/general/pull-requests.md):
 
 - Branch: `claude/<ID>-<description>`, for example `claude/KZ-E10-T09-complete-mira-adoption`.
-- Commit and PR titles start with the task ID. Jira is no longer used.
-- Older branches and PRs (`codex/E00-...`, `claude/E00-...`, `KAN-...`) stay as history; only new work uses the prefixed IDs.
+- Commit and PR titles: `[<ID>] <type>(<scope>): <summary>`, for example `[KZ-E10-T09] feat(ui): complete the Mira adoption`.
+- Jira is no longer used. Older branches and PRs (`codex/E00-...`, `claude/E00-...`, `KAN-...`) stay as history; only new work uses the prefixed IDs.
 
 ## Starting or finishing a task
 

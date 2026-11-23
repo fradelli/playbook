@@ -15,3 +15,10 @@ standards/
 ```
 
 Each project declares the profile it follows. General rules apply to every project.
+
+## Available now
+
+- [Pull request standard](general/pull-requests.md): titles, branches, commits, body, validation, and merge.
+- [Dependency security remediation](general/dependency-security-remediation.md): audit failures and their remediation.
+
+Both came from the former Sandicts shared docs in PB-E00-T02, without Jira. PB-E02-T01 still compares them with the Kaizen versions (`docs/delivery/PULL-REQUEST-STANDARD.md`).

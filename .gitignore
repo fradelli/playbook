@@ -1,5 +1,3 @@
-nodejs-sandicts-api/
-reactjs-sandicts-web/
 .env
 .env.*
 !.env.example

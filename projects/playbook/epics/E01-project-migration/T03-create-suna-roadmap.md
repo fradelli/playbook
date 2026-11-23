@@ -20,6 +20,7 @@ Suna was paused while Kaizen moved ahead. Its planning lived in Jira (`KAN-` key
 
 - `docs/product/sandicts-open-match-implementation-roadmap.md` and `docs/product/sandicts-v2-backlog.md` — existing Suna plans, or their new location after PB-E00-T03.
 - `docs/product/sandicts-scope-checklist.md` — scope checklist.
+- `docs/product/sandicts-jira-planning-workflow.md` — sections "Recommended MVP Roadmap" (phases 0 to 11), "Fullstack Parallelization Rules", and "Dependency Map". The Jira rules in the same file are obsolete.
 
 ## Deliverables
 
