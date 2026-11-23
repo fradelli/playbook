@@ -14,7 +14,7 @@ The only exception is product copy shown to end users, which follows each produc
 2. Read `projects/<project>/ACTIVE.md` and only the selected task with its Inputs.
 3. Open a project index (`projects/<project>/README.md`) only to plan or to change status or dependencies.
 
-Finished tasks are evidence, not default context. Do not read trees recursively; locate titles and paths with `rg`.
+Finished tasks are evidence, not default context. A selected task that is already `DONE` is a resumption checkpoint, not an order to repeat the work: its next action names the residual work and its limits. Do not read trees recursively; locate titles and paths with `rg`.
 
 ## Projects and IDs
 
