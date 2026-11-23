@@ -2,7 +2,7 @@
 
 ## Expected outcome
 
-`standards/` holds the architecture, organization, code, documentation, and delivery rules shared by every project, grouped into general rules and stack profiles.
+`standards/` holds the architecture, organization, code, documentation, writing, and delivery rules shared by every project, grouped into general rules and stack profiles.
 
 ## Context
 
@@ -13,6 +13,7 @@ Kaizen holds the most recent rules (design, architecture, documentation, pull re
 - Inventory of Kaizen rules.
 - Stack profiles.
 - Migration of the general rules.
+- Writing standard for rules, documents, and tasks, and its application to open tasks.
 
 ## Out of scope
 
@@ -26,6 +27,8 @@ Kaizen holds the most recent rules (design, architecture, documentation, pull re
 | PB-E02-T01 | PB-E00-T01 | Each Kaizen rule classified as general, profile, or Kaizen-only |
 | PB-E02-T02 | PB-E02-T01 | `standards/profiles/` describes each stack |
 | PB-E02-T03 | PB-E02-T02 | `standards/general/`, `frontend/`, and `backend/` hold the shared rules |
+| PB-E02-T04 | PB-E00-T04 | `standards/general/writing.md` exists and `roadmap:check` enforces it |
+| PB-E02-T05 | PB-E02-T04 | Every open task follows the writing standard |
 
 Status lives only in the project `README.md`.
 
