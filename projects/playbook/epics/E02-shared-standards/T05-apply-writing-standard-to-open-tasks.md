@@ -14,7 +14,7 @@ Rewrite every open task (not `DONE` or `CANCELLED`) of every project to follow `
 
 ## Context
 
-On 2026-11-23 there were 55 open Kaizen tasks: 8 with "Not recorded" placeholders, 1 without acceptance criteria, 1 above 6 KB, and 41 with extra sections. Design system and playbook tasks were already short. Done and cancelled tasks stay as historical evidence.
+PB-E02-T04 listed the open tasks that break the checked rules in `scripts/writing-baseline.json`: 9 Kaizen tasks with 17 violations. The other open tasks still need a read against the unchecked rules of the standard, such as observable acceptance criteria and no filler. Done and cancelled tasks stay as historical evidence.
 
 ## Inputs
 
@@ -41,8 +41,8 @@ On 2026-11-23 there were 55 open Kaizen tasks: 8 with "Not recorded" placeholder
 
 ## Acceptance criteria
 
-- [ ] Every open task passes the writing rules of `roadmap:check`.
-- [ ] No open task contains a "Not recorded in the original version" placeholder.
+- [ ] `scripts/writing-baseline.json` is empty and `npm run roadmap:check` passes.
+- [ ] No open task contains a placeholder saying a section was not recorded.
 - [ ] No done or cancelled task changed.
 
 ## Result

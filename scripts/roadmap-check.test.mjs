@@ -12,7 +12,9 @@ function task({ id, epic, depends = [], external, sections = SECTIONS, project =
   const lines = ["---", `id: ${id}`, `epic: ${epic}`, `project: ${project}`, "repository: fradelli/playbook", `depends_on: [${depends.join(", ")}]`];
   if (external) lines.push(`external: [${external.join(", ")}]`);
   lines.push("---", "", `# ${id}`, "");
-  for (const section of sections) lines.push(`## ${section}`, "", "Text.", "");
+  for (const section of sections) {
+    lines.push(`## ${section}`, "", section === "Acceptance criteria" ? "- [ ] Observable result." : "Text.", "");
+  }
   return lines.join("\n");
 }
 
@@ -200,5 +202,46 @@ describe("IN_PROGRESS and ACTIVE.md", () => {
   test("rejects 'No task selected' while a task is IN_PROGRESS", () => {
     edit(ACTIVE, "- **Task:** [PB-E00-T02](epics/E00-foundation/T02-second.md) — Second\n- **Status:** IN_PROGRESS", "- **Task:** No task selected\n- **Status:** —");
     expectError(/says no task selected, but PB-E00-T02 is IN_PROGRESS/);
+  });
+});
+
+describe("writing rules on open tasks", () => {
+  const withoutCriteria = (text) => text.replace("- [ ] Observable result.", "Text.");
+
+  test("rejects an open task without acceptance criteria", () => {
+    edit(T02, "- [ ] Observable result.", "Text.");
+    expectError(/T02-second.md: open task has no acceptance criteria checkbox/);
+  });
+
+  test("rejects an open task with a section outside the allowed list", () => {
+    edit(T02, "## Result", "## Known context\n\nText.\n\n## Result");
+    expectError(/open task has a section outside the allowed list/);
+  });
+
+  test("accepts the allowed optional sections", () => {
+    edit(T02, "## Result", "## Out of scope\n\nText.\n\n## Risks\n\nText.\n\n## Result");
+    edit(T02, "## Inputs", "## Context\n\nText.\n\n## Inputs");
+    assert.deepEqual(errorsOf(), []);
+  });
+
+  test("rejects a placeholder in an open task", () => {
+    edit(T02, "## Result\n\nText.", "## Result\n\nNot recorded in the original version of this task.");
+    expectError(/open task has a "Not recorded in the original version" placeholder/);
+  });
+
+  test("ignores writing rules on done tasks", () => {
+    write({ [T01]: withoutCriteria(readFileSync(join(root, T01), "utf8")).replace("## Result", "## Known context\n\nNot recorded in the original version of this task.\n\n## Result") });
+    assert.deepEqual(errorsOf(), []);
+  });
+
+  test("accepts known violations listed in the baseline", () => {
+    edit(T02, "- [ ] Observable result.", "Text.");
+    write({ "scripts/writing-baseline.json": JSON.stringify({ "PB-E00-T02": ["acceptance-criteria"] }) });
+    assert.deepEqual(errorsOf(), []);
+  });
+
+  test("rejects a baseline entry that is no longer needed", () => {
+    write({ "scripts/writing-baseline.json": JSON.stringify({ "PB-E00-T02": ["placeholder"] }) });
+    expectError(/remove "placeholder" from PB-E00-T02/);
   });
 });

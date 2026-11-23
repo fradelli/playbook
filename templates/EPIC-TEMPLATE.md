@@ -1,27 +1,28 @@
 # XX-E00 — Epic name
 
+<!-- Follow standards/general/writing.md. Delete this comment. -->
+
 ## Expected outcome
 
-A single, observable outcome for the epic.
+One sentence with the observable outcome of the epic.
 
 ## Scope
 
-- Required item.
+- Item the epic delivers.
 
 ## Out of scope
 
-- Item explicitly deferred.
+- Item deliberately left out.
 
 ## Order
 
 | Task | Depends on | Outcome |
 | --- | --- | --- |
-| XX-E00-T01 | — | Task outcome |
+| XX-E00-T01 | — | One-line outcome |
 
 Status lives only in the project `README.md`.
 
 ## Closing criteria
 
 - [ ] Every required task is `DONE`.
-- [ ] Validation and decisions are recorded.
-- [ ] The next eligible epic is identified.
+- [ ] Observable result of the epic.
