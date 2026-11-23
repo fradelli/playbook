@@ -40,7 +40,7 @@ Generate the `@theme inline` mapping from the DTCG tokens so the CSS contract is
 
 ## Acceptance criteria
 
-- [ ] Changing a semantic token requires no manual CSS edit.
+- [ ] After a semantic token changes and `npm run tokens:build` runs, `npm run tokens:check` passes with no edit to `src/styles/styles.css`.
 
 ## Result
 

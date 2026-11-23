@@ -14,7 +14,6 @@ Have one Zod schema per contract, from which the types, the Server Action valida
 ## Context
 
 Findings from the 2026-11-23 audit:
-
 - The activity type enum appears in `src/app/workout/training-actions.ts` and in `src/features/training/ui/lib/training-activity-editor-draft/training-activity-editor-draft.schema.ts`.
 - The `intensity` and `energy` enums appear in the action and in `src/features/training/ui/lib/training-activity-completion-draft/training-activity-completion-draft.ts`.
 - The execution draft has a Zod schema in the action and, on the client, the manual type guard `isTrainingActivityDraft` in `src/features/training/ui/hooks/use-training-activity-draft/use-training-activity-draft.utils.ts`, which validates fewer fields.

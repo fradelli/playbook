@@ -39,7 +39,7 @@ Classify each Kaizen rule document, and the shared engineering documents already
 
 ## Acceptance criteria
 
-- [ ] The owner can approve the target of each rule from the inventory alone.
+- [ ] `standards/INVENTORY.md` gives every row a class and a target path, so the owner can approve each rule from it.
 
 ## Result
 

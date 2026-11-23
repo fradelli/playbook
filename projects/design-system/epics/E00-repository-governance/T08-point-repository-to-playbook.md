@@ -20,7 +20,7 @@ The roadmap of this project was planned under `roadmap/` in this repository but 
 
 - `AGENTS.md` — current agent contract.
 - `CLAUDE.md` — created by DS-E00-T03, if it already exists.
-- `fradelli/playbook: CLAUDE.md` — sections "Reading order" and "Branches, commits, and PRs in code repositories".
+- `fradelli/playbook: CLAUDE.md` — sections "Reading order" and "Branches, commits, and PRs".
 
 ## Deliverables
 
@@ -40,7 +40,7 @@ The roadmap of this project was planned under `roadmap/` in this repository but 
 
 ## Acceptance criteria
 
-- [ ] An agent starting in this repository reaches the active task through the playbook.
+- [ ] `AGENTS.md` and `CLAUDE.md` link to `fradelli/playbook: projects/design-system/ACTIVE.md`, and no `roadmap/` folder exists in the clone.
 
 ## Result
 

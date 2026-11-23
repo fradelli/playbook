@@ -10,7 +10,7 @@ depends_on: []
 
 ## Objective
 
-Give every public component a Storybook entry and a consistent file layout.
+Give every public component a Storybook entry and PascalCase story file names.
 
 ## Context
 
@@ -44,6 +44,7 @@ Give every public component a Storybook entry and a consistent file layout.
 ## Acceptance criteria
 
 - [ ] Every exported component appears in Storybook.
+- [ ] Every story file under `src/stories/components/` uses PascalCase, and no shared test file covers components from another folder.
 
 ## Result
 

@@ -9,22 +9,27 @@ depends_on: [KZ-E06-T05, KZ-E07-T05]
 # Publish preview
 
 ## Objective
+
 Connect the project to Vercel and publish a verifiable preview without promoting production.
 
 ## Inputs
-- `docs/plans/release/E08.md`
-- `docs/decisions/PRIVACY-AND-OPERATIONS.md`
-- `docs/decisions/PUBLIC-SINGLE-WORKSPACE-MODE.md`
-- `docs/decisions/CI-CD-GOVERNANCE.md`
-- `.github/workflows/`
-- `prisma/migrations/`
-- `src/app/`
-- `tests/e2e/`
+
+- `docs/plans/release/E08.md`: epic plan.
+- `docs/decisions/PRIVACY-AND-OPERATIONS.md`: privacy and operations decision.
+- `docs/decisions/PUBLIC-SINGLE-WORKSPACE-MODE.md`: public mode decision.
+- `docs/decisions/CI-CD-GOVERNANCE.md`: CI/CD rules.
+- `.github/workflows/`: pipelines to adjust.
+- `prisma/migrations/`: migrations applied before the deploy.
+- `src/app/`: application under test.
+- `tests/e2e/`: smoke tests.
 
 ## Deliverables
+
 - Vercel project, preview variables, and a working deploy.
+- Documented promotion and failure diagnosis.
 
 ## Subtasks
+
 - [ ] Link the repository and define the build directory.
 - [ ] Configure a database and secrets exclusive to preview.
 - [ ] Associate `staging` with the stable preview.
@@ -35,10 +40,16 @@ Connect the project to Vercel and publish a verifiable preview without promoting
 - [ ] Document promotion and failure diagnosis.
 
 ## Validation
-- Run a smoke test at the preview address.
+
+- The smoke test (public read and mutation in the fixed workspace) passes at the preview address.
+- `git grep` finds no secret value in the repository.
 
 ## Acceptance criteria
-- [ ] Preview builds from Git with no versioned secret.
+
+- [ ] The preview URL serves a build produced from the `staging` commit.
+- [ ] The preview uses a database and secrets that production does not use.
+- [ ] No secret value is versioned in the repository.
 
 ## Result
-Not yet completed.
+
+Not started.

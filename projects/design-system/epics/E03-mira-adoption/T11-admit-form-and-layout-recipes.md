@@ -43,7 +43,7 @@ Add the Mira recipes that complete the form and overlay set and replace the resp
 ## Acceptance criteria
 
 - [ ] The four recipes are published entry points.
-- [ ] No unlayered CSS changes dialog layout.
+- [ ] `src/styles/styles.css` has no unlayered rule that changes Dialog or AlertDialog layout.
 
 ## Result
 

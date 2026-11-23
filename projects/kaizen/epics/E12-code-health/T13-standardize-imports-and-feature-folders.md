@@ -14,7 +14,6 @@ Make imports and the physical organization of features and tests uniform, with a
 ## Context
 
 Findings from the 2026-11-23 audit:
-
 - The schedule mixes 45 imports using `@/` and 42 relative ones with three or more `../`; the workout has 116 and 43.
 - `src/features/foundations` uses `components/`, while the other features use `ui/components/`.
 - `training-day-page` reaches seven levels of `components/` (for example `training-session/components/training-exercise/components/training-local-exercise-editor`).
@@ -45,7 +44,7 @@ Findings from the 2026-11-23 audit:
 - `git grep -E 'from "(\.\./){3,}' -- src` returns no result.
 
 ## Acceptance criteria
-- [ ] All features follow the same folder structure.
+- [ ] Every folder under `src/features/` keeps its components under `ui/components/`.
 - [ ] The import rule is enforced by lint.
 
 ## Result

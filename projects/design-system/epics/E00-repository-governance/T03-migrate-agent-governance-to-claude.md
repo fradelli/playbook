@@ -41,13 +41,13 @@ Make Claude Code the only supported development agent and replace Jira reference
 
 ## Validation
 
-- `rg -n "KAN-|Jira|codex/" --glob '!roadmap/**' --glob '!CHANGELOG.md' --glob '!docs/implementation/**'` returns nothing actionable.
+- `rg -n "KAN-|Jira|codex/" --glob '!roadmap/**' --glob '!CHANGELOG.md' --glob '!docs/implementation/**'` returns no match that requires Jira keys or the `codex/` prefix.
 - `npm run format:check` passes.
 
 ## Acceptance criteria
 
-- [ ] A new Claude Code session loads the repository contract automatically.
-- [ ] No current rule requires Jira or the Codex branch prefix.
+- [ ] `CLAUDE.md` exists at the repository root and contains or imports the repository contract.
+- [ ] The Validation `rg` command finds no current rule that requires Jira keys or the `codex/` prefix.
 
 ## Result
 

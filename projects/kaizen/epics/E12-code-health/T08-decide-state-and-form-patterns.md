@@ -14,7 +14,6 @@ Record a decision on adopting Zustand for shared client state and React Hook For
 ## Context
 
 Facts from the 2026-11-23 audit:
-
 - The project uses neither Zustand nor React Hook Form.
 - There are three hand-built client caches using a mutable `Map` and `useReducer` to force rendering: `use-schedule-entities.ts`, `use-calendar-days.ts`, and the workout draft in `use-training-activity-draft.ts`, which uses `CustomEvent`, the `storage` event, and a localStorage scan.
 - `schedule-workspace.tsx` creates three contexts and a long `useMemo`; `useScheduleWorkspace` joins the contexts again.

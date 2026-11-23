@@ -44,8 +44,8 @@ Separate normative rules from historical evidence so that an agent reads only th
 
 ## Acceptance criteria
 
-- [ ] Normative documents and evidence live in distinct, documented places.
-- [ ] `CLAUDE.md` names which documents to read before changing components, tokens, or releases.
+- [ ] `CLAUDE.md` or a linked document describes a layout in which rules, decisions, and evidence live in separate folders, and no file sits outside it.
+- [ ] `CLAUDE.md` lists the documents to read before changing components, tokens, or releases.
 
 ## Result
 

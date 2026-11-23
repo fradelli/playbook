@@ -47,7 +47,7 @@ Official class coverage measured in the audit: RadioGroup 10%, Separator 33%, Ba
 
 ## Acceptance criteria
 
-- [ ] The five components follow their recipes, with adaptations recorded.
+- [ ] The migration guide lists every adaptation of each of the five components from its recipe, including the glass Card decision.
 
 ## Result
 

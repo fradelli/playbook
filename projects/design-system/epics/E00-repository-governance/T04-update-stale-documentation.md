@@ -46,8 +46,8 @@ Make the README, the Mira catalog, the ADR statuses, and the admission table mat
 
 ## Acceptance criteria
 
-- [ ] No document claims a component is absent when it is exported, or the reverse.
-- [ ] ADR statuses reflect the decisions in force.
+- [ ] `README.md`, the Mira catalog, and the admission table list every component exported by `package.json` as present, and none lists a non-exported component as present.
+- [ ] ADR 0002 is marked superseded in part by ADR 0006, and ADR 0003 and 0004 no longer say publication is pending.
 
 ## Result
 

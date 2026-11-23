@@ -24,8 +24,6 @@ Move the interactive roadmap viewer from Kaizen to this repository and make it r
 - `scripts/build-roadmap-view.mjs`, its tests, and `viewer/`.
 - A project filter in the overview, matrix, and kanban.
 
-Removing the viewer from Kaizen is part of KZ-E00-T17.
-
 ## Subtasks
 
 - [ ] Port the generator to read `projects/*/README.md`, `ACTIVE.md`, epics, and tasks.
@@ -43,6 +41,10 @@ Removing the viewer from Kaizen is part of KZ-E00-T17.
 
 - [ ] One page shows the roadmap of every project.
 - [ ] A task blocked by another project shows that dependency.
+
+## Out of scope
+
+- Removing the viewer from Kaizen, which is part of KZ-E00-T17.
 
 ## Result
 

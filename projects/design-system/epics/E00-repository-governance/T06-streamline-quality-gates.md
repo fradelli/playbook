@@ -47,8 +47,8 @@ Make every gate in `npm run ci` reliable on Windows and Linux and stop running t
 
 ## Acceptance criteria
 
-- [ ] No gate fails locally for environmental reasons that CI does not reproduce.
-- [ ] Each check runs once per pipeline.
+- [ ] `npm run ci` passes on Windows without `EPERM unlink` errors from `fixtures:next`.
+- [ ] `icons:check` and `tokens:check` each run once per `npm run ci`.
 
 ## Result
 
