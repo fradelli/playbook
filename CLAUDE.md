@@ -105,12 +105,16 @@ external: [Maintainer merges the version PR]   # conditions that are not tasks; 
 
 Shared rules live in `standards/`. A rule that applies to one product only stays in that product's repository. Stack-specific rules are grouped by stack profile so that a full-stack Next.js app and a Next.js app with a separate API can share the common principles. The layout is defined in [PB-E02](projects/playbook/epics/E02-shared-standards/README.md).
 
-## Validation (future `npm run roadmap:check` in CI)
+## Validation
 
-- IDs unique and with the right prefix for `project`.
+Run `npm run roadmap:check` before every commit, including status commits on `main`. CI runs it, its tests (`npm test`), and `git diff --check` on every pull request and every push to `main`. It needs Node.js 24 and no installed packages.
+
+The check enforces:
+
+- IDs unique and with the right prefix for `project`; `epic` and the file name match the ID and the epic folder.
 - Every dependency exists (including across projects) and there are no cycles.
 - Frontmatter, project index, and epic table carry the same dependencies.
-- The seven sections are present, relative links are valid, at most one `IN_PROGRESS` per project, and `ACTIVE.md` matches the index.
+- The seven sections are present and in order, relative links are valid, at most one `IN_PROGRESS` per project, and `ACTIVE.md` matches the index.
 - No `READY` task has an open dependency.
 
-Until the check exists ([PB-E00-T04](projects/playbook/epics/E00-repository-foundation/T04-create-roadmap-check.md)), confirm these items by hand and run `git diff --check`.
+Links under `docs/` are not checked until the legacy Suna documents move out ([PB-E00-T03](projects/playbook/epics/E00-repository-foundation/T03-relocate-suna-product-docs.md)).
