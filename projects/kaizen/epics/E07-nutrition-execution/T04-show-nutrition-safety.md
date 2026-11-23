@@ -9,30 +9,38 @@ depends_on: [KZ-E07-T03]
 # Show safety and provenance
 
 ## Objective
+
 Show the version, origin, unknowns, and caveats of the nutrition content.
 
 ## Inputs
-- `docs/plans/nutrition/E07.md`
-- `data/nutrition/active.json`
-- `data/nutrition/reviews/e02-t03-review-metadata.json`
-- `docs/guides/NUTRITION.md`
-- `docs/migration/MIGRATION-MANIFEST.md`
-- `src/features/nutrition/`
+
+- `docs/plans/nutrition/E07.md`: epic plan.
+- `data/nutrition/active.json`: active plan.
+- `data/nutrition/reviews/e02-t03-review-metadata.json`: review metadata.
+- `docs/guides/NUTRITION.md`: nutrition guide.
+- `docs/migration/MIGRATION-MANIFEST.md`: origin of the migrated content.
+- `src/features/nutrition/`: feature code.
 
 ## Deliverables
+
 - Provenance metadata and contextual notices.
 
 ## Subtasks
+
 - [ ] Identify date, version, and authorship when known.
 - [ ] Distinguish confirmed fact from documented interpretation.
 - [ ] Show guidance to seek professional assessment when applicable.
 - [ ] Minimize the personal data presented.
 
 ## Validation
-- Check notices and metadata against the sources.
+
+- Compare each notice and metadata value shown with its source file.
 
 ## Acceptance criteria
-- [ ] The interface does not present a hypothesis as a confirmed prescription.
+
+- [ ] Every notice and metadata value shown (date, version, authorship) matches `data/nutrition/active.json` or the review metadata.
+- [ ] Content marked as interpretation or unknown in the sources is labeled as such and never shown as a confirmed prescription.
 
 ## Result
-Not yet completed.
+
+Not started.

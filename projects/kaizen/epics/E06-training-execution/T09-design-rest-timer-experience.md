@@ -9,50 +9,57 @@ depends_on: [KZ-E06-T03]
 # Design the rest timer experience
 
 ## Objective
-Define the mobile, accessible UX of a countdown timer for the prescribed rest between sets, without implementing the timer in this task.
 
-## Product decisions already made
+Define the mobile, accessible UX of a countdown for the prescribed rest between sets, without implementing it.
 
-- The timer starts only through an explicit action on a button.
-- A floating panel at the top does not block the rest of the application; therefore, it must not use the modal semantics of `AlertDialog`.
-- The controls are start/resume, pause, and restart, like a compact player.
+## Decisions
+
+Already made by the owner:
+
+- The timer starts only from an explicit button action.
+- A floating panel at the top does not block the rest of the app, so it must not use the modal semantics of `AlertDialog`.
+- Controls are start/resume, pause, and restart, like a compact player.
 - The `×` stops and discards the countdown.
-- The rest timer is distinct from the timer of the whole activity.
+- The rest timer is separate from the timer of the whole activity.
 
 ## Inputs
+
 - `docs/architecture/TARGET-ARCHITECTURE.md`
 - `src/features/training/ui/components/training-day-page/components/training-session/components/training-exercise/training-exercise.tsx`
 - `src/features/training/ui/components/training-day-page/components/training-session/components/training-exercise/components/training-local-exercise-editor/training-local-exercise-editor.tsx`
 - `src/features/training/ui/components/training-day-page/components/training-activity-timer/training-activity-timer.tsx`
 
 ## Deliverables
-Not recorded in the original version of this task; equivalent content in the section "Deliverables and impacts".
+
+A UX record in the Kaizen documentation with:
+
+- The visual flow: position, opening, focus, accessible announcements, time updates, completion, restart, and closing.
+- A short comparison of non-modal panel, modal, bottom sheet, and mini-player, justifying the option preferred for mobile.
+- The behavior when navigating between exercises or days, in the background, on page reload, and with several rests started.
+- The design system components to use, checked before any local presentation is created.
 
 ## Subtasks
-Not recorded in the original version of this task.
+
+- [ ] Check the design system components that fit the panel.
+- [ ] Define the behavior when the countdown reaches zero and when the user leaves the page.
+- [ ] Write the UX record.
+- [ ] Present the UX to the owner and get explicit approval before KZ-E06-T10 starts.
 
 ## Validation
-Not recorded in the original version of this task.
 
-## Deliverables and impacts
+- The owner's approval is recorded in the task `Result`, with the date.
+- Every state of the panel in the flow has a defined trigger and exit.
 
-- Visual flow of position, opening, focus, accessible announcements, time updates, completion, restart, and closing.
-- Short comparison between non-modal panel, modal, bottom sheet, and mini-player, justifying the option already preferred for mobile.
-- Decision on navigation between exercises/days, background, page reload, and multiple rests started.
-- Check of Design System components before creating a local presentation.
+## Acceptance criteria
+
+- [ ] The UX record covers every item in Deliverables and the owner approved it.
+- [ ] No state of the panel blocks interaction with the rest of the app.
+- [ ] The record does not promise background behavior that was not validated.
 
 ## Out of scope
 
-- Implement a timer, system notifications, audio, or a background service.
-
-## Decisions before implementation
-
-- Define the behavior when the countdown reaches zero and when the user leaves the page.
-- Present the final UX to the owner and wait for explicit approval for KZ-E06-T10.
-
-## Acceptance criteria
-- [ ] The mobile flow and the panel states are documented and approved.
-- [ ] There is no interaction blocking and no promise of background operation without validation.
+- Implementing the timer, system notifications, audio, or a background service.
 
 ## Result
-Not yet started.
+
+Not started.

@@ -14,7 +14,6 @@ Make the schedule Server Actions and reads follow the order and layers defined i
 ## Context
 
 Findings from the 2026-11-23 audit:
-
 - `src/app/workout/schedule-actions.ts` sends the `unknown` input to the repository, which validates with Zod in `src/features/schedule/data/prisma-schedule-repository.ts`; the action parses again afterward.
 - The action calls the data layer directly, with no use case in `application`, and finds the `id` with five nested ternaries.
 - `loadTodoLists`, `loadTodos`, and `loadCalendarTrainingDay` do not validate the origin; the first two throw an exception instead of returning a typed result, and `loadCalendarTrainingDay` does not validate `civilDate` with Zod.

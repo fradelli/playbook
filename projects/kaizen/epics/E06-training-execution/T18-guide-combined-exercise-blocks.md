@@ -9,9 +9,11 @@ depends_on: [KZ-E06-T16]
 # Guide the execution of combined blocks
 
 ## Objective
-Re-analyze with the user and implement the guidance of A/B blocks, using the composition already preserved in the plan sheet without changing the prescriptions.
+
+Guide the execution of A/B blocks, using the composition already preserved in the plan sheet and without changing prescriptions.
 
 ## Inputs
+
 - `docs/architecture/TARGET-ARCHITECTURE.md`
 - `data/plans/2026-09-training-v1.json`
 - `prisma/models/training.prisma`
@@ -20,26 +22,36 @@ Re-analyze with the user and implement the guidance of A/B blocks, using the com
 - `src/features/training/ui/hooks/use-training-activity-draft/use-training-activity-draft.utils.ts`
 
 ## Deliverables
-- Approved flow of A → rest → B → rest → next round, preserving the rests of each member.
-- Recoverable local draft, return to the members, and persistence only when the activity is completed.
+
+- An approved flow of A → rest → B → rest → next round, keeping the rest of each member.
+- A recoverable local draft, a way back to each member, and persistence only when the activity is completed.
 - Explicit behavior for zeroed exercises, interruption, and later correction.
 - Tests for order, restoration, sets per side, and partial completion.
 
 ## Subtasks
-Not recorded in the original version of this task.
+
+- [ ] Review the UX and the advance rules with the user and get approval.
+- [ ] Implement the guided flow and the local draft.
+- [ ] Define and implement zeroed exercises, interruption, and correction.
+- [ ] Add the tests listed in Deliverables.
 
 ## Validation
-Not recorded in the original version of this task.
+
+- Tests cover order, restoration, sets per side, and partial completion.
+- Nothing is written to the database before the activity is completed.
+- `pnpm run ci` passes.
+
+## Acceptance criteria
+
+- [ ] The user approved the UX and the advance rules before implementation started.
+- [ ] Blocks and members keep their existing IDs and prescriptions.
+- [ ] Moving through the guided flow writes nothing to the database until the activity is completed.
 
 ## Out of scope
 
 - Changing the plan sheet or inventing doses, rests, and progressions.
 - Implementing before a new review by the user.
 
-## Acceptance criteria
-- [ ] UX and advance rules approved before implementation.
-- [ ] Blocks and members preserve existing IDs and prescriptions.
-- [ ] Guided navigation does not anticipate writing to the database.
-
 ## Result
-Planned; KZ-E06-T16 keeps only manual navigation and the subtitles of the pairs.
+
+Not started. KZ-E06-T16 keeps only manual navigation and the pair subtitles.

@@ -46,7 +46,7 @@ If KZ-E12-T08 rejects Zustand, this task applies the approved alternative or is 
 ## Acceptance criteria
 - [ ] No client cache uses `useReducer` only to force rendering.
 - [ ] No `window.confirm` remains in product code.
-- [ ] The observable behavior is the same as before.
+- [ ] The regression tests for revision conflict, a draft in another tab, and storage failure pass.
 
 ## Result
 Not started.

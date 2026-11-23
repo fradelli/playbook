@@ -42,7 +42,7 @@ Findings from the 2026-11-23 audit:
 
 ## Acceptance criteria
 - [ ] No direct dependency uses a version range.
-- [ ] No override is left without effect or without a recorded reason.
+- [ ] Every override in `pnpm-workspace.yaml` matches a version resolved in `pnpm-lock.yaml` and has a recorded advisory.
 
 ## Result
 Not started.

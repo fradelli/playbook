@@ -29,10 +29,12 @@ Validate the complete flow of viewing and executing a workout before publication
 - [ ] Record known limitations.
 
 ## Validation
-- Run all the repository gates.
+- `pnpm run ci` passes.
+- Walk through the manual checklist on a mobile viewport.
 
 ## Acceptance criteria
-- [ ] The main flow is sound and ready for preview.
+- [ ] The automated tests and the manual checklist cover assignment, preparation, sets, load, rest, history, and empty states, each marked pass or listed as a known limitation.
+- [ ] `pnpm run ci` passes.
 
 ## Result
-Not yet completed.
+Not started.

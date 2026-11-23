@@ -20,7 +20,7 @@ Make the active version, the origin, and the documentary history of the workout 
 - `src/features/training/`
 
 ## Deliverables
-- Provenance metadata and historical navigation.
+- Training UI under `src/features/training/` that shows provenance metadata and lets the user browse versions.
 
 ## Subtasks
 - [ ] Show the version and update date.
@@ -29,10 +29,12 @@ Make the active version, the origin, and the documentary history of the workout 
 - [ ] Avoid unnecessary exposure of personal data.
 
 ## Validation
-- Compare the displayed metadata with the import.
+- Compare the version, update date, and origin shown in the UI with `data/active.json` and `docs/migration/MIGRATION-MANIFEST.md`.
+- Browse a past version and confirm `data/active.json` does not change.
 
 ## Acceptance criteria
-- [ ] The origin of what is shown can be audited.
+- [ ] The UI shows the version, the update date, and whether the content is original or adapted.
+- [ ] Browsing a past version leaves the active plan unchanged.
 
 ## Result
-Not yet completed.
+Not started.

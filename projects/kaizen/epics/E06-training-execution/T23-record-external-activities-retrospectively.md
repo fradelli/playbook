@@ -8,16 +8,12 @@ depends_on: [KZ-E06-T12]
 
 # Record footvolley and external activities retrospectively
 
-## Implemented scope
-
-Direct recording of sports practices and specific workouts for today and yesterday,
-with no timer, real times, or mandatory warm-up. Optional preparation
-can be viewed; the recording form appears only at the end of the expanded card.
-
 ## Objective
-Not recorded in the original version of this task; equivalent content is in the section «Implemented scope».
+
+Record sports practices and specific workouts for today and yesterday directly, without a timer, real times, or a mandatory warm-up.
 
 ## Inputs
+
 - `docs/architecture/TARGET-ARCHITECTURE.md`
 - `src/app/workout/training-actions.ts`
 - `src/features/training/application/mutate-training-day.ts`
@@ -29,41 +25,40 @@ Not recorded in the original version of this task; equivalent content is in the 
 - `prisma/migrations/20261004120000_allow_retrospective_external_activity/migration.sql`
 - `tests/integration/training-mutations.test.ts`
 
+## Expected behavior
+
+- Optional preparation can be viewed; the recording form appears only at the end of the expanded card.
+
 ## Deliverables
-Not recorded in the original version of this task; equivalent content is in the section «Implemented scope».
+
+- Retrospective recording rules, mutation, and repository support for today and yesterday.
+- Additive migration `20261004120000_allow_retrospective_external_activity`.
+- Card and controls showing the record last, only when the card is expanded.
+- Integration tests in `tests/integration/training-mutations.test.ts`.
 
 ## Subtasks
-Not recorded in the original version of this task.
+
+- [x] Implement recording without guided execution, keeping unknown times absent.
+- [x] Show the optional warm-up without blocking the record.
+- [x] Apply the additive migration to the local PostgreSQL (04/10/2026).
+- [x] Pass the PostgreSQL integrations and the CI of PRs #61 and #62.
+- [ ] Walk through the full manual journey.
 
 ## Validation
-Not recorded in the original version of this task.
+
+- `pnpm run ci` passes, including PostgreSQL integrations, backup/restore, and build.
+- The manual journey records a practice for yesterday and confirms the record is refused for a future date.
 
 ## Acceptance criteria
-Not recorded in the original version of this task; equivalent content is in the section «Acceptance and result».
+
+- [x] An activity is recorded without guided execution, and unknown times stay empty.
+- [x] The optional warm-up is visible and does not block the record.
+- [x] The record is hidden on the collapsed card and is the last item when expanded.
+- [x] Fixed workspace, ownership, revision, and the block on future completion are preserved.
+- [ ] The full manual journey passed.
 
 ## Result
-Not recorded in the original version of this task; equivalent content is in the section «Acceptance and result».
 
-## Acceptance and result
+Implemented, authorized, and reviewed by the user; `developer` was updated with KZ-E06-T22 without widening the retrospective window. The first CI of PR #61 failed the audit (17 findings); dependency fixes left one high finding in `braces` 3.0.3 without a published patch ([GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)), so PR #62 added an internal fork from commit `28d440b5dd449dbf1fe6f3506cf94ecca4d02660` with depth limits, documented in `vendor/braces/README.kaizen.md`. The full CI of PRs #61 and #62 passed on 12/10/2026 (291 app tests, 904 package tests, audit clean).
 
-- [x] Recording without guided execution; unknown times remain absent.
-- [x] Optional warm-up visible, without blocking the record.
-- [x] Record hidden on the collapsed card and in the last position when expanded.
-- [x] Fixed workspace, ownership, revision, and the block on future completion preserved.
-- [x] Additive migration applied to the local PostgreSQL on 04/10/2026.
-- [x] PostgreSQL integrations and checks of PRs #61 and #62 passed.
-
-Implementation authorized and reviewed by the user in the conversation. Update of
-`developer` with KZ-E06-T22 incorporated without widening the retrospective window.
-Tests, PostgreSQL integrations, backup/restore, build, quality, data, and governance
-passed in the first CI of PR #61. The audit failed with 17 findings.
-Fixes for Next.js 16.3.8 and transitive dependencies reduced the local audit to one high
-finding in `braces` 3.0.3, a development dependency with no published patch
-([GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)). PR #62
-adds an internal fork based on the reviewed commit
-`28d440b5dd449dbf1fe6f3506cf94ecca4d02660`, with depth limits. The fork
-is identified and documented in `vendor/braces/README.kaizen.md`.
-Frozen install, lint, formatting, audit with no findings, 291 app tests,
-and 904 package tests passed locally. The full CI of PRs #61 and #62 passed
-on 12/10/2026, including PostgreSQL, backup/restore, and build. The full manual
-journey remains pending; no planning document accompanies the delivery.
+Open: the full manual journey.
