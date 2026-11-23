@@ -35,6 +35,8 @@ Public repository with governed branches, documentation, content publication, an
 | [KZ-E00-T14](T14-analyze-documentation-for-claude.md) | KZ-E00-T12 | Approved plan for documentation optimized for Claude |
 | [KZ-E00-T15](T15-apply-approved-documentation-reorganization.md) | KZ-E00-T14 | Documentation reorganized according to the plan |
 | [KZ-E00-T16](T16-strengthen-ci-gates.md) | — | Remote CI with the same gates as `pnpm run ci` |
+| [KZ-E00-T17](T17-point-repository-to-playbook.md) | PB-E01-T02 | Kaizen uses the playbook as its only roadmap |
+| [KZ-E00-T18](T18-adopt-english-only-rule.md) | KZ-E00-T17 | Repository written in English, except end-user copy |
 
 Status lives only in the project `README.md`.
 

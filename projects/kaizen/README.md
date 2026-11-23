@@ -48,6 +48,8 @@ Migrated on 2026-11-23 by [PB-E01-T02](../playbook/epics/E01-project-migration/T
 | KZ-E00-T14 | READY | [Analyze the documentation for use by Claude](epics/E00-repository-governance/T14-analyze-documentation-for-claude.md) | KZ-E00-T12 |
 | KZ-E00-T15 | PLANNED | [Apply the approved documentation reorganization](epics/E00-repository-governance/T15-apply-approved-documentation-reorganization.md) | KZ-E00-T14 |
 | KZ-E00-T16 | DONE | [Strengthen the CI gates](epics/E00-repository-governance/T16-strengthen-ci-gates.md) | — |
+| KZ-E00-T17 | PLANNED | [Point the repository to the playbook](epics/E00-repository-governance/T17-point-repository-to-playbook.md) | PB-E01-T02 |
+| KZ-E00-T18 | PLANNED | [Adopt the English-only rule](epics/E00-repository-governance/T18-adopt-english-only-rule.md) | KZ-E00-T17 |
 | KZ-E01-T01 | DONE | [Freeze source snapshot](epics/E01-training-data-migration/T01-freeze-source-snapshot.md) | KZ-E00-T05 |
 | KZ-E01-T02 | DONE | [Migrate canonical training data](epics/E01-training-data-migration/T02-migrate-canonical-training-data.md) | KZ-E01-T01 |
 | KZ-E01-T03 | DONE | [Migrate training history](epics/E01-training-data-migration/T03-migrate-training-history.md) | KZ-E01-T02 |

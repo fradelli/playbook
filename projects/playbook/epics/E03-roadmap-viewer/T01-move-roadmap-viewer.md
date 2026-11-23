@@ -14,8 +14,8 @@ Move the interactive roadmap viewer from Kaizen to this repository and make it r
 
 ## Inputs
 
-- `fradelli/nextjs-kaizen-app: scripts/build-roadmap-view.mjs` and its tests — data generator.
-- `fradelli/nextjs-kaizen-app: roadmap/view/` — React page, Vite config, and Markdown renderer.
+- `fradelli/nextjs-kaizen-app: scripts/build-roadmap-view.mjs` and its tests at commit `1c3dd48` — data generator. KZ-E00-T17 removes them from Kaizen.
+- `fradelli/nextjs-kaizen-app: roadmap/view/` at commit `1c3dd48` — React page, Vite config, and Markdown renderer.
 - `fradelli/nextjs-kaizen-app: vendor/fradelli-ui-mira-table-progress.tgz` — design system package used by the page until a published version exists.
 
 ## Deliverables
@@ -23,7 +23,8 @@ Move the interactive roadmap viewer from Kaizen to this repository and make it r
 - `package.json` with `roadmap:view`.
 - `scripts/build-roadmap-view.mjs`, its tests, and `viewer/`.
 - A project filter in the overview, matrix, and kanban.
-- A `KZ-` task to remove the viewer from Kaizen.
+
+Removing the viewer from Kaizen is part of KZ-E00-T17.
 
 ## Subtasks
 
@@ -31,7 +32,6 @@ Move the interactive roadmap viewer from Kaizen to this repository and make it r
 - [ ] Resolve cross-project dependencies in waves and readiness.
 - [ ] Show `standards/` in the documents tab.
 - [ ] Add the project filter.
-- [ ] Register the Kaizen clean-up task.
 
 ## Validation
 
