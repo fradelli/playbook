@@ -23,6 +23,7 @@ The published package declares what consumers really need and its checks derive 
 | [DS-E01-T02](T02-derive-export-lists-from-one-source.md) | —          | Checks derived from exports and source |
 | [DS-E01-T03](T03-generate-theme-from-tokens.md)          | DS-E03-T02    | Theme mapping generated from tokens    |
 | [DS-E01-T04](T04-enable-coverage-thresholds.md)          | —          | Coverage measured and enforced         |
+| [DS-E01-T05](T05-plan-development-dependency-upgrades.md) | DS-E00-T09 | Order of the development tool majors decided |
 
 Status lives only in the project `README.md`.
 
