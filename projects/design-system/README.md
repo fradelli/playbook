@@ -26,7 +26,7 @@ Imported on 2026-11-23 by [PB-E01-T01](../playbook/epics/E01-project-migration/T
 | --- | --- | --- | --- |
 | DS-E00-T01 | DONE | [Create the roadmap system](epics/E00-repository-governance/T01-create-roadmap-system.md) | — |
 | DS-E00-T02 | READY | [Ignore local agent artifacts](epics/E00-repository-governance/T02-ignore-local-agent-artifacts.md) | — |
-| DS-E00-T03 | READY | [Migrate agent governance to Claude](epics/E00-repository-governance/T03-migrate-agent-governance-to-claude.md) | DS-E00-T01 |
+| DS-E00-T03 | IN_PROGRESS | [Migrate agent governance to Claude](epics/E00-repository-governance/T03-migrate-agent-governance-to-claude.md) | DS-E00-T01 |
 | DS-E00-T04 | READY | [Update stale documentation](epics/E00-repository-governance/T04-update-stale-documentation.md) | — |
 | DS-E00-T05 | PLANNED | [Reorganize documentation for Claude](epics/E00-repository-governance/T05-reorganize-documentation-for-claude.md) | DS-E00-T03, DS-E00-T04 |
 | DS-E00-T06 | READY | [Streamline the quality gates](epics/E00-repository-governance/T06-streamline-quality-gates.md) | — |
