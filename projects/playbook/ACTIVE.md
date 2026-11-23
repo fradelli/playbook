@@ -1,9 +1,9 @@
 # Active task
 
-- **Task:** No task selected
-- **Status:** —
-- **Main input:** —
-- **Next action:** start [PB-E00-T04](epics/E00-repository-foundation/T04-create-roadmap-check.md). Two projects now live here, and the manual check used in PB-E00-T01 and PB-E01-T01 is a ready base for `npm run roadmap:check`.
+- **Task:** [PB-E00-T04](epics/E00-repository-foundation/T04-create-roadmap-check.md) — Create the roadmap check
+- **Status:** IN_PROGRESS
+- **Main input:** `CLAUDE.md`, section "Validation".
+- **Next action:** write `scripts/roadmap-check.mjs`, its tests, and the CI workflow on branch `claude/PB-E00-T04-create-roadmap-check`.
 
 ## Resumption and parallel work
 
