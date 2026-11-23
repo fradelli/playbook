@@ -1,9 +1,9 @@
 # Active task
 
-- **Task:** No task selected
-- **Status:** —
-- **Main input:** —
-- **Next action:** start [PB-E01-T02](epics/E01-project-migration/T02-migrate-kaizen-roadmap.md) to bring the Kaizen roadmap here, or [PB-E02-T01](epics/E02-shared-standards/T01-inventory-kaizen-rules.md) to inventory the Kaizen rules.
+- **Task:** [PB-E01-T02](epics/E01-project-migration/T02-migrate-kaizen-roadmap.md) — Migrate the Kaizen roadmap
+- **Status:** IN_PROGRESS
+- **Main input:** `fradelli/nextjs-kaizen-app: roadmap/` at `developer` `1c3dd48` (13 epics, 125 tasks).
+- **Next action:** convert IDs, frontmatter, sections, and links by script, translate by epic, then reconcile with the latest Kaizen `developer` before merging. Branch `claude/PB-E01-T02-migrate-kaizen-roadmap`.
 
 ## Resumption and parallel work
 
