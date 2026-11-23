@@ -7,23 +7,27 @@ depends_on: []
 external: []
 ---
 
-# Task name
+# Verb and object
 
-<!-- `depends_on` lists task IDs only, from any project. `external` lists conditions that are not tasks and may be omitted when empty. The seven sections below are required; task-specific sections may go between them. A section with no content records "Not recorded in the original version of this task." -->
+<!--
+Follow standards/general/writing.md. Delete these comments.
+- depends_on: task IDs from any project. external: conditions that are not tasks; omit when empty.
+- The seven sections below are required and keep this order.
+- Optional sections, only when needed: Context, Decisions, Authorization (after Objective);
+  Expected behavior (after Inputs); Out of scope, Risks, Rollback (after Acceptance criteria).
+-->
 
 ## Objective
 
-The single outcome of this task.
+One sentence with the outcome.
 
 ## Inputs
 
-- `exact/path.ext` — section or heading needed and why it is read. Paths are relative to `repository`.
-
-Do not use vague references to epics, conversations, or "all documents".
+- `exact/path.ext` — section needed and why it is read. Paths in another repository: `owner/repo: path`.
 
 ## Deliverables
 
-- Exact path to create or change.
+- `exact/path.ext` that will exist or change.
 
 ## Subtasks
 
@@ -31,12 +35,12 @@ Do not use vague references to epics, conversations, or "all documents".
 
 ## Validation
 
-- Command or inspection and the expected result.
+- Command or inspection, and the expected result.
 
 ## Acceptance criteria
 
-- [ ] Observable result.
+- [ ] Observable result, answerable with yes or no by someone who did not do the work.
 
 ## Result
 
-When finishing, check only proven items and record concise evidence, without long logs.
+Not started.

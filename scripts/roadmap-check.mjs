@@ -21,7 +21,26 @@ export const REQUIRED_SECTIONS = [
   "Result",
 ];
 
+// Optional task sections allowed by standards/general/writing.md.
+export const OPTIONAL_SECTIONS = [
+  "Context",
+  "Decisions",
+  "Authorization",
+  "Expected behavior",
+  "Out of scope",
+  "Risks",
+  "Rollback",
+];
+
+// Writing rules checked on open tasks; ids are the keys used in scripts/writing-baseline.json.
+export const WRITING_RULES = {
+  "acceptance-criteria": "has no acceptance criteria checkbox",
+  "optional-sections": "has a section outside the allowed list",
+  placeholder: 'has a "Not recorded in the original version" placeholder',
+};
+
 const STATES = new Set(["PLANNED", "READY", "IN_PROGRESS", "BLOCKED", "DONE", "CANCELLED"]);
+const FINAL_STATES = new Set(["DONE", "CANCELLED"]);
 const TASK_ID = /^[A-Z]{2}-E\d{2}-T\d{2}$/;
 const EPIC_ID = /^[A-Z]{2}-E\d{2}$/;
 // Folders whose Markdown links are checked. `docs/` holds legacy documents until PB-E00-T03.
@@ -81,6 +100,19 @@ function readActive(text) {
   };
 }
 
+export function writingRulesBroken(text) {
+  const body = text.replace(/\r/g, "");
+  const rules = [];
+  const criteria = body.split(/^## Acceptance criteria$/m)[1]?.split(/^## /m)[0] ?? "";
+  if (!/^\s*[-*] \[[ x]\] \S/m.test(criteria)) rules.push("acceptance-criteria");
+  const headings = [...body.matchAll(/^## (.+)$/gm)].map((match) => match[1].trim());
+  if (headings.some((heading) => !REQUIRED_SECTIONS.includes(heading) && !OPTIONAL_SECTIONS.includes(heading))) {
+    rules.push("optional-sections");
+  }
+  if (/Not recorded in the original version/.test(body)) rules.push("placeholder");
+  return rules;
+}
+
 function findCycles(dependencies) {
   const cycles = [];
   const state = new Map();
@@ -138,6 +170,7 @@ export function checkRoadmap(root) {
 
   // Task files.
   const tasks = new Map(); // ID -> { project, file, depends }
+  const writingViolations = new Map(); // open task ID -> { file, rules }
   for (const [project, prefix] of Object.entries(PROJECT_PREFIXES)) {
     const epicsDirectory = join(root, "projects", project, "epics");
     for (const file of markdownFiles(epicsDirectory).filter((path) => /^T\d{2}-/.test(basename(path)))) {
@@ -176,8 +209,13 @@ export function checkRoadmap(root) {
         if (position >= 0) previous = position;
       }
 
-      const expected = [...(depends ?? []), ...(external ?? [])].join(", ") || "—";
       const row = index.get(id);
+      if (row && !FINAL_STATES.has(row.status)) {
+        const rules = writingRulesBroken(text);
+        if (rules.length > 0) writingViolations.set(id, { file, rules });
+      }
+
+      const expected = [...(depends ?? []), ...(external ?? [])].join(", ") || "—";
       if (!row) errors.push(`${at(file)}: ${id} is missing from projects/${project}/README.md`);
       else if (row.dependsOn !== expected) {
         errors.push(`${at(file)}: index dependencies "${row.dependsOn}" differ from frontmatter "${expected}"`);
@@ -197,6 +235,22 @@ export function checkRoadmap(root) {
 
   for (const [id, row] of index) {
     if (!tasks.has(id)) errors.push(`projects/${row.project}/README.md: ${id} has no task file`);
+  }
+
+  // Writing rules: open tasks follow standards/general/writing.md, except known debt in the baseline.
+  const baselinePath = join(root, "scripts", "writing-baseline.json");
+  const baseline = existsSync(baselinePath) ? JSON.parse(readFileSync(baselinePath, "utf8")) : {};
+  for (const [id, { file, rules }] of writingViolations) {
+    for (const rule of rules) {
+      if (!baseline[id]?.includes(rule)) errors.push(`${at(file)}: open task ${WRITING_RULES[rule]} (standards/general/writing.md)`);
+    }
+  }
+  for (const [id, rules] of Object.entries(baseline)) {
+    for (const rule of rules) {
+      if (!writingViolations.get(id)?.rules.includes(rule)) {
+        errors.push(`scripts/writing-baseline.json: remove "${rule}" from ${id}; the task no longer breaks it or is no longer open`);
+      }
+    }
   }
 
   // Dependencies, cycles, and READY tasks.

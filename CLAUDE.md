@@ -60,7 +60,7 @@ external: [Maintainer merges the version PR]   # conditions that are not tasks; 
 
 `Objective` · `Inputs` · `Deliverables` · `Subtasks` · `Validation` · `Acceptance criteria` · `Result`
 
-- Extra sections (for example `Context`) may go between them. Required sections are never renamed or removed.
+- Write every section following the [writing standard](standards/general/writing.md), which also lists the only optional sections allowed (`Context`, `Decisions`, `Authorization`, `Expected behavior`, `Out of scope`, `Risks`, `Rollback`). Required sections are never renamed or removed.
 - `Inputs` lists exact paths in the task `repository`, plus sections for long documents. A path in another repository is written as `owner/repo: path`, for example `fradelli/nextjs-kaizen-app: docs/README.md`. No vague references such as "all documents" or "previous result".
 
 ## States
@@ -118,5 +118,6 @@ The check enforces:
 - Frontmatter, project index, and epic table carry the same dependencies.
 - The seven sections are present and in order, relative links are valid, at most one `IN_PROGRESS` per project, and `ACTIVE.md` matches the index.
 - No `READY` task has an open dependency.
+- Open tasks have at least one acceptance criterion, only allowed optional sections, and no "not recorded" placeholder. Known debt is listed in `scripts/writing-baseline.json`, which may only shrink.
 
 Links under `docs/` are not checked until the legacy Suna documents move out ([PB-E00-T03](projects/playbook/epics/E00-repository-foundation/T03-relocate-suna-product-docs.md)).
