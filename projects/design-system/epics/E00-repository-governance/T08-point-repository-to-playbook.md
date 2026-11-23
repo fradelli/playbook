@@ -29,9 +29,9 @@ The roadmap of this project was planned under `roadmap/` in this repository but 
 
 ## Subtasks
 
-- [ ] Confirm that the playbook holds every epic and task of the local `roadmap/`.
-- [ ] Point the agent instructions to the playbook.
-- [ ] Delete the local `roadmap/` folder and the local branch, which has no commits beyond `main`.
+- [x] Confirm that the playbook holds every epic and task of the local `roadmap/`.
+- [x] Point the agent instructions to the playbook.
+- [x] Delete the local `roadmap/` folder and the local branch, which has no commits beyond `main`.
 
 ## Validation
 
@@ -40,7 +40,7 @@ The roadmap of this project was planned under `roadmap/` in this repository but 
 
 ## Acceptance criteria
 
-- [ ] `AGENTS.md` and `CLAUDE.md` link to `fradelli/playbook: projects/design-system/ACTIVE.md`, and no `roadmap/` folder exists in the clone.
+- [x] `AGENTS.md` and `CLAUDE.md` link to `fradelli/playbook: projects/design-system/ACTIVE.md`, and no `roadmap/` folder exists in the clone.
 
 ## Result
 
