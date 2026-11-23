@@ -52,4 +52,8 @@ The 2026-11-23 audit found no writing standard: tasks only follow a structure. D
 
 ## Result
 
-Not started.
+- `standards/general/writing.md`: rules for every text, rules, documents, tasks (a write/leave-out table per section), acceptance criteria with before-and-after examples and a list of vague words, the seven optional sections, and epics.
+- Templates rewritten to the standard; `CLAUDE.md` and `standards/README.md` point to it.
+- `roadmap:check` now rejects open tasks without an acceptance criteria checkbox, with a section outside the allowed list, or with a "not recorded" placeholder. Done and cancelled tasks are not checked for writing.
+- `scripts/writing-baseline.json` lists the current debt: 9 open Kaizen tasks, 17 violations. The check fails if a new violation appears or a listed one is fixed but not removed, so the list can only shrink (PB-E02-T05 empties it).
+- `npm test` passed 27 of 27 (7 new cases) and `npm run roadmap:check` passed with 171 tasks.
