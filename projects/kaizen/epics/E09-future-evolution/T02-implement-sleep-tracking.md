@@ -6,11 +6,11 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E09-T01]
 ---
 
-# Implementar controle de sono
+# Implement sleep tracking
 
 ## Objective
-Permitir registrar e consultar sono conforme o contrato aprovado na KZ-E09-T01,
-sem produzir diagnóstico ou recomendação médica.
+Allow logging and viewing sleep according to the contract approved in KZ-E09-T01,
+without producing a diagnosis or medical recommendation.
 
 ## Inputs
 - `roadmap/epics/E09-future-evolution/T01-design-sleep-and-general-activities.md`
@@ -19,28 +19,28 @@ sem produzir diagnóstico ou recomendação médica.
 - `src/lib/security/workspace.ts`
 
 ## Deliverables
-- Persistência versionada e protegida pelo workspace fixo.
-- Leitura e registro server-side com validação de entrada e concorrência.
-- Tela acessível e responsiva para consulta e edição dos dados aprovados.
-- Testes de domínio, integração PostgreSQL, componentes e fluxo crítico.
+- Versioned persistence protected by the fixed workspace.
+- Server-side reading and logging with input validation and concurrency handling.
+- Accessible, responsive screen for viewing and editing the approved data.
+- Domain, PostgreSQL integration, component, and critical-flow tests.
 
 ## Subtasks
-- [ ] Detalhar a tarefa com os contratos aprovados antes de torná-la `READY`.
-- [ ] Atualizar dependências e implementar autenticação antes desta tarefa se a
-      KZ-E09-T01 classificar os dados como sensíveis.
-- [ ] Preservar datas civis em `America/Sao_Paulo` e timestamps em UTC.
-- [ ] Tratar ausência, edição, conflito e falha sem inventar métricas.
-- [ ] Manter componentes em pastas próprias e o menor limite Client.
+- [ ] Detail the task with the approved contracts before making it `READY`.
+- [ ] Update dependencies and implement authentication before this task if
+      KZ-E09-T01 classifies the data as sensitive.
+- [ ] Preserve civil dates in `America/Sao_Paulo` and timestamps in UTC.
+- [ ] Handle absence, editing, conflict, and failure without inventing metrics.
+- [ ] Keep components in their own folders and the smallest Client boundary.
 
 ## Validation
-- Testar ownership, constraints, timezone, concorrência, acessibilidade e build.
+- Test ownership, constraints, timezone, concurrency, accessibility, and build.
 
 ## Acceptance criteria
-- [ ] O usuário registra e consulta sono sem que o aplicativo faça inferência clínica.
+- [ ] The user logs and views sleep without the app making clinical inferences.
 
-## Fora de escopo
+## Out of scope
 
-- Recomendações médicas, detecção de distúrbios ou integração não aprovada na KZ-E09-T01.
+- Medical recommendations, disorder detection, or integration not approved in KZ-E09-T01.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

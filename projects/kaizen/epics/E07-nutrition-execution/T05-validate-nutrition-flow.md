@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E07-T04]
 ---
 
-# Validar fluxo alimentar
+# Validate the nutrition flow
 
 ## Objective
-Validar o fluxo completo de consulta e registro alimentar antes da publicação.
+Validate the complete flow of viewing and recording nutrition before release.
 
 ## Inputs
 - `docs/plans/nutrition/E07.md`
@@ -19,20 +19,20 @@ Validar o fluxo completo de consulta e registro alimentar antes da publicação.
 - `tests/`
 
 ## Deliverables
-- Evidências automatizadas e checklist manual do fluxo.
+- Automated evidence and a manual checklist of the flow.
 
 ## Subtasks
-- [ ] Testar tipo de dia, refeições, escolhas, alternativa, comentário e estados vazios.
-- [ ] Validar acessibilidade básica e navegação móvel.
-- [ ] Confirmar unidades, unknowns e proveniência.
-- [ ] Confirmar acesso público no workspace fixo, erro de gravação e concorrência.
-- [ ] Registrar limitações conhecidas.
+- [ ] Test day type, meals, choices, alternative, comment, and empty states.
+- [ ] Validate basic accessibility and mobile navigation.
+- [ ] Confirm units, unknowns, and provenance.
+- [ ] Confirm public access in the fixed workspace, write error, and concurrency.
+- [ ] Record known limitations.
 
 ## Validation
-- Executar todos os gates do repositório.
+- Run all the repository gates.
 
 ## Acceptance criteria
-- [ ] O fluxo principal está íntegro e pronto para preview.
+- [ ] The main flow is sound and ready for preview.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

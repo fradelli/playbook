@@ -6,38 +6,38 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E11-T03]
 ---
 
-# Mover e redimensionar uma reserva individual
+# Move and resize an individual reservation
 
 ## Objective
-Criar os contratos ausentes para editar somente a reserva selecionada, sem mover o pai nem alterar outras reservas da tarefa.
+Create the missing contracts to edit only the selected reservation, without moving the parent or changing other reservations of the task.
 
 ## Inputs
-- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/application/schedule-command.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/application/schedule-command.ts) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/data/schedule-writer.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/data/schedule-writer.ts) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/ui/components/reservation-editor/reservation-editor.tsx](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/reservation-editor/reservation-editor.tsx) — consultar o contrato ou seção correspondente ao escopo.
+- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consult the contract or section matching the scope.
+- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consult the contract or section matching the scope.
+- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consult the contract or section matching the scope.
+- [src/features/schedule/application/schedule-command.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/application/schedule-command.ts) — consult the contract or section matching the scope.
+- [src/features/schedule/data/schedule-writer.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/data/schedule-writer.ts) — consult the contract or section matching the scope.
+- [src/features/schedule/ui/components/reservation-editor/reservation-editor.tsx](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/reservation-editor/reservation-editor.tsx) — consult the contract or section matching the scope.
 
 ## Deliverables
-Resultado verificável descrito nos critérios abaixo, com evidências vinculadas a esta tarefa. Antes de editar código, aplicar as seções pertinentes da [arquitetura](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) e os contratos locais. Não carregar planos históricos inteiros.
+Verifiable result described in the criteria below, with evidence linked to this task. Before editing code, apply the relevant sections of the [architecture](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) and the local contracts. Do not load entire historical plans.
 
 ## Subtasks
-- [ ] Definir comandos e validar revisão da reserva e dos pais afetados.
-- [ ] Reutilizar ocupação, grade temporal, histórico e recibos.
-- [ ] Integrar editor e gesto usando a mesma operação.
+- [ ] Define commands and validate the revision of the reservation and of the affected parents.
+- [ ] Reuse occupancy, the time grid, history, and receipts.
+- [ ] Integrate the editor and the gesture using the same operation.
 
 ## Validation
-Conferir links, IDs, dependências e coerência com regras de produto. Quando houver implementação autorizada, executar os gates proporcionais e os cenários do plano; registrar o que foi executado e o que ficou pendente. Testes ainda não executados não contam como evidência.
+Check links, IDs, dependencies, and consistency with product rules. When implementation is authorized, run the proportional gates and the plan's scenarios; record what was run and what remains pending. Tests not yet run do not count as evidence.
 
 ## Acceptance criteria
-- [ ] Reserva mantém ID, todoId e checkbox compartilhado.
-- [ ] Editar uma reserva não move o pai nem suas irmãs.
-- [ ] Ocupação interna, cancelamento, retry e concorrência são cobertos por testes.
+- [ ] The reservation keeps its ID, todoId, and shared checkbox.
+- [ ] Editing one reservation does not move the parent or its siblings.
+- [ ] Internal occupancy, cancellation, retry, and concurrency are covered by tests.
 
-## Fora de escopo
+## Out of scope
 
-Sem recorrência, inferência de execução ou alteração implícita de todas as reservas.
+No recurrence, execution inference, or implicit change of all reservations.
 
 ## Result
-Backlog registrado em 21/11/2026 durante a reconciliação documental. Nenhuma execução desta tarefa foi iniciada por este registro. O status canônico fica exclusivamente no índice do roadmap.
+Backlog recorded on 21/11/2026 during the documentation reconciliation. No execution of this task was started by this record. Canonical status lives only in the roadmap index.

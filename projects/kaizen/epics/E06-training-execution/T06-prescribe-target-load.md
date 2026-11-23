@@ -6,14 +6,14 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T03]
 ---
 
-# Prescrever carga alvo por exercício e por série
+# Prescribe target load per exercise and per set
 
 ## Objective
-Mostrar uma carga alvo distinta da carga efetivamente realizada, permitindo um alvo único para o exercício ou alvos diferentes por série.
+Show a target load distinct from the load actually performed, allowing a single target for the exercise or different targets per set.
 
-## Contexto conhecido
+## Known context
 
-Na implementação proposta pela KZ-E06-T03, a execução guarda `loadKg` por série e o exercício informa `loadApplicable` e `loadUnit`. Ainda não há campo próprio para a carga alvo na definição prescrita. Os dados atuais usam kg. Confirmar esses fatos novamente após o merge da PR correspondente.
+In the implementation proposed by KZ-E06-T03, the execution stores `loadKg` per set and the exercise reports `loadApplicable` and `loadUnit`. There is still no dedicated field for the target load in the prescribed definition. The current data uses kg. Confirm these facts again after the corresponding PR is merged.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -25,7 +25,7 @@ Na implementação proposta pela KZ-E06-T03, a execução guarda `loadKg` por s�
 - `src/features/training/ui/components/training-day-page/components/training-session/components/training-exercise/training-exercise.tsx`
 
 ## Deliverables
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Escopo e impactos».
+Not recorded in the original version of this task; equivalent content in the section "Scope and impacts".
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -33,34 +33,34 @@ Not recorded in the original version of this task.
 ## Validation
 Not recorded in the original version of this task.
 
-## Comportamento esperado
+## Expected behavior
 
-- Uma prescrição pode definir a mesma carga para todas as séries ou uma carga específica para cada série.
-- O alvo aparece com unidade e nunca é confundido com a carga realizada.
-- Exercícios sem carga aplicável não exibem nem exigem alvo.
-- Planos antigos sem carga alvo continuam importáveis e legíveis.
+- A prescription can define the same load for all sets or a specific load for each set.
+- The target appears with its unit and is never confused with the load performed.
+- Exercises without an applicable load neither show nor require a target.
+- Old plans without a target load remain importable and readable.
 
-## Escopo e impactos
+## Scope and impacts
 
-- Reanalisar contrato canônico, unidade, validação, importação, persistência versionada, projeção e apresentação compacta no mobile.
-- Preservar a imutabilidade das versões já importadas e planejar migração/rollback se o esquema mudar.
-- Testar alvo único, alvos por série, ausência de alvo e exercícios sem carga.
+- Reanalyze the canonical contract, unit, validation, import, versioned persistence, projection, and compact mobile presentation.
+- Preserve the immutability of already imported versions and plan a migration/rollback if the schema changes.
+- Test a single target, per-set targets, absence of a target, and exercises without load.
 
-## Fora de escopo
+## Out of scope
 
-- Calcular ou recomendar cargas automaticamente.
-- Mudar a carga realizada ou mover instruções de execução para o resumo.
+- Calculate or recommend loads automatically.
+- Change the load performed or move execution instructions into the summary.
 
-## Decisões antes da implementação
+## Decisions before implementation
 
-- Definir a representação canônica dos dois modos de alvo e se há necessidade real de faixa ou outra unidade.
-- Conferir valores disponíveis na fonte aprovada; não inventar cargas para o plano atual.
-- Reanalisar o código vigente, apresentar solução e trade-offs e aguardar aprovação explícita antes de implementar.
+- Define the canonical representation of the two target modes and whether there is a real need for a range or another unit.
+- Check the values available in the approved source; do not invent loads for the current plan.
+- Reanalyze the current code, present a solution and trade-offs, and wait for explicit approval before implementing.
 
 ## Acceptance criteria
-- [ ] Os dois modos de alvo são representáveis e exibidos sem alterar resultados reais.
-- [ ] Compatibilidade com planos antigos, unidades e ausência de alvo é demonstrada por testes.
-- [ ] A solução aprovada tem migração e rollback quando necessários.
+- [ ] Both target modes can be represented and shown without changing real results.
+- [ ] Compatibility with old plans, units, and absence of a target is demonstrated by tests.
+- [ ] The approved solution has a migration and rollback when needed.
 
 ## Result
-Ainda não iniciada.
+Not yet started.

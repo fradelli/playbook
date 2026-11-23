@@ -6,11 +6,11 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E09-T05]
 ---
 
-# Internacionalizar produto e conteúdo canônico
+# Internationalize product and canonical content
 
 ## Objective
-Migrar as quatro jornadas do produto para o catálogo i18n aprovado, usando inglês
-como idioma-fonte e preservando proveniência e histórico dos dados canônicos.
+Migrate the four product journeys to the approved i18n catalog, using English
+as the source language and preserving provenance and history of the canonical data.
 
 ## Inputs
 - `roadmap/epics/E09-future-evolution/T05-design-i18n-and-english-policy.md`
@@ -22,30 +22,30 @@ como idioma-fonte e preservando proveniência e histórico dos dados canônicos.
 - `src/app/layout.tsx`
 
 ## Deliverables
-- Catálogo inglês completo e pelo menos um locale adicional aprovado.
-- Interface, acessibilidade, erros e metadados sem strings de produto dispersas.
-- Rotas inglesas com compatibilidade explícita para URLs anteriores.
-- Conteúdo canônico traduzido por nova versão quando a proveniência exigir.
-- Testes de fallback, formatação, carregamento e ausência de chave.
+- Complete English catalog and at least one additional approved locale.
+- Interface, accessibility, errors, and metadata without scattered product strings.
+- English routes with explicit compatibility for previous URLs.
+- Canonical content translated as a new version when provenance requires it.
+- Tests for fallback, formatting, loading, and missing keys.
 
 ## Subtasks
-- [ ] Internacionalizar shell, treino, alimentação, sono e atividades gerais.
-- [ ] Traduzir datas, números, unidades, mensagens e nomes acessíveis.
-- [ ] Preservar IDs estáveis e criar versões novas em vez de alterar histórico importado.
-- [ ] Manter conteúdo não traduzido explícito, sem fallback silencioso incorreto.
-- [ ] Atualizar testes por comportamento e locale.
+- [ ] Internationalize the shell, workouts, nutrition, sleep, and general activities.
+- [ ] Translate dates, numbers, units, messages, and accessible names.
+- [ ] Preserve stable IDs and create new versions instead of altering imported history.
+- [ ] Keep untranslated content explicit, with no silent incorrect fallback.
+- [ ] Update tests by behavior and locale.
 
 ## Validation
-- Executar integridade dos dados, importação idempotente, testes de UI e build por locale.
+- Run data integrity, idempotent import, UI tests, and a build per locale.
 
 ## Acceptance criteria
-- [ ] Um usuário em inglês usa todas as jornadas sem encontrar texto de produto em português.
-- [ ] O locale adicional aprovado funciona com fallback determinístico.
-- [ ] Histórico, IDs e versões anteriores permanecem íntegros.
+- [ ] A user in English uses all journeys without finding product text in Portuguese.
+- [ ] The additional approved locale works with a deterministic fallback.
+- [ ] History, IDs, and previous versions remain intact.
 
-## Fora de escopo
+## Out of scope
 
-- Tradução automática em runtime ou conteúdo clínico/nutricional não revisado.
+- Automatic runtime translation or unreviewed clinical/nutritional content.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

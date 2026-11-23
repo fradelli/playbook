@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E07-T02]
 ---
 
-# Registrar escolhas, cumprimento e comentários
+# Record choices, adherence, and comments
 
 ## Objective
-Apresentar as opções aprovadas e registrar o resultado real de cada refeição.
+Present the approved options and record the actual outcome of each meal.
 
 ## Inputs
 - `docs/plans/nutrition/E07.md`
@@ -19,21 +19,21 @@ Apresentar as opções aprovadas e registrar o resultado real de cada refeição
 - `src/features/nutrition/`
 
 ## Deliverables
-- Componentes e Server Actions de refeição com estado e revisão.
+- Meal components and Server Actions with state and revision.
 
 ## Subtasks
-- [ ] Diferenciar item principal, complemento e alternativa.
-- [ ] Preservar quantidades e unidades originais.
-- [ ] Evitar converter alternativa em equivalência clínica.
-- [ ] Registrar `followed_plan`, `followed_different`, `skipped` e comentário.
-- [ ] Exigir descrição para refeição diferente e limpar campos incompatíveis.
-- [ ] Preservar rascunho em erro e detectar concorrência.
+- [ ] Differentiate main item, complement, and alternative.
+- [ ] Preserve original quantities and units.
+- [ ] Avoid converting an alternative into a clinical equivalence.
+- [ ] Record `followed_plan`, `followed_different`, `skipped`, and comment.
+- [ ] Require a description for a different meal and clear incompatible fields.
+- [ ] Preserve the draft on error and detect concurrency.
 
 ## Validation
-- Conferir opções contra o plano público e transições contra as regras do P0.
+- Check options against the public plan and transitions against the P0 rules.
 
 ## Acceptance criteria
-- [ ] Recarregar restaura o registro sem alterar o plano ou expor outro workspace.
+- [ ] Reloading restores the record without changing the plan or exposing another workspace.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

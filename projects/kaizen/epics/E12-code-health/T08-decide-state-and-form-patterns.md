@@ -6,46 +6,46 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: []
 ---
 
-# Decidir o padrão de estado global e de formulários
+# Decide the global state and form pattern
 
 ## Objective
-Registrar uma decisão sobre adotar Zustand para estado de cliente compartilhado e React Hook Form para formulários complexos, com critério de quando usar cada um.
+Record a decision on adopting Zustand for shared client state and React Hook Form for complex forms, with a criterion for when to use each.
 
-## Contexto
+## Context
 
-Fatos da auditoria de 2026-11-23:
+Facts from the 2026-11-23 audit:
 
-- O projeto não usa Zustand nem React Hook Form.
-- Há três caches de cliente feitos à mão com `Map` mutável e `useReducer` para forçar renderização: `use-schedule-entities.ts`, `use-calendar-days.ts` e o rascunho de treino em `use-training-activity-draft.ts`, que usa `CustomEvent`, evento `storage` e varredura do localStorage.
-- `schedule-workspace.tsx` cria três contexts e um `useMemo` extenso; `useScheduleWorkspace` junta os contexts de novo.
-- `training-activity-form.tsx` tem 391 linhas, seis `useState` e validação manual no `onSubmit`; os demais formulários são simples e usam `useActionState`.
-- A arquitetura proíbe dependência sem consumidor e exige decisão explícita para mudar a stack.
+- The project uses neither Zustand nor React Hook Form.
+- There are three hand-built client caches using a mutable `Map` and `useReducer` to force rendering: `use-schedule-entities.ts`, `use-calendar-days.ts`, and the workout draft in `use-training-activity-draft.ts`, which uses `CustomEvent`, the `storage` event, and a localStorage scan.
+- `schedule-workspace.tsx` creates three contexts and a long `useMemo`; `useScheduleWorkspace` joins the contexts again.
+- `training-activity-form.tsx` has 391 lines, six `useState` calls, and manual validation in `onSubmit`; the other forms are simple and use `useActionState`.
+- The architecture forbids a dependency without a consumer and requires an explicit decision to change the stack.
 
 ## Inputs
-- `docs/architecture/TARGET-ARCHITECTURE.md` — seções "Stack escolhida", "Client Components" e "Server Actions".
-- `docs/decisions/` — formato das decisões existentes.
-- `src/features/schedule/ui/components/schedule-workspace/schedule-workspace.tsx` e `hooks/use-schedule-entities.ts`.
+- `docs/architecture/TARGET-ARCHITECTURE.md` — sections "Stack escolhida" (Chosen stack), "Client Components", and "Server Actions".
+- `docs/decisions/` — format of the existing decisions.
+- `src/features/schedule/ui/components/schedule-workspace/schedule-workspace.tsx` and `hooks/use-schedule-entities.ts`.
 - `src/features/schedule/ui/components/calendar-range/hooks/use-calendar-days.ts`.
 - `src/features/training/ui/hooks/use-training-activity-draft/use-training-activity-draft.ts`.
 - `src/features/training/ui/components/training-day-page/components/training-activity-form/training-activity-form.tsx`.
 
 ## Deliverables
-- Decisão em `docs/decisions/` comparando a situação atual, Zustand e alternativas, e React Hook Form com `zodResolver` frente a `useActionState` puro.
-- Critérios de uso registrados na seção "Client Components" da arquitetura.
-- Versões exatas previstas, sem instalar dependência nesta tarefa.
+- Decision in `docs/decisions/` comparing the current situation, Zustand and alternatives, and React Hook Form with `zodResolver` against plain `useActionState`.
+- Usage criteria recorded in the "Client Components" section of the architecture.
+- Exact versions planned, without installing a dependency in this task.
 
 ## Subtasks
-- [ ] Medir re-renderizações e complexidade dos três caches atuais.
-- [ ] Avaliar compatibilidade com Server Actions, rascunhos locais e regra de não confirmar antes do servidor.
-- [ ] Redigir a decisão e submeter ao responsável.
-- [ ] Atualizar a arquitetura com o resultado aprovado.
+- [ ] Measure re-renders and complexity of the three current caches.
+- [ ] Evaluate compatibility with Server Actions, local drafts, and the rule of not confirming before the server.
+- [ ] Write the decision and submit it to the owner.
+- [ ] Update the architecture with the approved result.
 
 ## Validation
-- `pnpm docs:check` passa com a decisão no catálogo.
+- `pnpm docs:check` passes with the decision in the catalog.
 
 ## Acceptance criteria
-- [ ] Decisão aprovada pelo responsável, aceitando ou rejeitando cada biblioteca.
-- [ ] Critério de uso explícito para estado local, estado compartilhado e formulários.
+- [ ] Decision approved by the owner, accepting or rejecting each library.
+- [ ] Explicit usage criterion for local state, shared state, and forms.
 
 ## Result
-Não iniciada.
+Not started.

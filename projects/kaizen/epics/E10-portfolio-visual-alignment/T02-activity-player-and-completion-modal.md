@@ -6,12 +6,12 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E10-T01]
 ---
 
-# Player e registro de atividade em modal
+# Player and activity record in a modal
 
 ## Objective
-Trocar o botão largo de início e a avaliação inline por controles de execução no
-cabeçalho e um modal de registro, com tempo ativo e rascunhos preservados. Ajustar
-também a superfície e o contorno interativo das dicas de execução.
+Replace the wide start button and the inline rating with execution controls in the
+header and a record modal, with active time and preserved drafts. Also adjust
+the surface and the interactive outline of the execution hints.
 
 ## Inputs
 - `docs/history/implementation/TRAINING-ACTIVITY-PLAYER-AND-FEEDBACK-PLAN.md`
@@ -31,20 +31,20 @@ também a superfície e o contorno interativo das dicas de execução.
 - `tests/integration/fixtures/import-database.fixture.ts`
 - `prisma/migrations/20261028010000_allow_short_training_activity_times/migration.sql`
 
-## Decisões de entrada
+## Input decisions
 
-- Concluir a KZ-E10-T01 com a versão publicada que contém catálogo e hover do DS.
-- Orientação mais recente: treino guiado usa player; futevôlei/tipos externos abrem registro direto sem cronômetro.
-- CheckCircle do Design System aprovado pelo usuário para finalização direta.
-- Preservar a regra atual de Mobilidade (somente comentário); não ampliar campos sem decisão explícita.
-- Aprovar o fluxo e a semântica de stop definidos no plano antes de implementar.
+- Complete KZ-E10-T01 with the published version that contains the DS catalog and hover.
+- Most recent guidance: guided workouts use the player; futevôlei/external types open a direct record without a timer.
+- The Design System CheckCircle was approved by the user for direct completion.
+- Preserve the current Mobility rule (comment only); do not add fields without an explicit decision.
+- Approve the flow and the stop semantics defined in the plan before implementing.
 
 ## Deliverables
-- Dicas nativas com superfície elevada e contorno arredondado em hover/foco.
-- Play/Pausa/Stop no cabeçalho e layout responsivo com alvos de toque adequados.
-- Um modal de registro por atividade, com footer externo e ação à direita.
-- Captura consistente da pausa, cache da avaliação e recuperação em falhas.
-- Servidor e regressões alinhados às Decisions approved, sem migration presumida.
+- Native hints with an elevated surface and a rounded outline on hover/focus.
+- Play/Pause/Stop in the header and a responsive layout with adequate touch targets.
+- One record modal per activity, with an external footer and the action on the right.
+- Consistent pause capture, rating cache, and recovery on failures.
+- Server and regressions aligned with the approved decisions, with no presumed migration.
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -53,28 +53,28 @@ Not recorded in the original version of this task.
 Not recorded in the original version of this task.
 
 ## Acceptance criteria
-- [x] Player representa os estados e mantém as transições aprovadas.
-- [x] Stop abre o modal sem concluir automaticamente nem contar seu preenchimento como tempo ativo.
-- [x] Salvar/erro/fechar/reabrir preservam avaliação, execução, foco e revisão.
-- [x] Registro direto e correção de avaliação mantêm seus contratos próprios.
-- [x] Dicas, cursor, hover, responsividade e acessibilidade passam no roteiro do plano.
-- [x] Gates do consumidor e integrações descartáveis aprovados.
+- [x] Player represents the states and keeps the approved transitions.
+- [x] Stop opens the modal without completing automatically or counting its filling as active time.
+- [x] Save/error/close/reopen preserve the rating, execution, focus, and review.
+- [x] Direct record and rating correction keep their own contracts.
+- [x] Hints, cursor, hover, responsiveness, and accessibility pass the plan's script.
+- [x] Consumer gates and disposable integrations passed.
 
 ## Result
-Implementado e validado em 28/10/2026: ícones do DS publicado, player guiado no
-cabeçalho, registro externo direto e modal recuperável com proteção de envio/foco,
-cache isolado e captura síncrona do stop. Mobilidade mantém somente comentário.
-Dicas e botões seguem os estados compartilhados. A migration adicional corrige
-horários reais curtos e a virada do dia sem fabricar duração.
+Implemented and validated on 28/10/2026: published DS icons, guided player in the
+header, direct external record, and recoverable modal with submit/focus protection,
+isolated cache, and synchronous stop capture. Mobility keeps comment only.
+Hints and buttons follow the shared states. The additional migration fixes
+short real times and the day rollover without fabricating a duration.
 
-Validação: 389 testes da aplicação, 53 integrações PostgreSQL, 41 testes dos scripts,
-qualidade/tipos/build e auditoria aprovados. Chromium confirmou as jornadas, erro de
-rede, recuperação/foco e larguras 320/390/768/1440px. Dispositivo físico segue na KZ-E06-T14.
+Validation: 389 application tests, 53 PostgreSQL integrations, 41 script tests,
+quality/types/build and audit passed. Chromium confirmed the journeys, network
+error, recovery/focus, and widths 320/390/768/1440px. Physical device remains in KZ-E06-T14.
 
-Evidências e limites: [relatório da implementação](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/evidence/design-system/TRAINING-PLAYER-VALIDATION-2026-10-28.md).
+Evidence and limits: [implementation report](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/evidence/design-system/TRAINING-PLAYER-VALIDATION-2026-10-28.md).
 
-## Achado confirmado no navegador
+## Finding confirmed in the browser
 
-A constraint de minutos reais rejeitava execuções no mesmo minuto e na virada do dia.
-A migration adicional valida a faixa do relógio sem inventar duração mínima; a ordem
-cronológica continua protegida por timestamps, intervalos e validação do servidor.
+The real-minutes constraint rejected executions within the same minute and at the day rollover.
+The additional migration validates the clock range without inventing a minimum duration; chronological
+order remains protected by timestamps, intervals, and server validation.

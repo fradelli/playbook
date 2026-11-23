@@ -6,47 +6,47 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E12-T09]
 ---
 
-# Padronizar imports e estrutura de pastas das features
+# Standardize imports and the folder structure of the features
 
 ## Objective
-Uniformizar imports e a organização física das features e dos testes, com validação automática para manter o padrão.
+Make imports and the physical organization of features and tests uniform, with automatic validation to keep the pattern.
 
-## Contexto
+## Context
 
-Achados da auditoria de 2026-11-23:
+Findings from the 2026-11-23 audit:
 
-- A agenda mistura 45 imports com `@/` e 42 relativos com três ou mais `../`; o treino, 116 e 43.
-- `src/features/foundations` usa `components/`, enquanto as demais features usam `ui/components/`.
-- `training-day-page` chega a sete níveis de `components/` (por exemplo `training-session/components/training-exercise/components/training-local-exercise-editor`).
-- A lógica de rascunho está dividida entre `src/features/training/ui/hooks/use-training-*-draft` e `src/features/training/ui/lib/training-*-draft`.
-- `tests/training-detail-route.test.tsx` está solto na raiz de `tests/`, e `tests/unit/` só tem fixtures.
+- The schedule mixes 45 imports using `@/` and 42 relative ones with three or more `../`; the workout has 116 and 43.
+- `src/features/foundations` uses `components/`, while the other features use `ui/components/`.
+- `training-day-page` reaches seven levels of `components/` (for example `training-session/components/training-exercise/components/training-local-exercise-editor`).
+- The draft logic is split between `src/features/training/ui/hooks/use-training-*-draft` and `src/features/training/ui/lib/training-*-draft`.
+- `tests/training-detail-route.test.tsx` sits loose at the root of `tests/`, and `tests/unit/` only has fixtures.
 
 ## Inputs
-- `docs/architecture/TARGET-ARCHITECTURE.md` — seções "Estrutura de diretórios alvo" e "Organização dos componentes React".
-- `scripts/validate-component-structure.mjs` e `scripts/validate-layer-boundaries.mjs` — gates de estrutura.
-- `eslint.config.mjs` — regras de import.
+- `docs/architecture/TARGET-ARCHITECTURE.md` — sections "Estrutura de diretórios alvo" (Target directory structure) and "Organização dos componentes React" (React component organization).
+- `scripts/validate-component-structure.mjs` and `scripts/validate-layer-boundaries.mjs` — structure gates.
+- `eslint.config.mjs` — import rules.
 
 ## Deliverables
-- Regra de import definida (alias `@/` entre pastas e relativo só para arquivos irmãos ou filhos) e aplicada por lint.
-- `foundations` no mesmo formato das outras features.
-- Componentes que não são filhos privados movidos para níveis mais rasos.
-- Rascunhos de treino num único local por responsabilidade.
-- `tests/` organizado por tipo, com fixtures junto de quem as usa.
+- Import rule defined (`@/` alias between folders and relative only for sibling or child files) and enforced by lint.
+- `foundations` in the same format as the other features.
+- Components that are not private children moved to shallower levels.
+- Workout drafts in a single location per responsibility.
+- `tests/` organized by type, with fixtures next to whoever uses them.
 
 ## Subtasks
-- [ ] Definir e configurar a regra de import.
-- [ ] Corrigir imports automaticamente.
-- [ ] Reorganizar `foundations`, `training-day-page` e rascunhos.
-- [ ] Reorganizar `tests/`.
-- [ ] Ampliar o gate de estrutura para profundidade máxima, se aprovado.
+- [ ] Define and configure the import rule.
+- [ ] Fix imports automatically.
+- [ ] Reorganize `foundations`, `training-day-page`, and the drafts.
+- [ ] Reorganize `tests/`.
+- [ ] Extend the structure gate to a maximum depth, if approved.
 
 ## Validation
-- `pnpm lint`, `pnpm structure:check`, `pnpm typecheck` e `pnpm test` passam.
-- `git grep -E 'from "(\.\./){3,}' -- src` não retorna resultado.
+- `pnpm lint`, `pnpm structure:check`, `pnpm typecheck`, and `pnpm test` pass.
+- `git grep -E 'from "(\.\./){3,}' -- src` returns no result.
 
 ## Acceptance criteria
-- [ ] Todas as features seguem a mesma estrutura de pastas.
-- [ ] A regra de import é aplicada pelo lint.
+- [ ] All features follow the same folder structure.
+- [ ] The import rule is enforced by lint.
 
 ## Result
-Não iniciada.
+Not started.

@@ -7,37 +7,37 @@ depends_on: [KZ-E02-T01]
 external: [Diet provided]
 ---
 
-# Preservar dieta original
+# Preserve original diet
 
 ## Objective
-Registrar a fonte alimentar original sem corrigir, completar ou promovê-la a plano vigente.
+Record the original nutrition source without correcting, completing, or promoting it to the current plan.
 
 ## Inputs
-- Inventário corrigido de KZ-E02-T01.
-- Commit privado `138531e4fbca6d744de73274fbb96da39c02bad3`.
+- Corrected inventory from KZ-E02-T01.
+- Private commit `138531e4fbca6d744de73274fbb96da39c02bad3`.
 
 ## Deliverables
-- Snapshot e tag imutáveis no repositório privado.
-- Blobs originais preservados somente na origem privada.
-- Linhas de manifesto com referências seguras, hashes, tratamento e exposição.
+- Immutable snapshot and tag in the private repository.
+- Original blobs preserved only in the private source.
+- Manifest rows with safe references, hashes, treatment, and exposure.
 
 ## Subtasks
-- [x] Criar snapshot privado sem reescrever os caminhos históricos.
-- [x] Usar nomes neutros em cópias privadas byte a byte quando necessário para a proveniência pública.
-- [x] Calcular integridade diretamente dos blobs do snapshot.
-- [x] Criar a tag privada `kaizen-nutrition-source-v1`.
-- [x] Registrar originais como `SKIP/DO_NOT_PUBLISH` no destino público.
-- [x] Marcar planos derivados como não vigentes até revisão.
+- [x] Create a private snapshot without rewriting the historical paths.
+- [x] Use neutral names in byte-for-byte private copies when needed for public provenance.
+- [x] Compute integrity directly from the snapshot blobs.
+- [x] Create the private tag `kaizen-nutrition-source-v1`.
+- [x] Record originals as `SKIP/DO_NOT_PUBLISH` at the public destination.
+- [x] Mark derived plans as not current until review.
 
 ## Validation
-- Cópias privadas literais mantêm os hashes dos blobs históricos.
-- A tag e o commit existem no remote privado.
-- Nenhum conteúdo alimentar ou caminho pessoal entra no repositório público.
-- Nenhuma recomendação é adicionada ao original.
+- Literal private copies keep the hashes of the historical blobs.
+- The tag and the commit exist on the private remote.
+- No nutrition content or personal path enters the public repository.
+- No recommendation is added to the original.
 
 ## Acceptance criteria
-- [x] A revisão pode voltar à fonte exata por referência privada imutável.
-- [x] O destino público contém somente proveniência segura.
+- [x] The review can return to the exact source through an immutable private reference.
+- [x] The public destination contains only safe provenance.
 
 ## Result
-Snapshot privado publicado no commit `0d6456a68329f51fb9f83e1230cb285fe82f5996` e fixado pela tag `kaizen-nutrition-source-v1`. Os oito blobs foram preservados sob aliases neutros com identidade confirmada pelos objetos Git e hashes SHA-256. O Kaizen registra somente metadados `SKIP/DO_NOT_PUBLISH`; nenhum conteúdo alimentar foi publicado.
+Private snapshot published at commit `0d6456a68329f51fb9f83e1230cb285fe82f5996` and pinned by tag `kaizen-nutrition-source-v1`. The eight blobs were preserved under neutral aliases with identity confirmed by the Git objects and SHA-256 hashes. Kaizen records only `SKIP/DO_NOT_PUBLISH` metadata; no nutrition content was published.

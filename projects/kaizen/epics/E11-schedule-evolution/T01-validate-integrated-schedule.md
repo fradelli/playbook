@@ -6,38 +6,38 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: []
 ---
 
-# Validar a base integrada da agenda
+# Validate the integrated schedule base
 
 ## Objective
-Verificar os fluxos já integrados na PR #86 e registrar quais validações continuam pendentes. A tarefa é de validação residual, não de reconstrução da agenda.
+Verify the flows already integrated in PR #86 and record which validations remain pending. This is a residual validation task, not a rebuild of the schedule.
 
 ## Inputs
-- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/data/schedule-writer.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/data/schedule-writer.ts) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/ui/components/calendar-range/hooks/use-calendar-days.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/calendar-range/hooks/use-calendar-days.ts) — consultar o contrato ou seção correspondente ao escopo.
-- [tests/integration/agenda-foundation.test.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/tests/integration/agenda-foundation.test.ts) — consultar o contrato ou seção correspondente ao escopo.
+- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consult the contract or section matching the scope.
+- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consult the contract or section matching the scope.
+- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consult the contract or section matching the scope.
+- [src/features/schedule/data/schedule-writer.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/data/schedule-writer.ts) — consult the contract or section matching the scope.
+- [src/features/schedule/ui/components/calendar-range/hooks/use-calendar-days.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/calendar-range/hooks/use-calendar-days.ts) — consult the contract or section matching the scope.
+- [tests/integration/agenda-foundation.test.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/tests/integration/agenda-foundation.test.ts) — consult the contract or section matching the scope.
 
 ## Deliverables
-Resultado verificável descrito nos critérios abaixo, com evidências vinculadas a esta tarefa. Antes de editar código, aplicar as seções pertinentes da [arquitetura](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) e os contratos locais. Não carregar planos históricos inteiros.
+Verifiable result described in the criteria below, with evidence linked to this task. Before editing code, apply the relevant sections of the [architecture](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) and the local contracts. Do not load entire historical plans.
 
 ## Subtasks
-- [ ] Conferir criação/edição de atividade, grupos, tarefas e reservas na base integrada.
-- [ ] Conferir cache ao reduzir/ampliar dias, resposta perdida e atualização de datas afetadas.
-- [ ] Executar regressões proporcionais e registrar resultados e limitações de navegador/dispositivo.
+- [ ] Check activity creation/editing, groups, tasks, and reservations in the integrated base.
+- [ ] Check the cache when shrinking/expanding days, a lost response, and the update of affected dates.
+- [ ] Run proportional regressions and record results and browser/device limitations.
 
 ## Validation
-Conferir links, IDs, dependências e coerência com regras de produto. Quando houver implementação autorizada, executar os gates proporcionais e os cenários do plano; registrar o que foi executado e o que ficou pendente. Testes ainda não executados não contam como evidência.
+Check links, IDs, dependencies, and consistency with product rules. When implementation is authorized, run the proportional gates and the plan's scenarios; record what was run and what remains pending. Tests not yet run do not count as evidence.
 
 ## Acceptance criteria
-- [ ] O relatório distingue código existente, teste executado e validação não realizada.
-- [ ] Lista, reserva e card preservam identidade após recarga; ocupação interna e sobreposição independente são verificadas.
-- [ ] Movimento de pai e mudança de grupo preservam horários, vínculos e histórico conforme as regras.
+- [ ] The report distinguishes existing code, executed tests, and validation not performed.
+- [ ] List, reservation, and card preserve identity after reload; internal occupancy and independent overlap are verified.
+- [ ] Parent movement and group change preserve times, links, and history according to the rules.
 
-## Fora de escopo
+## Out of scope
 
-Não implementar gestos, recorrência ou reescrever a fundação. Falhas reais encontradas devem ser delimitadas antes de ampliar o escopo.
+Do not implement gestures or recurrence, or rewrite the foundation. Real failures found must be delimited before expanding the scope.
 
 ## Result
-Backlog registrado em 21/11/2026 durante a reconciliação documental. Nenhuma execução desta tarefa foi iniciada por este registro. O status canônico fica exclusivamente no índice do roadmap.
+Backlog recorded on 21/11/2026 during the documentation reconciliation. No execution of this task was started by this record. Canonical status lives only in the roadmap index.

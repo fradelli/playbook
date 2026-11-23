@@ -6,7 +6,7 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E10-T07]
 ---
 
-# Ajustar Hoje e entrada do aplicativo
+# Adjust Today and the app entry
 
 ## Objective
 Not recorded in the original version of this task.
@@ -31,12 +31,12 @@ Not recorded in the original version of this task.
 Not recorded in the original version of this task.
 
 ## Result
-Hoje usa amarelo do DS e botão nativo desabilitado, sem esmaecer, na data atual.
-Nas demais datas e data inválida, link cinza com hover/foco amarelo. Badge verde
-removido. Marca acessível liga à raiz; raiz redireciona para /treino, reutilizando
-resolução/canonicalização de hoje em America/Sao_Paulo. Rotas explícitas com outra
-data continuam preservadas. Sem alteração no DS, banco ou dados de planos.
+Today uses the DS yellow and a native disabled button, without fading, on the current date.
+On other dates and on an invalid date, a gray link with yellow hover/focus. Green badge
+removed. The accessible brand links to the root; the root redirects to /treino, reusing the
+resolution/canonicalization of today in America/Sao_Paulo. Explicit routes with another
+date remain preserved. No changes to the DS, database, or plan data.
 
-394 testes, lint, estrutura, tipos/build e diff check aprovados. Chromium 320/1440px
-confirmou estado desabilitado, cor de hover e retorno para hoje pela marca e raiz.
-Ajustes publicados junto da KZ-E09-T09 na PR [#75](https://github.com/fradelli/nextjs-kaizen-app/pull/75), com destino developer.
+394 tests, lint, structure, types/build, and diff check passed. Chromium 320/1440px
+confirmed the disabled state, hover color, and return to today via the brand and root.
+Adjustments published together with KZ-E09-T09 in PR [#75](https://github.com/fradelli/nextjs-kaizen-app/pull/75), targeting developer.

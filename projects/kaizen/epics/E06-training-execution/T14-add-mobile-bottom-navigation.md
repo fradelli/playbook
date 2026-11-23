@@ -6,14 +6,14 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E04-T04]
 ---
 
-# Mover navegação principal para baixo no mobile
+# Move the main navigation to the bottom on mobile
 
 ## Objective
-Apresentar os acessos de Treino e Dieta numa barra inferior em telas mobile, com comportamento de aplicativo, sem duplicar a navegação para leitores de tela.
+Present the Training and Diet links in a bottom bar on mobile screens, with app-like behavior, without duplicating the navigation for screen readers.
 
-## Contexto conhecido
+## Known context
 
-Hoje os acessos principais ficam no topo. A mudança visual é transversal ao app, mas está registrada neste épico por ter surgido na revisão da jornada de treino; não contém regra de negócio de treino.
+Today the main links sit at the top. The visual change is app-wide, but it is recorded in this epic because it came up during the review of the training journey; it contains no training business rules.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -36,7 +36,7 @@ Hoje os acessos principais ficam no topo. A mudança visual é transversal ao ap
 - `src/components/shared/app-shell/components/app-shell-navigation/components/app-shell-navigation-routes/app-shell-navigation-routes.tsx`
 
 ## Deliverables
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Escopo e impactos».
+Not recorded in the original version of this task; equivalent content is in the section «Scope and impacts».
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -44,75 +44,75 @@ Not recorded in the original version of this task.
 ## Validation
 Not recorded in the original version of this task.
 
-## Comportamento esperado
+## Expected behavior
 
-- Em mobile, Treino e Dieta aparecem fixos na parte inferior com indicação clara da rota ativa e respeito à área segura do dispositivo.
-- Em desktop, a navegação permanece no topo.
-- A barra não cobre conteúdo, controles ou o painel flutuante de descanso; teclado virtual e leitores de tela continuam utilizáveis.
+- On mobile, Training and Diet appear fixed at the bottom with a clear indication of the active route and respect for the device safe area.
+- On desktop, the navigation stays at the top.
+- The bar does not cover content, controls, or the floating rest panel; the virtual keyboard and screen readers remain usable.
 
-## Escopo e impactos
+## Scope and impacts
 
-- Reavaliar a estrutura real do shell e os componentes disponíveis no Design System antes de escolher os arquivos a alterar.
-- Testar foco, navegação por teclado, responsividade, contraste, viewport estreita e safe area.
+- Re-evaluate the real structure of the shell and the components available in the Design System before choosing which files to change.
+- Test focus, keyboard navigation, responsiveness, contrast, narrow viewports, and safe area.
 
-## Fora de escopo
+## Out of scope
 
-- Redesenhar as páginas de dieta/treino ou criar navegação para rotas ainda inexistentes.
+- Redesigning the diet/training pages or creating navigation for routes that do not exist yet.
 
-## Decisões antes da implementação
+## Decisions before implementation
 
-- Confirmar a largura de transição e o comportamento com teclado virtual na análise da tarefa.
-- Reanalisar o código vigente, apresentar solução e trade-offs e aguardar aprovação explícita antes de implementar.
+- Confirm the transition width and the behavior with the virtual keyboard during the analysis of the task.
+- Re-analyze the current code, present the solution and trade-offs, and wait for explicit approval before implementing.
 
 ## Acceptance criteria
-- [x] Navegação inferior mobile e superior desktop funcionam sem duplicação acessível.
-- [ ] Nenhum conteúdo fica encoberto em celular comum ou com safe area.
+- [x] Mobile bottom navigation and desktop top navigation work without accessible duplication.
+- [ ] No content is covered on a common phone or with a safe area.
 
 ## Result
-Plano aprovado em 27/09: abaixo de 768 px, somente ícones na barra inferior;
-header com altura, marca e espaçamento menores. Desktop mantém navegação no topo.
-Uma única navegação acessível, data válida preservada nos links, safe area e
-espaço reservado para não cobrir conteúdo. Troca de rota não altera execução.
-Dieta ainda preserva apenas a data na URL enquanto sua jornada não existe.
+Plan approved on 27/09: below 768 px, icons only in the bottom bar;
+header with smaller height, brand, and spacing. Desktop keeps the navigation at the top.
+A single accessible navigation, valid date preserved in the links, safe area, and
+reserved space so content is not covered. Changing routes does not affect execution.
+Diet still preserves only the date in the URL while its journey does not exist.
 
-Implementação começa no Design System: NavigationItem como primitive fundamental
-de link e exports BarbellIcon/ForkKnifeIcon sobre Phosphor existente. Admissão
-segue a exceção para primitives; a barra composta e rotas ficam no app. API
-genérica sem Next.js, tokens ou dependências novos. Changeset minor compatível.
+Implementation starts in the Design System: NavigationItem as the fundamental
+link primitive and BarbellIcon/ForkKnifeIcon exports on top of the existing Phosphor.
+Admission follows the exception for primitives; the composed bar and routes stay in the app. Generic
+API without Next.js, and no new tokens or dependencies. Compatible minor changeset.
 
-Release depende do workflow oficial do Design System em main após revisão.
-Não copiar código ou instalar artefato provisório no Kaizen. Integração e
-validação mobile permanecem pendentes até publicar uma versão exata do pacote.
+The release depends on the official Design System workflow on main after review.
+Do not copy code or install a provisional artifact in Kaizen. Integration and
+mobile validation remain pending until an exact version of the package is published.
 
-Primeira etapa implementada na branch `codex/mobile-navigation-primitives` do
-Design System, sem commit ou PR. `npm run ci` aprovado: 27 testes unitários,
-12 testes de Storybook em Chromium, formato, lint, tipos, tokens, build,
-tarball e consumidores npm/pnpm com um único React; auditoria sem vulnerabilidades.
-Wrappers de ícones expõem apenas tipos React, sem propagar a incompatibilidade
-NodeNext das declarações Phosphor ao consumidor. Nenhuma UI do Kaizen alterada
-antes da publicação da dependência. Próxima ação exige aprovação de entrega
-do Design System e publicação pelo workflow oficial.
+First stage implemented on the `codex/mobile-navigation-primitives` branch of the
+Design System, with no commit or PR. `npm run ci` passed: 27 unit tests,
+12 Storybook tests in Chromium, format, lint, types, tokens, build,
+tarball, and npm/pnpm consumers with a single React; audit with no vulnerabilities.
+Icon wrappers expose only React types, without propagating the NodeNext
+incompatibility of the Phosphor declarations to the consumer. No Kaizen UI changed
+before the dependency was published. The next action requires approval to deliver the
+Design System and publication through the official workflow.
 
-Atualização de 27/09: PR #9 integrada; PR #10 corrigida com lockfile alinhado,
-CI local e remota aprovadas e merge autorizado. Release oficial 0.3.0 publicado
-e instalado por versão exata no Kaizen. Exceção de idade mínima restrita à
-versão publicada do pacote próprio, adicionada pelo pnpm.
-Integração do shell em validação, sem commit ou PR do Kaizen.
+Update of 27/09: PR #9 merged; PR #10 fixed with an aligned lockfile,
+local and remote CI passed, and merge authorized. Official release 0.3.0 published
+and installed by exact version in Kaizen. A minimum-age exception limited to the
+published version of the own package, added by pnpm.
+Shell integration under validation, with no Kaizen commit or PR.
 
-Verificações da integração: 13 testes do shell aprovados; formato, lint,
-fronteiras e tipos aprovados. Navegação real Treino/Dieta preservou a data;
-viewport de 320 px sem overflow horizontal causado pela barra, dois destinos,
-áreas de toque de 48 × 44 px e reserva inferior de 80 px. Desktop mantém
-navegação no topo. Teclado virtual e safe area físicos dependem de validação
-em dispositivo real; não foram simulados como prova de funcionamento.
+Integration checks: 13 shell tests passed; format, lint,
+boundaries, and types passed. Real Training/Diet navigation preserved the date;
+320 px viewport with no horizontal overflow caused by the bar, two destinations,
+touch targets of 48 × 44 px, and a bottom reserve of 80 px. Desktop keeps the
+navigation at the top. Virtual keyboard and safe area on physical devices depend on validation
+on a real device; they were not simulated as proof that it works.
 
-`pnpm run ci` aprovado: 280 testes unitários, 41 de integração PostgreSQL,
-33 testes dos validadores, formato, lint, estrutura, tipos, dados, build e
-auditoria sem vulnerabilidades. Após mover o CSS para o filho responsável,
-formato, estrutura, lint, 13 testes do shell e build foram repetidos e aprovados.
-Revisão semântica: shell mantém composição Server, leitura de URL fica na
-ilha Client, validação de data é pura e a navegação não importa persistência.
-Diff revisado sem credenciais ou dados operacionais; `git diff --check` aprovado.
+`pnpm run ci` passed: 280 unit tests, 41 PostgreSQL integration tests,
+33 validator tests, format, lint, structure, types, data, build, and
+audit with no vulnerabilities. After moving the CSS to the responsible child,
+format, structure, lint, 13 shell tests, and build were repeated and passed.
+Semantic review: the shell keeps Server composition, URL reading stays in the
+Client island, date validation is pure, and the navigation does not import persistence.
+Diff reviewed with no credentials or operational data; `git diff --check` passed.
 
-Usuário aprovou o resultado visual e autorizou commit e PR. Tarefa permanece
-bloqueada até validar teclado virtual e safe area em dispositivo real.
+The user approved the visual result and authorized commit and PR. The task remains
+blocked until the virtual keyboard and safe area are validated on a real device.

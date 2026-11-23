@@ -6,14 +6,14 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T11]
 ---
 
-# Reconciliar atividades futuras ao ativar outro plano
+# Reconcile future activities when activating another plan
 
 ## Objective
-Impedir que treinos estruturados futuros materializados com um plano antigo permaneçam como programação vigente após a ativação de um novo plano.
+Prevent future structured workouts materialized with an old plan from remaining as the current schedule after a new plan is activated.
 
-## Contexto conhecido
+## Known context
 
-A ativação troca a versão ativa, e as atividades do dia preservam `source` e `trainingPlanVersionId`. Não há reconciliação das datas já materializadas; o histórico executado aponta para a versão original e deve continuar intacto.
+Activation switches the active version, and the day's activities preserve `source` and `trainingPlanVersionId`. There is no reconciliation of already materialized dates; the executed history points to the original version and must remain intact.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -24,7 +24,7 @@ A ativação troca a versão ativa, e as atividades do dia preservam `source` e 
 - `roadmap/epics/E06-training-execution/T11-review-daily-plan-lifecycle.md`
 
 ## Deliverables
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Escopo e impactos».
+Not recorded in the original version of this task; equivalent content in the section "Scope and impacts".
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -32,31 +32,31 @@ Not recorded in the original version of this task.
 ## Validation
 Not recorded in the original version of this task.
 
-## Comportamento esperado
+## Expected behavior
 
-- Atividades estruturadas futuras originadas do plano antigo deixam de ser apresentadas como vigentes conforme estratégia aprovada.
-- Jogos, aulas, práticas independentes e atividades criadas manualmente permanecem.
-- Treinos já executados nunca são reescritos; versões antigas permanecem auditáveis.
-- A operação é segura sob repetição, falha parcial e concorrência.
+- Future structured activities originating from the old plan stop being presented as current, according to the approved strategy.
+- Games, classes, independent practices, and manually created activities remain.
+- Workouts already executed are never rewritten; old versions remain auditable.
+- The operation is safe under repetition, partial failure, and concurrency.
 
-## Escopo e impactos
+## Scope and impacts
 
-- Comparar exclusão lógica, invalidação, recriação e regeneração sob demanda; escolher a alternativa mínima que preserve integridade.
-- Definir como tratar uma atividade de origem no plano que foi editada manualmente e datas futuras com execução já iniciada.
-- Especificar migração e rollback antes de qualquer operação destrutiva.
+- Compare logical deletion, invalidation, recreation, and on-demand regeneration; choose the minimal alternative that preserves integrity.
+- Define how to handle an activity originating from the plan that was manually edited, and future dates with an execution already started.
+- Specify migration and rollback before any destructive operation.
 
-## Fora de escopo
+## Out of scope
 
-- Reescrever o passado, remover atividades independentes ou criar sistema genérico de versionamento adicional sem consumidor.
+- Rewrite the past, remove independent activities, or create an additional generic versioning system without a consumer.
 
-## Decisões antes da implementação
+## Decisions before implementation
 
-- Aprovar a estratégia de reconciliação e a política para exceções manuais; reanalisar o código vigente, apresentar plano e aguardar aprovação explícita.
+- Approve the reconciliation strategy and the policy for manual exceptions; reanalyze the current code, present a plan, and wait for explicit approval.
 
 ## Acceptance criteria
-- [ ] Ativar Plano B não deixa treino futuro do Plano A como vigente e não apaga jogo independente.
-- [ ] Passado executado e vínculo à versão original permanecem íntegros.
-- [ ] Repetição, concorrência e rollback são cobertos por testes proporcionais.
+- [ ] Activating Plan B does not leave a future workout from Plan A as current and does not delete an independent game.
+- [ ] The executed past and the link to the original version remain intact.
+- [ ] Repetition, concurrency, and rollback are covered by proportional tests.
 
 ## Result
-Ainda não iniciada.
+Not yet started.

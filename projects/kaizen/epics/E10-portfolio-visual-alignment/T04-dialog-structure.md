@@ -6,7 +6,7 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E10-T03]
 ---
 
-# Uniformizar estrutura visual dos diálogos
+# Standardize the visual structure of dialogs
 
 ## Objective
 Not recorded in the original version of this task.
@@ -32,10 +32,10 @@ Not recorded in the original version of this task.
 Not recorded in the original version of this task.
 
 ## Result
-Confirmações reutilizam superfícies, títulos, espaçamentos e divisórias do modal.
-Descrição redundante da edição removida; descrição opcional não produz referência
-acessível vazia. Preservados fluxo, foco seguro e ações destrutivas à esquerda.
+Confirmations reuse the modal's surfaces, titles, spacing, and dividers.
+Redundant edit description removed; an optional description does not produce an empty
+accessible reference. Flow, safe focus, and destructive actions on the left preserved.
 
-45 testes afetados, lint, estrutura, tipos e build aprovados. Chromium em 320/1440px
-confirmou títulos Inter 20px/700/28px e divisória de rodapé de 1px. Sem gravação de
-atividades durante a conferência. Alterações locais, sem commit.
+45 affected tests, lint, structure, types, and build passed. Chromium at 320/1440px
+confirmed Inter titles 20px/700/28px and a 1px footer divider. No activity writes
+during the check. Local changes, no commit.

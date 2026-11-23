@@ -6,14 +6,14 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: []
 ---
 
-# Internacionalizar a interface atual em português e inglês
+# Internationalize the current interface in Portuguese and English
 
-## Autorização e escopo
+## Authorization and scope
 
-Antecipação autorizada pelo usuário em 29/10/2026. A interface atual pode avançar antes do catálogo novo e das jornadas futuras. Esta entrega não conclui KZ-E09-T05/E09-T06/E09-T08 nem altera a política de documentação em português.
+Anticipation authorized by the user on 29/10/2026. The current interface can advance before the new catalog and the future journeys. This delivery does not complete KZ-E09-T05/E09-T06/E09-T08 nor change the documentation policy in Portuguese.
 
 ## Objective
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Autorização e escopo».
+Not recorded in the original version of this task; equivalent content in the "Authorization and scope" section.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -98,22 +98,22 @@ Não registrado na versão original desta tarefa; conteúdo equivalente na seç�
 Not recorded in the original version of this task.
 
 ## Subtasks
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Passos e critérios de aceite».
+Not recorded in the original version of this task; equivalent content in the "Steps and acceptance criteria" section.
 
 ## Validation
 Not recorded in the original version of this task.
 
 ## Acceptance criteria
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Passos e critérios de aceite».
+Not recorded in the original version of this task; equivalent content in the "Steps and acceptance criteria" section.
 
-## Passos e critérios de aceite
+## Steps and acceptance criteria
 
-- [x] Resolver inglês/português pelas preferências do navegador e manter fallback inglês.
-- [x] Traduzir HTML, metadados, shell e interface de treino disponível.
-- [x] Traduzir formulários, acessibilidade, confirmações, rascunhos e erros conhecidos.
-- [x] Localizar datas e pluralização conservando regras civis, códigos e unidades.
-- [x] Validar paridade de catálogos no CI e interface nos dois idiomas.
-- [x] Preservar banco, conteúdo editorial e textos livres para integração do catálogo novo.
+- [x] Resolve English/Portuguese from browser preferences and keep an English fallback.
+- [x] Translate HTML, metadata, shell, and the available workout interface.
+- [x] Translate forms, accessibility, confirmations, drafts, and known errors.
+- [x] Localize dates and pluralization while preserving civil rules, codes, and units.
+- [x] Validate catalog parity in CI and the interface in both languages.
+- [x] Preserve the database, editorial content, and free text for integration of the new catalog.
 
 ## Result
-290 mensagens em cada idioma. 408 testes passaram, build de produção aprovado e seis cenários HTTP confirmaram idioma inicial e metadados. Lint, tipos, estrutura, fronteiras, ícones e integridade de dados aprovados. Detalhes e limites em [I18N-UI-IMPLEMENTATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/evidence/i18n/I18N-UI-IMPLEMENTATION.md).
+290 messages in each language. 408 tests passed, the production build was approved, and six HTTP scenarios confirmed the initial language and metadata. Lint, types, structure, boundaries, icons, and data integrity approved. Details and limits in [I18N-UI-IMPLEMENTATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/evidence/i18n/I18N-UI-IMPLEMENTATION.md).

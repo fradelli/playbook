@@ -6,33 +6,33 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E01-T03]
 ---
 
-# Migrar documentação humana
+# Migrate human documentation
 
 ## Objective
-Levar ao Kaizen somente guias, evidências e templates úteis, removendo caminhos e decisões obsoletas.
+Bring only useful guides, evidence, and templates to Kaizen, removing obsolete paths and decisions.
 
 ## Inputs
-- Guia de treino, evidências, templates e documentação de atualização do snapshot.
+- Training guide, evidence, templates, and update documentation from the snapshot.
 
 ## Deliverables
 - `docs/guides/`
 - `docs/evidence/`
 - `templates/`
-- Linhas transformadas no manifesto.
+- Transformed rows in the manifest.
 
 ## Subtasks
-- [x] Classificar cada documento como copiar, transformar, resumir ou omitir.
-- [x] Atualizar links e nomes do projeto.
-- [x] Remover orientação Next + Nest como decisão vigente.
-- [x] Preservar limites de segurança e proveniência.
+- [x] Classify each document as copy, transform, summarize, or omit.
+- [x] Update project links and names.
+- [x] Remove Next + Nest guidance as a current decision.
+- [x] Preserve safety and provenance limits.
 
 ## Validation
-- Links relativos resolvem.
-- Não há caminho absoluto antigo usado como instrução vigente.
+- Relative links resolve.
+- No old absolute path is used as a current instruction.
 
 ## Acceptance criteria
-- [x] Documentação corresponde aos dados migrados.
-- [x] Auditorias e prompts não viraram fonte canônica por acidente.
+- [x] Documentation matches the migrated data.
+- [x] Audits and prompts did not become a canonical source by accident.
 
 ## Result
-Cinco documentos humanos e três templates vazios foram derivados exclusivamente do snapshot aprovado e dos dados já migrados. Os guias subordinam prescrição aos JSONs canônicos; agenda, contexto pessoal, caminhos antigos e duplicações extensas foram removidos. Cada template exige preenchimento privado e proíbe versionar a instância preenchida.
+Five human documents and three empty templates were derived exclusively from the approved snapshot and the data already migrated. The guides subordinate prescription to the canonical JSON files; schedule, personal context, old paths, and extensive duplication were removed. Each template requires private completion and forbids versioning the filled-in instance.

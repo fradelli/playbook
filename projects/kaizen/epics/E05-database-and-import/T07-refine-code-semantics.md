@@ -6,12 +6,12 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E05-T04]
 ---
 
-# Aprimorar semântica e fronteiras do código
+# Refine code semantics and boundaries
 
 ## Objective
-Tornar o importador e a auditoria persistida legíveis por conceitos de negócio,
-com tipos explícitos, responsabilidades coesas e fronteiras arquiteturais
-verificadas automaticamente.
+Make the importer and the persisted audit readable through business concepts,
+with explicit types, cohesive responsibilities, and architectural boundaries
+verified automatically.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -55,32 +55,32 @@ verificadas automaticamente.
 - `.github/pull_request_template.md`
 
 ## Deliverables
-- Contratos tipados e mapeamento explícito entre Prisma e domínio.
-- Regras de integridade separadas por entidade e fixtures restritas a testes.
-- Taxonomia pública de falhas da CLI sem vazamento de detalhes internos.
-- Gate automatizado de dependências entre camadas e fronteiras Client/Server.
+- Typed contracts and explicit mapping between Prisma and the domain.
+- Integrity rules separated by entity and fixtures restricted to tests.
+- Public taxonomy of CLI failures without leaking internal details.
+- Automated gate for dependencies between layers and Client/Server boundaries.
 
 ## Subtasks
-- [x] Tipar cada projeção persistida e mapear Prisma explicitamente.
-- [x] Tornar as fontes do importador uma união discriminada e tipar contadores.
-- [x] Separar regras de paridade por entidade e mover fixtures para testes.
-- [x] Distinguir argumentos, fonte e infraestrutura nos erros da CLI.
-- [x] Impedir imports entre camadas incompatíveis por gate automatizado.
-- [x] Documentar as convenções como regra permanente da arquitetura.
+- [x] Type each persisted projection and map Prisma explicitly.
+- [x] Make the importer sources a discriminated union and type the counters.
+- [x] Separate parity rules by entity and move fixtures to tests.
+- [x] Distinguish arguments, source, and infrastructure in CLI errors.
+- [x] Prevent imports between incompatible layers with an automated gate.
+- [x] Document the conventions as a permanent architecture rule.
 
 ## Validation
-- Formato, lint, estrutura, fronteiras, tipos, cobertura, dados, build e audit.
-- Integrações PostgreSQL executadas na CI da PR em ambiente descartável.
+- Format, lint, structure, boundaries, types, coverage, data, build, and audit.
+- PostgreSQL integrations run in the PR CI in a disposable environment.
 
 ## Acceptance criteria
-- [x] Código de produção não usa casts duplos para descobrir formatos canônicos.
-- [x] Tipos Prisma permanecem na camada de dados.
-- [x] Regras de treino e alimentação revelam sua entidade responsável pelo nome.
-- [x] Imports arquiteturalmente incompatíveis falham no gate local e na CI.
+- [x] Production code does not use double casts to discover canonical formats.
+- [x] Prisma types remain in the data layer.
+- [x] Workout and nutrition rules reveal their responsible entity by name.
+- [x] Architecturally incompatible imports fail in the local gate and in CI.
 
 ## Result
-Implementação concluída. A suíte unitária possui 150 testes, a integração possui
-30 casos PostgreSQL e os validadores de CI possuem 32 regressões. Os seis checks
-da PR #41 aprovaram governança, qualidade, testes, integridade dos dados, build e
-auditoria de dependências. A integração local ficou indisponível porque o engine
-Docker Desktop não iniciou, sem substituir ou enfraquecer a validação remota.
+Implementation complete. The unit suite has 150 tests, the integration suite has
+30 PostgreSQL cases, and the CI validators have 32 regressions. The six checks
+of PR #41 approved governance, quality, tests, data integrity, build, and
+dependency audit. The local integration was unavailable because the Docker Desktop
+engine did not start, without replacing or weakening the remote validation.

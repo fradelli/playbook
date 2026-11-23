@@ -6,20 +6,20 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E04-T04]
 ---
 
-# Padronizar estrutura das páginas React
+# Standardize the React page structure
 
 ## Objective
-Deixar as entradas de rota finas e separar renderização, estilos, contratos,
-constantes e interatividade dos componentes existentes, preservando o resultado
-visual e mantendo Server Components como padrão.
+Keep route entries thin and separate rendering, styles, contracts,
+constants, and interactivity of the existing components, preserving the visual
+result and keeping Server Components as the default.
 
-## Contexto
+## Context
 
-O shell já estabelece a fronteira mínima entre servidor e cliente, mas as
-páginas placeholder de Dieta e Treino ainda concentram markup e classes na
-entrada de rota. A página técnica `/foundations` também mantém toda a árvore no
-cliente por causa de uma única demonstração interativa. Esta tarefa corrige
-essas responsabilidades sem antecipar as features KZ-E06 e KZ-E07.
+The shell already establishes the minimal boundary between server and client, but the
+Diet and Workout placeholder pages still concentrate markup and classes in the
+route entry. The technical `/foundations` page also keeps the whole tree on the
+client because of a single interactive demo. This task fixes
+those responsibilities without anticipating the KZ-E06 and KZ-E07 features.
 
 ## Inputs
 - `AGENTS.md`
@@ -75,73 +75,73 @@ essas responsabilidades sem antecipar as features KZ-E06 e KZ-E07.
 - `scripts/validate-component-structure.test.mjs`
 
 ## Deliverables
-- Entradas de rota limitadas à composição e aos dados estáticos da rota.
-- Placeholder compartilhado com renderização, estilos, contratos e testes separados.
-- `/foundations` server-side com a demonstração de `Sheet` isolada em uma ilha Client.
-- Convenções verificáveis sem arquivos vazios ou abstrações sem consumidor.
-- Cada componente encapsulado em pasta própria, inclusive filhos privados.
-- Validador local e de CI impedindo componentes soltos ou auxiliares sem ownership.
+- Route entries limited to composition and the route's static data.
+- Shared placeholder with rendering, styles, contracts, and tests separated.
+- Server-side `/foundations` with the `Sheet` demo isolated in a Client island.
+- Verifiable conventions without empty files or abstractions without a consumer.
+- Each component encapsulated in its own folder, including private children.
+- Local and CI validator preventing loose components or helpers without ownership.
 
-## Fora do escopo
+## Out of scope
 
-- Implementar dados, formulários ou regras reais de treino e alimentação.
-- Criar Server Actions, acesso a banco, sessão, providers ou cliente HTTP interno.
-- Alterar primitives, tokens, versão ou API pública de `@fradelli/ui`.
-- Redesenhar o shell ou modificar o comportamento visual aprovado na KZ-E04-T04.
+- Implementing real data, forms, or workout and nutrition rules.
+- Creating Server Actions, database access, session, providers, or an internal HTTP client.
+- Changing primitives, tokens, version, or the public API of `@fradelli/ui`.
+- Redesigning the shell or changing the visual behavior approved in KZ-E04-T04.
 
 ## Subtasks
-- [x] Extrair o placeholder reutilizado por Dieta e Treino para componente compartilhado.
-- [x] Separar props e composição de classes em arquivos com responsabilidade explícita.
-- [x] Manter `src/app/dieta/page.tsx` e `src/app/treino/page.tsx` como Server Components finos.
-- [x] Mover a composição visual de foundations para uma família de componente própria.
-- [x] Restringir `"use client"` ao exemplo interativo que realmente usa `Sheet`.
-- [x] Separar a lista fixa de amostras de cor em constantes tipadas.
-- [x] Separar as seções privadas de Foundations para manter a composição principal legível.
-- [x] Encapsular cada seção privada em pasta própria com seus arquivos auxiliares.
-- [x] Encapsular AppShellNavigation e suas responsabilidades em pasta própria.
-- [x] Mover e ampliar testes sem alterar nomes acessíveis ou comportamento.
-- [x] Auditar layout, redirect, estilos globais e a família AppShell sem criar alterações artificiais.
-- [x] Automatizar a regra de pastas e ownership no gate de qualidade.
-- [x] Não criar hooks, utils, tipos ou barrels sem responsabilidade concreta.
+- [x] Extract the placeholder reused by Diet and Workout into a shared component.
+- [x] Separate props and class composition into files with explicit responsibility.
+- [x] Keep `src/app/dieta/page.tsx` and `src/app/treino/page.tsx` as thin Server Components.
+- [x] Move the visual composition of foundations into its own component family.
+- [x] Restrict `"use client"` to the interactive example that actually uses `Sheet`.
+- [x] Separate the fixed list of color samples into typed constants.
+- [x] Separate the private Foundations sections to keep the main composition readable.
+- [x] Encapsulate each private section in its own folder with its helper files.
+- [x] Encapsulate AppShellNavigation and its responsibilities in its own folder.
+- [x] Move and expand tests without changing accessible names or behavior.
+- [x] Audit layout, redirect, global styles, and the AppShell family without creating artificial changes.
+- [x] Automate the folder and ownership rule in the quality gate.
+- [x] Do not create hooks, utils, types, or barrels without a concrete responsibility.
 
 ## Validation
-- `page.tsx` contém somente composição de rota e permanece sem `"use client"`.
-- Apenas componentes que usam hooks, estado ou APIs do navegador possuem `"use client"`.
-- Client Components não importam Prisma, dados, application layer ou módulos server-only.
-- Dieta, Treino e Foundations preservam conteúdo, landmarks, foco e navegação.
-- Viewport de 320 px e zoom de 200% não geram rolagem horizontal.
-- Formato, lint, tipos, testes, integridade, build e auditoria passam.
-- O validador estrutural rejeita componentes soltos e auxiliares misturados.
+- `page.tsx` contains only route composition and remains without `"use client"`.
+- Only components that use hooks, state, or browser APIs have `"use client"`.
+- Client Components do not import Prisma, data, the application layer, or server-only modules.
+- Diet, Workout, and Foundations preserve content, landmarks, focus, and navigation.
+- The 320 px viewport and 200% zoom do not cause horizontal scrolling.
+- Format, lint, types, tests, integrity, build, and audit pass.
+- The structural validator rejects loose components and mixed helpers.
 
 ## Acceptance criteria
-- [x] O JSX das entradas de rota não concentra estilos nem blocos visuais reutilizáveis.
-- [x] O placeholder possui dois consumidores reais e pode ser removido quando KZ-E06/E07 o substituírem.
-- [x] `/foundations` renderiza sua composição estática no servidor.
-- [x] A menor ilha Client contém somente a demonstração interativa necessária.
-- [x] Nenhum arquivo existe apenas para satisfazer uma convenção nominal.
-- [x] Nenhum diretório `components/` contém arquivos de componentes soltos.
-- [x] A convenção permanece protegida por teste de regressão e gate de CI.
+- [x] The JSX of route entries does not concentrate styles or reusable visual blocks.
+- [x] The placeholder has two real consumers and can be removed when KZ-E06/E07 replace it.
+- [x] `/foundations` renders its static composition on the server.
+- [x] The smallest Client island contains only the necessary interactive demo.
+- [x] No file exists only to satisfy a naming convention.
+- [x] No `components/` directory contains loose component files.
+- [x] The convention remains protected by a regression test and a CI gate.
 
-## Riscos
+## Risks
 
-- Criar abstração temporária maior que os dois placeholders consumidores.
-- Alterar a demonstração técnica de foundations durante uma refatoração estrutural.
-- Empurrar primitives do Design System ou dados server-only para módulos client.
+- Creating a temporary abstraction larger than the two consuming placeholders.
+- Changing the technical foundations demo during a structural refactor.
+- Pushing Design System primitives or server-only data into client modules.
 
 ## Rollback
 
-Reverter as extrações e restaurar as páginas da KZ-E04-T04/E04-T08, sem alterar o
-shell, a integração do Design System ou os contratos de dados.
+Revert the extractions and restore the pages from KZ-E04-T04/E04-T08, without changing the
+shell, the Design System integration, or the data contracts.
 
 ## Result
-Páginas React padronizadas com entradas de rota finas, componentes encapsulados
-em pastas próprias e responsabilidades auxiliares colocalizadas. Foundations
-passou a renderizar no servidor com apenas o exemplo de `Sheet` no cliente, e o
-novo gate `structure:check` protege a convenção localmente e na CI. Conteúdo,
-acessibilidade e resultado visual foram preservados; todos os gates passaram.
+React pages standardized with thin route entries, components encapsulated
+in their own folders, and helper responsibilities colocated. Foundations
+now renders on the server with only the `Sheet` example on the client, and the
+new `structure:check` gate protects the convention locally and in CI. Content,
+accessibility, and visual result were preserved; all gates passed.
 
-## Consolidação documental de 12/11/2026
+## Documentation consolidation of 12/11/2026
 
-Pasta própria, ownership de auxiliares e Server/Client estão na arquitetura/validador. Inventário da base antiga permanece na origem.
+Own folder, helper ownership, and Server/Client are in the architecture/validator. The inventory of the old base remains at the source.
 
-[Pacote original integral](https://github.com/fradelli/nextjs-kaizen-app/blob/fd2269d2eaa7d55cfea724631f12fa6505d37b32/docs/implementation/tasks/E04-T09.md), SHA-256 `b25d690846bba03530cf7bb02a17c0412bfe43207220fef0fdc7873f7c118661`. Comandos, critérios, riscos e rollback registram aquela base e não são receita para reinstalar a aplicação atual. Pendências não viraram aprovações nesta consolidação.
+[Full original package](https://github.com/fradelli/nextjs-kaizen-app/blob/fd2269d2eaa7d55cfea724631f12fa6505d37b32/docs/implementation/tasks/E04-T09.md), SHA-256 `b25d690846bba03530cf7bb02a17c0412bfe43207220fef0fdc7873f7c118661`. Commands, criteria, risks, and rollback record that baseline and are not a recipe for reinstalling the current application. Open items were not turned into approvals in this consolidation.

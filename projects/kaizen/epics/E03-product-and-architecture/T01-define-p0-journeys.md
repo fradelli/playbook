@@ -6,31 +6,31 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E01-T06, KZ-E02-T06]
 ---
 
-# Definir jornadas do P0
+# Define P0 journeys
 
 ## Objective
-Fechar o menor produto operacional utilizável para treino e alimentação.
+Close the smallest usable operational product for training and nutrition.
 
 ## Inputs
-- Fundações validadas de treino e alimentação.
-- Roadmap e decisões vigentes.
+- Validated training and nutrition foundations.
+- Current roadmap and decisions.
 
 ## Deliverables
 - `docs/product/P0.md`
 
 ## Subtasks
-- [x] Definir jornadas, telas e navegação.
-- [x] Definir estados pronto, vazio, incompleto e erro.
-- [x] Definir critérios de aceite observáveis.
-- [x] Incluir somente os registros necessários para cumprir dieta e executar treino.
-- [x] Excluir automações e áreas alheias a dieta e treino.
+- [x] Define journeys, screens, and navigation.
+- [x] Define the ready, empty, incomplete, and error states.
+- [x] Define observable acceptance criteria.
+- [x] Include only the records needed to follow the diet and execute training.
+- [x] Exclude automations and areas unrelated to diet and training.
 
 ## Validation
-- Cada jornada referencia dados existentes.
-- Nenhuma tela exige dado ainda desconhecido sem estado alternativo.
+- Each journey references existing data.
+- No screen requires still-unknown data without an alternative state.
 
 ## Acceptance criteria
-- [x] P0 pode ser testado por comportamento, não por opinião visual.
+- [x] P0 can be tested by behavior, not by visual opinion.
 
 ## Result
-Definidas duas jornadas testáveis em `docs/product/P0.md`: Dieta registra opção seguida, refeição diferente, item pulado e comentário; Treino resolve sessão, mobilidade ou descanso, separa preparação, registra séries, carga somente quando aplicável, repetições e comentários. Estados, falhas, histórico, acessibilidade e limites do P0 foram explicitados.
+Two testable journeys defined in `docs/product/P0.md`: Diet records the option followed, a different meal, a skipped item, and a comment; Training resolves the session, mobility, or rest, separates preparation, records sets, load only when applicable, repetitions, and comments. States, failures, history, accessibility, and P0 limits were made explicit.

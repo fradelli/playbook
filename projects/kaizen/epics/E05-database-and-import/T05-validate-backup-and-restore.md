@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E05-T04]
 ---
 
-# Validar backup e restauração
+# Validate backup and restore
 
 ## Objective
-Demonstrar recuperação dos dados em PostgreSQL local antes de depender de um provedor gerenciado.
+Demonstrate data recovery on a local PostgreSQL before depending on a managed provider.
 
 ## Inputs
 - `docs/operations/E05.md`
@@ -42,29 +42,29 @@ Demonstrar recuperação dos dados em PostgreSQL local antes de depender de um p
 
 ## Deliverables
 - `docs/operations/BACKUP-AND-RESTORE.md`
-- Evidência de teste de restauração.
+- Evidence of the restore test.
 
 ## Subtasks
-- [x] Executar `pg_dump` no PostgreSQL local de origem.
-- [x] Restaurar com `pg_restore` em outro PostgreSQL local descartável.
-- [x] Validar contagens, IDs e versão ativa.
-- [x] Registrar duração, limitações e evidência; RPO/RTO gerenciado pertence a KZ-E08.
-- [x] Isolar origem e destino em containers descartáveis sem tocar volumes existentes.
-- [x] Automatizar o fluxo e sua limpeza com erros sanitizados.
-- [x] Executar a prova em job dedicado da CI.
+- [x] Run `pg_dump` on the local source PostgreSQL.
+- [x] Restore with `pg_restore` into another disposable local PostgreSQL.
+- [x] Validate counts, IDs, and active version.
+- [x] Record duration, limitations, and evidence; managed RPO/RTO belongs to KZ-E08.
+- [x] Isolate source and destination in disposable containers without touching existing volumes.
+- [x] Automate the flow and its cleanup with sanitized errors.
+- [x] Run the proof in a dedicated CI job.
 
 ## Validation
-- Restore local produz banco utilizável e íntegro.
-- Nenhuma conta, branch ou credencial Neon é necessária nesta tarefa.
+- The local restore produces a usable, intact database.
+- No Neon account, branch, or credential is needed in this task.
 
 ## Acceptance criteria
-- [x] Procedimento local é repetível e não expõe credenciais.
+- [x] The local procedure is repeatable and does not expose credentials.
 
 ## Result
-Concluída na PR #42. O job `Backup restore` executou PostgreSQL 18.6 em dois
-containers descartáveis, gerou dump custom de 151.376 bytes em 199 ms e restaurou
-em 231 ms. O destino manteve migrations atuais, integridade persistida válida,
-planos ativos, contagens globais e por workspace e todas as identidades do canário.
-Os sete gates da PR passaram. A estação local não tinha engine Docker disponível;
-a prova repetível foi executada no runner Linux isolado da CI. Neon, dados reais,
-RPO/RTO gerenciado, retenção e restauração de produção permanecem fora do escopo.
+Completed in PR #42. The `Backup restore` job ran PostgreSQL 18.6 in two
+disposable containers, produced a custom dump of 151,376 bytes in 199 ms, and restored
+it in 231 ms. The destination kept current migrations, valid persisted integrity,
+active plans, global and per-workspace counts, and all the canary identities.
+All seven PR gates passed. The local workstation had no Docker engine available;
+the repeatable proof was run on the isolated Linux CI runner. Neon, real data,
+managed RPO/RTO, retention, and production restore remain out of scope.

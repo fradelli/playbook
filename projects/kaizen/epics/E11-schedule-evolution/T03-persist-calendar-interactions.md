@@ -6,39 +6,39 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E11-T02]
 ---
 
-# Integrar os gestos aprovados à persistência
+# Integrate the approved gestures with persistence
 
 ## Objective
-Conectar o recorte aprovado da POC aos comandos existentes de atividades comuns, agendamento e troca de grupo, preservando revisão, recibos e cache.
+Connect the approved slice of the POC to the existing commands for common activities, scheduling, and group change, preserving revision, receipts, and cache.
 
 ## Inputs
-- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/application/schedule-command.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/application/schedule-command.ts) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/ui/components/schedule-workspace/hooks/use-schedule-mutations.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/schedule-workspace/hooks/use-schedule-mutations.ts) — consultar o contrato ou seção correspondente ao escopo.
-- [src/app/workout/schedule-actions.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/app/workout/schedule-actions.ts) — consultar o contrato ou seção correspondente ao escopo.
+- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consult the contract or section matching the scope.
+- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consult the contract or section matching the scope.
+- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consult the contract or section matching the scope.
+- [src/features/schedule/application/schedule-command.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/application/schedule-command.ts) — consult the contract or section matching the scope.
+- [src/features/schedule/ui/components/schedule-workspace/hooks/use-schedule-mutations.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/schedule-workspace/hooks/use-schedule-mutations.ts) — consult the contract or section matching the scope.
+- [src/app/workout/schedule-actions.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/app/workout/schedule-actions.ts) — consult the contract or section matching the scope.
 
 ## Deliverables
-Resultado verificável descrito nos critérios abaixo, com evidências vinculadas a esta tarefa. Antes de editar código, aplicar as seções pertinentes da [arquitetura](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) e os contratos locais. Não carregar planos históricos inteiros.
+Verifiable result described in the criteria below, with evidence linked to this task. Before editing code, apply the relevant sections of the [architecture](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) and the local contracts. Do not load entire historical plans.
 
 ## Subtasks
-- [ ] Registrar aprovação da POC e resolver suas limitações impeditivas.
-- [ ] Usar create/update/move_activity, reserve/reserve_new e change_list conforme a intenção.
-- [ ] Integrar confirmações de pai, estados pendentes e reconciliação de falhas.
+- [ ] Record the POC approval and resolve its blocking limitations.
+- [ ] Use create/update/move_activity, reserve/reserve_new, and change_list according to the intent.
+- [ ] Integrate parent confirmations, pending states, and failure reconciliation.
 
 ## Validation
-Conferir links, IDs, dependências e coerência com regras de produto. Quando houver implementação autorizada, executar os gates proporcionais e os cenários do plano; registrar o que foi executado e o que ficou pendente. Testes ainda não executados não contam como evidência.
+Check links, IDs, dependencies, and consistency with product rules. When implementation is authorized, run the proportional gates and the plan's scenarios; record what was run and what remains pending. Tests not yet run do not count as evidence.
 
 ## Acceptance criteria
-- [ ] Um gesto válido confirmado produz uma operação idempotente; movimento de ponteiro não grava.
-- [ ] Reenvio, concorrência e falha transacional não duplicam tarefas/reservas nem sobrescrevem revisões mais recentes.
-- [ ] Keep/shift e mudança de grupo respeitam a distinção entre atividade interna e reserva de to-do.
-- [ ] Recarga preserva o resultado; cache recebe apenas as alterações necessárias.
+- [ ] A confirmed valid gesture produces an idempotent operation; pointer movement does not write.
+- [ ] Resubmission, concurrency, and transactional failure do not duplicate tasks/reservations or overwrite more recent revisions.
+- [ ] Keep/shift and group change respect the distinction between an internal activity and a to-do reservation.
+- [ ] Reload preserves the result; the cache receives only the necessary changes.
 
-## Fora de escopo
+## Out of scope
 
-Não incluir reservas individuais, vínculos novos entre atividades, recorrência ou treino realizado neste incremento.
+Do not include individual reservations, new links between activities, recurrence, or completed workouts in this increment.
 
 ## Result
-Backlog registrado em 21/11/2026 durante a reconciliação documental. Nenhuma execução desta tarefa foi iniciada por este registro. O status canônico fica exclusivamente no índice do roadmap.
+Backlog recorded on 21/11/2026 during the documentation reconciliation. No execution of this task was started by this record. Canonical status lives only in the roadmap index.

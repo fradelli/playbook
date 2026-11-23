@@ -6,18 +6,18 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T12]
 ---
 
-# Remover treino específico das opções de inclusão
+# Remove specific workout from the add options
 
-## Cancelamento em 26/10/2026
+## Cancellation on 26/10/2026
 
-O usuário decidiu manter a opção Treino específico. A remoção deixou de ser
-necessária e a tarefa foi retirada das pendências. O ID é preservado apenas
-como histórico; nenhuma alteração de interface, servidor ou dados foi feita.
-O escopo abaixo registra a proposta anterior e não autoriza implementação.
+The user decided to keep the Treino específico (Specific workout) option. Removing it
+was no longer necessary and the task was dropped from the pending items. The ID is kept only
+as history; no interface, server, or data change was made.
+The scope below records the earlier proposal and does not authorize implementation.
 
 ## Objective
-Simplificar a lista de tipos de atividade, retirando a opção Treino específico
-por decisão do usuário, sem eliminar dados históricos ou atividades da agenda.
+Simplify the list of activity types by removing the Treino específico option
+by user decision, without deleting historical data or schedule activities.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -37,31 +37,31 @@ Not recorded in the original version of this task.
 ## Validation
 Not recorded in the original version of this task.
 
-## Regras confirmadas
+## Confirmed rules
 
-- Não oferecer Treino específico ao adicionar uma nova atividade.
-- Manter Treino do plano, Prática esportiva e Mobilidade.
-- Não apagar automaticamente enum, histórico ou atividades existentes do tipo `specific_training`.
-- Preservar os treinos de futevôlei planejados e seus aquecimentos.
+- Do not offer Treino específico when adding a new activity.
+- Keep Treino do plano (Plan workout), Prática esportiva (Sports practice), and Mobilidade (Mobility).
+- Do not automatically delete the enum, history, or existing activities of the `specific_training` type.
+- Preserve the planned footvolley workouts and their warm-ups.
 
-## Decisões antes da implementação
+## Decisions before implementation
 
-- Reanalisar e apresentar o plano ao usuário antes de implementar.
-- A agenda atual usa `specific_training` para futevôlei: decidir se permanece como compatibilidade interna ou passa a outra categoria em nova versão do plano.
-- Aprovar como editar e rotular atividades existentes desse tipo sem conversão silenciosa nem perda de dados.
-- Decidir se a criação manual também será rejeitada pelo servidor; ocultar a opção não substitui essa decisão de negócio.
+- Re-analyze and present the plan to the user before implementing.
+- The current schedule uses `specific_training` for footvolley: decide whether it stays as internal compatibility or moves to another category in a new plan version.
+- Approve how to edit and label existing activities of this type without silent conversion or data loss.
+- Decide whether manual creation will also be rejected by the server; hiding the option does not replace this business decision.
 
-## Fora de escopo
+## Out of scope
 
-- Excluir dados ou reescrever versões históricas sem autorização e migração específica.
-- Implementar i18n ou redesenhar o drawer.
+- Deleting data or rewriting historical versions without specific authorization and migration.
+- Implementing i18n or redesigning the drawer.
 
 ## Acceptance criteria
-- [ ] Inclusão não oferece Treino específico e mantém as outras três opções.
-- [ ] Agenda, aquecimentos e registros existentes continuam consultáveis.
-- [ ] Edição de dados legados segue a política aprovada e tem testes.
-- [ ] A interface e o servidor aplicam a mesma regra de criação aprovada.
+- [ ] Adding does not offer Treino específico and keeps the other three options.
+- [ ] Schedule, warm-ups, and existing records remain queryable.
+- [ ] Editing of legacy data follows the approved policy and has tests.
+- [ ] The interface and the server apply the same approved creation rule.
 
 ## Result
-Cancelada por decisão do usuário em 26/10/2026. Treino específico permanece
-disponível; nenhuma mudança funcional deve ser realizada por esta tarefa.
+Canceled by user decision on 26/10/2026. Treino específico remains
+available; this task must not cause any functional change.

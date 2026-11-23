@@ -6,39 +6,39 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E12-T02]
 ---
 
-# Criar testes E2E das jornadas críticas
+# Create E2E tests for the critical journeys
 
 ## Objective
-Cobrir as jornadas críticas de treino e agenda com Playwright em PostgreSQL real, como prevê a estratégia de testes da arquitetura.
+Cover the critical workout and schedule journeys with Playwright on a real PostgreSQL, as the architecture's testing strategy provides.
 
-## Contexto
+## Context
 
-A arquitetura lista Playwright para jornadas críticas, mas o projeto não tem nenhum teste E2E. O `.gitignore` já reserva `playwright-report/` e `test-results/`. A suíte atual tem testes unitários, de UI em jsdom e de integração com banco.
+The architecture lists Playwright for critical journeys, but the project has no E2E test. The `.gitignore` already reserves `playwright-report/` and `test-results/`. The current suite has unit tests, UI tests in jsdom, and integration tests with a database.
 
 ## Inputs
-- `docs/architecture/TARGET-ARCHITECTURE.md` — seções "Estratégia de testes" e "Casos obrigatórios".
-- `compose.yaml` — banco de teste local.
-- `.github/workflows/ci.yml` — job Test com serviço PostgreSQL.
-- `scripts/test-i18n-http.mjs` — verificação HTTP de idioma, candidata a virar caso E2E.
+- `docs/architecture/TARGET-ARCHITECTURE.md` — sections "Estratégia de testes" (Testing strategy) and "Casos obrigatórios" (Required cases).
+- `compose.yaml` — local test database.
+- `.github/workflows/ci.yml` — Test job with a PostgreSQL service.
+- `scripts/test-i18n-http.mjs` — HTTP language check, a candidate to become an E2E case.
 
 ## Deliverables
-- Playwright instalado com versão exata e configuração em `tests/e2e/`.
-- Jornadas: abrir o dia, incluir e editar atividade, executar e concluir treino, conflito entre abas, mutação da agenda e troca de idioma.
-- Job de E2E no CI com banco descartável.
+- Playwright installed with an exact version and configuration in `tests/e2e/`.
+- Journeys: open the day, add and edit an activity, run and finish a workout, conflict between tabs, schedule mutation, and language switch.
+- E2E job in CI with a disposable database.
 
 ## Subtasks
-- [ ] Configurar Playwright, servidor de teste e semente de dados.
-- [ ] Escrever as jornadas.
-- [ ] Incluir o job no CI.
-- [ ] Decidir o destino de `scripts/test-i18n-http.mjs`.
+- [ ] Configure Playwright, the test server, and the data seed.
+- [ ] Write the journeys.
+- [ ] Add the job to CI.
+- [ ] Decide the fate of `scripts/test-i18n-http.mjs`.
 
 ## Validation
-- Os testes E2E passam localmente e no CI.
-- Uma regressão proposital numa jornada faz o job falhar.
+- The E2E tests pass locally and in CI.
+- A deliberate regression in a journey makes the job fail.
 
 ## Acceptance criteria
-- [ ] As jornadas críticas listadas rodam a cada PR.
-- [ ] O tempo do job fica registrado na PR.
+- [ ] The listed critical journeys run on every PR.
+- [ ] The job's duration is recorded in the PR.
 
 ## Result
-Não iniciada.
+Not started.

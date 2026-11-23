@@ -6,64 +6,64 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: []
 ---
 
-# Fortalecer os gates de CI
+# Strengthen the CI gates
 
 ## Objective
-Fazer o CI remoto executar os mesmos gates do `pnpm run ci` e fechar as lacunas que deixaram falhas passarem sem aviso.
+Make remote CI run the same gates as `pnpm run ci` and close the gaps that let failures pass unnoticed.
 
-## Contexto
+## Context
 
-Achados da auditoria de 2026-11-23 sobre `developer` (`364c71f`):
+Findings from the audit of 2026-11-23 on `developer` (`364c71f`):
 
-- `pnpm i18n:check` falha com quatro erros, e `.github/workflows/ci.yml` não executa esse gate.
-- Os quatro erros são falsos positivos do validador: entidades HTML (`&rarr;`, `&plusmn;`, `&minus;`) lidas como texto e o nome da marca `kaizen` fora da lista de exceções.
-- `scripts/validate-i18n.mjs` não inspeciona `src/features/schedule/ui`, `src/features/training/ui/hooks` nem `src/app/workout`, e não detecta chaves sem uso; cerca de 75 chaves não têm referência no código.
-- `npx prisma format --check` aponta arquivos sem formatação; o CI não confere.
-- `vitest.config.ts` exige 80% de cobertura sem `coverage.include`; arquivos não carregados por testes ficam fora da conta.
-- Toda a suíte roda em jsdom (ambiente somou 586 s na execução local).
-- Todos os jobs usam `package-manager-cache: false`, sem decisão registrada.
+- `pnpm i18n:check` fails with four errors, and `.github/workflows/ci.yml` does not run this gate.
+- The four errors are validator false positives: HTML entities (`&rarr;`, `&plusmn;`, `&minus;`) read as text and the brand name `kaizen` missing from the exceptions list.
+- `scripts/validate-i18n.mjs` does not inspect `src/features/schedule/ui`, `src/features/training/ui/hooks`, or `src/app/workout`, and does not detect unused keys; about 75 keys have no reference in the code.
+- `npx prisma format --check` flags unformatted files; CI does not check this.
+- `vitest.config.ts` requires 80% coverage without `coverage.include`; files not loaded by tests stay out of the count.
+- The whole suite runs in jsdom (the environment added up to 586 s in the local run).
+- All jobs use `package-manager-cache: false`, with no recorded decision.
 
 ## Inputs
-- `.github/workflows/ci.yml` — jobs e passos.
-- `package.json` — script `ci`.
-- `scripts/validate-i18n.mjs` — raízes inspecionadas e regra de texto.
-- `messages/en.json` e `messages/pt-BR.json` — chaves candidatas a remoção.
-- `vitest.config.ts` — cobertura e ambiente.
-- `prisma/models/` — arquivos sem formatação.
+- `.github/workflows/ci.yml` — jobs and steps.
+- `package.json` — `ci` script.
+- `scripts/validate-i18n.mjs` — inspected roots and text rule.
+- `messages/en.json` and `messages/pt-BR.json` — keys that are candidates for removal.
+- `vitest.config.ts` — coverage and environment.
+- `prisma/models/` — unformatted files.
 
 ## Deliverables
-- Passo `pnpm i18n:check` no job Quality.
-- `scripts/validate-i18n.mjs` decodificando entidades, ignorando conteúdo `aria-hidden`, com exceção da marca, raízes ampliadas e detecção de chaves sem uso, com teste em `scripts/`.
-- Chaves sem uso removidas dos dois catálogos.
-- Passo de `prisma format --check` no CI e schema formatado.
-- `coverage.include` definido; thresholds revisados se a cobertura real cair.
-- Projetos do Vitest com ambiente `node` para domínio, aplicação e dados e `jsdom` para UI.
-- Decisão registrada sobre cache de dependências no CI.
+- `pnpm i18n:check` step in the Quality job.
+- `scripts/validate-i18n.mjs` decoding entities, ignoring `aria-hidden` content, with a brand exception, expanded roots, and detection of unused keys, with a test in `scripts/`.
+- Unused keys removed from both catalogs.
+- `prisma format --check` step in CI and a formatted schema.
+- `coverage.include` defined; thresholds revised if real coverage drops.
+- Vitest projects with a `node` environment for domain, application, and data and `jsdom` for UI.
+- Recorded decision on dependency caching in CI.
 
 ## Subtasks
-- [x] Corrigir o validador de i18n e cobrir com testes.
-- [x] Remover as chaves órfãs.
-- [x] Incluir i18n e formatação do Prisma no workflow.
-- [x] Ajustar a cobertura e separar os ambientes de teste.
-- [x] Decidir e aplicar a política de cache.
+- [x] Fix the i18n validator and cover it with tests.
+- [x] Remove the orphan keys.
+- [x] Include i18n and Prisma formatting in the workflow.
+- [x] Adjust coverage and separate the test environments.
+- [x] Decide and apply the cache policy.
 
 ## Validation
-- `pnpm i18n:check`, `pnpm test:coverage`, `pnpm test:ci-scripts` e `pnpm run ci` passam localmente.
-- O PR desta tarefa mostra os novos passos executados no CI.
-- Um texto fixo inserido de propósito em `src/features/schedule/ui` faz o i18n falhar.
+- `pnpm i18n:check`, `pnpm test:coverage`, `pnpm test:ci-scripts`, and `pnpm run ci` pass locally.
+- This task PR shows the new steps running in CI.
+- A hard-coded text deliberately inserted in `src/features/schedule/ui` makes i18n fail.
 
 ## Acceptance criteria
-- [x] Todo gate de `pnpm run ci` roda também no CI remoto.
-- [x] O i18n detecta texto fixo na agenda e chaves sem uso.
-- [x] A cobertura reportada considera todos os arquivos de `src/`.
+- [x] Every `pnpm run ci` gate also runs in remote CI.
+- [x] i18n detects hard-coded text in the schedule and unused keys.
+- [x] The reported coverage considers all files in `src/`.
 
 ## Result
-Concluída em 2026-11-23.
+Completed on 2026-11-23.
 
-- `scripts/validate-i18n.mjs` foi refeito em funções testáveis (`scripts/validate-i18n.test.mjs`, 5 testes, incluído em `pnpm test:ci-scripts`). Ignora entidades HTML e a marca (`kaizen`, `改善`), inspeciona `src/app`, `src/components` e `src/features/*/ui` (exceto a vitrine `foundations`) e acusa chaves sem referência. Um texto fixo temporário em `src/features/schedule/ui` fez o gate falhar.
-- 75 chaves sem uso removidas de `messages/en.json` e `messages/pt-BR.json`; restam 349 mensagens, todas referenciadas.
-- O job Quality passou a rodar `pnpm db:format:check` (script novo) e `pnpm i18n:check`; o `pnpm run ci` ganhou `db:format:check`. O schema em `prisma/models/` foi formatado, com mudança só de espaços (zero linhas diferentes com `git diff -w`).
-- `vitest.config.ts`: projetos `node` (domínio, aplicação, dados, `tests/` e `prisma/`) e `dom` (componentes e hooks de UI); `coverage.include` cobre todo `src/`. A suíte unitária caiu de 144 s para 55 s; `scripts/validate-data.test.mjs` deixou de rodar duas vezes (segue no `test:ci-scripts`).
-- Cobertura real sobre todo `src/`: 61,26% de linhas, 60,66% de funções, 57,57% de branches e 59,68% de statements. Os thresholds de 80% passaram a esse piso (61/60/57/59), como trava contra regressão. Lacuna conhecida: as camadas `data` e `app` só são exercitadas pela suíte de integração, que não mede cobertura.
-- Cache de dependências mantido desligado, com a decisão comentada em `.github/workflows/ci.yml`: a instalação leva de 10 a 14 s por job, em paralelo.
-- Validações locais: `pnpm i18n:check`, `pnpm test:coverage` (80 arquivos, 577 testes), `pnpm test:ci-scripts`, `pnpm lint`, `pnpm typecheck`, `pnpm structure:check`, `pnpm data:check`, `pnpm docs:check`, `pnpm db:validate`, `pnpm db:format:check`, `pnpm format:check` e `git diff --check`. Integração, build e audit ficaram para o CI.
+- `scripts/validate-i18n.mjs` was rebuilt into testable functions (`scripts/validate-i18n.test.mjs`, 5 tests, included in `pnpm test:ci-scripts`). It ignores HTML entities and the brand (`kaizen`, `改善`), inspects `src/app`, `src/components`, and `src/features/*/ui` (except the `foundations` showcase), and flags keys with no reference. A temporary hard-coded text in `src/features/schedule/ui` made the gate fail.
+- 75 unused keys were removed from `messages/en.json` and `messages/pt-BR.json`; 349 messages remain, all referenced.
+- The Quality job now runs `pnpm db:format:check` (new script) and `pnpm i18n:check`; `pnpm run ci` gained `db:format:check`. The schema in `prisma/models/` was formatted, with whitespace-only changes (zero differing lines with `git diff -w`).
+- `vitest.config.ts`: `node` projects (domain, application, data, `tests/`, and `prisma/`) and `dom` (UI components and hooks); `coverage.include` covers all of `src/`. The unit suite dropped from 144 s to 55 s; `scripts/validate-data.test.mjs` no longer runs twice (it stays in `test:ci-scripts`).
+- Real coverage over all of `src/`: 61.26% lines, 60.66% functions, 57.57% branches, and 59.68% statements. The 80% thresholds were lowered to that floor (61/60/57/59), as a guard against regression. Known gap: the `data` and `app` layers are exercised only by the integration suite, which does not measure coverage.
+- Dependency caching kept off, with the decision commented in `.github/workflows/ci.yml`: installation takes 10 to 14 s per job, in parallel.
+- Local validations: `pnpm i18n:check`, `pnpm test:coverage` (80 files, 577 tests), `pnpm test:ci-scripts`, `pnpm lint`, `pnpm typecheck`, `pnpm structure:check`, `pnpm data:check`, `pnpm docs:check`, `pnpm db:validate`, `pnpm db:format:check`, `pnpm format:check`, and `git diff --check`. Integration, build, and audit were left for CI.

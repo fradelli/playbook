@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E04-T03, KZ-E05-T01]
 ---
 
-# Configurar banco e migrations
+# Configure database and migrations
 
 ## Objective
-Configurar o banco e o ORM aprovados com migrations reproduzíveis.
+Configure the approved database and ORM with reproducible migrations.
 
 ## Inputs
 - `AGENTS.md`
@@ -46,73 +46,73 @@ Configurar o banco e o ORM aprovados com migrations reproduzíveis.
 - `src/lib/db/environment.test.ts`
 
 ## Deliverables
-- `compose.yaml`, `prisma.config.ts`, `prisma/schema.prisma`, schemas de domínio em `prisma/models/` e configuração testável da CLI.
-- `prisma/migrations/20260913011504_initial_p0/migration.sql` e `migration_lock.toml`.
-- Client e configuração server-only em `src/lib/db/`, com testes unitários.
-- Configuração Vitest Node e testes PostgreSQL em `tests/integration/`.
-- Geração do Client e integração PostgreSQL nos gates locais/CI.
-- Operação, deploy, recuperação e pendências documentados no guia.
+- `compose.yaml`, `prisma.config.ts`, `prisma/schema.prisma`, domain schemas in `prisma/models/`, and a testable CLI configuration.
+- `prisma/migrations/20260913011504_initial_p0/migration.sql` and `migration_lock.toml`.
+- Server-only Client and configuration in `src/lib/db/`, with unit tests.
+- Vitest Node configuration and PostgreSQL tests in `tests/integration/`.
+- Client generation and PostgreSQL integration in the local/CI gates.
+- Operation, deploy, recovery, and pending items documented in the guide.
 
 ## Subtasks
-- [x] Isolar URLs por ambiente.
-- [x] Versionar migration inicial.
-- [x] Impedir acesso do cliente ao banco.
-- [x] Definir processo de deploy e rollback.
+- [x] Isolate URLs per environment.
+- [x] Version the initial migration.
+- [x] Prevent client access to the database.
+- [x] Define the deploy and rollback process.
 
 ## Validation
-- Banco vazio converge pela migration.
-- Segredos não entram no Git ou bundle.
+- An empty database converges through the migration.
+- Secrets do not enter Git or the bundle.
 
 ## Acceptance criteria
-- [x] Local e teste usam configuração reproduzível.
-- [x] Banco vazio converge e segunda aplicação não encontra migrations pendentes.
-- [x] Testes reais validam ownership, versões, carga, medidas, refeições e histórico.
-- [x] Gates locais completos passam, incluindo auditoria das novas dependências.
+- [x] Local and test use reproducible configuration.
+- [x] An empty database converges and a second application finds no pending migrations.
+- [x] Real tests validate ownership, versions, load, measurements, meals, and history.
+- [x] Complete local gates pass, including the audit of the new dependencies.
 
 ## Result
-Em 14/09, schema dividido por domínio com equivalência dos 30 blocos confirmada,
-sem modificar a migration. Configuração tipada e proteções puras da CLI separadas;
-geração automática incluída nos comandos de desenvolvimento, build, tipos e testes.
-Convenções registradas na arquitetura e referenciadas no AGENTS. Nova execução
-validou 42 testes unitários, 10 testes PostgreSQL, 28 regressões dos validadores,
-formato, lint, estrutura, tipos, dados e build. O `ci` falhou somente na auditoria
-transitiva já registrada abaixo; Docker permanece pendente.
+On 14/09, the schema was split by domain, with equivalence of the 30 blocks confirmed
+and no change to the migration. The typed configuration and the pure CLI safeguards were separated;
+automatic generation was included in the development, build, types, and test commands.
+Conventions were recorded in the architecture and referenced in AGENTS. A new run
+validated 42 unit tests, 10 PostgreSQL tests, 28 validator regressions,
+format, lint, structure, types, data, and build. `ci` failed only on the transitive
+audit already recorded below; Docker remains pending.
 
-Implementação preparada para PR de revisão, com merge condicionado aos critérios
-pendentes. Schema validado, Client gerado e migration
-aplicada em dois bancos temporários PostgreSQL 18.6; segunda aplicação e status
-confirmaram convergência. Testes unitários e PostgreSQL, tipos, lint, dados e build
-foram executados. Containers locais ainda aguardam correção da inicialização do
-Docker Desktop; Compose foi validado sem iniciar containers.
+Implementation prepared for a review PR, with the merge conditioned on the pending
+criteria. The schema was validated, the Client generated, and the migration
+applied in two temporary PostgreSQL 18.6 databases; a second application and the status
+confirmed convergence. Unit and PostgreSQL tests, types, lint, data, and build
+were run. Local containers are still waiting for the Docker Desktop startup
+to be fixed; Compose was validated without starting containers.
 
-Após a falha da PR #36, a correção foi publicada e integrada separadamente pela
-PR #37, baseada em `developer`. Override restrito a `@prisma/config@7.10.0`
-resolve `deepmerge-ts@8.0.2`, com compatibilidade do uso concreto verificada.
-Instalação congelada e `ci` completo passaram em duas cópias limpas:
-`developer` + correção e KZ-E05-T02 + correção, com testes PostgreSQL reais.
-Os dois findings de mysql2 continuam corrigidos pelo override restrito 3.23.1.
-Nenhuma exceção de auditoria ou Prisma RC foi aplicado. Naquela execução,
-a validação dos containers locais ainda impedia a conclusão.
+After the failure of PR #36, the fix was published and merged separately
+through PR #37, based on `developer`. A scoped override on `@prisma/config@7.10.0`
+resolves `deepmerge-ts@8.0.2`, with compatibility of the concrete usage verified.
+Frozen install and the complete `ci` passed in two clean copies:
+`developer` + fix and KZ-E05-T02 + fix, with real PostgreSQL tests.
+The two mysql2 findings remain fixed by the scoped override 3.23.1.
+No audit exception or Prisma RC was applied. In that run,
+validation of the local containers still blocked completion.
 
-### Encerramento da pendência Docker
+### Closing the Docker pending item
 
-Em 14/09/2026, Docker Desktop respondeu normalmente e o Compose foi executado
-com PostgreSQL 18.6 Alpine real. O banco local ficou saudável em loopback na
-porta 5432, com volume nomeado; o banco de teste ficou saudável na porta 5434,
-com tmpfs independente. A porta 5433 estava ocupada por outro projeto, que foi
-preservado. Adicionado `TEST_DATABASE_PORT` opcional com padrão 5433; as duas URLs
-privadas de teste foram alinhadas à porta livre, sem alteração de credenciais.
-Padrão e override do Compose foram validados sem expor o ambiente privado.
+On 14/09/2026, Docker Desktop responded normally and Compose was run
+with a real PostgreSQL 18.6 Alpine. The local database became healthy on loopback on
+port 5432, with a named volume; the test database became healthy on port 5434,
+with an independent tmpfs. Port 5433 was taken by another project, which was
+preserved. An optional `TEST_DATABASE_PORT` was added with a default of 5433; the two
+private test URLs were aligned to the free port, with no change to credentials.
+The Compose default and override were validated without exposing the private environment.
 
-O banco local iniciou sem tabelas públicas. `db:deploy` aplicou a migration;
-segunda execução e `db:status` confirmaram convergência. Reiniciar o container
-local preservou identidade e checksum da migration no volume. O banco de teste
-recebeu a mesma migration e também confirmou ausência de pendências. As fixtures
-de importação foram removidas dos schemas isolados ao concluir; desenvolvimento
-permaneceu sem lotes importados ou execuções pessoais criadas pelos testes.
+The local database started with no public tables. `db:deploy` applied the migration;
+a second run and `db:status` confirmed convergence. Restarting the local
+container preserved the identity and checksum of the migration in the volume. The test database
+received the same migration and also confirmed no pending items. The import
+fixtures were removed from the isolated schemas on completion; development
+remained without imported batches or personal executions created by the tests.
 
-Instalação congelada e `pnpm run ci` completo passaram: 85 testes unitários,
-17 integrações PostgreSQL, 29 regressões de scripts, formato, lint, estrutura,
-tipos, dados, build e auditoria sem findings. Ambos os serviços permanecem
-saudáveis para uso local. Nenhum volume foi apagado, migration alterada ou
-container de outro projeto interrompido. A pendência Docker está encerrada.
+Frozen install and the complete `pnpm run ci` passed: 85 unit tests,
+17 PostgreSQL integration tests, 29 script regressions, format, lint, structure,
+types, data, build, and audit with no findings. Both services remain
+healthy for local use. No volume was deleted, no migration changed, and no
+container from another project was interrupted. The Docker pending item is closed.

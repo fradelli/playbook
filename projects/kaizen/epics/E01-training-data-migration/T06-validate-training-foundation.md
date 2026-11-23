@@ -6,33 +6,33 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E01-T05]
 ---
 
-# Validar fundação de treino
+# Validate training foundation
 
 ## Objective
-Executar o gate final da migração de treino e marcar uma base imutável para as próximas fases.
+Run the final gate of the training migration and tag an immutable base for the next phases.
 
 ## Inputs
-- Todos os entregáveis de KZ-E01.
-- Manifesto completo.
+- All KZ-E01 deliverables.
+- Complete manifest.
 
 ## Deliverables
 - `docs/migration/TRAINING-VALIDATION-REPORT.md`
-- Tag `training-foundation-v1` após aprovação.
+- Tag `training-foundation-v1` after approval.
 
 ## Subtasks
-- [x] Validar JSONs, schemas, IDs, ponteiros, agenda sanitizada e links.
-- [x] Comparar hashes de cópias literais.
-- [x] Confirmar ausência de código, dependências e dados inventados.
-- [x] Revisar o manifesto por completude.
+- [x] Validate JSON files, schemas, IDs, pointers, sanitized schedule, and links.
+- [x] Compare hashes of literal copies.
+- [x] Confirm the absence of code, dependencies, and invented data.
+- [x] Review the manifest for completeness.
 
 ## Validation
-- O snapshot privado mantém quatro sessões confirmadas; seus valores não são reproduzidos no destino público.
-- O destino público mantém quatro sessões com dia, horário e intensidade `null`.
-- Dia e horário do jogo continuam `null` se não houver novo fato.
+- The private snapshot keeps four confirmed sessions; their values are not reproduced at the public destination.
+- The public destination keeps four sessions with day, time, and intensity as `null`.
+- The match day and time remain `null` if there is no new fact.
 
 ## Acceptance criteria
-- [x] Relatório sem falhas abertas.
-- [x] KZ-E02-T01 pode iniciar.
+- [x] Report with no open failures.
+- [x] KZ-E02-T01 can start.
 
 ## Result
-O gate final verificou diretamente o snapshot privado, os 23 artefatos do manifesto, os 19 destinos publicados, os contratos estruturais e as invariantes entre arquivos. O ponteiro ativo foi transformado para eliminar caminhos ausentes, a agenda pública permaneceu sanitizada e a exposição histórica anterior foi aceita sem autorizar novas publicações. O relatório não possui falhas abertas; a tag `training-foundation-v1` identifica o commit integrado desta entrega.
+The final gate directly verified the private snapshot, the 23 manifest artifacts, the 19 published destinations, the structural contracts, and the invariants across files. The active pointer was transformed to eliminate missing paths, the public schedule remained sanitized, and the earlier historical exposure was accepted without authorizing new publications. The report has no open failures; tag `training-foundation-v1` identifies the integrated commit of this delivery.

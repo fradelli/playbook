@@ -6,7 +6,7 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E10-T06]
 ---
 
-# Corrigir achados da revisão de rascunhos
+# Fix the findings of the draft review
 
 ## Objective
 Not recorded in the original version of this task.
@@ -30,10 +30,10 @@ Not recorded in the original version of this task.
 Not recorded in the original version of this task.
 
 ## Result
-Descartar avaliação preserva o stop recuperado; eventos de outro armazenamento não
-bloqueiam a sessão; falha de limpeza legada não impede leitura da sessão atual.
-Os três casos reproduzidos viraram testes permanentes junto ao hook. Edição não agenda
-timers nem registra listeners de persistência. Superfícies usam composição base única.
+Discarding a rating preserves the recovered stop; events from other storage do not
+block the session; a legacy cleanup failure does not prevent reading the current session.
+The three reproduced cases became permanent tests alongside the hook. Editing does not schedule
+timers or register persistence listeners. Surfaces use a single base composition.
 
-394 testes em 54 arquivos, lint, estrutura, tipos, build e diff check aprovados.
-Alterações locais sem commit. Sem alterações de banco ou dados operacionais.
+394 tests in 54 files, lint, structure, types, build, and diff check passed.
+Local changes, no commit. No changes to the database or operational data.

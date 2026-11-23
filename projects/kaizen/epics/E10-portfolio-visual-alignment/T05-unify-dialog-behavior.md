@@ -6,7 +6,7 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E10-T04]
 ---
 
-# Unificar comportamento dos diálogos
+# Unify dialog behavior
 
 ## Objective
 Not recorded in the original version of this task.
@@ -31,13 +31,13 @@ Not recorded in the original version of this task.
 Not recorded in the original version of this task.
 
 ## Result
-Confirmações usam TrainingActivityModal, com X, Escape e clique externo centralizados,
-foco inicial seguro configurável, retorno de foco e bloqueio durante envio. Eventos de
-Escape não propagam para o modal anterior; a navegação por Tab exclui diálogos filhos.
-Exclusão e finalização mantêm seus comandos, estados e preservação de preenchimento.
-Removidos dois módulos de estilos sem consumidores. Botões usam as mesmas variantes
-e tamanhos dos formulários, mantendo destruição à esquerda e ação principal à direita.
+Confirmations use TrainingActivityModal, with X, Escape, and outside click centralized,
+configurable safe initial focus, focus return, and blocking during submission. Escape
+events do not propagate to the previous modal; Tab navigation excludes child dialogs.
+Delete and completion keep their commands, states, and preservation of filled-in data.
+Two style modules without consumers removed. Buttons use the same variants
+and sizes as the forms, keeping destruction on the left and the primary action on the right.
 
-45 testes, tipos, lint, estrutura e build aprovados. Chromium em 320/1440px confirmou
-fechamento por X, Escape e clique fora; fechar a confirmação mantém editor e bloqueio
-de rolagem. Nenhuma atividade excluída na validação. Alterações locais sem commit.
+45 tests, types, lint, structure, and build passed. Chromium at 320/1440px confirmed
+closing by X, Escape, and outside click; closing the confirmation keeps the editor and the scroll
+lock. No activity was deleted during validation. Local changes, no commit.

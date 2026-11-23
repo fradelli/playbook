@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E05-T02]
 ---
 
-# Criar importação idempotente
+# Create idempotent import
 
 ## Objective
-Importar a fundação documental sem duplicar ou alterar silenciosamente os dados.
+Import the documentary foundation without duplicating or silently altering data.
 
 ## Inputs
 - `AGENTS.md`
@@ -56,60 +56,60 @@ Importar a fundação documental sem duplicar ou alterar silenciosamente os dado
 - `roadmap/ACTIVE.md`
 - `CHANGELOG.md`
 
-## Autorização de sequência
+## Sequence authorization
 
-Em 14/09/2026, o proprietário autorizou implementar com PostgreSQL real,
-mantendo a validação dos containers como pendência explícita da KZ-E05-T02.
-Essa exceção de sequência não conclui o critério pendente nem dispensa gates.
+On 14/09/2026, the owner authorized implementing with a real PostgreSQL,
+keeping the validation of the containers as an explicit pending item of KZ-E05-T02.
+This sequence exception does not close the pending criterion or waive the gates.
 
 ## Deliverables
-- Importador e relatório de execução definidos no guia.
+- Importer and execution report defined in the guide.
 
 ## Subtasks
-- [x] Validar antes de gravar.
-- [x] Usar IDs e versões estáveis.
-- [x] Registrar origem e hash.
-- [x] Fazer transação onde a consistência exigir.
+- [x] Validate before writing.
+- [x] Use stable IDs and versions.
+- [x] Record source and hash.
+- [x] Use a transaction where consistency requires it.
 
 ## Validation
-- Segunda execução não cria duplicatas.
-- Falha intermediária não deixa versão parcial ativa.
+- A second run creates no duplicates.
+- An intermediate failure does not leave a partial version active.
 
 ## Acceptance criteria
-- [x] Contagens e relações coincidem com a origem.
+- [x] Counts and relations match the source.
 
 ## Result
-Implementada CLI `pnpm data:import --environment local`, com seleção do commit
-fixado, validação compartilhada e persistência server-only sem endpoint ou UI.
-Lotes preservam documentos originais, SHA-256 e origem; versões são insert-only,
-e os ponteiros controlam ativações atômicas com histórico.
+Implemented the CLI `pnpm data:import --environment local`, with selection of the pinned
+commit, shared validation, and server-only persistence with no endpoint or UI.
+Batches preserve the original documents, SHA-256, and source; versions are insert-only,
+and the pointers control atomic activations with history.
 
-Primeira execução real em banco local descartável: 7 lotes, 38 exercícios
-revisados, 2 versões de treino, 14 sessões, 87 prescrições, 1 versão alimentar,
-5 refeições, 20 opções, 6 tipos de dia, 30 vínculos e 2 ativações. Segunda
-execução: `no-op`, sem novos registros ou ativações.
+First real run on a disposable local database: 7 batches, 38 reviewed exercises,
+2 workout versions, 14 sessions, 87 prescriptions, 1 nutrition version,
+5 meals, 20 options, 6 day types, 30 links, and 2 activations. Second
+run: `no-op`, with no new records or activations.
 
-Gates locais completos passaram, incluindo 85 testes unitários/validador com
-cobertura acima de 80%, 17 testes de integração em PostgreSQL real, 29 regressões
-de scripts, formato, lint, estrutura, tipos, dados, build e auditoria sem findings.
-Testes verificam versão nova com ID estável, conflito, rollback real, concorrência,
-referências alimentares, ponteiros inválidos, ciclos e preservação operacional.
+Complete local gates passed, including 85 unit/validator tests with
+coverage above 80%, 17 integration tests on a real PostgreSQL, 29 script
+regressions, format, lint, structure, types, data, build, and audit with no findings.
+Tests verify a new version with a stable ID, conflict, real rollback, concurrency,
+nutrition references, invalid pointers, cycles, and operational preservation.
 
-Documentação operacional em `docs/operations/E05.md`. Não foram alterados
-planos JSON, schemas, migration, shells, dados pessoais ou infraestrutura externa.
-A validação Docker continua pendente na KZ-E05-T02; a autorização de sequência
-não a declara concluída.
+Operational documentation in `docs/operations/E05.md`. No JSON
+plans, schemas, migration, shells, personal data, or external infrastructure were changed.
+The Docker validation remains pending in KZ-E05-T02; the sequence authorization
+does not declare it complete.
 
-Refinamento semântico autorizado: feature `plan-definition-import`, caso de uso
-`importVersionedPlanDefinitions`, etapas de persistência separadas recebendo a
-mesma transação e mapeadores explícitos. Manifesto convertido em propriedades
-nomeadas, regras de validação separadas e CLI sem validação duplicada. O cliente
-do banco só é criado depois da validação; código de erro e relatório mantidos.
-Gates completos reexecutados após o refinamento, incluindo regressões de
-publicação do manifesto, validação única e smoke da CLI sobre dados existentes
-com resultado `no-op`.
+Authorized semantic refinement: feature `plan-definition-import`, use case
+`importVersionedPlanDefinitions`, separate persistence steps receiving the
+same transaction, and explicit mappers. The manifest was converted into
+named properties, validation rules were separated, and the CLI no longer duplicates validation. The database
+client is created only after validation; error code and report were kept.
+Complete gates were rerun after the refinement, including regressions for
+manifest publication, single validation, and a CLI smoke test over existing data
+with a `no-op` result.
 
-Registrada convenção permanente de semântica e legibilidade na arquitetura, com
-referência obrigatória no AGENTS e checklist de revisão semântica no template de
-PR, conforme solicitação do proprietário. A convenção orienta nomes, responsabilidades,
-formatos externos, testes e preservação de fronteiras e atomicidade.
+Recorded a permanent convention on semantics and readability in the architecture, with
+a mandatory reference in AGENTS and a semantic review checklist in the PR
+template, as requested by the owner. The convention guides names, responsibilities,
+external formats, tests, and the preservation of boundaries and atomicity.

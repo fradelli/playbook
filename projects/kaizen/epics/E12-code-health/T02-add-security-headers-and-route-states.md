@@ -6,47 +6,47 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: []
 ---
 
-# Aplicar headers de segurança e páginas de erro e carregamento
+# Apply security headers and error and loading pages
 
 ## Objective
-Proteger a aplicação pública com headers HTTP de segurança e cobrir erro, rota inexistente e carregamento com telas próprias.
+Protect the public application with HTTP security headers and cover errors, missing routes, and loading with dedicated screens.
 
-## Contexto
+## Context
 
-Achados da auditoria de 2026-11-23:
+Findings from the 2026-11-23 audit:
 
-- `next.config.ts` não define `headers()`: faltam Content-Security-Policy, `frame-ancestors` ou `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy` e `X-Content-Type-Options`.
-- `src/app` não tem `not-found.tsx`, `global-error.tsx` nem `loading.tsx`; só existe `src/app/workout/error.tsx`.
-- `src/lib/security/request-origin.ts` confia em `x-forwarded-host`, premissa válida atrás do proxy da Vercel e não registrada.
+- `next.config.ts` does not define `headers()`: Content-Security-Policy, `frame-ancestors` or `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, and `X-Content-Type-Options` are missing.
+- `src/app` has no `not-found.tsx`, `global-error.tsx`, or `loading.tsx`; only `src/app/workout/error.tsx` exists.
+- `src/lib/security/request-origin.ts` trusts `x-forwarded-host`, an assumption that is valid behind the Vercel proxy but not recorded.
 
 ## Inputs
-- `next.config.ts` — configuração atual.
-- `src/app/layout.tsx` e `src/app/workout/error.tsx` — layout raiz e tratamento de erro existente.
-- `src/lib/security/request-origin.ts` — validação de origem.
-- `docs/architecture/TARGET-ARCHITECTURE.md` — seções "Segurança" e "Observabilidade e falhas".
-- `docs/product/telas/guia-de-estilo.md` — aparência das telas de estado.
+- `next.config.ts` — current configuration.
+- `src/app/layout.tsx` and `src/app/workout/error.tsx` — root layout and existing error handling.
+- `src/lib/security/request-origin.ts` — origin validation.
+- `docs/architecture/TARGET-ARCHITECTURE.md` — sections "Segurança" (Security) and "Observabilidade e falhas" (Observability and failures).
+- `docs/product/telas/guia-de-estilo.md` — appearance of the state screens.
 
 ## Deliverables
-- `headers()` em `next.config.ts` com CSP compatível com `next/font`, `next-intl` e o design system.
-- `src/app/not-found.tsx`, `src/app/global-error.tsx` e `loading.tsx` nas rotas com leitura dinâmica.
-- Textos novos em `messages/en.json` e `messages/pt-BR.json`.
-- Premissa de proxy confiável registrada na seção "Segurança" da arquitetura.
+- `headers()` in `next.config.ts` with a CSP compatible with `next/font`, `next-intl`, and the design system.
+- `src/app/not-found.tsx`, `src/app/global-error.tsx`, and `loading.tsx` in the routes with dynamic reads.
+- New texts in `messages/en.json` and `messages/pt-BR.json`.
+- Trusted proxy assumption recorded in the "Segurança" (Security) section of the architecture.
 
 ## Subtasks
-- [ ] Definir e aplicar os headers.
-- [ ] Testar a CSP em desenvolvimento e build sem violações no console.
-- [ ] Criar as telas de rota inexistente, erro global e carregamento.
-- [ ] Registrar a premissa de proxy.
+- [ ] Define and apply the headers.
+- [ ] Test the CSP in development and build with no console violations.
+- [ ] Create the screens for missing route, global error, and loading.
+- [ ] Record the proxy assumption.
 
 ## Validation
-- `pnpm build` passa e a resposta de `/workout` traz os headers definidos.
-- O console do navegador não mostra violações de CSP nas rotas existentes.
-- Testes de UI cobrem as novas telas; `pnpm i18n:check` passa.
+- `pnpm build` passes and the `/workout` response carries the defined headers.
+- The browser console shows no CSP violations on the existing routes.
+- UI tests cover the new screens; `pnpm i18n:check` passes.
 
 ## Acceptance criteria
-- [ ] Todas as respostas HTML trazem os headers de segurança.
-- [ ] Uma URL inexistente mostra a tela própria, traduzida.
-- [ ] Erro no layout raiz mostra a tela de erro global.
+- [ ] All HTML responses carry the security headers.
+- [ ] A nonexistent URL shows the dedicated, translated screen.
+- [ ] An error in the root layout shows the global error screen.
 
 ## Result
-Não iniciada.
+Not started.

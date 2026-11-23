@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E08-T01]
 ---
 
-# Validar exposição pública
+# Validate public exposure
 
 ## Objective
-Comprovar no preview o modo público com workspace único e endurecer as proteções que não dependem de autenticação.
+Prove the public single-workspace mode in preview and harden the protections that do not depend on authentication.
 
 ## Inputs
 - `docs/plans/release/E08.md`
@@ -17,23 +17,23 @@ Comprovar no preview o modo público com workspace único e endurecer as proteç
 - `docs/decisions/PUBLIC-SINGLE-WORKSPACE-MODE.md`
 - `src/lib/security/workspace.ts`
 - `next.config.ts`
-- Ambiente de preview publicado em KZ-E08-T01.
+- Preview environment published in KZ-E08-T01.
 
 ## Deliverables
-- Exposição aceita validada em HTTPS e configuração endurecida para produção.
+- Accepted exposure validated over HTTPS and hardened configuration for production.
 
 ## Subtasks
-- [ ] Confirmar que leitura e mutação públicas atuam somente no workspace fixo.
-- [ ] Testar que `workspace_id` fornecido pelo cliente não altera ownership.
-- [ ] Verificar cache privado, indexação, headers, logs e erros.
-- [ ] Confirmar validação de origem, entrada e revisão nas mutações.
-- [ ] Confirmar que credenciais, fontes `DO_NOT_PUBLISH` e dados de outros ambientes não são expostos.
+- [ ] Confirm that public reads and mutations act only on the fixed workspace.
+- [ ] Test that a client-supplied `workspace_id` does not change ownership.
+- [ ] Verify private cache, indexing, headers, logs, and errors.
+- [ ] Confirm origin, input, and revision validation in mutations.
+- [ ] Confirm that credentials, `DO_NOT_PUBLISH` sources, and data from other environments are not exposed.
 
 ## Validation
-- Executar smoke de leitura e mutação pública contra a URL de preview e inspecionar o workspace persistido.
+- Run a public read and mutation smoke test against the preview URL and inspect the persisted workspace.
 
 ## Acceptance criteria
-- [ ] O comportamento público corresponde ao risco aceito, sem alegar autenticação, e nenhum cliente consegue selecionar outro workspace.
+- [ ] The public behavior matches the accepted risk, without claiming authentication, and no client can select another workspace.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E04-T02]
 ---
 
-# Criar fronteira server-only
+# Create the server-only boundary
 
 ## Objective
-Impedir que acesso a dados, segredos e regras privilegiadas vaze para o cliente.
+Prevent data access, secrets, and privileged rules from leaking to the client.
 
 ## Inputs
 - `.env.example`
@@ -28,33 +28,33 @@ Impedir que acesso a dados, segredos e regras privilegiadas vaze para o cliente.
 - `tsconfig.json`
 
 ## Deliverables
-- Boundary server-only e validação mínima de ambiente definidos no guia.
+- Server-only boundary and minimal environment validation defined in the guide.
 
 ## Subtasks
-- [x] Isolar acesso a ambiente e dados.
-- [x] Retornar projeções mínimas para renderização.
-- [x] Impedir import por Client Components.
-- [x] Definir erros discriminados mínimos.
+- [x] Isolate environment and data access.
+- [x] Return minimal projections for rendering.
+- [x] Prevent imports by Client Components.
+- [x] Define minimal discriminated errors.
 
 ## Validation
-- Build falha para import indevido no cliente.
-- Nenhum segredo aparece no bundle.
+- Build fails on an improper import in the client.
+- No secret appears in the bundle.
 
 ## Acceptance criteria
-- [x] Entrada de dados possui um único boundary.
+- [x] Data entry has a single boundary.
 
 ## Result
-Concluída em 2026-09-10 com uma fronteira server-only única para configuração e resolução do workspace pessoal fixo.
+Completed on 2026-09-10 with a single server-only boundary for configuration and for resolving the fixed personal workspace.
 
-- `APP_ENV` e `PERSONAL_WORKSPACE_ID` são validados no servidor com Zod, sem antecipar banco, sessão ou autenticação.
-- Erros de configuração usam código discriminado e informam somente nomes de variáveis inválidas.
-- O contexto mínimo de workspace é derivado sem entrada controlada pelo cliente e retornado como objeto imutável.
-- Testes unitários cobrem validação, ausência, cache, sanitização e resolução do workspace.
-- Um Client Component temporário confirmou que imports dessa árvore fazem o build falhar; removido o probe, o build de produção voltou a passar.
-- Instalação congelada, formato, lint, tipos, testes, cobertura, build, auditoria de dependências, diff e busca por segredos foram validados localmente.
+- `APP_ENV` and `PERSONAL_WORKSPACE_ID` are validated on the server with Zod, without anticipating database, session, or authentication.
+- Configuration errors use a discriminated code and report only the names of invalid variables.
+- The minimal workspace context is derived without client-controlled input and returned as an immutable object.
+- Unit tests cover validation, absence, caching, sanitization, and workspace resolution.
+- A temporary Client Component confirmed that imports from this tree make the build fail; after the probe was removed, the production build passed again.
+- Frozen install, format, lint, types, tests, coverage, build, dependency audit, diff, and secret search were validated locally.
 
-## Consolidação documental de 12/11/2026
+## Documentation consolidation of 12/11/2026
 
-Prova negativa server-only e validação de ambiente permanecem evidência; regras permanentes estão na arquitetura.
+The server-only negative proof and environment validation remain evidence; permanent rules are in the architecture.
 
-[Pacote original integral](https://github.com/fradelli/nextjs-kaizen-app/blob/fd2269d2eaa7d55cfea724631f12fa6505d37b32/docs/implementation/tasks/E04-T03.md), SHA-256 `fc7dacd7e0d82458fe9a6625703e11efae6fca4a3de25d862b459754f4c70540`. Comandos, critérios, riscos e rollback registram aquela base e não são receita para reinstalar a aplicação atual. Pendências não viraram aprovações nesta consolidação.
+[Full original package](https://github.com/fradelli/nextjs-kaizen-app/blob/fd2269d2eaa7d55cfea724631f12fa6505d37b32/docs/implementation/tasks/E04-T03.md), SHA-256 `fc7dacd7e0d82458fe9a6625703e11efae6fca4a3de25d862b459754f4c70540`. Commands, criteria, risks, and rollback record that baseline and are not a recipe for reinstalling the current application. Open items were not turned into approvals in this consolidation.

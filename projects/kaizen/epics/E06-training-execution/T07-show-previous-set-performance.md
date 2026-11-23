@@ -6,14 +6,14 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T03]
 ---
 
-# Mostrar a última execução de cada série
+# Show the last execution of each set
 
 ## Objective
-Dar referência de progressão ao mostrar, na série atual, o resultado da série de mesmo número na última execução concluída do mesmo exercício.
+Give a progression reference by showing, on the current set, the result of the set with the same number in the last completed execution of the same exercise.
 
-## Contexto conhecido
+## Known context
 
-A KZ-E06-T03 persiste exercícios e séries por atividade, mas a leitura do dia consulta somente as execuções daquela data. A identidade estável do exercício entre versões do plano precisa ser confirmada, sem usar apenas o nome.
+KZ-E06-T03 persists exercises and sets per activity, but the day read queries only the executions of that date. The stable identity of the exercise across plan versions needs to be confirmed, without relying on the name alone.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -24,7 +24,7 @@ A KZ-E06-T03 persiste exercícios e séries por atividade, mas a leitura do dia 
 - `src/features/training/ui/components/training-day-page/components/training-session/components/training-exercise/components/training-local-exercise-editor/training-local-exercise-editor.tsx`
 
 ## Deliverables
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Escopo e impactos».
+Not recorded in the original version of this task; equivalent content in the section "Scope and impacts".
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -32,34 +32,34 @@ Not recorded in the original version of this task.
 ## Validation
 Not recorded in the original version of this task.
 
-## Comportamento esperado
+## Expected behavior
 
-- A série 1 mostra a série 1 da última execução concluída do mesmo exercício; a série 2 mostra a série 2, e assim por diante.
-- A referência é informativa: o usuário pode manter, melhorar ou reduzir o resultado.
-- Sem histórico ou sem série correspondente, não há valor inventado.
-- Exercícios sem carga mostram apenas as medidas aplicáveis.
+- Set 1 shows set 1 of the last completed execution of the same exercise; set 2 shows set 2, and so on.
+- The reference is informational: the user can keep, improve, or reduce the result.
+- With no history or no matching set, no value is invented.
+- Exercises without load show only the applicable measures.
 
-## Escopo e impactos
+## Scope and impacts
 
-- Investigar a identidade canônica de exercícios entre planos, versões e sessões; avaliar reuso de `ExerciseDefinition` existente antes de propor outra entidade.
-- Definir consulta eficiente, ordenação por conclusão real, ownership do workspace e projeção mínima para a UI.
-- Cobrir mudança na quantidade de séries, séries zeradas, atividade excluída e mais de uma sessão no mesmo dia.
+- Investigate the canonical identity of exercises across plans, versions, and sessions; evaluate reusing the existing `ExerciseDefinition` before proposing another entity.
+- Define an efficient query, ordering by actual completion, workspace ownership, and a minimal projection for the UI.
+- Cover a change in the number of sets, zeroed sets, a deleted activity, and more than one session on the same day.
 
-## Fora de escopo
+## Out of scope
 
-- Exigir progressão, alterar prescrições ou criar gráficos históricos.
-- Refatorar todo o catálogo de exercícios sem necessidade comprovada.
+- Require progression, change prescriptions, or create historical charts.
+- Refactor the entire exercise catalog without proven need.
 
-## Decisões antes da implementação
+## Decisions before implementation
 
-- Definir se a última execução com série zerada conta como referência ou se a busca recua para a última série efetivamente realizada.
-- Confirmar a chave estável do exercício e o desempate de execuções no mesmo dia.
-- Reanalisar o código vigente, apresentar solução e trade-offs e aguardar aprovação explícita antes de implementar.
+- Define whether the last execution with a zeroed set counts as a reference or whether the search goes back to the last set actually performed.
+- Confirm the stable key of the exercise and the tie-break for executions on the same day.
+- Reanalyze the current code, present a solution and trade-offs, and wait for explicit approval before implementing.
 
 ## Acceptance criteria
-- [ ] A referência por número de série é correta entre versões compatíveis e não vaza dados de outro workspace.
-- [ ] Casos sem histórico, com séries diferentes e sem carga são claros e testados.
-- [ ] A consulta não torna a página diária desnecessariamente lenta.
+- [ ] The reference by set number is correct across compatible versions and does not leak data from another workspace.
+- [ ] Cases with no history, with different sets, and without load are clear and tested.
+- [ ] The query does not make the daily page unnecessarily slow.
 
 ## Result
-Escopo incorporado à KZ-E06-T26 com correspondência por tipo (aquecimento/trabalho), entre treinos, aprovada pelo usuário. Não implementar outra referência paralela.
+Scope incorporated into KZ-E06-T26 with matching by type (warm-up/work), across workouts, approved by the user. Do not implement another parallel reference.

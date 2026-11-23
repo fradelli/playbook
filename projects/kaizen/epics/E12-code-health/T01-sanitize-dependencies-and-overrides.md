@@ -6,43 +6,43 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E00-T13]
 ---
 
-# Sanear dependências e overrides
+# Sanitize dependencies and overrides
 
 ## Objective
-Garantir que toda dependência use versão exata e que todo override do pnpm ainda corresponda a um pacote resolvido e a um motivo vigente.
+Ensure every dependency uses an exact version and every pnpm override still matches a resolved package and a current reason.
 
-## Contexto
+## Context
 
-Achados da auditoria de 2026-11-23:
+Findings from the 2026-11-23 audit:
 
-- `lucide-react` usa `^1.71.0`, contrariando `save-exact=true` e a regra de versão exata da arquitetura.
-- `pnpm-workspace.yaml` tem overrides com seletor `@prisma/config@7.10.0` e `prisma@7.10.0`, mas o lockfile resolve a 7.10.1; `mysql2` resolve para 3.24.4, e não para o 3.23.1 do override.
-- `minimumReleaseAgeExclude` cita `@fradelli/ui@0.3.0 || 0.6.0`, enquanto o pacote vem de `vendor/`.
+- `lucide-react` uses `^1.71.0`, which contradicts `save-exact=true` and the architecture rule of exact versions.
+- `pnpm-workspace.yaml` has overrides with the selectors `@prisma/config@7.10.0` and `prisma@7.10.0`, but the lockfile resolves 7.10.1; `mysql2` resolves to 3.24.4, not to the 3.23.1 of the override.
+- `minimumReleaseAgeExclude` mentions `@fradelli/ui@0.3.0 || 0.6.0`, while the package comes from `vendor/`.
 
 ## Inputs
-- `package.json` — `dependencies` e `devDependencies`.
-- `pnpm-workspace.yaml` — `overrides` e `minimumReleaseAgeExclude`.
-- `pnpm-lock.yaml` — versões resolvidas.
-- `docs/architecture/TARGET-ARCHITECTURE.md` — seção "Stack escolhida".
+- `package.json` — `dependencies` and `devDependencies`.
+- `pnpm-workspace.yaml` — `overrides` and `minimumReleaseAgeExclude`.
+- `pnpm-lock.yaml` — resolved versions.
+- `docs/architecture/TARGET-ARCHITECTURE.md` — section "Stack escolhida" (Chosen stack).
 
 ## Deliverables
-- `package.json` só com versões exatas.
-- `pnpm-workspace.yaml` com overrides que casam com o lockfile atual, cada um com o aviso de segurança correspondente, ou removidos quando o pacote pai já corrige.
-- `minimumReleaseAgeExclude` atualizado.
+- `package.json` with exact versions only.
+- `pnpm-workspace.yaml` with overrides that match the current lockfile, each with its corresponding security advisory, or removed when the parent package already fixes the issue.
+- Updated `minimumReleaseAgeExclude`.
 
 ## Subtasks
-- [ ] Fixar a versão do `lucide-react`.
-- [ ] Conferir cada override contra o lockfile e o aviso de segurança.
-- [ ] Remover ou atualizar overrides sem efeito.
-- [ ] Atualizar exclusões de idade mínima.
+- [ ] Pin the `lucide-react` version.
+- [ ] Check each override against the lockfile and the security advisory.
+- [ ] Remove or update overrides that have no effect.
+- [ ] Update the minimum-age exclusions.
 
 ## Validation
-- `pnpm install --frozen-lockfile` e `pnpm audit --audit-level=moderate` passam.
-- `pnpm why <pacote>` confirma a versão aplicada por cada override restante.
+- `pnpm install --frozen-lockfile` and `pnpm audit --audit-level=moderate` pass.
+- `pnpm why <package>` confirms the version applied by each remaining override.
 
 ## Acceptance criteria
-- [ ] Nenhuma dependência direta usa intervalo de versão.
-- [ ] Nenhum override fica sem efeito ou sem motivo registrado.
+- [ ] No direct dependency uses a version range.
+- [ ] No override is left without effect or without a recorded reason.
 
 ## Result
-Não iniciada.
+Not started.

@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T03]
 ---
 
-# Exibir proveniência e histórico
+# Show provenance and history
 
 ## Objective
-Tornar visíveis a versão ativa, a origem e o histórico documental do treino.
+Make the active version, the origin, and the documentary history of the workout visible.
 
 ## Inputs
 - `docs/history/implementation/E06.md`
@@ -20,19 +20,19 @@ Tornar visíveis a versão ativa, a origem e o histórico documental do treino.
 - `src/features/training/`
 
 ## Deliverables
-- Metadados de proveniência e navegação histórica.
+- Provenance metadata and historical navigation.
 
 ## Subtasks
-- [ ] Exibir versão e data de atualização.
-- [ ] Identificar conteúdo original e conteúdo adaptado.
-- [ ] Permitir consulta de versões sem alterar o plano ativo.
-- [ ] Evitar exposição desnecessária de dados pessoais.
+- [ ] Show the version and update date.
+- [ ] Identify original content and adapted content.
+- [ ] Allow browsing versions without changing the active plan.
+- [ ] Avoid unnecessary exposure of personal data.
 
 ## Validation
-- Comparar metadados exibidos com a importação.
+- Compare the displayed metadata with the import.
 
 ## Acceptance criteria
-- [ ] A origem do que é mostrado pode ser auditada.
+- [ ] The origin of what is shown can be audited.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

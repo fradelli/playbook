@@ -6,31 +6,31 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E02-T02]
 ---
 
-# Revisar plano alimentar
+# Review nutrition plan
 
 ## Objective
-Classificar o conteúdo original diante da rotina atual sem falsa precisão ou conduta clínica indevida.
+Classify the original content against the current routine without false precision or improper clinical conduct.
 
 ## Inputs
-- Original preservado.
-- Perfil, agenda, carga e unknowns.
-- Evidência ou validação profissional disponível.
+- Preserved original.
+- Profile, schedule, load, and unknowns.
+- Available professional evidence or validation.
 
 ## Deliverables
-- Revisão estruturada em `data/nutrition/reviews/`.
-- Resumo humano em `docs/history/`.
+- Structured review in `data/nutrition/reviews/`.
+- Human summary in `docs/history/`.
 
 ## Subtasks
-- [x] Classificar manter, ajustar, remover ou esclarecer.
-- [x] Registrar riscos e dependências profissionais.
-- [x] Diferenciar prescrito, praticado e proposto.
-- [x] Não diagnosticar baixa disponibilidade energética.
+- [x] Classify as keep, adjust, remove, or clarify.
+- [x] Record professional risks and dependencies.
+- [x] Differentiate prescribed, practiced, and proposed.
+- [x] Do not diagnose low energy availability.
 
 ## Validation
-- Toda recomendação tem fonte, motivo e status de validação.
+- Every recommendation has a source, a reason, and a validation status.
 
 ## Acceptance criteria
-- [x] A revisão não se apresenta como plano aprovado.
+- [x] The review does not present itself as an approved plan.
 
 ## Result
-Revisão completa publicada privadamente no commit `35decd378d29e880ffcc1a0361af31e1b2083173`, com 23 decisões: 7 `keep`, 6 `adjust`, 2 `remove` e 8 `clarify`. Nenhum item foi aprovado como plano vigente. O Kaizen registra somente metadados e resumo sanitizados; KZ-E02-T04 depende agora de aprovação explícita das decisões que podem entrar na proposta.
+Complete review published privately at commit `35decd378d29e880ffcc1a0361af31e1b2083173`, with 23 decisions: 7 `keep`, 6 `adjust`, 2 `remove`, and 8 `clarify`. No item was approved as the current plan. Kaizen records only sanitized metadata and summary; KZ-E02-T04 now depends on explicit approval of the decisions that may enter the proposal.

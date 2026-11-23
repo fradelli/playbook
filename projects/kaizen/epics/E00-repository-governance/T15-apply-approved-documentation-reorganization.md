@@ -6,40 +6,40 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E00-T14]
 ---
 
-# Aplicar a reorganização documental aprovada
+# Apply the approved documentation reorganization
 
 ## Objective
-Executar o plano aprovado na KZ-E00-T14, preservando IDs, histórico e links.
+Execute the plan approved in KZ-E00-T14, preserving IDs, history, and links.
 
 ## Inputs
-- Plano aprovado entregue pela KZ-E00-T14 em `docs/plans/` — mapa de movimentação, convenção de nomes e índice único.
-- `docs/DOCUMENTATION-STANDARD.md` — padrão a substituir pelo aprovado.
-- `scripts/validate-documentation.mjs` — validador a ajustar.
-- `scripts/build-roadmap-view.mjs` — leitura de documentos pela visualização local.
+- Approved plan delivered by KZ-E00-T14 in `docs/plans/` — move map, naming convention, and single index.
+- `docs/DOCUMENTATION-STANDARD.md` — standard to be replaced by the approved one.
+- `scripts/validate-documentation.mjs` — validator to adjust.
+- `scripts/build-roadmap-view.mjs` — reading of documents by the local view.
 
 ## Deliverables
-- Documentos movidos, mesclados ou arquivados conforme o mapa.
-- `docs/DOCUMENTATION-STANDARD.md` e o índice único atualizados.
-- `scripts/validate-documentation.mjs` e testes cobrindo a nova convenção.
-- `CLAUDE.md` e skills do projeto apontando para o núcleo normativo.
-- Pastas de modelos consolidadas conforme o plano.
+- Documents moved, merged, or archived according to the map.
+- `docs/DOCUMENTATION-STANDARD.md` and the single index updated.
+- `scripts/validate-documentation.mjs` and tests covering the new convention.
+- `CLAUDE.md` and project skills pointing to the normative core.
+- Template folders consolidated according to the plan.
 
 ## Subtasks
-- [ ] Mover arquivos com `git mv` para preservar o histórico.
-- [ ] Atualizar links relativos e o índice.
-- [ ] Ajustar o validador e seus testes.
-- [ ] Atualizar o contrato do agente e as skills.
-- [ ] Conferir a visualização local do roadmap.
+- [ ] Move files with `git mv` to preserve history.
+- [ ] Update relative links and the index.
+- [ ] Adjust the validator and its tests.
+- [ ] Update the agent contract and the skills.
+- [ ] Check the local roadmap view.
 
 ## Validation
-- `pnpm docs:check` e `pnpm test:ci-scripts` passam.
-- `pnpm roadmap:view` gera a página sem links quebrados.
-- Nenhum ID de tarefa, decisão ou plano mudou.
+- `pnpm docs:check` and `pnpm test:ci-scripts` pass.
+- `pnpm roadmap:view` generates the page without broken links.
+- No task, decision, or plan ID changed.
 
 ## Acceptance criteria
-- [ ] A estrutura de `docs/` segue a taxonomia aprovada.
-- [ ] Existe um único índice de documentos.
-- [ ] O validador impede a volta dos problemas de nome e organização tratados.
+- [ ] The structure of `docs/` follows the approved taxonomy.
+- [ ] There is a single document index.
+- [ ] The validator prevents the return of the naming and organization problems addressed.
 
 ## Result
-Não iniciada.
+Not started.

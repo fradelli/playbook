@@ -1,23 +1,23 @@
-# Tarefa selecionada
+# Active task
 
-- **Tarefa:** KZ-E10-T09 — Concluir adoção do design system Mira
+- **Task:** KZ-E10-T09 — Complete the Mira design system adoption
 - **Status:** IN_PROGRESS
-- **Entrada principal:** `roadmap/epics/E10-portfolio-visual-alignment/T09-complete-mira-adoption.md`.
-- **Autorização:** pacote de ajustes do executor e diálogos autorizado em 13/11/2026. Aquecimentos excluídos do resumo e carga unilateral por lado.
-- **Próxima ação da tarefa selecionada:** revisar o pacote registrado em `docs/plans/design-system/AJUSTES-DO-EXECUTOR-MIRA.md` e continuar as pendências globais da migração Mira. Build, 64 testes direcionados, 18 integrações e conferência de navegador em 1440/390/320 px são evidências da entrega original, não verificações refeitas nesta reorganização. KZ-E00-T08 permanece concluída.
+- **Main input:** `roadmap/epics/E10-portfolio-visual-alignment/T09-complete-mira-adoption.md`.
+- **Authorization:** package of executor and dialog adjustments authorized on 13/11/2026. Warm-ups are excluded from the summary, and load is unilateral per side.
+- **Next action:** review the package recorded in `docs/plans/design-system/AJUSTES-DO-EXECUTOR-MIRA.md` and continue the global Mira migration backlog. The build, 64 targeted tests, 18 integration tests, and browser checks at 1440/390/320 px are evidence from the original delivery, not checks redone in this reorganization. KZ-E00-T08 remains done.
 
-## Retomada e trabalhos paralelos
+## Resumption and parallel work
 
-- Base da reorganização: `27536ef`, integração da agenda pela PR #86; histórico local também registra a integração Mira em `b37c215` pela PR #84. Isso não encerra automaticamente a KZ-E10-T09 nem comprova release do design system ou produção.
-- KZ-E00-T08 a KZ-E00-T11 integradas em `developer` pelas PRs #87 a #90 (até `e0834f3`): organização e padronização documental e a [visualização local do roadmap](epics/E00-repository-governance/T11-apply-design-system-to-roadmap-view.md), aberta com `pnpm roadmap:view`. A reorganização documental não inicia a implementação do drag and drop.
-- `@fradelli/ui` vem do pacote local `vendor/fradelli-ui-mira-table-progress.tgz`, gerado de um commit do design system (`698b828`) sem versão publicada. Trocar pela versão publicada quando existir.
-- App próprio de roadmap e central multiprojeto: proposta sem tarefa nem plano registrados. Não iniciar sem tarefa aprovada.
-- KZ-E06-T26 conserva os commits e resultados originais na própria tarefa. Não repetir implementação a partir dos checkpoints antigos.
-- O plano de [drag and drop](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) está vinculado ao [KZ-E11](epics/E11-schedule-evolution/README.md), sem iniciar sua execução. A [organização documental](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/REORGANIZATION-2026-11.md) preserva status e dependências existentes.
-- KZ-E06-T23: implementação entregue, jornada manual completa pendente. KZ-E06-T14: teclado virtual/área segura em aparelho físico pendentes.
-- KZ-E06-T22 e KZ-E06-T25 permanecem concluídas; detalhes nas respectivas tarefas.
-- Auditoria técnica de 2026-11-23 sobre `developer` (`364c71f`) registrada como KZ-E00-T12 a KZ-E00-T16 e no [KZ-E12](epics/E12-code-health/README.md). KZ-E00-T12 concluída: o agente suportado passa a ser o Claude Code, com contratos em `CLAUDE.md` e branches `claude/<ID>-descricao`. KZ-E00-T16 concluída: o CI roda i18n e formatação do Prisma, e a cobertura considera todo `src/`. KZ-E00-T13 e KZ-E00-T14 estão `READY`. Nenhuma delas substitui a tarefa selecionada sem decisão do responsável.
+- Reorganization baseline: `27536ef`, the schedule integration from PR #86; the local history also records the Mira integration in `b37c215` from PR #84. This does not automatically close KZ-E10-T09 or prove a design system release or production.
+- KZ-E00-T08 to KZ-E00-T11 were integrated into `developer` by PRs #87 to #90 (up to `e0834f3`): documentation organization and standardization, and the [local roadmap view](epics/E00-repository-governance/T11-apply-design-system-to-roadmap-view.md), opened with `pnpm roadmap:view`. The documentation reorganization does not start the drag and drop implementation.
+- `@fradelli/ui` comes from the local package `vendor/fradelli-ui-mira-table-progress.tgz`, built from a design system commit (`698b828`) with no published version. Replace it with the published version when one exists.
+- Own roadmap app and multi-project hub: a proposal with no registered task or plan. Do not start without an approved task.
+- KZ-E06-T26 keeps the original commits and results in the task itself. Do not repeat the implementation from the old checkpoints.
+- The [drag and drop](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) plan is linked to [KZ-E11](epics/E11-schedule-evolution/README.md), without starting its execution. The [documentation reorganization](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/REORGANIZATION-2026-11.md) preserves existing statuses and dependencies.
+- KZ-E06-T23: implementation delivered, full manual journey pending. KZ-E06-T14: virtual keyboard and safe area on a physical device pending.
+- KZ-E06-T22 and KZ-E06-T25 remain done; see their respective tasks for details.
+- Technical audit of 2026-11-23 on `developer` (`364c71f`) recorded as KZ-E00-T12 to KZ-E00-T16 and in [KZ-E12](epics/E12-code-health/README.md). KZ-E00-T12 is done: the supported agent is now Claude Code, with contracts in `CLAUDE.md` and branches `claude/<ID>-descricao`. KZ-E00-T16 is done: CI runs i18n and Prisma formatting, and coverage covers all of `src/`. KZ-E00-T13 and KZ-E00-T14 are `READY`. None of them replaces the active task without a decision from the owner.
 
-O [diário operacional](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/worklog/index.md) registra sessões; seus estados não substituem o status canônico do roadmap.
+The [operational log](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/worklog/index.md) records sessions; its states do not replace the canonical roadmap status.
 
-As [próximas tarefas da agenda antes do drag and drop](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AJUSTES-DA-AGENDA.md#próximas-tarefas-antes-do-drag-and-drop) estão registradas com critérios de aceite.
+The [next schedule tasks before drag and drop](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AJUSTES-DA-AGENDA.md#próximas-tarefas-antes-do-drag-and-drop) are recorded with acceptance criteria.

@@ -6,42 +6,42 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E12-T05]
 ---
 
-# Dividir o repositório de treino e mover as regras para o domínio
+# Split the workout repository and move the rules to the domain
 
 ## Objective
-Reduzir `prisma-training-repository.ts` a persistência e mapeamento, com as regras de negócio no domínio e módulos coesos por responsabilidade.
+Reduce `prisma-training-repository.ts` to persistence and mapping, with the business rules in the domain and modules that are cohesive by responsibility.
 
-## Contexto
+## Context
 
-Achados da auditoria de 2026-11-23:
+Findings from the 2026-11-23 audit:
 
-- `src/features/training/data/prisma-training-repository.ts` tem 1641 linhas; `completeTrainingActivityFromDraft` sozinha tem cerca de 340.
-- Regras de negócio estão na camada de dados: `validateActivitySchedule`, `validateCompleteExerciseSetInput`, `isSetResultPerformed` e `hasSetExecutionMeasurement`.
+- `src/features/training/data/prisma-training-repository.ts` has 1641 lines; `completeTrainingActivityFromDraft` alone has about 340.
+- Business rules are in the data layer: `validateActivitySchedule`, `validateCompleteExerciseSetInput`, `isSetResultPerformed`, and `hasSetExecutionMeasurement`.
 
 ## Inputs
-- `docs/architecture/TARGET-ARCHITECTURE.md` — seções "Semântica e legibilidade do código", "Boundaries" e "Transações e concorrência".
-- `src/features/training/data/prisma-training-repository.ts` — arquivo a dividir.
-- `src/features/training/domain/` — destino das regras.
-- `tests/integration/training-mutations.test.ts` — rede de proteção.
+- `docs/architecture/TARGET-ARCHITECTURE.md` — sections "Semântica e legibilidade do código" (Code semantics and readability), "Boundaries", and "Transações e concorrência" (Transactions and concurrency).
+- `src/features/training/data/prisma-training-repository.ts` — file to split.
+- `src/features/training/domain/` — destination of the rules.
+- `tests/integration/training-mutations.test.ts` — safety net.
 
 ## Deliverables
-- Regras de negócio em módulos de `src/features/training/domain/` com testes unitários.
-- Repositório dividido em módulos de leitura, mutação e mapeamento, mantendo a interface `TrainingRepository`.
-- Funções longas quebradas em etapas nomeadas.
+- Business rules in modules under `src/features/training/domain/` with unit tests.
+- Repository split into read, mutation, and mapping modules, keeping the `TrainingRepository` interface.
+- Long functions broken into named steps.
 
 ## Subtasks
-- [ ] Cobrir com testes o comportamento atual antes de mover.
-- [ ] Mover as regras para o domínio.
-- [ ] Separar leitura, mutação e mapeamento.
-- [ ] Quebrar `completeTrainingActivityFromDraft` e `findTrainingDay`.
+- [ ] Cover the current behavior with tests before moving anything.
+- [ ] Move the rules to the domain.
+- [ ] Separate read, mutation, and mapping.
+- [ ] Break up `completeTrainingActivityFromDraft` and `findTrainingDay`.
 
 ## Validation
-- `pnpm test`, `pnpm test:integration` e `pnpm structure:check` passam sem alterar asserções de comportamento.
-- Nenhum arquivo de `src/features/training/data/` passa de 500 linhas.
+- `pnpm test`, `pnpm test:integration`, and `pnpm structure:check` pass without changing behavior assertions.
+- No file in `src/features/training/data/` exceeds 500 lines.
 
 ## Acceptance criteria
-- [ ] A camada de dados não contém regra de negócio.
-- [ ] A interface pública do repositório e o comportamento ficam iguais.
+- [ ] The data layer contains no business rule.
+- [ ] The repository's public interface and behavior stay the same.
 
 ## Result
-Não iniciada.
+Not started.

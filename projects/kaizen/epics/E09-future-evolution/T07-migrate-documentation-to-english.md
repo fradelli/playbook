@@ -6,11 +6,11 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E09-T05]
 ---
 
-# Migrar documentação e entrega para inglês
+# Migrate documentation and delivery to English
 
 ## Objective
-Tornar inglês o idioma operacional do repositório para programadores, agentes e
-revisores, sem reescrever evidência histórica imutável.
+Make English the operating language of the repository for developers, agents, and
+reviewers, without rewriting immutable historical evidence.
 
 ## Inputs
 - `roadmap/epics/E09-future-evolution/T05-design-i18n-and-english-policy.md`
@@ -22,29 +22,29 @@ revisores, sem reescrever evidência histórica imutável.
 - `CHANGELOG.md`
 
 ## Deliverables
-- Instruções, documentação ativa, roadmap e templates de entrega em inglês.
-- Mensagens de CLI, testes e validadores voltadas ao programador em inglês.
-- Regra automatizada proporcional para evitar nova documentação em português.
-- Política explícita para preservar commits, PRs fechadas e migrations históricas.
+- Instructions, active documentation, roadmap, and delivery templates in English.
+- Developer-facing CLI messages, tests, and validators in English.
+- Proportional automated rule to prevent new documentation in Portuguese.
+- Explicit policy to preserve commits, closed PRs, and historical migrations.
 
 ## Subtasks
-- [ ] Inventariar documentação ativa, histórica e gerada antes de traduzir.
-- [ ] Traduzir fontes normativas antes dos documentos dependentes.
-- [ ] Atualizar template e convenções de título/descrição de PR.
-- [ ] Traduzir descrições de testes e mensagens operacionais mantidas no código.
-- [ ] Criar allowlist pequena para nomes próprios e conteúdo preservado.
+- [ ] Inventory active, historical, and generated documentation before translating.
+- [ ] Translate normative sources before the documents that depend on them.
+- [ ] Update the template and the PR title/description conventions.
+- [ ] Translate test descriptions and operational messages kept in the code.
+- [ ] Create a small allowlist for proper names and preserved content.
 
 ## Validation
-- Validar links, IDs, dependências, exemplos, comandos e ausência de instruções contraditórias.
+- Validate links, IDs, dependencies, examples, commands, and absence of contradictory instructions.
 
 ## Acceptance criteria
-- [ ] Um programador que lê inglês consegue operar o repositório sem depender de documentação em português.
-- [ ] Novas PRs e documentos seguem inglês por padrão.
-- [ ] Evidência histórica preservada está identificada e não foi reescrita.
+- [ ] A developer who reads English can operate the repository without depending on Portuguese documentation.
+- [ ] New PRs and documents follow English by default.
+- [ ] Preserved historical evidence is identified and was not rewritten.
 
-## Fora de escopo
+## Out of scope
 
-- Editar descrições de PRs fechadas, mensagens de commits existentes ou migrations aplicadas.
+- Editing descriptions of closed PRs, existing commit messages, or applied migrations.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

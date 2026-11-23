@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E10-T02]
 ---
 
-# Corrigir navegação e padronizar ações dos diálogos
+# Fix navigation and standardize dialog actions
 
 ## Objective
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Escopo».
+Not recorded in the original version of this task; equivalent content is in the "Scope" section.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -28,18 +28,18 @@ Not recorded in the original version of this task.
 Not recorded in the original version of this task.
 
 ## Acceptance criteria
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Aceite».
+Not recorded in the original version of this task; equivalent content is in the "Acceptance" section.
 
-## Escopo
+## Scope
 
-Navegação acima do vidro do cabeçalho. Ações destrutivas à esquerda em vermelho,
-ação principal à direita; foco inicial seguro na confirmação de exclusão.
-Preservar validação, cache, envio e regras de negócio.
+Navigation above the header glass. Destructive actions on the left in red,
+primary action on the right; safe initial focus on the delete confirmation.
+Preserve validation, cache, submission, and business rules.
 
-## Aceite
+## Acceptance
 
-- [x] Ordem, cor e foco verificados em desktop e celular.
-- [x] Testes afetados, tipos e lint aprovados.
+- [x] Order, color, and focus verified on desktop and mobile.
+- [x] Affected tests, types, and lint passed.
 
 ## Result
-Implementado localmente: exclusão/descarte à esquerda em vermelho, confirmação à direita e foco seguro em Manter atividade. Rodapé compartilhado usa duas colunas para preservar as posições em 320px. Navegador validado em 320/390/1440px sem executar exclusões. 45 testes, lint, estrutura, tipos e build aprovados. Alterações ainda não commitadas.
+Implemented locally: delete/discard on the left in red, confirmation on the right, and safe focus on Manter atividade (Keep activity). The shared footer uses two columns to preserve positions at 320px. Browser validated at 320/390/1440px without performing deletions. 45 tests, lint, structure, types, and build passed. Changes not yet committed.

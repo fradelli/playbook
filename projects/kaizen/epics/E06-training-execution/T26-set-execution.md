@@ -6,11 +6,11 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T03, KZ-E09-T09]
 ---
 
-# Execução independente de séries e histórico
+# Independent set execution and history
 
-## Autorização
+## Authorization
 
-Implementação autorizada pelo usuário em 29/10/2026, com branch criada a partir de developer atualizada.
+Implementation authorized by the user on 29/10/2026, with a branch created from an updated developer.
 
 ## Objective
 Not recorded in the original version of this task.
@@ -27,12 +27,12 @@ Not recorded in the original version of this task.
 - `src/features/training/ui/components/training-day-page/components/training-session/components/training-exercise/training-exercise.tsx`
 
 ## Deliverables
-- Séries independentes, confirmação local, aquecimentos e séries adicionais.
-- Descanso local em mobile e desktop, ajustes de 15 segundos e pular.
-- Referência histórica por tipo, sem copiar valores.
-- Layout mobile compacto, dicas em dialog e toggle de finalização preservado.
-- Faixa e texto de estado; verde exige todas as séries realizadas.
-- Compatibilidade de registros e rascunhos existentes e português/inglês.
+- Independent sets, local confirmation, warm-up sets, and additional sets.
+- Local rest on mobile and desktop, 15-second adjustments, and skip.
+- Historical reference by type, without copying values.
+- Compact mobile layout, tips in a dialog, and the finish toggle preserved.
+- Status strip and text; green requires all sets to be performed.
+- Compatibility with existing records and drafts, and Portuguese/English.
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -41,14 +41,14 @@ Not recorded in the original version of this task.
 Not recorded in the original version of this task.
 
 ## Acceptance criteria
-- [x] Prescrição e histórico preservados; séries enviadas somente na finalização do treino.
-- [x] Migração aditiva e recuperação local verificadas.
-- [x] Estados completos, parciais e ausência de realização distinguíveis.
-- [x] Testes, tipos, lint, estrutura, build e acessibilidade/responsividade validados.
+- [x] Prescription and history preserved; sets sent only when the workout is finished.
+- [x] Additive migration and local recovery verified.
+- [x] Complete, partial, and not-performed states distinguishable.
+- [x] Tests, types, lint, structure, build, and accessibility/responsiveness validated.
 
 ## Result
-Implementação local na branch `codex/E06-T26-set-execution`, baseada em developer `ed89d0a`. Migração aditiva aplicada no banco local; essa descrição registra a validação local original. Posteriormente, a entrega foi registrada nos commits `d927367` (implementação) e `963074f` (revisão/PR #76). O estado remoto da PR não foi reconfirmado nesta revisão.
+Local implementation on the `codex/E06-T26-set-execution` branch, based on developer `ed89d0a`. Additive migration applied to the local database; this description records the original local validation. The delivery was later recorded in commits `d927367` (implementation) and `963074f` (review/PR #76). The remote state of the PR was not reconfirmed in this review.
 
-414 testes unitários/interface e 54 testes PostgreSQL aprovados; build, tipos, lint, estrutura, fronteiras, ícones e i18n aprovados. Conferência no navegador confirmou referência histórica real, grade mobile e início/controles de descanso. KZ-E06-T07/T08 incorporadas ou substituídas; mantidas como CANCELLED.
+414 unit/interface tests and 54 PostgreSQL tests passed; build, types, lint, structure, boundaries, icons, and i18n passed. A browser check confirmed the real historical reference, the mobile grid, and the start/rest controls. KZ-E06-T07/T08 incorporated or replaced; kept as CANCELLED.
 
-Limitação: teclado virtual, área segura e leitor de tela em dispositivo físico ainda precisam de validação manual. Desenho usa grade com referência em linha secundária para comportar medidas e campos no mobile; não reproduz pixel a pixel o Hevy.
+Limitation: virtual keyboard, safe area, and screen reader on a physical device still need manual validation. The design uses a grid with the reference on a secondary line to fit measurements and fields on mobile; it does not reproduce Hevy pixel by pixel.

@@ -1,22 +1,22 @@
-# KZ-E03 — Produto e arquitetura
+# KZ-E03 — Product and architecture
 
 ## Expected outcome
-Escopo P0, transição da fonte de verdade, operação e arquitetura aprovados em documentação, sem criar código.
+P0 scope, source-of-truth transition, operations, and architecture approved in documentation, without creating code.
 
 ## Out of scope
-- Scaffold, dependências, banco ou deploy.
-- Features além da execução essencial de treino e alimentação.
+- Scaffold, dependencies, database, or deploy.
+- Features beyond the essential execution of training and nutrition.
 
 ## Order
-| Tarefa | Depende de | Resultado |
+| Task | Depends on | Outcome |
 | --- | --- | --- |
-| KZ-E03-T01 | KZ-E01-T06, KZ-E02-T06 | Jornadas e aceite do P0 |
-| KZ-E03-T02 | KZ-E03-T01 | Transição arquivos/banco |
-| KZ-E03-T03 | KZ-E03-T01 | Privacidade e operação |
-| KZ-E03-T04 | KZ-E03-T02, KZ-E03-T03 | Arquitetura proporcional |
-| KZ-E03-T05 | KZ-E03-T04 | Guia copiável aprovado |
+| KZ-E03-T01 | KZ-E01-T06, KZ-E02-T06 | P0 journeys and acceptance |
+| KZ-E03-T02 | KZ-E03-T01 | Files/database transition |
+| KZ-E03-T03 | KZ-E03-T01 | Privacy and operations |
+| KZ-E03-T04 | KZ-E03-T02, KZ-E03-T03 | Proportional architecture |
+| KZ-E03-T05 | KZ-E03-T04 | Approved copyable guide |
 
 ## Closing criteria
-- [x] Nenhuma decisão técnica bloqueante permanece implícita.
-- [x] O guia de implementação possui ordem, arquivos e validações.
-- [x] KZ-E04-T01 está `READY`.
+- [x] No blocking technical decision remains implicit.
+- [x] The implementation guide has order, files, and validations.
+- [x] KZ-E04-T01 is `READY`.

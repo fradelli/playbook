@@ -6,15 +6,15 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E00-T04, KZ-E00-T06]
 ---
 
-# Registrar proveniência do legado
+# Register legacy provenance
 
 ## Objective
-Criar o manifesto que liga cada artefato futuro à sua origem verificável.
+Create the manifest that links each future artifact to its verifiable origin.
 
 ## Inputs
-- Decisão de manter `fradelli/kaizen-app` público.
-- Repositório privado `developerlucaslima/personal-performance`.
-- Commit-base remoto observado; o snapshot definitivo será escolhido em KZ-E01-T01.
+- Decision to keep `fradelli/kaizen-app` public.
+- Private repository `developerlucaslima/personal-performance`.
+- Remote base commit observed; the final snapshot will be chosen in KZ-E01-T01.
 
 ## Deliverables
 - `docs/migration/MIGRATION-MANIFEST.md`
@@ -22,20 +22,20 @@ Criar o manifesto que liga cada artefato futuro à sua origem verificável.
 - `docs/decisions/PUBLIC-REPOSITORY-AND-DATA-POLICY.md`
 
 ## Subtasks
-- [x] Registrar identificadores, remotes, branches e commits sem caminhos locais absolutos.
-- [x] Definir tratamentos `COPY`, `TRANSFORM`, `SUMMARIZE` e `SKIP`.
-- [x] Definir exposições `PUBLIC`, `REVIEW_REQUIRED` e `DO_NOT_PUBLISH`.
-- [x] Definir uso de SHA-256 para origem e destino.
-- [x] Registrar que o legado privado não será apagado.
+- [x] Record identifiers, remotes, branches, and commits without absolute local paths.
+- [x] Define the `COPY`, `TRANSFORM`, `SUMMARIZE`, and `SKIP` treatments.
+- [x] Define the `PUBLIC`, `REVIEW_REQUIRED`, and `DO_NOT_PUBLISH` exposures.
+- [x] Define the use of SHA-256 for source and destination.
+- [x] Record that the private legacy will not be deleted.
 
 ## Validation
-- Todo campo do manifesto tem definição inequívoca.
-- Nenhum dado pessoal é copiado nesta tarefa.
+- Every manifest field has an unambiguous definition.
+- No personal data is copied in this task.
 
 ## Acceptance criteria
-- [x] O manifesto pode receber uma linha por artefato sem nova decisão estrutural.
-- [x] A origem pode ser reproduzida por repositório, commit e caminho.
-- [x] Nenhum conteúdo do legado foi copiado nesta tarefa.
+- [x] The manifest can receive one row per artifact without a new structural decision.
+- [x] The origin can be reproduced by repository, commit, and path.
+- [x] No legacy content was copied in this task.
 
 ## Result
-Concluída em 2026-08-31. A fonte privada, o commit-base remoto, a política pública, os tratamentos, as classificações de exposição e as regras de integridade foram registrados sem copiar conteúdo do legado.
+Completed on 2026-08-31. The private source, the remote base commit, the public policy, the treatments, the exposure classifications, and the integrity rules were recorded without copying legacy content.

@@ -6,29 +6,29 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E03-T01]
 ---
 
-# Definir privacidade e operação
+# Define privacy and operations
 
 ## Objective
-Decidir acesso, hospedagem, ambientes, segredos, backup, restore e perda aceitável de dados.
+Decide access, hosting, environments, secrets, backup, restore, and acceptable data loss.
 
 ## Inputs
-- Jornada do P0.
-- Decisão de branches e ambientes.
+- P0 journey.
+- Branches and environments decision.
 
 ## Deliverables
 - `docs/decisions/PRIVACY-AND-OPERATIONS.md`
 
 ## Subtasks
-- [x] Definir proteção da produção.
-- [x] Definir Vercel e provedor de banco candidatos.
-- [x] Definir ambientes e variáveis sensíveis.
-- [x] Definir backup, retenção e teste de restore.
+- [x] Define production protection.
+- [x] Define candidate Vercel and database provider.
+- [x] Define environments and sensitive variables.
+- [x] Define backup, retention, and restore testing.
 
 ## Validation
-- Dados pessoais não ficam acessíveis sem decisão explícita.
+- Personal data is not accessible without an explicit decision.
 
 ## Acceptance criteria
-- [x] KZ-E08 possui requisitos operacionais verificáveis.
+- [x] KZ-E08 has verifiable operational requirements.
 
 ## Result
-Definida publicação em URL pública da Vercel sem cadastro, com conteúdo canônico público separado dos dados operacionais privados. Pareamento por chave de edição, cookie seguro, autorização server-side, ambientes isolados, Neon PostgreSQL, segredos, RPO de 24 horas, RTO de 4 horas, backup externo cifrado, restore e evolução para contas foram documentados em `docs/decisions/PRIVACY-AND-OPERATIONS.md`.
+Defined publication at a public Vercel URL without sign-up, with public canonical content separated from private operational data. Pairing by edit key, secure cookie, server-side authorization, isolated environments, Neon PostgreSQL, secrets, a 24-hour RPO, a 4-hour RTO, encrypted external backup, restore, and evolution to accounts were documented in `docs/decisions/PRIVACY-AND-OPERATIONS.md`.

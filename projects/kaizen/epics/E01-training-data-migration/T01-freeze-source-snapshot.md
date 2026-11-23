@@ -6,33 +6,33 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E00-T05]
 ---
 
-# Congelar snapshot de origem
+# Freeze source snapshot
 
 ## Objective
-Escolher um commit limpo e imutável do legado como única base da migração de treino.
+Choose a clean, immutable commit of the legacy as the single base of the training migration.
 
 ## Inputs
-- Fonte lógica `personal-performance` registrada em `docs/migration/SOURCE-REPOSITORIES.md`.
-- Manifesto criado em KZ-E00-T05.
+- Logical source `personal-performance` registered in `docs/migration/SOURCE-REPOSITORIES.md`.
+- Manifest created in KZ-E00-T05.
 
 ## Deliverables
-- Snapshot registrado em `docs/migration/SOURCE-REPOSITORIES.md`.
-- Inventário inicial no manifesto.
+- Snapshot registered in `docs/migration/SOURCE-REPOSITORIES.md`.
+- Initial inventory in the manifest.
 
 ## Subtasks
-- [x] Verificar branch, commit, remote e worktree.
-- [x] Consolidar ou excluir explicitamente alterações não rastreadas da origem.
-- [x] Registrar o commit e a tag aprovados.
-- [x] Inventariar arquivos candidatos sem copiá-los.
+- [x] Verify branch, commit, remote, and worktree.
+- [x] Consolidate or explicitly exclude untracked changes in the source.
+- [x] Record the approved commit and tag.
+- [x] Inventory candidate files without copying them.
 
 ## Validation
-- O commit registrado existe e pode ser lido.
-- O manifesto não referencia estado ambíguo de worktree.
+- The recorded commit exists and can be read.
+- The manifest does not reference an ambiguous worktree state.
 
 ## Acceptance criteria
-- [x] Existe uma única referência de origem para KZ-E01.
-- [x] Todo candidato tem hash, tratamento e exposição.
-- [x] Nenhum conteúdo do legado foi criado no destino.
+- [x] There is a single source reference for KZ-E01.
+- [x] Every candidate has a hash, treatment, and exposure.
+- [x] No legacy content was created at the destination.
 
 ## Result
-Concluída em 2026-08-31. O commit privado `d1acad309e2b81b714d1aa375e9371a310ad6ed0`, publicado na tag `kaizen-training-source-v1`, é a única origem de KZ-E01. O manifesto contém 23 artefatos calculados dos blobs desse commit e nenhuma cópia no Kaizen.
+Completed on 2026-08-31. The private commit `d1acad309e2b81b714d1aa375e9371a310ad6ed0`, published at tag `kaizen-training-source-v1`, is the single source of KZ-E01. The manifest contains 23 artifacts computed from the blobs of that commit and no copy in Kaizen.

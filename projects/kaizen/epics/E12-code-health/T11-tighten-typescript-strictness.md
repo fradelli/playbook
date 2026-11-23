@@ -6,38 +6,38 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E12-T07]
 ---
 
-# Endurecer as opções estritas do TypeScript
+# Tighten the strict TypeScript options
 
 ## Objective
-Ativar `noUncheckedIndexedAccess` e `noImplicitOverride` e eliminar as asserções não nulas que essas opções tornam desnecessárias.
+Enable `noUncheckedIndexedAccess` and `noImplicitOverride` and eliminate the non-null assertions that these options make unnecessary.
 
-## Contexto
+## Context
 
-`tsconfig.json` usa `strict: true` sem `noUncheckedIndexedAccess`. O código compensa com `!` em leituras de `Map` e de índices, por exemplo `cache.listPages.get("current")!` em `use-schedule-entities.ts` e `exercises[key]!` em `use-training-activity-draft.ts`. Há também um `as unknown as` em `src/features/schedule/data/prisma-schedule-repository.ts`.
+`tsconfig.json` uses `strict: true` without `noUncheckedIndexedAccess`. The code compensates with `!` on `Map` and index reads, for example `cache.listPages.get("current")!` in `use-schedule-entities.ts` and `exercises[key]!` in `use-training-activity-draft.ts`. There is also an `as unknown as` in `src/features/schedule/data/prisma-schedule-repository.ts`.
 
 ## Inputs
-- `tsconfig.json` — opções do compilador.
-- `docs/architecture/TARGET-ARCHITECTURE.md` — seção "Stack escolhida" (Linguagem).
-- Saída de `pnpm typecheck` com as opções ativadas.
+- `tsconfig.json` — compiler options.
+- `docs/architecture/TARGET-ARCHITECTURE.md` — section "Stack escolhida" (Chosen stack, Language).
+- Output of `pnpm typecheck` with the options enabled.
 
 ## Deliverables
-- `tsconfig.json` com as novas opções.
-- Correções por tratamento explícito de ausência, sem silenciar erros.
-- Regra de lint contra asserção não nula, se o volume restante permitir.
+- `tsconfig.json` with the new options.
+- Fixes by explicit handling of absence, without silencing errors.
+- Lint rule against non-null assertions, if the remaining volume allows it.
 
 ## Subtasks
-- [ ] Ativar as opções e medir os erros.
-- [ ] Corrigir por módulo, começando pelo domínio.
-- [ ] Remover o `as unknown as`.
-- [ ] Avaliar a regra de lint.
+- [ ] Enable the options and measure the errors.
+- [ ] Fix module by module, starting with the domain.
+- [ ] Remove the `as unknown as`.
+- [ ] Evaluate the lint rule.
 
 ## Validation
-- `pnpm typecheck`, `pnpm lint` e `pnpm test` passam.
-- `git grep -c ')!' -- src` diminui e cada uso restante tem justificativa.
+- `pnpm typecheck`, `pnpm lint`, and `pnpm test` pass.
+- `git grep -c ')!' -- src` decreases and each remaining use has a justification.
 
 ## Acceptance criteria
-- [ ] As duas opções estão ativas.
-- [ ] Nenhum erro foi silenciado com `@ts-expect-error` ou `as`.
+- [ ] Both options are enabled.
+- [ ] No error was silenced with `@ts-expect-error` or `as`.
 
 ## Result
-Não iniciada.
+Not started.

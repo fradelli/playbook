@@ -6,31 +6,31 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E08-T03]
 ---
 
-# Validar operação e rollback
+# Validate operations and rollback
 
 ## Objective
-Comprovar monitoramento mínimo, backup, restauração e retorno à versão anterior.
+Prove minimal monitoring, backup, restore, and return to the previous version.
 
 ## Inputs
 - `docs/plans/release/E08.md`
 - `docs/decisions/PRIVACY-AND-OPERATIONS.md`
 - `docs/operations/BACKUP-AND-RESTORE.md`
-- Ambiente de produção preparado em KZ-E08-T03.
+- Production environment prepared in KZ-E08-T03.
 
 ## Deliverables
-- Runbook curto e evidências dos testes operacionais.
+- Short runbook and evidence of the operational tests.
 
 ## Subtasks
-- [ ] Definir sinais mínimos de saúde e falha.
-- [ ] Testar backup externo e restauração em branch Neon isolada.
-- [ ] Simular rollback da aplicação.
-- [ ] Registrar responsáveis e sequência de recuperação.
+- [ ] Define minimal health and failure signals.
+- [ ] Test external backup and restore in an isolated Neon branch.
+- [ ] Simulate an application rollback.
+- [ ] Record owners and the recovery sequence.
 
 ## Validation
-- Executar o runbook sem depender de conhecimento não documentado.
+- Run the runbook without depending on undocumented knowledge.
 
 ## Acceptance criteria
-- [ ] Uma falha pode ser detectada e revertida com passos claros.
+- [ ] A failure can be detected and reverted with clear steps.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

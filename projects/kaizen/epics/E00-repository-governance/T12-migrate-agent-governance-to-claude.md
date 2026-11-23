@@ -6,64 +6,64 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: []
 ---
 
-# Migrar a governança do agente de Codex para Claude
+# Migrate agent governance from Codex to Claude
 
 ## Objective
-Tornar o Claude Code o único agente de desenvolvimento suportado pelo repositório, sem regra, validador ou instalação local que exija o Codex ou outros clientes.
+Make Claude Code the only development agent supported by the repository, with no rule, validator, or local installation that requires Codex or other clients.
 
-## Contexto
+## Context
 
-Fatos levantados na auditoria de 2026-11-23 sobre `developer` (`364c71f`):
+Facts gathered in the audit of 2026-11-23 on `developer` (`364c71f`):
 
-- `scripts/validate-governance.mjs` aceita somente branches `codex/<ID>-descricao`; um PR de branch com outro prefixo reprova no CI.
-- `AGENTS.md` se intitula "Contrato do Codex" e reserva `.agents/skills/` ao Codex; `docs/delivery/PULL-REQUEST-STANDARD.md` repete o prefixo `codex/`.
-- `.agents/skills/` guarda 11 skills do Prisma; `.claude/skills/` e `.windsurf/skills/` contêm apenas links para elas; `skills-lock.json` é do Codex. Nenhum desses caminhos é versionado.
-- `.gitignore` mantém blocos específicos do Codex e do Windsurf.
+- `scripts/validate-governance.mjs` accepts only `codex/<ID>-description` branches; a PR from a branch with another prefix fails in CI.
+- `AGENTS.md` is titled "Contrato do Codex" (Codex contract) and reserves `.agents/skills/` for Codex; `docs/delivery/PULL-REQUEST-STANDARD.md` repeats the `codex/` prefix.
+- `.agents/skills/` holds 11 Prisma skills; `.claude/skills/` and `.windsurf/skills/` contain only links to them; `skills-lock.json` belongs to Codex. None of these paths is versioned.
+- `.gitignore` keeps Codex-specific and Windsurf-specific blocks.
 
-Decisão do responsável em 2026-11-23: usar somente Claude no desenvolvimento. Prefixo de branch proposto: `claude/<ID>-descricao-curta`.
+Owner decision on 2026-11-23: use only Claude for development. Proposed branch prefix: `claude/<ID>-short-description`.
 
 ## Inputs
-- `AGENTS.md` — contrato atual a converter.
-- `scripts/validate-governance.mjs` — `taskBranchPattern` e mensagem de erro.
-- `scripts/validate-governance.test.mjs` — casos de branch.
-- `docs/delivery/PULL-REQUEST-STANDARD.md` — seção de branches.
-- `.gitignore` — blocos de referências locais do Codex e de clientes não utilizados.
-- `roadmap/AGENTS.md`, `docs/AGENTS.md`, `docs/migration/AGENTS.md`, `data/AGENTS.md` — instruções aninhadas que precisam continuar sendo carregadas.
+- `AGENTS.md` — current contract to convert.
+- `scripts/validate-governance.mjs` — `taskBranchPattern` and error message.
+- `scripts/validate-governance.test.mjs` — branch cases.
+- `docs/delivery/PULL-REQUEST-STANDARD.md` — branches section.
+- `.gitignore` — blocks of local references to Codex and unused clients.
+- `roadmap/AGENTS.md`, `docs/AGENTS.md`, `docs/migration/AGENTS.md`, `data/AGENTS.md` — nested instructions that must keep being loaded.
 
 ## Deliverables
-- `CLAUDE.md` na raiz como contrato do agente (conteúdo convertido de `AGENTS.md`), e decisão registrada sobre manter `AGENTS.md` como import ou removê-lo.
-- Instruções aninhadas convertidas para `CLAUDE.md` nas mesmas pastas, ou referenciadas pelo contrato raiz.
-- `scripts/validate-governance.mjs` e testes aceitando o novo prefixo; histórico `codex/` preservado apenas para branches já integradas.
-- `docs/delivery/PULL-REQUEST-STANDARD.md` atualizado.
-- `.claude/skills/` com as skills do Prisma como pasta real (local, fora do Git) e `.claude/settings.json` versionado somente se houver permissão ou hook com consumidor.
-- `.gitignore` sem blocos do Codex e do Windsurf.
+- `CLAUDE.md` at the root as the agent contract (content converted from `AGENTS.md`), and a recorded decision on keeping `AGENTS.md` as an import or removing it.
+- Nested instructions converted to `CLAUDE.md` in the same folders, or referenced by the root contract.
+- `scripts/validate-governance.mjs` and tests accepting the new prefix; `codex/` history preserved only for branches already integrated.
+- `docs/delivery/PULL-REQUEST-STANDARD.md` updated.
+- `.claude/skills/` with the Prisma skills as a real folder (local, outside Git) and `.claude/settings.json` versioned only if there is a permission or hook with a consumer.
+- `.gitignore` without the Codex and Windsurf blocks.
 
 ## Subtasks
-- [x] Converter o contrato raiz e remover a seção "Skills locais" exclusiva do Codex.
-- [x] Converter ou referenciar as quatro instruções aninhadas.
-- [x] Trocar o padrão de branch no validador, nos testes e no padrão de PR.
-- [x] Mover as skills do Prisma para `.claude/skills/` e remover `.agents/`, `.windsurf/` e `skills-lock.json` locais.
-- [x] Limpar o `.gitignore`.
-- [x] Revisar menções ao Codex fora do histórico (`docs/history/`, `docs/worklog/` e `docs/evidence/` permanecem como registro).
+- [x] Convert the root contract and remove the Codex-exclusive "Skills locais" (Local skills) section.
+- [x] Convert or reference the four nested instructions.
+- [x] Change the branch pattern in the validator, in the tests, and in the PR standard.
+- [x] Move the Prisma skills to `.claude/skills/` and remove the local `.agents/`, `.windsurf/`, and `skills-lock.json`.
+- [x] Clean up `.gitignore`.
+- [x] Review mentions of Codex outside the history (`docs/history/`, `docs/worklog/`, and `docs/evidence/` remain as record).
 
 ## Validation
-- `pnpm test:ci-scripts` passa com casos para `claude/E00-T12-x` (aceito) e prefixos não previstos (recusado).
-- `pnpm governance` com evento de PR de branch `claude/...` passa.
-- `git grep -i codex -- ':!docs/history' ':!docs/worklog' ':!docs/evidence' ':!roadmap/epics'` não retorna regra vigente.
-- `pnpm docs:check` passa.
+- `pnpm test:ci-scripts` passes with cases for `claude/E00-T12-x` (accepted) and unforeseen prefixes (rejected).
+- `pnpm governance` with a PR event from a `claude/...` branch passes.
+- `git grep -i codex -- ':!docs/history' ':!docs/worklog' ':!docs/evidence' ':!roadmap/epics'` returns no current rule.
+- `pnpm docs:check` passes.
 
 ## Acceptance criteria
-- [x] Um PR aberto de branch `claude/<ID>-descricao` passa no job Governance.
-- [x] Uma sessão nova do Claude Code carrega o contrato raiz e as instruções aninhadas sem depender de `AGENTS.md` do Codex.
-- [x] Não restam pastas ou arquivos locais de outros clientes de agente.
+- [x] An open PR from a `claude/<ID>-description` branch passes the Governance job.
+- [x] A new Claude Code session loads the root contract and the nested instructions without depending on the Codex `AGENTS.md`.
+- [x] No local folders or files of other agent clients remain.
 
 ## Result
-Concluída em 2026-11-23.
+Completed on 2026-11-23.
 
-- Os cinco `AGENTS.md` (raiz, `roadmap/`, `docs/`, `docs/migration/` e `data/`) foram renomeados para `CLAUDE.md` com `git mv`. Decisão: não manter `AGENTS.md` nem import, porque o Claude Code é o único agente suportado.
-- O contrato raiz passou a se chamar "Contrato do Claude no Kaizen", lista as instruções aninhadas em `CLAUDE.md` e troca a seção de skills do Codex por "Agente e skills locais".
-- `scripts/validate-governance.mjs` aceita somente `claude/<ID>-descricao`; um teste novo recusa `codex/` e `feature/`. `docs/delivery/PULL-REQUEST-STANDARD.md` e `docs/decisions/BRANCHING-AND-ENVIRONMENTS.md` registram a mudança.
-- `scripts/validate-documentation.mjs`, `scripts/verify-doc-preservation.mjs` e os links vigentes passaram a apontar para `CLAUDE.md`. Menções a `AGENTS.md` do design system e nomes de branches históricas foram preservados.
-- Localmente, as 11 skills do Prisma viraram pasta real em `.claude/skills/` (conteúdo idêntico ao de `.agents/skills/`), e `.agents/`, `.windsurf/` e `skills-lock.json` foram removidos. O `.gitignore` ignora `.claude/skills/` e `.claude/settings.local.json`.
-- `.claude/settings.json` não foi criado: nenhuma permissão ou hook tem consumidor nesta tarefa.
-- Validações: `pnpm test:ci-scripts` (60 testes), `pnpm docs:check`, `pnpm format:check` e `git diff --check` passaram. O primeiro PR com branch `claude/` comprova o critério do job Governance.
+- The five `AGENTS.md` files (root, `roadmap/`, `docs/`, `docs/migration/`, and `data/`) were renamed to `CLAUDE.md` with `git mv`. Decision: keep neither `AGENTS.md` nor an import, because Claude Code is the only supported agent.
+- The root contract is now called "Contrato do Claude no Kaizen" (Claude contract in Kaizen), lists the nested instructions in `CLAUDE.md`, and replaces the Codex skills section with "Agente e skills locais" (Agent and local skills).
+- `scripts/validate-governance.mjs` accepts only `claude/<ID>-description`; a new test rejects `codex/` and `feature/`. `docs/delivery/PULL-REQUEST-STANDARD.md` and `docs/decisions/BRANCHING-AND-ENVIRONMENTS.md` record the change.
+- `scripts/validate-documentation.mjs`, `scripts/verify-doc-preservation.mjs`, and the current links now point to `CLAUDE.md`. Mentions of the design system `AGENTS.md` and historical branch names were preserved.
+- Locally, the 11 Prisma skills became a real folder in `.claude/skills/` (content identical to `.agents/skills/`), and `.agents/`, `.windsurf/`, and `skills-lock.json` were removed. `.gitignore` ignores `.claude/skills/` and `.claude/settings.local.json`.
+- `.claude/settings.json` was not created: no permission or hook has a consumer in this task.
+- Validations: `pnpm test:ci-scripts` (60 tests), `pnpm docs:check`, `pnpm format:check`, and `git diff --check` passed. The first PR with a `claude/` branch proves the Governance job criterion.

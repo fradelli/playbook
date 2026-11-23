@@ -6,36 +6,36 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E00-T03]
 ---
 
-# Criar sistema de roadmap
+# Create roadmap system
 
 ## Objective
-Permitir que humanos e Codex encontrem status, tarefa ativa e detalhes sem carregar todo o projeto.
+Let humans and Codex find the status, the active task, and the details without loading the whole project.
 
 ## Inputs
-- Convenções de `AGENTS.md`.
-- Épicos e tarefas aprovados.
+- Conventions from `AGENTS.md`.
+- Approved epics and tasks.
 
 ## Deliverables
 - `roadmap/README.md`
 - `roadmap/ACTIVE.md`
 - `roadmap/templates/EPIC-TEMPLATE.md`
 - `roadmap/templates/TASK-TEMPLATE.md`
-- Pastas e arquivos dos épicos KZ-E00–KZ-E09.
+- Folders and files for epics KZ-E00–KZ-E09.
 
 ## Subtasks
-- [x] Consolidar todos os status no arquivo pai.
-- [x] Criar ponteiro de tarefa ativa.
-- [x] Manter subtarefas dentro da tarefa.
-- [x] Definir dependências e critérios de aceite.
+- [x] Consolidate all statuses in the parent file.
+- [x] Create an active-task pointer.
+- [x] Keep subtasks inside the task.
+- [x] Define dependencies and acceptance criteria.
 
 ## Validation
-- Todos os IDs são únicos.
-- Cada link do índice resolve para um arquivo existente.
-- Existe no máximo uma tarefa `IN_PROGRESS`.
+- All IDs are unique.
+- Every index link resolves to an existing file.
+- There is at most one `IN_PROGRESS` task.
 
 ## Acceptance criteria
-- [x] O progresso global é visível sem abrir tarefas individuais.
-- [x] A leitura mínima está documentada.
+- [x] Global progress is visible without opening individual tasks.
+- [x] The minimal reading is documented.
 
 ## Result
-Concluída em 2026-08-30. O status canônico está em `roadmap/README.md`.
+Completed on 2026-08-30. The canonical status is in `roadmap/README.md`.

@@ -6,11 +6,11 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T05, KZ-E07-T05, KZ-E09-T04]
 ---
 
-# Projetar arquitetura i18n e política English-first
+# Design i18n architecture and English-first policy
 
 ## Objective
-Definir inglês como idioma-fonte do produto e do repositório e aprovar uma
-arquitetura i18n capaz de atender outros idiomas sem espalhar traduções pelo código.
+Define English as the source language of the product and the repository, and approve an
+i18n architecture able to serve other languages without scattering translations through the code.
 
 ## Inputs
 - `AGENTS.md`
@@ -23,39 +23,39 @@ arquitetura i18n capaz de atender outros idiomas sem espalhar traduções pelo c
 - `roadmap/epics/E09-future-evolution/T04-validate-sleep-and-activity-flows.md`
 
 ## Deliverables
-- Decisão arquitetural de locale, catálogo, fallback, formatação e roteamento.
-- Inglês definido como idioma-fonte para UI, código, testes, documentação e PRs.
-- Estratégia para preservar IDs, versões importadas, URLs antigas e histórico Git.
-- Inventário do padrão i18n do Sandicts com decisões adotadas ou rejeitadas.
-- Plano executável para KZ-E09-T06, KZ-E09-T07 e KZ-E09-T08.
+- Architecture decision on locale, catalog, fallback, formatting, and routing.
+- English defined as the source language for UI, code, tests, documentation, and PRs.
+- Strategy to preserve IDs, imported versions, old URLs, and Git history.
+- Inventory of the Sandicts i18n pattern with decisions adopted or rejected.
+- Executable plan for KZ-E09-T06, KZ-E09-T07, and KZ-E09-T08.
 
 ## Subtasks
-- [ ] Identificar a referência exata do Sandicts antes de comparar implementações.
-- [ ] Escolher biblioteca somente após confirmar consumidores e requisitos.
-- [ ] Definir negociação, persistência e fallback de locale no servidor.
-- [ ] Separar texto de produto, conteúdo canônico e documentação técnica.
-- [ ] Definir política para rotas `/treino` e `/dieta` sem quebrar URLs existentes.
-- [ ] Definir como impedir novas strings fora do catálogo sem falsos positivos.
+- [ ] Identify the exact Sandicts reference before comparing implementations.
+- [ ] Choose a library only after confirming consumers and requirements.
+- [ ] Define locale negotiation, persistence, and fallback on the server.
+- [ ] Separate product text, canonical content, and technical documentation.
+- [ ] Define the policy for the `/treino` and `/dieta` routes without breaking existing URLs.
+- [ ] Define how to prevent new strings outside the catalog without false positives.
 
-## Dados ausentes
+## Missing data
 
-- Repositório, versão e arquivos exatos do padrão i18n do Sandicts.
-- Idiomas iniciais confirmados: português, espanhol e inglês. Ordem de prioridade e locale padrão ainda serão definidos.
-- Necessidade de detecção automática versus seleção explícita de idioma.
+- Repository, version, and exact files of the Sandicts i18n pattern.
+- Confirmed initial languages: Portuguese, Spanish, and English. Priority order and default locale are still to be defined.
+- Need for automatic detection versus explicit language selection.
 
 ## Validation
-- Provar a decisão com um spike mínimo descartável ou teste de contrato, sem migrar o produto.
-- Revisar compatibilidade com Server Components, Server Actions e conteúdo versionado.
+- Prove the decision with a minimal disposable spike or a contract test, without migrating the product.
+- Review compatibility with Server Components, Server Actions, and versioned content.
 
 ## Acceptance criteria
-- [ ] A arquitetura suporta inglês e expansão de locales sem duplicar regras de negócio.
-- [ ] IDs, histórico, ownership e versões canônicas possuem estratégia de preservação.
-- [ ] Unknowns restantes estão explícitos e não foram convertidos em defaults.
+- [ ] The architecture supports English and locale expansion without duplicating business rules.
+- [ ] IDs, history, ownership, and canonical versions have a preservation strategy.
+- [ ] Remaining unknowns are explicit and were not converted into defaults.
 
-## Fora de escopo
+## Out of scope
 
-- Traduzir telas, dados, documentos ou PRs históricos.
-- Reescrever commits, migrations aplicadas ou versões já importadas.
+- Translating screens, data, documents, or historical PRs.
+- Rewriting commits, applied migrations, or already imported versions.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

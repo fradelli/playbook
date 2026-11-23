@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E04-T04, KZ-E06-T01]
 ---
 
-# Criar página de treino do dia
+# Create the daily workout page
 
 ## Objective
-Exibir treino, mobilidade, descanso ou estado não atribuído da data com leitura rápida em celular.
+Show the workout, mobility, rest, or unassigned state of the date, quick to read on a phone.
 
 ## Inputs
 - `docs/history/implementation/E06.md`
@@ -23,100 +23,100 @@ Exibir treino, mobilidade, descanso ou estado não atribuído da data com leitur
 - `src/components/shared/feature-placeholder/feature-placeholder.tsx`
 
 ## Deliverables
-- Página server-rendered do dia com navegação por data e URL canônica.
-- Estados explícitos para treino, mobilidade, descanso, não atribuído,
-  indisponível, data inválida, referência inconsistente e erro inesperado.
-- Componentes acessíveis e responsivos, organizados em pastas próprias.
+- Server-rendered day page with date navigation and canonical URL.
+- Explicit states for workout, mobility, rest, unassigned,
+  unavailable, invalid date, inconsistent reference, and unexpected error.
+- Accessible, responsive components, organized in their own folders.
 
-## Decisões de implementação
+## Implementation decisions
 
-- KZ-E06-T02 é somente leitura. Atribuir sessão, mobilidade ou descanso, salvar
-  execução e concluir treino pertencem à KZ-E06-T03.
-- A data ausente redireciona para `?date=YYYY-MM-DD` calculada no servidor em
-  `America/Sao_Paulo`; data inválida não consulta o banco.
-- Navegação anterior/Hoje/seguinte usa datas civis e não depende do fuso do
-  navegador.
-- `src/app/treino/page.tsx` permanece fino: resolve a rota, inicia a query
-  server-only e entrega somente contratos serializáveis à UI.
-- Server Components são o padrão. O único limite Client obrigatório é o error
-  boundary com nova tentativa.
-- O conteúdo assíncrono usa `Suspense` local para preservar cabeçalho e data sem
-  apresentar o treino anterior como se pertencesse à nova data.
-- Erros de referência conhecidos viram feedback seguro; detalhes de banco,
-  caminhos e IDs internos não chegam ao navegador.
-- Valores `null` permanecem ausentes. Carga aparece somente quando
-  `loadApplicable` for verdadeiro e não aplicável nunca vira `0 kg`.
-- Cada componente React fica em pasta própria; auxiliares permanecem junto de
-  seu consumidor real e nenhum barrel global é criado.
+- KZ-E06-T02 is read-only. Assigning a session, mobility, or rest, saving
+  execution, and finishing the workout belong to KZ-E06-T03.
+- A missing date redirects to `?date=YYYY-MM-DD` calculated on the server in
+  `America/Sao_Paulo`; an invalid date does not query the database.
+- Previous/Today/next navigation uses civil dates and does not depend on the
+  browser time zone.
+- `src/app/treino/page.tsx` stays thin: it resolves the route, starts the
+  server-only query, and hands only serializable contracts to the UI.
+- Server Components are the default. The only mandatory Client boundary is the error
+  boundary with retry.
+- Async content uses a local `Suspense` to preserve the header and date without
+  showing the previous workout as if it belonged to the new date.
+- Known reference errors become safe feedback; database details,
+  paths, and internal IDs do not reach the browser.
+- `null` values stay absent. Load appears only when
+  `loadApplicable` is true, and not applicable never becomes `0 kg`.
+- Each React component lives in its own folder; helpers stay next to
+  their actual consumer and no global barrel is created.
 
-## Plano por responsabilidade
+## Plan by responsibility
 
-### Data civil e rota
+### Civil date and route
 
-- Criar resolvedor puro e testado para hoje em `America/Sao_Paulo`, validação da
-  query e cálculo de anterior/seguinte atravessando mês, ano e ano bissexto.
-- Normalizar `/treino` para a URL canônica e oferecer retorno para Hoje em caso
-  de parâmetro inválido ou repetido.
+- Create a pure, tested resolver for today in `America/Sao_Paulo`, query
+  validation, and previous/next calculation across month, year, and leap year.
+- Normalize `/treino` to the canonical URL and offer a return to Today when the
+  parameter is invalid or repeated.
 
-### Composição server-only
+### Server-only composition
 
-- Reutilizar `queryFixedWorkspaceTrainingDay()` e mapear apenas falhas conhecidas
-  para um resultado serializável da página; falhas inesperadas seguem para o
+- Reuse `queryFixedWorkspaceTrainingDay()` and map only known failures
+  to a serializable page result; unexpected failures go to the
   error boundary.
-- Não aceitar `workspace_id`, não criar cache público e não introduzir endpoint
-  HTTP interno.
+- Do not accept `workspace_id`, do not create a public cache, and do not introduce an internal
+  HTTP endpoint.
 
 ### Interface
 
-- Criar `src/features/training/ui/components/training-day-page/` com o frame da
-  página e filhos privados para navegação, loading, feedback, dia não atribuído,
-  descanso, sessão, exercício e série.
-- Exibir preparação antes do treino principal; mobilidade usa apenas sua sessão
-  e descanso não cria exercícios artificiais.
-- Traduzir estados e medidas para textos legíveis, preservar a ordem do DTO e
-  exibir instruções, alertas e comentários como texto simples.
-- Usar primitives do `@fradelli/ui` e composição local sem duplicar tokens do
-  Design System.
+- Create `src/features/training/ui/components/training-day-page/` with the page
+  frame and private children for navigation, loading, feedback, unassigned day,
+  rest, session, exercise, and set.
+- Show preparation before the main workout; mobility uses only its session
+  and rest does not create artificial exercises.
+- Translate states and measures into readable text, preserve the DTO order, and
+  show instructions, alerts, and comments as plain text.
+- Use `@fradelli/ui` primitives and local composition without duplicating Design System
+  tokens.
 
-### Testes
+### Tests
 
-- Cobrir data ausente, inválida e repetida, mudanças de mês/ano e ano bissexto.
-- Cobrir todos os estados discriminados, preparação separada, carga aplicável,
-  valores ausentes, ordenação e rótulos acessíveis.
-- Confirmar ausência de formulário, mutação e ownership vindo do navegador.
+- Cover missing, invalid, and repeated date, month/year changes, and leap year.
+- Cover all discriminated states, separate preparation, applicable load,
+  missing values, ordering, and accessible labels.
+- Confirm the absence of forms, mutations, and ownership coming from the browser.
 
 ## Subtasks
-- [x] Implementar data anterior, Hoje e data seguinte em `America/Sao_Paulo`.
-- [x] Exibir as opções disponíveis quando o dia não estiver atribuído, sem gravar.
-- [x] Separar conteúdo público dos dados pessoais.
-- [x] Tratar loading, vazio, referência inválida e erro.
-- [x] Exibir treino, preparação, mobilidade e descanso sem inventar dados.
-- [x] Manter o menor limite Client e componentes em pastas próprias.
+- [x] Implement previous date, Today, and next date in `America/Sao_Paulo`.
+- [x] Show the available options when the day is unassigned, without writing.
+- [x] Separate public content from personal data.
+- [x] Handle loading, empty, invalid reference, and error.
+- [x] Show workout, preparation, mobility, and rest without inventing data.
+- [x] Keep the smallest Client boundary and components in their own folders.
 
 ## Validation
-- Testar navegação, responsividade, estados discriminados e falhas seguras.
-- Executar formato, lint, estrutura, tipos, testes, integração PostgreSQL,
-  cobertura, build, auditoria, `pnpm run ci` e `git diff --check`.
+- Test navigation, responsiveness, discriminated states, and safe failures.
+- Run format, lint, structure, types, tests, PostgreSQL integration,
+  coverage, build, audit, `pnpm run ci`, and `git diff --check`.
 
 ## Acceptance criteria
-- [x] O usuário identifica o estado do dia sem inferência de agenda privada.
-- [x] Data e navegação permanecem visíveis durante carregamento e falhas.
-- [x] Preparação e treino principal aparecem separados e na ordem prescrita.
-- [x] A página não aceita workspace nem oferece controles de gravação.
+- [x] The user identifies the day's state without inferring a private schedule.
+- [x] Date and navigation stay visible during loading and failures.
+- [x] Preparation and main workout appear separately and in the prescribed order.
+- [x] The page does not accept a workspace nor offer write controls.
 
-## Fora de escopo
+## Out of scope
 
-- Atribuir treino, mobilidade ou descanso.
-- Salvar preparação, séries, comentários ou conclusão.
-- Autenticação, múltiplos usuários, cache público ou infraestrutura de produção.
+- Assigning workout, mobility, or rest.
+- Saving preparation, sets, comments, or completion.
+- Authentication, multiple users, public cache, or production infrastructure.
 
 ## Result
-Página de treino do dia implementada como leitura server-rendered, com URL
-canônica por data civil de `America/Sao_Paulo`, navegação entre datas e estados
-explícitos para treino, mobilidade, descanso, dia não atribuído, indisponibilidade,
-data inválida, referência inconsistente e erro inesperado. A composição preserva
-o workspace fixo exclusivamente no servidor, não oferece mutações e mantém apenas
-o error boundary como limite Client. Componentes, testes e estilos permanecem
-organizados por responsabilidade; a validação final aprovou 196 testes unitários,
-33 integrações PostgreSQL, cobertura, validadores, build e auditoria sem
-vulnerabilidades conhecidas.
+Daily workout page implemented as a server-rendered read, with a canonical
+URL by civil date in `America/Sao_Paulo`, navigation between dates, and explicit
+states for workout, mobility, rest, unassigned day, unavailability,
+invalid date, inconsistent reference, and unexpected error. The composition keeps
+the fixed workspace exclusively on the server, offers no mutations, and keeps only
+the error boundary as a Client boundary. Components, tests, and styles remain
+organized by responsibility; final validation passed 196 unit tests,
+33 PostgreSQL integrations, coverage, validators, build, and an audit with no
+known vulnerabilities.

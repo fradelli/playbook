@@ -6,52 +6,52 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: []
 ---
 
-# Alinhar a agenda às fronteiras da arquitetura
+# Align the schedule with the architecture boundaries
 
 ## Objective
-Fazer as Server Actions e leituras da agenda seguirem a ordem e as camadas definidas na arquitetura, sem REST interna.
+Make the schedule Server Actions and reads follow the order and layers defined in the architecture, with no internal REST.
 
-## Contexto
+## Context
 
-Achados da auditoria de 2026-11-23:
+Findings from the 2026-11-23 audit:
 
-- `src/app/workout/schedule-actions.ts` envia o input `unknown` ao repositório, que valida com Zod em `src/features/schedule/data/prisma-schedule-repository.ts`; a action faz o parse de novo depois.
-- A action chama a camada de dados diretamente, sem caso de uso em `application`, e descobre o `id` com cinco ternários aninhados.
-- `loadTodoLists`, `loadTodos` e `loadCalendarTrainingDay` não validam a origem; os dois primeiros lançam exceção em vez de devolver resultado tipado, e `loadCalendarTrainingDay` não valida o `civilDate` com Zod.
-- `src/app/workout/calendar-day/route.ts` é consumida por `fetch` em `src/features/schedule/ui/components/calendar-range/hooks/use-calendar-days.ts`, o que a arquitetura proíbe ("Não existe REST interna"); a resposta é usada sem validação e as duas leituras rodam em sequência.
-- `console.info` de medição ficou em `schedule-actions.ts` e em `prisma-schedule-repository.ts`.
+- `src/app/workout/schedule-actions.ts` sends the `unknown` input to the repository, which validates with Zod in `src/features/schedule/data/prisma-schedule-repository.ts`; the action parses again afterward.
+- The action calls the data layer directly, with no use case in `application`, and finds the `id` with five nested ternaries.
+- `loadTodoLists`, `loadTodos`, and `loadCalendarTrainingDay` do not validate the origin; the first two throw an exception instead of returning a typed result, and `loadCalendarTrainingDay` does not validate `civilDate` with Zod.
+- `src/app/workout/calendar-day/route.ts` is consumed through `fetch` in `src/features/schedule/ui/components/calendar-range/hooks/use-calendar-days.ts`, which the architecture forbids ("Não existe REST interna", There is no internal REST); the response is used without validation and the two reads run in sequence.
+- Measurement `console.info` calls remain in `schedule-actions.ts` and in `prisma-schedule-repository.ts`.
 
 ## Inputs
-- `docs/architecture/TARGET-ARCHITECTURE.md` — seções "Boundaries", "Server Actions", "Route Handlers" e "Segurança".
-- `src/app/workout/schedule-actions.ts` — actions atuais.
-- `src/app/workout/calendar-day/route.ts` — rota a remover.
-- `src/features/schedule/data/prisma-schedule-repository.ts` — validação e transação.
-- `src/features/schedule/application/schedule-command.ts` — schema do comando.
-- `src/features/schedule/ui/components/calendar-range/hooks/use-calendar-days.ts` — consumidor da rota.
+- `docs/architecture/TARGET-ARCHITECTURE.md` — sections "Boundaries", "Server Actions", "Route Handlers", and "Segurança" (Security).
+- `src/app/workout/schedule-actions.ts` — current actions.
+- `src/app/workout/calendar-day/route.ts` — route to remove.
+- `src/features/schedule/data/prisma-schedule-repository.ts` — validation and transaction.
+- `src/features/schedule/application/schedule-command.ts` — command schema.
+- `src/features/schedule/ui/components/calendar-range/hooks/use-calendar-days.ts` — route consumer.
 
 ## Deliverables
-- Caso de uso de mutação da agenda em `src/features/schedule/application/`, recebendo comando já validado.
-- `schedule-actions.ts` na ordem: origem, workspace, Zod, comando, caso de uso, resultado tipado.
-- Leituras da agenda com validação de origem e de entrada e resultado tipado.
-- `calendar-day/route.ts` removida; leitura do dia por Server Action, com as duas consultas em paralelo.
-- Medições removidas ou centralizadas num logger com consumidor.
+- Schedule mutation use case in `src/features/schedule/application/`, receiving an already validated command.
+- `schedule-actions.ts` in order: origin, workspace, Zod, command, use case, typed result.
+- Schedule reads with origin and input validation and a typed result.
+- `calendar-day/route.ts` removed; day read through a Server Action, with the two queries in parallel.
+- Measurements removed or centralized in a logger with a consumer.
 
 ## Subtasks
-- [ ] Extrair o caso de uso e a resolução do identificador afetado.
-- [ ] Mover a validação Zod para a fronteira da action.
-- [ ] Proteger e tipar as leituras.
-- [ ] Substituir a Route Handler por action e atualizar `use-calendar-days.ts`.
-- [ ] Remover os `console.info`.
+- [ ] Extract the use case and the resolution of the affected identifier.
+- [ ] Move the Zod validation to the action boundary.
+- [ ] Protect and type the reads.
+- [ ] Replace the Route Handler with an action and update `use-calendar-days.ts`.
+- [ ] Remove the `console.info` calls.
 
 ## Validation
-- `pnpm test`, `pnpm test:integration` e `pnpm structure:check` passam.
-- Testes cobrem origem inválida, entrada inválida, conflito e sucesso das actions.
-- `git grep "calendar-day?date"` não retorna resultado.
+- `pnpm test`, `pnpm test:integration`, and `pnpm structure:check` pass.
+- Tests cover invalid origin, invalid input, conflict, and success of the actions.
+- `git grep "calendar-day?date"` returns no result.
 
 ## Acceptance criteria
-- [ ] Nenhuma action da agenda chama a camada de dados sem caso de uso.
-- [ ] Nenhuma rota HTTP interna é consumida pela própria UI.
-- [ ] Todas as leituras expostas validam origem e entrada.
+- [ ] No schedule action calls the data layer without a use case.
+- [ ] No internal HTTP route is consumed by the UI itself.
+- [ ] All exposed reads validate origin and input.
 
 ## Result
-Não iniciada.
+Not started.

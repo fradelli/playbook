@@ -6,18 +6,18 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T12]
 ---
 
-# Permitir organizar a agenda futura sem iniciar treinos
+# Allow organizing the future schedule without starting workouts
 
 ## Objective
-Permitir adicionar, remover e ajustar atividades em datas futuras acessíveis,
-mantendo bloqueado o início de qualquer execução antes de sua data civil.
+Allow adding, removing, and adjusting activities on accessible future dates,
+while keeping the start of any execution blocked before its civil date.
 
-## Contexto conhecido
+## Known context
 
-O usuário relatou que datas futuras não permitem adicionar ou remover treinos.
-A regra aprovada distingue planejamento de execução: organizar os próximos dias
-é permitido; treinar antecipadamente no aplicativo não é. A causa técnica deve
-ser confirmada antes da implementação, sem assumir que o bloqueio é apenas visual.
+The user reported that future dates do not allow adding or removing workouts.
+The approved rule distinguishes planning from execution: organizing the coming days
+is allowed; training ahead of time in the app is not. The technical cause must be
+confirmed before implementation, without assuming the block is only visual.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -42,56 +42,56 @@ ser confirmada antes da implementação, sem assumir que o bloqueio é apenas vi
 Not recorded in the original version of this task.
 
 ## Subtasks
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Plano da tarefa».
+Not recorded in the original version of this task; equivalent content is in the section «Task plan».
 
 ## Validation
 Not recorded in the original version of this task.
 
-## Regras aprovadas
+## Approved rules
 
-- Amanhã até hoje + 4 dias: permitir inclusão, exclusão e edição do planejamento.
-- Datas futuras: permitir consulta e expansão dos treinos, mas nunca iniciar,
-  retomar ou finalizar uma execução nem registrar resultados antecipadamente.
-- Separar a permissão de editar agenda da permissão de executar atividade;
-  garantir ambas no servidor, além da apresentação correta dos controles.
-- Planejamento pode ser persistido; não inicia cronômetro nem cria resultados.
-- Preservar hoje e ontem como datas permitidas para registros; datas anteriores
-  continuam bloqueadas para alterações, conforme a regra já aprovada.
-- Preservar o limite futuro de quatro dias, fuso `America/Sao_Paulo`, ownership,
-  revisão concorrente e restrições de exclusão de atividades concluídas.
-- Não alterar a programação semanal nem recriar automaticamente atividades
-  removidas intencionalmente de uma data já materializada.
+- Tomorrow through today + 4 days: allow adding, deleting, and editing the planning.
+- Future dates: allow viewing and expanding the workouts, but never starting,
+  resuming, or finishing an execution nor recording results ahead of time.
+- Separate the permission to edit the schedule from the permission to execute an activity;
+  enforce both on the server, in addition to showing the controls correctly.
+- Planning can be persisted; it does not start a timer or create results.
+- Keep today and yesterday as allowed dates for records; earlier dates
+  remain blocked for changes, per the rule already approved.
+- Preserve the four-day future limit, the `America/Sao_Paulo` time zone, ownership,
+  concurrent revision, and the restrictions on deleting completed activities.
+- Do not change the weekly schedule nor automatically recreate activities
+  intentionally removed from an already materialized date.
 
-## Plano da tarefa
+## Task plan
 
-1. Reanalisar as permissões atuais da UI, aplicação e fronteiras de mutação.
-2. Apresentar o diagnóstico e o plano detalhado para aprovação antes de implementar.
-3. Corrigir a distinção entre edição da agenda e registro da execução nas camadas
-   necessárias, sem duplicar validações ou ampliar permissões de ownership.
-4. Cobrir inclusão, exclusão e edição futuras, bloqueio de início por chamada
-   direta ao servidor, limites temporais e regressões de hoje e ontem.
-5. Executar gates proporcionais, revisão semântica e teste manual da agenda futura.
+1. Re-analyze the current permissions in the UI, application, and mutation boundaries.
+2. Present the diagnosis and the detailed plan for approval before implementing.
+3. Fix the distinction between editing the schedule and recording the execution in the
+   necessary layers, without duplicating validations or widening ownership permissions.
+4. Cover future adding, deleting, and editing, blocking the start via a
+   direct server call, time limits, and regressions for today and yesterday.
+5. Run proportional gates, semantic review, and manual testing of the future schedule.
 
-## Fora de escopo
+## Out of scope
 
-- Ampliar a janela futura, alterar dados canônicos ou reconciliar troca de plano.
-- Alterar o fluxo de conclusão, rascunhos ou cronômetros durante um treino.
+- Widening the future window, changing canonical data, or reconciling a plan change.
+- Changing the completion flow, drafts, or timers during a workout.
 
 ## Acceptance criteria
-- [x] Adicionar, remover e ajustar planejamento funciona em hoje + 1 e hoje + 4.
-- [x] Iniciar atividade futura permanece indisponível e é rejeitado no servidor.
-- [x] Datas além de hoje + 4 e anteriores a ontem não ganham novas permissões.
-- [x] Exclusão futura não recria o treino na consulta seguinte.
-- [x] Hoje e ontem preservam o fluxo atual e atividades concluídas não podem ser excluídas.
-- [x] Testes, revisão semântica e validações do projeto aprovados.
+- [x] Adding, removing, and adjusting planning works on today + 1 and today + 4.
+- [x] Starting a future activity remains unavailable and is rejected on the server.
+- [x] Dates beyond today + 4 and before yesterday do not gain new permissions.
+- [x] Future deletion does not recreate the workout on the next query.
+- [x] Today and yesterday keep the current flow and completed activities cannot be deleted.
+- [x] Tests, semantic review, and project validations passed.
 
 ## Result
-Separadas as permissões de agenda e execução no domínio, na aplicação e na UI.
-Inclusão, edição e exclusão ficam disponíveis entre ontem e hoje + 4; início,
-pausa e registro da execução continuam limitados a ontem e hoje. Os testes
-cobrem os limites, o fuso de São Paulo, chamadas diretas às mutações e a
-preservação de exclusões em dias materializados.
+Schedule and execution permissions separated in the domain, the application, and the UI.
+Adding, editing, and deleting are available from yesterday through today + 4; starting,
+pausing, and recording the execution remain limited to yesterday and today. The tests
+cover the limits, the São Paulo time zone, direct calls to the mutations, and
+the preservation of deletions on materialized days.
 
-CI da PR #56 aprovada em governança, qualidade, testes unitários e PostgreSQL,
-integridade dos dados, restauração de backup, build e auditoria de dependências.
-Revisão semântica e `git diff --check` aprovados; validação manual não executada.
+CI of PR #56 passed in governance, quality, unit and PostgreSQL tests,
+data integrity, backup restore, build, and dependency audit.
+Semantic review and `git diff --check` passed; manual validation not run.

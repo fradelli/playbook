@@ -1,23 +1,23 @@
-# KZ-E07 — Execução de alimentação
+# KZ-E07 — Nutrition execution
 
 ## Expected outcome
-Plano alimentar do dia consultável, com escolha, cumprimento, alternativa e comentário registráveis no workspace fixo.
+The day's meal plan can be viewed, with choice, adherence, alternative, and comment recordable in the fixed workspace.
 
 ## Order
-| Tarefa  | Depende de | Resultado                                         |
+| Task    | Depends on | Outcome                                           |
 | ------- | ---------- | ------------------------------------------------- |
-| KZ-E07-T01 | KZ-E05-T05    | Projeção do plano e da execução do workspace fixo |
-| KZ-E07-T02 | KZ-E04-T04, KZ-E07-T01 | Página de dieta do dia                            |
-| KZ-E07-T03 | KZ-E07-T02    | Escolhas, cumprimento e comentários               |
-| KZ-E07-T04 | KZ-E07-T03    | Segurança e proveniência                          |
-| KZ-E07-T05 | KZ-E07-T04    | Fluxo validado                                    |
+| KZ-E07-T01 | KZ-E05-T05    | Projection of the fixed workspace plan and execution |
+| KZ-E07-T02 | KZ-E04-T04, KZ-E07-T01 | Diet page for the day                            |
+| KZ-E07-T03 | KZ-E07-T02    | Choices, adherence, and comments               |
+| KZ-E07-T04 | KZ-E07-T03    | Safety and provenance                           |
+| KZ-E07-T05 | KZ-E07-T04    | Validated flow                                    |
 
 ## Out of scope
-- Prescrição automática ou diagnóstico nutricional.
-- Cálculo automático de consumo, calorias ou macronutrientes.
-- Edição do plano canônico pela interface.
+- Automatic prescription or nutritional diagnosis.
+- Automatic calculation of intake, calories, or macronutrients.
+- Editing the canonical plan through the interface.
 
 ## Closing criteria
-- [ ] O plano ativo é legível e rastreável.
-- [ ] O usuário registra plano seguido, refeição diferente ou refeição pulada.
-- [ ] Unknowns e ressalvas permanecem explícitos.
+- [ ] The active plan is readable and traceable.
+- [ ] The user records plan followed, different meal, or skipped meal.
+- [ ] Unknowns and caveats remain explicit.

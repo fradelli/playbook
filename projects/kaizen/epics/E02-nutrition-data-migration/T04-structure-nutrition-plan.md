@@ -7,31 +7,31 @@ depends_on: [KZ-E02-T03]
 external: [Decisions approved]
 ---
 
-# Estruturar plano alimentar
+# Structure nutrition plan
 
 ## Objective
-Representar a versão aprovada do plano por contexto de dia, refeições, itens, alternativas e limites.
+Represent the approved version of the plan by day context, meals, items, alternatives, and limits.
 
 ## Inputs
-- Revisão concluída.
-- Decisões aprovadas pelo usuário ou profissional responsável.
+- Completed review.
+- Decisions approved by the user or the responsible professional.
 
 ## Deliverables
-- Plano versionado em `data/nutrition/plans/`.
+- Versioned plan in `data/nutrition/plans/`.
 
 ## Subtasks
-- [x] Definir versão, status e vigência.
-- [x] Estruturar tipos de dia e refeições.
-- [x] Registrar quantidades e equivalências apenas quando confirmadas.
-- [x] Preservar alertas e unknowns.
+- [x] Define version, status, and validity.
+- [x] Structure day types and meals.
+- [x] Record quantities and equivalences only when confirmed.
+- [x] Preserve warnings and unknowns.
 
 ## Validation
-- Nenhum campo obrigatório depende de dado inventado.
-- Alternativas não perdem sua relação com a refeição.
+- No required field depends on invented data.
+- Alternatives do not lose their relationship to the meal.
 
 ## Acceptance criteria
-- [x] O plano é legível sem consultar a conversa original.
-- [x] Status profissional é inequívoco.
+- [x] The plan is readable without consulting the original conversation.
+- [x] Professional status is unambiguous.
 
 ## Result
-Concluída em 2026-09-02. Criado `data/nutrition/plans/2026-09-personal-v1.json` com seis tipos de dia, cinco refeições, vinte opções, horários condicionais, módulos de carboidrato, preferências, `unknowns`, proveniência e aprovação pública explícita. As faixas energéticas foram preservadas como valores legados aprovados para uso pessoal, sem validação profissional; identidade, contexto médico, suplementos, protocolo cognitivo, caminhos privados e metas inferidas foram excluídos. JSON, referências, manifesto e exposição foram validados, liberando KZ-E02-T05.
+Completed on 2026-09-02. Created `data/nutrition/plans/2026-09-personal-v1.json` with six day types, five meals, twenty options, conditional times, carbohydrate modules, preferences, `unknowns`, provenance, and explicit public approval. Energy ranges were preserved as legacy values approved for personal use, without professional validation; identity, medical context, supplements, cognitive protocol, private paths, and inferred targets were excluded. JSON, references, manifest, and exposure were validated, releasing KZ-E02-T05.

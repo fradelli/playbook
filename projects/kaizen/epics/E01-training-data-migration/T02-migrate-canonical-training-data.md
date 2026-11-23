@@ -6,34 +6,34 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E01-T01]
 ---
 
-# Migrar dados canônicos de treino
+# Migrate canonical training data
 
 ## Objective
-Migrar perfil aprovado, agenda aprovada, ponteiro ativo, biblioteca e somente o plano vigente sem alterar IDs ou fatos.
+Migrate the approved profile, approved schedule, active pointer, library, and only the current plan without changing IDs or facts.
 
 ## Inputs
-- Snapshot aprovado em KZ-E01-T01.
-- Linhas `e01-t02-*` do manifesto.
+- Snapshot approved in KZ-E01-T01.
+- `e01-t02-*` rows of the manifest.
 
 ## Deliverables
-- Arquivos canônicos correspondentes e somente o plano apontado por `data/active.json`.
-- Linhas de manifesto para cada artefato.
+- Corresponding canonical files and only the plan pointed to by `data/active.json`.
+- Manifest rows for each artifact.
 
 ## Subtasks
-- [x] Copiar ou transformar conforme manifesto.
-- [x] Preservar `null`, `unknowns` aprovados, IDs e versões.
-- [x] Ajustar somente caminhos relativos aprovados.
-- [x] Registrar hash de origem e destino.
-- [x] Não migrar versões anteriores nesta tarefa.
+- [x] Copy or transform according to the manifest.
+- [x] Preserve `null`, approved `unknowns`, IDs, and versions.
+- [x] Adjust only approved relative paths.
+- [x] Record source and destination hash.
+- [x] Do not migrate previous versions in this task.
 
 ## Validation
-- JSONs fazem parse.
-- `active_plan_id` coincide com o plano apontado.
-- Todos os `exercise_id` existem e são únicos.
+- JSON files parse.
+- `active_plan_id` matches the pointed plan.
+- All `exercise_id` values exist and are unique.
 
 ## Acceptance criteria
-- [x] Nenhuma regra ou dado foi inventado.
-- [x] A leitura canônica de treino é reproduzível.
+- [x] No rule or data was invented.
+- [x] The canonical training reading is reproducible.
 
 ## Result
-Cinco artefatos canônicos foram migrados exclusivamente do snapshot `d1acad309e2b81b714d1aa375e9371a310ad6ed0`. As três cópias literais mantiveram o SHA-256; perfil e agenda receberam somente a sanitização aprovada, com hashes de destino registrados. O plano ativo e todos os `exercise_id` foram validados, sem incluir versões ou históricos da KZ-E01-T03.
+Five canonical artifacts were migrated exclusively from snapshot `d1acad309e2b81b714d1aa375e9371a310ad6ed0`. The three literal copies kept their SHA-256; profile and schedule received only the approved sanitization, with destination hashes recorded. The active plan and all `exercise_id` values were validated, without including versions or histories from KZ-E01-T03.

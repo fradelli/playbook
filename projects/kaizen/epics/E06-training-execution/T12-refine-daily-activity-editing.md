@@ -6,14 +6,14 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T11]
 ---
 
-# Refinar edição de atividades do dia
+# Refine editing of the day's activities
 
 ## Objective
-Garantir que a instância diária possa divergir do template semanal sem alterar a definição recorrente nem perder atividades independentes.
+Ensure that the daily instance can diverge from the weekly template without changing the recurring definition or losing independent activities.
 
-## Contexto conhecido
+## Known context
 
-Na KZ-E06-T03 já há inclusão, edição de horário/tipo e exclusão lógica de atividades não concluídas em um drawer. Esta tarefa deve corrigir apenas lacunas confirmadas pela KZ-E06-T11, inclusive o caso de materialização parcial, sem recriar o fluxo existente.
+KZ-E06-T03 already includes adding, editing time/type, and logically deleting non-completed activities in a drawer. This task must fix only the gaps confirmed by KZ-E06-T11, including the partial materialization case, without recreating the existing flow.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -40,7 +40,7 @@ Na KZ-E06-T03 já há inclusão, edição de horário/tipo e exclusão lógica d
 - `schemas/exercise-library.schema.json`
 
 ## Deliverables
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Escopo e impactos».
+Not recorded in the original version of this task; equivalent content in the section "Scope and impacts".
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -48,80 +48,80 @@ Not recorded in the original version of this task.
 ## Validation
 Not recorded in the original version of this task.
 
-## Comportamento esperado
+## Expected behavior
 
-- É possível cancelar um jogo do dia, mover um treino para outro horário e adicionar outra atividade, sem mudar a agenda semanal.
-- Origem do plano, alteração manual e exclusão intencional permanecem distinguíveis.
-- Atividades concluídas e histórico real não são removidos pela edição do planejamento.
-- Não completar automaticamente datas já materializadas, conforme KZ-E06-T11; exclusões intencionais permanecem respeitadas.
+- It is possible to cancel a game of the day, move a workout to another time, and add another activity, without changing the weekly schedule.
+- Plan origin, manual change, and intentional deletion remain distinguishable.
+- Completed activities and real history are not removed by editing the planning.
+- Do not automatically complete already materialized dates, per KZ-E06-T11; intentional deletions remain respected.
 
-## Correções aprovadas em 26/09
+## Corrections approved on 26/09
 
-- Alterações, inclusão, exclusão, início e conclusão somente hoje e ontem em America/Sao_Paulo, com validação no servidor.
-- Consulta e expansão independentes de início, inclusive em datas futuras; cronômetro exige ação explícita.
-- Conclusão parcial envia o rascunho como está, mantendo vazios como zero e sem marcar pendências como feitas.
-- Modal: “Há exercícios ou séries incompletos. Deseja voltar ou finalizar com os dados atuais?”; Voltar em destaque, Finalizar secundário.
-- Aquecimento não possui séries; validar seu switch sem exigir séries inexistentes.
-- Nova versão 1.1.0 com dados de treino em inglês, nomes Push Workout, Pull Workout e Lower Body Workout; preservar fontes históricas e comentários do usuário.
-- i18n e navegação inferior não são implementados. Autorização inicial manteve alterações sem commit; em 27/09 o usuário aprovou commit, importação local e PR.
+- Changes, inclusion, deletion, start, and completion only today and yesterday in America/Sao_Paulo, with server-side validation.
+- Viewing and expanding independent of starting, including on future dates; the timer requires an explicit action.
+- Partial completion sends the draft as it is, keeping empty values as zero and without marking pending items as done.
+- Modal: "Há exercícios ou séries incompletos. Deseja voltar ou finalizar com os dados atuais?" (There are incomplete exercises or sets. Do you want to go back or finish with the current data?); "Voltar" (Back) highlighted, "Finalizar" (Finish) secondary.
+- The warm-up has no sets; validate its switch without requiring nonexistent sets.
+- New version 1.1.0 with workout data in English, named Push Workout, Pull Workout, and Lower Body Workout; preserve historical sources and user comments.
+- i18n and bottom navigation are not implemented. The initial authorization kept the changes uncommitted; on 27/09 the user approved the commit, local import, and PR.
 
-## Escopo e impactos
+## Scope and impacts
 
-- Ajustar somente mutações, leitura, UI e testes necessários às lacunas comprovadas.
-- Verificar ownership, revisão concorrente, preparação vinculada e horários nulos.
+- Adjust only the mutations, reads, UI, and tests needed by the proven gaps.
+- Verify ownership, concurrent revision, linked preparation, and null times.
 
-## Fora de escopo
+## Out of scope
 
-- Editor do template semanal ou replanejamento automático por recomendações.
+- Weekly template editor or automatic replanning by recommendations.
 
-## Decisões antes da implementação
+## Decisions before implementation
 
-- Reanalisar o código vigente e as decisões da KZ-E06-T11, apresentar plano incremental e aguardar aprovação explícita.
+- Reanalyze the current code and the decisions of KZ-E06-T11, present an incremental plan, and wait for explicit approval.
 
 ## Acceptance criteria
-- [x] Conclusão parcial com aquecimento sem séries, confirmação e consulta sem iniciar passam nos testes.
-- [x] Hoje/ontem podem ser alterados; todas as mutações fora dessa janela são rejeitadas antes do repositório.
-- [x] Alterações diárias não reescrevem o template nem as definições históricas.
-- [x] Versão 1.1.0 em inglês importada e ativada após autorização de commit em 27/09.
+- [x] Partial completion with a warm-up without sets, confirmation, and viewing without starting pass the tests.
+- [x] Today/yesterday can be changed; all mutations outside that window are rejected before the repository.
+- [x] Daily changes do not rewrite the template nor the historical definitions.
+- [x] Version 1.1.0 in English imported and activated after the commit authorization on 27/09.
 
 ## Result
-Correções de fluxo implementadas e submetidas à validação local. A conclusão
-parcial não exige séries no aquecimento, mantém o estado dos switches e
-normaliza valores numéricos vazios sem fabricar repetições realizadas.
-O servidor impede mutações fora de hoje/ontem; a consulta continua independente
-do início. Expansão e recolhimento ficam no título, sem botão duplicado.
+Flow corrections implemented and submitted to local validation. Partial
+completion does not require sets on the warm-up, keeps the state of the switches,
+and normalizes empty numeric values without fabricating repetitions performed.
+The server prevents mutations outside today/yesterday; viewing remains independent
+of starting. Expanding and collapsing live on the title, with no duplicate button.
 
-A versão 1.1.0 da ficha foi criada sem alterar a versão 1.0.0. Nomes ingleses
-usam o campo explícito `name_en` da biblioteca; `name_pt` e a coluna legada do
-banco permanecem por compatibilidade. Importador e auditoria reconhecem o novo
-campo. IDs, doses, ordem e blocos são preservados; comentários do usuário não
-são traduzidos. Importação autorizada em 27/09 e condicionada à fonte commitada.
+Version 1.1.0 of the workout sheet was created without changing version 1.0.0. English names
+use the explicit `name_en` field of the library; `name_pt` and the legacy database
+column remain for compatibility. The importer and the audit recognize the new
+field. IDs, doses, order, and blocks are preserved; user comments are not
+translated. Import authorized on 27/09 and conditioned on the committed source.
 
-Navegação inferior somente com ícones permanece proposta não decidida em KZ-E06-T14.
-Idiomas futuros confirmados: português, espanhol e inglês; sem implementação i18n.
+Bottom navigation with icons only remains an undecided proposal in KZ-E06-T14.
+Confirmed future languages: Portuguese, Spanish, and English; no i18n implementation.
 
-Validação local: 272 testes unitários, 41 integrações PostgreSQL, tipos, lint,
-estrutura, dados, formato, build e diff sem problemas. Conferidas respostas 200
-para ontem e data futura; a data futura não expõe início de treino. Revisão
-semântica preservou a fronteira de aplicação para a janela de mutação, o estado
-local do rascunho e a distinção entre preparação sem séries e execução principal.
+Local validation: 272 unit tests, 41 PostgreSQL integrations, types, lint,
+structure, data, format, build, and diff with no problems. Confirmed 200 responses
+for yesterday and a future date; the future date does not expose a workout start. Semantic
+review preserved the application boundary for the mutation window, the local
+draft state, and the distinction between preparation without sets and the main execution.
 
-Revisão pré-PR corrigiu três inconsistências: a projeção preserva o estado
-persistido do toggle independentemente das medidas das séries; a associação de
-aquecimento reconhece Futevôlei e Footvolley sem alterar o nome informado pelo
-usuário; a pausa de outra atividade não modifica rascunhos fora de hoje/ontem.
-Rascunhos locais com JSON inválido não impedem o início de uma nova atividade.
-A comparação de esportes fica em regra pura de domínio, sem dependência de UI
-ou Prisma. Dados das séries, conclusão do exercício e conclusão da atividade
-continuam sendo responsabilidades distintas.
+Pre-PR review fixed three inconsistencies: the projection preserves the
+persisted state of the toggle regardless of the set measures; the warm-up
+association recognizes Futevôlei and Footvolley without changing the name entered
+by the user; pausing another activity does not modify drafts outside today/yesterday.
+Local drafts with invalid JSON do not prevent starting a new activity.
+The sport comparison lives in a pure domain rule, with no UI or Prisma dependency.
+Set data, exercise completion, and activity completion remain distinct
+responsibilities.
 
-Entrega local concluída em 27/09: fonte fbd544e importada e ativada na versão
-1.1.0, com 34 definições de exercícios, 7 sessões e 42 prescrições novas.
-Reimportação retornou no-op. Contagens e hashes de atribuições, atividades,
-execuções e dados alimentares permaneceram idênticos antes/depois. Versões
-anteriores e datas já materializadas não foram reescritas; reconciliação futura
-permanece fora de escopo em KZ-E06-T13.
+Local delivery completed on 27/09: source fbd544e imported and activated in version
+1.1.0, with 34 exercise definitions, 7 sessions, and 42 new prescriptions.
+Reimport returned a no-op. Counts and hashes of assignments, activities,
+executions, and food data remained identical before/after. Previous versions
+and already materialized dates were not rewritten; future reconciliation
+remains out of scope in KZ-E06-T13.
 
-`pnpm run ci` aprovado integralmente: 272 testes unitários, 41 integrações,
-33 regressões dos validadores, cobertura acima dos limites, tipos, formato,
-lint, estrutura, schema, dados, build e auditoria sem vulnerabilidades conhecidas.
+`pnpm run ci` passed fully: 272 unit tests, 41 integrations,
+33 validator regressions, coverage above the thresholds, types, format,
+lint, structure, schema, data, build, and an audit with no known vulnerabilities.

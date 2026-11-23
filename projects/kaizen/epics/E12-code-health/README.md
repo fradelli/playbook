@@ -1,40 +1,40 @@
-# KZ-E12 — Saúde técnica do código
+# KZ-E12 — Technical code health
 
 ## Expected outcome
-Código da aplicação alinhado à arquitetura alvo, com fronteiras, validação, estado, segurança e testes corrigidos a partir da auditoria técnica de 2026-11-23 sobre `developer` (`364c71f`).
+Application code aligned with the target architecture, with boundaries, validation, state, security, and tests fixed based on the technical audit of 2026-11-23 on `developer` (`364c71f`).
 
 ## Scope
-- Dependências, configuração e headers de segurança.
-- Fronteiras entre app, aplicação, domínio e dados na agenda e no treino.
-- Schemas Zod únicos entre cliente e servidor e erros tipados.
-- Decisão e adoção de padrões de estado global e de formulários.
-- TypeScript estrito, testes E2E e organização de pastas.
+- Dependencies, configuration, and security headers.
+- Boundaries between app, application, domain, and data in the schedule and in workouts.
+- Single Zod schemas shared between client and server, and typed errors.
+- Decision on and adoption of global state and form patterns.
+- Strict TypeScript, E2E tests, and folder organization.
 
 ## Out of scope
-- Funcionalidades novas de produto.
-- Governança, documentação e CI, tratadas nas tarefas KZ-E00-T12 a KZ-E00-T16.
-- Migração Mira, que segue em KZ-E10-T09.
+- New product features.
+- Governance, documentation, and CI, handled in tasks KZ-E00-T12 to KZ-E00-T16.
+- The Mira migration, which continues in KZ-E10-T09.
 
 ## Order
-| Tarefa | Depende de | Resultado |
+| Task | Depends on | Outcome |
 | --- | --- | --- |
-| [KZ-E12-T01](T01-sanitize-dependencies-and-overrides.md) | KZ-E00-T13 | Dependências com versão exata e overrides válidos |
-| [KZ-E12-T02](T02-add-security-headers-and-route-states.md) | — | Headers de segurança e páginas de erro e carregamento |
-| [KZ-E12-T03](T03-align-schedule-with-architecture-boundaries.md) | — | Agenda com caso de uso, action na ordem e sem REST interna |
-| [KZ-E12-T04](T04-unify-zod-schemas.md) | KZ-E12-T03 | Um schema por contrato, compartilhado entre cliente e servidor |
-| [KZ-E12-T05](T05-replace-text-errors-with-typed-codes.md) | KZ-E12-T04 | Erros por código, traduzidos só na UI |
-| [KZ-E12-T06](T06-remove-duplicate-refresh-after-mutations.md) | — | Uma única atualização da rota após cada mutação |
-| [KZ-E12-T07](T07-split-training-repository.md) | KZ-E12-T05 | Repositório de treino dividido e regras no domínio |
-| [KZ-E12-T08](T08-decide-state-and-form-patterns.md) | — | Decisão sobre Zustand e React Hook Form registrada |
-| [KZ-E12-T09](T09-migrate-client-caches-to-approved-store.md) | KZ-E12-T08 | Caches da agenda e rascunho de treino na store aprovada |
-| [KZ-E12-T10](T10-migrate-activity-form-to-approved-pattern.md) | KZ-E12-T04, KZ-E12-T08 | Formulário de atividade no padrão aprovado |
-| [KZ-E12-T11](T11-tighten-typescript-strictness.md) | KZ-E12-T07 | Opções estritas extras do TypeScript ativas |
-| [KZ-E12-T12](T12-create-critical-e2e-tests.md) | KZ-E12-T02 | Jornadas críticas cobertas por Playwright |
-| [KZ-E12-T13](T13-standardize-imports-and-feature-folders.md) | KZ-E12-T09 | Imports e estrutura de pastas uniformes |
+| [KZ-E12-T01](T01-sanitize-dependencies-and-overrides.md) | KZ-E00-T13 | Dependencies with exact versions and valid overrides |
+| [KZ-E12-T02](T02-add-security-headers-and-route-states.md) | — | Security headers and error and loading pages |
+| [KZ-E12-T03](T03-align-schedule-with-architecture-boundaries.md) | — | Schedule with a use case, an action in order, and no internal REST |
+| [KZ-E12-T04](T04-unify-zod-schemas.md) | KZ-E12-T03 | One schema per contract, shared between client and server |
+| [KZ-E12-T05](T05-replace-text-errors-with-typed-codes.md) | KZ-E12-T04 | Errors by code, translated only in the UI |
+| [KZ-E12-T06](T06-remove-duplicate-refresh-after-mutations.md) | — | A single route refresh after each mutation |
+| [KZ-E12-T07](T07-split-training-repository.md) | KZ-E12-T05 | Workout repository split and rules in the domain |
+| [KZ-E12-T08](T08-decide-state-and-form-patterns.md) | — | Decision on Zustand and React Hook Form recorded |
+| [KZ-E12-T09](T09-migrate-client-caches-to-approved-store.md) | KZ-E12-T08 | Schedule caches and workout draft in the approved store |
+| [KZ-E12-T10](T10-migrate-activity-form-to-approved-pattern.md) | KZ-E12-T04, KZ-E12-T08 | Activity form in the approved pattern |
+| [KZ-E12-T11](T11-tighten-typescript-strictness.md) | KZ-E12-T07 | Extra strict TypeScript options enabled |
+| [KZ-E12-T12](T12-create-critical-e2e-tests.md) | KZ-E12-T02 | Critical journeys covered by Playwright |
+| [KZ-E12-T13](T13-standardize-imports-and-feature-folders.md) | KZ-E12-T09 | Uniform imports and folder structure |
 
 Status lives only in the project `README.md`.
 
 ## Closing criteria
-- [ ] Todas as tarefas obrigatórias estão `DONE` ou `CANCELLED` por decisão registrada.
-- [ ] `docs/architecture/TARGET-ARCHITECTURE.md` reflete as decisões tomadas no épico.
-- [ ] `pnpm run ci` passa com os novos gates.
+- [ ] All required tasks are `DONE` or `CANCELLED` by a recorded decision.
+- [ ] `docs/architecture/TARGET-ARCHITECTURE.md` reflects the decisions made in the epic.
+- [ ] `pnpm run ci` passes with the new gates.

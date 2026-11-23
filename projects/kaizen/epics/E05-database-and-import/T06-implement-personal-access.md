@@ -6,17 +6,17 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E05-T05]
 ---
 
-# Implementar acesso pessoal
+# Implement personal access
 
-## Estado
+## Status
 
-Cancelada em 2026-09-15 por decisão explícita do proprietário. O P0 será usado
-temporariamente em URL pública, sem autenticação, com o risco de leitura e
-alteração por terceiros aceito. A autenticação volta a ser obrigatória antes de
-múltiplos usuários ou dados sensíveis.
+Canceled on 2026-09-15 by explicit decision of the owner. P0 will be used
+temporarily at a public URL, without authentication, with the risk of third-party reading and
+modification accepted. Authentication becomes mandatory again before
+multiple users or sensitive data.
 
 ## Objective
-Criar sessão, autorização e pareamento antes de qualquer leitura ou mutação operacional de treino e alimentação.
+Create session, authorization, and pairing before any operational read or mutation of workouts and nutrition.
 
 ## Inputs
 - `docs/operations/E05.md`
@@ -27,29 +27,29 @@ Criar sessão, autorização e pareamento antes de qualquer leitura ou mutação
 - `prisma/schema.prisma`
 
 ## Deliverables
-- Sessão autenticada server-only.
-- Pareamento por chave de alta entropia.
-- Autorização e resolução de workspace reutilizáveis.
-- Validação de origem e limite de tentativas.
-- Testes de sucesso, ausência, expiração, rotação e fraude.
+- Server-only authenticated session.
+- Pairing by a high-entropy key.
+- Reusable authorization and workspace resolution.
+- Origin validation and attempt limiting.
+- Tests for success, absence, expiration, rotation, and fraud.
 
 ## Subtasks
-- [ ] Implementar cookie seguro e sessão assinada.
-- [ ] Derivar ator e workspace exclusivamente no servidor.
-- [ ] Implementar pareamento sem registrar chave ou hash.
-- [ ] Validar origem em mutações e limitar tentativas.
-- [ ] Impedir importação das fronteiras server-only pelo cliente.
+- [ ] Implement a secure cookie and signed session.
+- [ ] Derive actor and workspace exclusively on the server.
+- [ ] Implement pairing without recording the key or its hash.
+- [ ] Validate origin on mutations and limit attempts.
+- [ ] Prevent the client from importing the server-only boundaries.
 
 ## Validation
-- Testar sessão ausente, inválida, expirada e rotacionada.
-- Testar origem inválida e `workspace_id` fornecido pelo cliente.
-- Confirmar ausência de segredo, cookie ou payload em logs.
+- Test missing, invalid, expired, and rotated sessions.
+- Test invalid origin and a client-supplied `workspace_id`.
+- Confirm no secret, cookie, or payload in logs.
 
 ## Acceptance criteria
-- [ ] KZ-E06 e KZ-E07 recebem uma API de autorização testada e não precisam criar segurança ad hoc.
-- [ ] Conteúdo público permanece acessível sem expor dado operacional.
+- [ ] KZ-E06 and KZ-E07 receive a tested authorization API and do not need to create ad hoc security.
+- [ ] Public content remains accessible without exposing operational data.
 
 ## Result
-Cancelada. Nenhuma sessão, chave de pareamento, cookie ou tela de ativação foi
-implementada. O resolvedor fixo server-only existente permanece como fronteira
-substituível por sessão e membership no futuro.
+Canceled. No session, pairing key, cookie, or activation screen was
+implemented. The existing fixed server-only resolver remains as a boundary
+replaceable by session and membership in the future.

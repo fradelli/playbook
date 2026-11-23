@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E05-T03]
 ---
 
-# Testar integridade persistida
+# Test persisted integrity
 
 ## Objective
-Provar joins, constraints, versão ativa e proveniência contra banco real de teste.
+Prove joins, constraints, active version, and provenance against a real test database.
 
 ## Inputs
 - `docs/operations/E05.md`
@@ -55,40 +55,40 @@ Provar joins, constraints, versão ativa e proveniência contra banco real de te
 - `tests/integration/persisted-data-concurrency.test.ts`
 
 ## Deliverables
-- Testes de integração e relatório de paridade.
+- Integration tests and parity report.
 
 ## Subtasks
-- [x] Testar plano ativo e referências.
-- [x] Testar duplicação e ausência de pai.
-- [x] Comparar contagens e campos relevantes.
-- [x] Testar rollback da importação.
-- [x] Auditar projeções e proveniência em snapshot somente leitura consistente.
-- [x] Distinguir banco vazio de paridade válida, sem expor dados operacionais.
-- [x] Validar conflitos de revisão com duas conexões reais.
-- [x] Executar CLI em schema descartável preparado pela integração.
+- [x] Test the active plan and references.
+- [x] Test duplication and missing parent.
+- [x] Compare counts and relevant fields.
+- [x] Test import rollback.
+- [x] Audit projections and provenance in a consistent read-only snapshot.
+- [x] Distinguish an empty database from valid parity, without exposing operational data.
+- [x] Validate revision conflicts with two real connections.
+- [x] Run the CLI in a disposable schema prepared by the integration.
 
 ## Validation
-- Testes rodam em ambiente descartável e falham para dados inválidos.
+- Tests run in a disposable environment and fail for invalid data.
 
 ## Acceptance criteria
-- [x] Banco preserva as invariantes do repositório.
+- [x] The database preserves the repository invariants.
 
 ## Result
-Implementado auditor server-only somente leitura, com regras puras de paridade,
-DTOs sem Prisma, hash dos bytes Git e confirmação da origem no commit de primeira
-importação. Relatório distingue `valid`, `invalid` e `not-imported`, sem incluir
-valores, documentos, UUIDs ou strings de conexão. Seu escopo é o conjunto canônico
-de definições do commit selecionado; não certifica fontes históricas não
-selecionadas nem varre dados operacionais privados.
+Implemented a read-only server-only auditor, with pure parity rules,
+DTOs without Prisma, a hash of the Git bytes, and confirmation of the source in the first-import
+commit. The report distinguishes `valid`, `invalid`, and `not-imported`, without including
+values, documents, UUIDs, or connection strings. Its scope is the canonical set
+of definitions of the selected commit; it does not certify unselected
+historical sources or scan private operational data.
 
-CLI protegida pelo destino loopback `kaizen_test`, sem fallback operacional,
-importação, migration ou reparo. Integração prepara schema aleatório, importa,
-executa a CLI e remove somente o schema validado. Casos de revisão concorrente
-usam dois Clients independentes e exigem um vencedor e um conflito, preservando
-campos e vínculos do vencedor. Testes prévios de rollback e história mantidos.
+CLI protected by the loopback target `kaizen_test`, with no operational fallback,
+import, migration, or repair. The integration prepares a random schema, imports,
+runs the CLI, and removes only the validated schema. Concurrent revision cases
+use two independent Clients and require one winner and one conflict, preserving the
+winner's fields and links. Earlier rollback and history tests were kept.
 
-`pnpm run ci` aprovado: 144 testes unitários/validadores, 30 integrações PostgreSQL,
-29 regressões dos scripts, formato, lint, estrutura, tipos, dados, build e audit
-sem vulnerabilidades conhecidas. Migration inicial, JSONs aprovados, shells e
-volumes preservados. Implementação local aguardando validação e autorização de
-commit/PR. Conclusão Docker anterior já integrada pela PR #39.
+`pnpm run ci` approved: 144 unit/validator tests, 30 PostgreSQL integrations,
+29 script regressions, format, lint, structure, types, data, build, and audit
+with no known vulnerabilities. Initial migration, approved JSONs, shells, and
+volumes preserved. Local implementation awaiting validation and authorization for
+commit/PR. The earlier Docker closure was already merged through PR #39.

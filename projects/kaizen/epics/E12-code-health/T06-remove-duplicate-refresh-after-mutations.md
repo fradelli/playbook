@@ -6,36 +6,36 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: []
 ---
 
-# Remover o refresh duplicado após mutações
+# Remove the duplicate refresh after mutations
 
 ## Objective
-Garantir uma única atualização da rota depois de cada mutação de treino.
+Ensure a single route refresh after each workout mutation.
 
-## Contexto
+## Context
 
-Achado da auditoria de 2026-11-23: `src/app/workout/training-actions.ts` chama `revalidatePath("/workout")` quando a mutação é salva, e o cliente ainda chama `router.refresh()` em `src/features/training/ui/hooks/use-training-action-feedback.ts` e em outros cinco pontos. O `revalidatePath` dentro de uma Server Action já devolve a árvore atualizada, então a rota é buscada duas vezes.
+Finding from the 2026-11-23 audit: `src/app/workout/training-actions.ts` calls `revalidatePath("/workout")` when the mutation is saved, and the client still calls `router.refresh()` in `src/features/training/ui/hooks/use-training-action-feedback.ts` and in five other places. A `revalidatePath` inside a Server Action already returns the updated tree, so the route is fetched twice.
 
 ## Inputs
-- `src/app/workout/training-actions.ts` — revalidação.
-- `src/features/training/ui/hooks/use-training-action-feedback.ts` — refresh no cliente.
-- `docs/architecture/TARGET-ARCHITECTURE.md` — seção "Server Actions", passo 8.
+- `src/app/workout/training-actions.ts` — revalidation.
+- `src/features/training/ui/hooks/use-training-action-feedback.ts` — client refresh.
+- `docs/architecture/TARGET-ARCHITECTURE.md` — section "Server Actions", step 8.
 
 ## Deliverables
-- Uma só estratégia de atualização por fluxo, escolhida e aplicada nos seis pontos de `router.refresh()`.
-- Exceções justificadas em comentário quando o fluxo não passa por Server Action.
+- A single refresh strategy per flow, chosen and applied in the six `router.refresh()` places.
+- Exceptions justified in a comment when the flow does not go through a Server Action.
 
 ## Subtasks
-- [ ] Mapear os seis pontos de `router.refresh()` e a action de cada um.
-- [ ] Remover o refresh redundante.
-- [ ] Ajustar os testes que esperam o refresh.
+- [ ] Map the six `router.refresh()` places and the action of each one.
+- [ ] Remove the redundant refresh.
+- [ ] Adjust the tests that expect the refresh.
 
 ## Validation
-- `pnpm test` passa.
-- No navegador, salvar uma atividade dispara uma única requisição de atualização da rota.
+- `pnpm test` passes.
+- In the browser, saving an activity triggers a single route refresh request.
 
 ## Acceptance criteria
-- [ ] Nenhum fluxo de mutação atualiza a rota duas vezes.
-- [ ] A tela mostra o estado salvo sem recarregar manualmente.
+- [ ] No mutation flow refreshes the route twice.
+- [ ] The screen shows the saved state without a manual reload.
 
 ## Result
-Não iniciada.
+Not started.

@@ -6,14 +6,14 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E04-T07]
 ---
 
-# Integrar Design System versionado
+# Integrate the versioned Design System
 
 ## Objective
-Adotar exatamente `@fradelli/ui@0.1.0` pelo GitHub Packages com instalação, build e rollback reproduzíveis.
+Adopt exactly `@fradelli/ui@0.1.0` through GitHub Packages with reproducible install, build, and rollback.
 
-## Contexto
+## Context
 
-A integração só começa após o GO de prontidão de KZ-E04-T07. O package publicado é privado e versionado; credenciais de leitura permanecem fora do repositório.
+The integration only starts after the readiness GO from KZ-E04-T07. The published package is private and versioned; read credentials stay outside the repository.
 
 ## Inputs
 - `docs/evidence/design-system/E04-T07-DESIGN-SYSTEM-READINESS.md`
@@ -32,73 +32,73 @@ A integração só começa após o GO de prontidão de KZ-E04-T07. O package pub
 - `CHANGELOG.md`
 - `https://github.com/fradelli/design-system/blob/3e0c23f591ff458ab9e3e74dc44bb0cdba068a03/package.json`
 
-## Escopo
+## Scope
 
-- Configurar o scope público do registry sem versionar autenticação.
-- Instalar versões exatas do package e da toolchain CSS compatível.
-- Configurar Tailwind CSS 4 e PostCSS.
-- Carregar Inter variável e expor `--font-inter` no elemento raiz.
-- Ativar dark explicitamente, importar uma vez o CSS público e registrar o `dist` em `@source`.
-- Criar `/foundations` como smoke test sem domínio.
-- Remover somente tokens e estados locais substituídos pelo package.
-- Estender CI para instalar o package privado com acesso mínimo.
+- Configure the public registry scope without versioning authentication.
+- Install exact versions of the package and the compatible CSS toolchain.
+- Configure Tailwind CSS 4 and PostCSS.
+- Load variable Inter and expose `--font-inter` on the root element.
+- Explicitly enable dark mode, import the public CSS once, and register `dist` in `@source`.
+- Create `/foundations` as a smoke test with no domain.
+- Remove only the local tokens and states replaced by the package.
+- Extend CI to install the private package with minimal access.
 
-## Fora do escopo
+## Out of scope
 
-- Construir shell definitivo, páginas de dieta/treino ou calendário compartilhado.
-- Copiar código do package para o Kaizen.
-- Adicionar flags ou variantes específicas de produto ao Design System.
+- Building the final shell, diet/workout pages, or the shared calendar.
+- Copying package code into Kaizen.
+- Adding product-specific flags or variants to the Design System.
 
 ## Deliverables
-- Dependências e lockfile reproduzíveis.
-- Configuração Tailwind/PostCSS e integração raiz de fonte, tema e CSS.
-- Página foundations e testes de smoke.
-- CI autorizado a ler somente o package necessário.
+- Reproducible dependencies and lockfile.
+- Tailwind/PostCSS configuration and root integration of font, theme, and CSS.
+- Foundations page and smoke tests.
+- CI authorized to read only the necessary package.
 
 ## Subtasks
-- [x] Fixar `@fradelli/ui@0.1.0` sem range ou caminho local.
-- [x] Aplicar o contrato público reconfirmado em KZ-E04-T07.
-- [x] Criar foundations sem conceito de dieta, treino, hábito ou tarefa.
-- [x] Validar instalação limpa, acessibilidade, responsividade e build.
-- [x] Registrar a versão anterior ou o commit pré-adoção para rollback.
+- [x] Pin `@fradelli/ui@0.1.0` without a range or local path.
+- [x] Apply the public contract reconfirmed in KZ-E04-T07.
+- [x] Create foundations without any diet, workout, habit, or task concept.
+- [x] Validate clean install, accessibility, responsiveness, and build.
+- [x] Record the previous version or the pre-adoption commit for rollback.
 
 ## Validation
-- Executar `pnpm install --frozen-lockfile` em checkout limpo.
-- Executar format check, lint, typecheck, testes, cobertura e build localmente e no CI.
-- Inspecionar CSS gerado, foco, teclado, contraste, 320 px e zoom de 200%.
-- Confirmar um único React, ausência de credencial e importação única do CSS público.
+- Run `pnpm install --frozen-lockfile` on a clean checkout.
+- Run format check, lint, typecheck, tests, coverage, and build locally and in CI.
+- Inspect generated CSS, focus, keyboard, contrast, 320 px, and 200% zoom.
+- Confirm a single React, absence of credentials, and a single import of the public CSS.
 
 ## Acceptance criteria
-- [x] `@fradelli/ui` usa versão exata do GitHub Packages.
-- [x] Inter, `--font-inter`, dark, CSS público e `@source` estão ativos no root.
-- [x] Foundations prova tokens e primitives disponíveis sem domínio.
-- [x] Instalação congelada e build passam em ambiente limpo e no CI.
-- [x] O rollback por versão ou commit está documentado e testável.
+- [x] `@fradelli/ui` uses an exact version from GitHub Packages.
+- [x] Inter, `--font-inter`, dark mode, public CSS, and `@source` are active at the root.
+- [x] Foundations proves tokens and primitives are available without domain.
+- [x] Frozen install and build pass in a clean environment and in CI.
+- [x] Rollback by version or commit is documented and testable.
 
-## Riscos
+## Risks
 
-- Falha de autenticação ou permissão do package privado.
-- CSS duplicado, ordem incorreta de imports ou classes omitidas.
-- Duas cópias de React ou incompatibilidade durante a linha `0.x`.
+- Authentication or permission failure on the private package.
+- Duplicated CSS, wrong import order, or omitted classes.
+- Two copies of React or incompatibility during the `0.x` line.
 
 ## Rollback
 
-Reverter a PR na primeira adoção para restaurar a base pré-adoção `26f1416`. Em upgrades posteriores, restaurar a versão exata e o lockfile do último release conhecido como bom; nunca copiar código nem republicar o mesmo número de versão.
+Revert the PR on the first adoption to restore the pre-adoption base `26f1416`. On later upgrades, restore the exact version and lockfile of the last known good release; never copy code or republish the same version number.
 
 ## Result
-Implementação e validação local concluídas em 2026-09-11 sobre a base pré-adoção `26f1416`:
+Implementation and local validation completed on 2026-09-11 on top of the pre-adoption base `26f1416`:
 
-- `@fradelli/ui@0.1.0`, Tailwind CSS `4.3.3`, `@tailwindcss/postcss@4.3.3` e PostCSS `8.5.28` foram fixados no manifesto e lockfile;
-- instalação congelada passou em worktree temporário sem `node_modules` prévio;
-- `/foundations` exercita exports públicos, estados, cores rotuladas, campos, foco, movimento reduzido e sheet por teclado;
-- viewport de 320 px e zoom de 200% foram inspecionados sem overflow horizontal na condição final;
-- `pnpm run ci`, árvore única de React `19.2.8`, CSS compilado e varredura sanitizada de segredos passaram localmente;
-- CI recebeu `packages: read` somente nos quatro jobs que instalam dependências e usa `GITHUB_TOKEN` apenas no passo de instalação.
+- `@fradelli/ui@0.1.0`, Tailwind CSS `4.3.3`, `@tailwindcss/postcss@4.3.3`, and PostCSS `8.5.28` were pinned in the manifest and lockfile;
+- frozen install passed in a temporary worktree without a prior `node_modules`;
+- `/foundations` exercises public exports, states, labeled colors, fields, focus, reduced motion, and a keyboard-operated sheet;
+- the 320 px viewport and 200% zoom were inspected with no horizontal overflow in the final condition;
+- `pnpm run ci`, the single React tree `19.2.8`, compiled CSS, and a sanitized secret scan passed locally;
+- CI received `packages: read` only in the four jobs that install dependencies and uses `GITHUB_TOKEN` only in the install step.
 
-A PR #30 comprovou a instalação autenticada no GitHub Actions e concluiu os seis gates obrigatórios em 2026-09-11.
+PR #30 proved the authenticated install on GitHub Actions and completed the six required gates on 2026-09-11.
 
-## Consolidação documental de 12/11/2026
+## Documentation consolidation of 12/11/2026
 
-Registry sem segredos, CSS público/source, fonte/tema e React único eram gates iniciais. Release atual exige nova verificação; tarball é prévia.
+Registry without secrets, public CSS/source, font/theme, and a single React were initial gates. The current release requires new verification; the tarball is a preview.
 
-[Pacote original integral](https://github.com/fradelli/nextjs-kaizen-app/blob/fd2269d2eaa7d55cfea724631f12fa6505d37b32/docs/implementation/tasks/E04-T08.md), SHA-256 `1b2b095e2b32bab9098ea848576eab1b13afdbd0a42d1935fec49b29177ec3a0`. Comandos, critérios, riscos e rollback registram aquela base e não são receita para reinstalar a aplicação atual. Pendências não viraram aprovações nesta consolidação.
+[Full original package](https://github.com/fradelli/nextjs-kaizen-app/blob/fd2269d2eaa7d55cfea724631f12fa6505d37b32/docs/implementation/tasks/E04-T08.md), SHA-256 `1b2b095e2b32bab9098ea848576eab1b13afdbd0a42d1935fec49b29177ec3a0`. Commands, criteria, risks, and rollback record that baseline and are not a recipe for reinstalling the current application. Open items were not turned into approvals in this consolidation.

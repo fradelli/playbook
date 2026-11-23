@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E07-T03]
 ---
 
-# Exibir segurança e proveniência
+# Show safety and provenance
 
 ## Objective
-Exibir versão, origem, unknowns e ressalvas do conteúdo alimentar.
+Show the version, origin, unknowns, and caveats of the nutrition content.
 
 ## Inputs
 - `docs/plans/nutrition/E07.md`
@@ -20,19 +20,19 @@ Exibir versão, origem, unknowns e ressalvas do conteúdo alimentar.
 - `src/features/nutrition/`
 
 ## Deliverables
-- Metadados de proveniência e avisos contextuais.
+- Provenance metadata and contextual notices.
 
 ## Subtasks
-- [ ] Identificar data, versão e autoria quando conhecidas.
-- [ ] Distinguir fato confirmado de interpretação documentada.
-- [ ] Exibir orientação para avaliação profissional quando aplicável.
-- [ ] Minimizar dados pessoais apresentados.
+- [ ] Identify date, version, and authorship when known.
+- [ ] Distinguish confirmed fact from documented interpretation.
+- [ ] Show guidance to seek professional assessment when applicable.
+- [ ] Minimize the personal data presented.
 
 ## Validation
-- Conferir avisos e metadados contra as fontes.
+- Check notices and metadata against the sources.
 
 ## Acceptance criteria
-- [ ] A interface não apresenta hipótese como prescrição confirmada.
+- [ ] The interface does not present a hypothesis as a confirmed prescription.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

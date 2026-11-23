@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E03-T05]
 ---
 
-# Otimizar contexto e sanear dependências pré-MVP
+# Optimize context and clean up pre-MVP dependencies
 
 ## Objective
-Reduzir leituras desnecessárias do Codex e tornar a sequência KZ-E04–KZ-E08 executável sem dependências implícitas.
+Reduce unnecessary reads by Codex and make the KZ-E04–KZ-E08 sequence executable without implicit dependencies.
 
 ## Inputs
 - `AGENTS.md`
@@ -20,27 +20,27 @@ Reduzir leituras desnecessárias do Codex e tornar a sequência KZ-E04–KZ-E08 
 - `docs/decisions/PRIVACY-AND-OPERATIONS.md`
 
 ## Deliverables
-- Instruções segmentadas por árvore.
-- Guia de implementação modular e tarefas com entradas exatas.
-- Ordem corrigida para autorização, backup local e Neon.
-- Nomes e checklists coerentes com o P0 operacional.
+- Instructions segmented by tree.
+- Modular implementation guide and tasks with exact inputs.
+- Corrected order for authorization, local backup, and Neon.
+- Names and checklists consistent with the operational P0.
 
 ## Subtasks
-- [x] Reduzir o contrato raiz e criar instruções especializadas.
-- [x] Separar a implementação em pacotes pequenos por tarefa ou épico.
-- [x] Antecipar sessão e autorização para antes de KZ-E06/E07.
-- [x] Limitar KZ-E05-T05 ao restore local e manter Neon em KZ-E08.
-- [x] Normalizar nomes, checklists, entradas, links e índices.
+- [x] Shrink the root contract and create specialized instructions.
+- [x] Split the implementation into small packages per task or epic.
+- [x] Move session and authorization ahead of KZ-E06/E07.
+- [x] Limit KZ-E05-T05 to the local restore and keep Neon in KZ-E08.
+- [x] Normalize names, checklists, inputs, links, and indexes.
 
 ## Validation
-- Medir a rota mínima de leitura de KZ-E04-T01 antes e depois.
-- Validar Markdown, JSON, schemas, IDs, dependências e estados.
-- Confirmar ausência de código, dependências, workflows e segredos.
+- Measure the minimal reading route of KZ-E04-T01 before and after.
+- Validate Markdown, JSON, schemas, IDs, dependencies, and states.
+- Confirm there is no code, dependency, workflow, or secret.
 
 ## Acceptance criteria
-- [x] KZ-E04-T01 é autocontida e pode começar sem ler o guia inteiro.
-- [x] Nenhuma feature operacional antecede sua autorização.
-- [x] Nenhuma tarefa exige Neon antes de sua configuração.
+- [x] KZ-E04-T01 is self-contained and can start without reading the whole guide.
+- [x] No operational feature precedes its authorization.
+- [x] No task requires Neon before it is configured.
 
 ## Result
-Contrato do agente segmentado, guia modularizado, tarefas futuras com entradas exatas e sequência de segurança/infraestrutura corrigida. A rota mínima de KZ-E04-T01 caiu de 4.801 para 1.761 palavras, redução aproximada de 63%. O saneamento permanece exclusivamente documental e mantém KZ-E04-T01 como próximo incremento de código.
+Agent contract segmented, guide modularized, future tasks with exact inputs, and the security/infrastructure sequence corrected. The minimal reading route of KZ-E04-T01 dropped from 4,801 to 1,761 words, a reduction of about 63%. The cleanup remains documentation-only and keeps KZ-E04-T01 as the next code increment.

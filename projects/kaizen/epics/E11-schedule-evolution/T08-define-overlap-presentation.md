@@ -6,37 +6,37 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: []
 ---
 
-# Definir apresentação de sobreposições e agrupador
+# Define overlap presentation and the grouper
 
 ## Objective
-Detalhar o agrupamento visual com dois cards e +N, sem alterar a liberdade de sobreposição nem confundir apresentação com vínculo.
+Detail the visual grouping with two cards and +N, without changing the freedom of overlap or confusing presentation with a link.
 
 ## Inputs
-- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/ui/schedule-layout.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/schedule-layout.ts) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/ui/components/calendar-grid/calendar-grid.entries.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/calendar-grid/calendar-grid.entries.ts) — consultar o contrato ou seção correspondente ao escopo.
+- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consult the contract or section matching the scope.
+- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consult the contract or section matching the scope.
+- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consult the contract or section matching the scope.
+- [src/features/schedule/ui/schedule-layout.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/schedule-layout.ts) — consult the contract or section matching the scope.
+- [src/features/schedule/ui/components/calendar-grid/calendar-grid.entries.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/calendar-grid/calendar-grid.entries.ts) — consult the contract or section matching the scope.
 
 ## Deliverables
-Resultado verificável descrito nos critérios abaixo, com evidências vinculadas a esta tarefa. Antes de editar código, aplicar as seções pertinentes da [arquitetura](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) e os contratos locais. Não carregar planos históricos inteiros.
+Verifiable result described in the criteria below, with evidence linked to this task. Before editing code, apply the relevant sections of the [architecture](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) and the local contracts. Do not load entire historical plans.
 
 ## Subtasks
-- [ ] Definir ordem das atividades visíveis e tratamento de cruzamentos parciais.
-- [ ] Definir abertura do agrupador por mouse, toque e teclado.
-- [ ] Definir escolha de alvo quando um drop encontra atividades agrupadas.
+- [ ] Define the order of visible activities and the handling of partial crossings.
+- [ ] Define how the grouper opens by mouse, touch, and keyboard.
+- [ ] Define target selection when a drop meets grouped activities.
 
 ## Validation
-Conferir links, IDs, dependências e coerência com regras de produto. Quando houver implementação autorizada, executar os gates proporcionais e os cenários do plano; registrar o que foi executado e o que ficou pendente. Testes ainda não executados não contam como evidência.
+Check links, IDs, dependencies, and consistency with product rules. When implementation is authorized, run the proportional gates and the plan's scenarios; record what was run and what remains pending. Tests not yet run do not count as evidence.
 
 ## Acceptance criteria
-- [ ] Regras de ordem e cruzamentos estão decididas ou registradas como pendentes.
-- [ ] Todas as atividades permanecem acessíveis e identificáveis.
-- [ ] O plano distingue esta entrega do DnD inicial e do vínculo entre atividades.
+- [ ] Order and crossing rules are decided or recorded as pending.
+- [ ] All activities remain accessible and identifiable.
+- [ ] The plan distinguishes this deliverable from the initial DnD and from linking between activities.
 
-## Fora de escopo
+## Out of scope
 
-Esta tarefa entrega especificação; implementação posterior depende do aceite visual. Não bloqueia sobreposição independente existente.
+This task delivers a specification; later implementation depends on visual acceptance. It does not block the existing independent overlap.
 
 ## Result
-Backlog registrado em 21/11/2026 durante a reconciliação documental. Nenhuma execução desta tarefa foi iniciada por este registro. O status canônico fica exclusivamente no índice do roadmap.
+Backlog recorded on 21/11/2026 during the documentation reconciliation. No execution of this task was started by this record. Canonical status lives only in the roadmap index.

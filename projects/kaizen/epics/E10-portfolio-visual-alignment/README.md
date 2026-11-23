@@ -1,38 +1,38 @@
-# KZ-E10 — Alinhamento visual com o portfólio
+# KZ-E10 — Visual alignment with the portfolio
 
 ## Expected outcome
-O Kaizen parece uma extensão do portfólio, com a mesma linguagem visual estática e
-sem alterar conteúdo, funcionalidades ou regras de negócio. Animações, estrelas e
-partículas ficam fora da experiência.
+Kaizen looks like an extension of the portfolio, with the same static visual language
+and without changing content, features, or business rules. Animations, stars, and
+particles stay out of the experience.
 
-## Sequência
+## Sequence
 
-O resultado e os limites abaixo descrevem a referência histórica do portfólio.
-A KZ-E10-T09 segue o guia Mira aprovado, com aparência e primitivas no design system;
-não autoriza recriar estilos genéricos localmente quando faltar um export.
+The outcome and limits below describe the historical portfolio reference.
+KZ-E10-T09 follows the approved Mira guide, with appearance and primitives in the design system;
+it does not authorize recreating generic styles locally when an export is missing.
 
-| Tarefa | Depende de | Resultado |
+| Task | Depends on | Outcome |
 | --- | --- | --- |
-| KZ-E10-T01 | KZ-E06-T25 | Integrar referência visual, catálogo de ícones e estados genéricos do DS |
-| KZ-E10-T02 | KZ-E10-T01 | Player no card, dicas coerentes e encerramento em modal com rascunho |
-| KZ-E10-T09 | KZ-E10-T08 | Concluir adoção Mira após as entregas históricas KZ-E10-T01 a KZ-E10-T08 |
+| KZ-E10-T01 | KZ-E06-T25 | Integrate the visual reference, the icon catalog, and the generic DS states |
+| KZ-E10-T02 | KZ-E10-T01 | Player in the card, consistent hints, and closing in a modal with a draft |
+| KZ-E10-T09 | KZ-E10-T08 | Complete the Mira adoption after the historical deliveries KZ-E10-T01 to KZ-E10-T08 |
 
-## Limites
+## Limits
 
-- O portfólio publicado é a referência final; `@fradelli/ui` fornece os tokens e primitives disponíveis.
-- Complementos locais reproduzem estilos estáticos do portfólio quando não houver contrato público equivalente.
-- Conteúdo e comportamento de Dieta/Treino permanecem próprios do Kaizen.
-- Não copiar animações, fundo estrelado, partículas ou ilustrações.
+- The published portfolio is the final reference; `@fradelli/ui` provides the available tokens and primitives.
+- Local additions reproduce the portfolio's static styles when there is no equivalent public contract.
+- Diet/Workout content and behavior remain specific to Kaizen.
+- Do not copy animations, starry background, particles, or illustrations.
 
-## Tarefas complementares registradas
+## Registered complementary tasks
 
-Status canônico no [roadmap](../../README.md). Esta tabela completa a navegação sem alterar prioridade ou dependências.
+Canonical status is in the [roadmap](../../README.md). This table completes the navigation without changing priority or dependencies.
 
-| Tarefa | Depende de | Resultado |
+| Task | Depends on | Outcome |
 | --- | --- | --- |
-| [KZ-E10-T03](T03-dialog-actions.md) | KZ-E10-T02 | Corrigir navegação e padronizar ações dos diálogos |
-| [KZ-E10-T04](T04-dialog-structure.md) | KZ-E10-T03 | Uniformizar estrutura visual dos diálogos |
-| [KZ-E10-T05](T05-unify-dialog-behavior.md) | KZ-E10-T04 | Unificar comportamento dos diálogos |
-| [KZ-E10-T06](T06-session-form-drafts.md) | KZ-E10-T05 | Rascunhos de formulário por sessão |
-| [KZ-E10-T07](T07-fix-draft-review.md) | KZ-E10-T06 | Corrigir achados da revisão de rascunhos |
-| [KZ-E10-T08](T08-today-navigation.md) | KZ-E10-T07 | Ajustar Hoje e entrada do aplicativo |
+| [KZ-E10-T03](T03-dialog-actions.md) | KZ-E10-T02 | Fix navigation and standardize dialog actions |
+| [KZ-E10-T04](T04-dialog-structure.md) | KZ-E10-T03 | Standardize the visual structure of dialogs |
+| [KZ-E10-T05](T05-unify-dialog-behavior.md) | KZ-E10-T04 | Unify dialog behavior |
+| [KZ-E10-T06](T06-session-form-drafts.md) | KZ-E10-T05 | Per-session form drafts |
+| [KZ-E10-T07](T07-fix-draft-review.md) | KZ-E10-T06 | Fix the findings of the draft review |
+| [KZ-E10-T08](T08-today-navigation.md) | KZ-E10-T07 | Adjust Today and the app entry |

@@ -6,16 +6,16 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T12]
 ---
 
-# Registrar futevôlei e atividades externas retrospectivamente
+# Record footvolley and external activities retrospectively
 
-## Escopo implementado
+## Implemented scope
 
-Registro direto de práticas esportivas e treinos específicos em hoje e ontem,
-sem cronômetro, horários reais ou aquecimento obrigatório. Preparação opcional
-consultável; formulário de registro somente no fim do cartão expandido.
+Direct recording of sports practices and specific workouts for today and yesterday,
+with no timer, real times, or mandatory warm-up. Optional preparation
+can be viewed; the recording form appears only at the end of the expanded card.
 
 ## Objective
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Escopo implementado».
+Not recorded in the original version of this task; equivalent content is in the section «Implemented scope».
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -30,7 +30,7 @@ Não registrado na versão original desta tarefa; conteúdo equivalente na seç�
 - `tests/integration/training-mutations.test.ts`
 
 ## Deliverables
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Escopo implementado».
+Not recorded in the original version of this task; equivalent content is in the section «Implemented scope».
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -39,31 +39,31 @@ Not recorded in the original version of this task.
 Not recorded in the original version of this task.
 
 ## Acceptance criteria
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Aceite e resultado».
+Not recorded in the original version of this task; equivalent content is in the section «Acceptance and result».
 
 ## Result
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Aceite e resultado».
+Not recorded in the original version of this task; equivalent content is in the section «Acceptance and result».
 
-## Aceite e resultado
+## Acceptance and result
 
-- [x] Registro sem execução guiada; horários desconhecidos permanecem ausentes.
-- [x] Aquecimento opcional visível, sem bloquear o registro.
-- [x] Registro oculto no cartão recolhido e na última posição quando expandido.
-- [x] Workspace fixo, ownership, revisão e bloqueio de conclusão futura preservados.
-- [x] Migration aditiva aplicada no PostgreSQL local em 04/10/2026.
-- [x] Integrações PostgreSQL e checks das PRs #61 e #62 aprovados.
+- [x] Recording without guided execution; unknown times remain absent.
+- [x] Optional warm-up visible, without blocking the record.
+- [x] Record hidden on the collapsed card and in the last position when expanded.
+- [x] Fixed workspace, ownership, revision, and the block on future completion preserved.
+- [x] Additive migration applied to the local PostgreSQL on 04/10/2026.
+- [x] PostgreSQL integrations and checks of PRs #61 and #62 passed.
 
-Implementação autorizada e revisada pelo usuário na conversa. Atualização de
-`developer` com a KZ-E06-T22 incorporada sem ampliar a janela retrospectiva.
-Testes, integrações PostgreSQL, backup/restore, build, qualidade, dados e governança
-passaram na primeira CI da PR #61. A auditoria falhou com 17 achados.
-Correções de Next.js 16.3.8 e transitivos reduziram a auditoria local a um achado
-alto em `braces` 3.0.3, dependência de desenvolvimento sem patch publicado
-([GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)). A PR #62
-adiciona um fork interno baseado no commit revisado
-`28d440b5dd449dbf1fe6f3506cf94ecca4d02660`, com limites de profundidade. O fork
-está identificado e documentado em `vendor/braces/README.kaizen.md`.
-Instalação congelada, lint, formatação, auditoria sem achados, 291 testes do app
-e 904 testes do pacote passaram localmente. A CI completa das PRs #61 e #62 passou
-em 12/10/2026, incluindo PostgreSQL, backup/restore e build. A jornada manual
-completa permanece pendente; nenhum documento de planejamento acompanha a entrega.
+Implementation authorized and reviewed by the user in the conversation. Update of
+`developer` with KZ-E06-T22 incorporated without widening the retrospective window.
+Tests, PostgreSQL integrations, backup/restore, build, quality, data, and governance
+passed in the first CI of PR #61. The audit failed with 17 findings.
+Fixes for Next.js 16.3.8 and transitive dependencies reduced the local audit to one high
+finding in `braces` 3.0.3, a development dependency with no published patch
+([GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)). PR #62
+adds an internal fork based on the reviewed commit
+`28d440b5dd449dbf1fe6f3506cf94ecca4d02660`, with depth limits. The fork
+is identified and documented in `vendor/braces/README.kaizen.md`.
+Frozen install, lint, formatting, audit with no findings, 291 app tests,
+and 904 package tests passed locally. The full CI of PRs #61 and #62 passed
+on 12/10/2026, including PostgreSQL, backup/restore, and build. The full manual
+journey remains pending; no planning document accompanies the delivery.

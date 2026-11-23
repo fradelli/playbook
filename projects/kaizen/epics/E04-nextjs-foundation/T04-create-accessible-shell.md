@@ -6,14 +6,14 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E04-T08]
 ---
 
-# Criar shell acessível
+# Create the accessible shell
 
 ## Objective
-Criar estrutura visual responsiva e sem regra de negócio consumindo a fundação compartilhada já validada.
+Create a responsive visual structure with no business rules, consuming the shared foundation that is already validated.
 
-## Contexto
+## Context
 
-Shell, páginas, rotas, marca e composição pertencem ao Kaizen. Tokens, tipografia, foco, estados genéricos e primitives pertencem a `@fradelli/ui`; esta tarefa não pode recriá-los localmente.
+Shell, pages, routes, brand, and composition belong to Kaizen. Tokens, typography, focus, generic states, and primitives belong to `@fradelli/ui`; this task must not recreate them locally.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -24,50 +24,50 @@ Shell, páginas, rotas, marca e composição pertencem ao Kaizen. Tokens, tipogr
 - `src/app/page.tsx`
 
 ## Deliverables
-- Layout, navegação mínima e estados compartilhados aprovados no guia.
+- Layout, minimal navigation, and shared states approved in the guide.
 
-## Fora do escopo
+## Out of scope
 
-- Criar tokens, primitives ou variantes específicas do Kaizen no package.
-- Compartilhar calendário, dieta, treino, hábito ou tarefa.
-- Alterar a versão do Design System sem validação própria.
+- Creating Kaizen-specific tokens, primitives, or variants in the package.
+- Sharing calendar, diet, workout, habit, or task.
+- Changing the Design System version without its own validation.
 
 ## Subtasks
-- [x] Definir landmarks e navegação por teclado.
-- [x] Criar layout mobile-first.
-- [x] Manter o shell server-side e isolar somente a navegação dependente da rota como ilha Client.
-- [x] Separar contratos, constantes, estilos, utilitários e hooks por responsabilidade real.
-- [x] Consumir primitives e tokens públicos sem duplicação local.
-- [x] Criar loading, vazio e erro somente quando houver repetição real.
-- [x] Evitar providers globais sem consumidor.
+- [x] Define landmarks and keyboard navigation.
+- [x] Create a mobile-first layout.
+- [x] Keep the shell server-side and isolate only the route-dependent navigation as a Client island.
+- [x] Separate contracts, constants, styles, utilities, and hooks by real responsibility.
+- [x] Consume public primitives and tokens without local duplication.
+- [x] Create loading, empty, and error states only when there is real repetition.
+- [x] Avoid global providers without a consumer.
 
 ## Validation
-- Navegação e foco funcionam sem mouse.
-- Shell não depende de banco.
-- Todos os gates de KZ-E04-T08 permanecem verdes.
+- Navigation and focus work without a mouse.
+- The shell does not depend on the database.
+- All KZ-E04-T08 gates remain green.
 
 ## Acceptance criteria
-- [x] Treino e alimentação podem ser encaixados sem duplicar layout.
-- [x] O shell permanece local e não amplia a API pública do Design System.
+- [x] Workout and nutrition can be slotted in without duplicating layout.
+- [x] The shell stays local and does not expand the Design System public API.
 
-## Riscos
+## Risks
 
-- Recriar localmente um primitive já compartilhado.
-- Empurrar navegação ou domínio do Kaizen para o package.
+- Locally recreating a primitive that is already shared.
+- Pushing Kaizen navigation or domain into the package.
 
 ## Rollback
 
-Reverter somente o shell e manter a integração e a página foundations como base técnica validada.
+Revert only the shell and keep the integration and the foundations page as the validated technical base.
 
 ## Result
-Shell compartilhado entregue como Server Component sobre `@fradelli/ui@0.1.0`,
-com navegação Dieta/Treino isolada em uma ilha Client, landmarks acessíveis,
-skip link, rota ativa, layout mobile-first e placeholders sem dados de domínio.
-Os gates locais e a validação manual passaram; a padronização estrutural das
-páginas existentes segue separada em KZ-E04-T09.
+Shared shell delivered as a Server Component on top of `@fradelli/ui@0.1.0`,
+with Diet/Workout navigation isolated in a Client island, accessible landmarks,
+skip link, active route, mobile-first layout, and placeholders with no domain data.
+Local gates and manual validation passed; the structural standardization of the
+existing pages remains separate in KZ-E04-T09.
 
-## Consolidação documental de 12/11/2026
+## Documentation consolidation of 12/11/2026
 
-Shell/layout pertencem ao Kaizen; primitives/estados genéricos ao pacote. Ownership permanece na arquitetura e decisão do DS.
+Shell/layout belong to Kaizen; primitives/generic states belong to the package. Ownership remains in the architecture and the DS decision.
 
-[Pacote original integral](https://github.com/fradelli/nextjs-kaizen-app/blob/fd2269d2eaa7d55cfea724631f12fa6505d37b32/docs/implementation/tasks/E04-T04.md), SHA-256 `1d745a46e69ca978eb4076ebff4b9b670bbf97b370af1fbfcb8da7b9861c1266`. Comandos, critérios, riscos e rollback registram aquela base e não são receita para reinstalar a aplicação atual. Pendências não viraram aprovações nesta consolidação.
+[Full original package](https://github.com/fradelli/nextjs-kaizen-app/blob/fd2269d2eaa7d55cfea724631f12fa6505d37b32/docs/implementation/tasks/E04-T04.md), SHA-256 `1d745a46e69ca978eb4076ebff4b9b670bbf97b370af1fbfcb8da7b9861c1266`. Commands, criteria, risks, and rollback record that baseline and are not a recipe for reinstalling the current application. Open items were not turned into approvals in this consolidation.

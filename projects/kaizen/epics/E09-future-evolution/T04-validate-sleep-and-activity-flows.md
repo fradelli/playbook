@@ -6,11 +6,11 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E09-T02, KZ-E09-T03]
 ---
 
-# Validar jornadas de sono e atividades
+# Validate sleep and activity journeys
 
 ## Objective
-Comprovar que sono e atividades gerais funcionam de ponta a ponta, preservam
-ownership e não conflitam com treino ou alimentação.
+Prove that sleep and general activities work end to end, preserve
+ownership, and do not conflict with workouts or nutrition.
 
 ## Inputs
 - `roadmap/epics/E09-future-evolution/T02-implement-sleep-tracking.md`
@@ -19,25 +19,25 @@ ownership e não conflitam com treino ou alimentação.
 - `.github/workflows/ci.yml`
 
 ## Deliverables
-- Testes automatizados dos fluxos críticos e de falhas seguras.
-- Evidência de responsividade, acessibilidade, timezone e isolamento do workspace.
-- Registro de limitações e unknowns restantes antes do i18n.
+- Automated tests of the critical flows and safe failures.
+- Evidence of responsiveness, accessibility, timezone, and workspace isolation.
+- Record of remaining limitations and unknowns before i18n.
 
 ## Subtasks
-- [ ] Validar criação, consulta, edição, conflito e dados ausentes.
-- [ ] Confirmar que os quatro domínios não sobrescrevem registros entre si.
-- [ ] Executar testes relacionais em PostgreSQL real e build de produção.
-- [ ] Validar as telas em viewport móvel e desktop.
+- [ ] Validate creation, viewing, editing, conflict, and missing data.
+- [ ] Confirm that the four domains do not overwrite each other's records.
+- [ ] Run relational tests on a real PostgreSQL and a production build.
+- [ ] Validate the screens in mobile and desktop viewports.
 
 ## Validation
-- Executar os gates completos e cenários manuais definidos no planejamento.
+- Run the complete gates and the manual scenarios defined in planning.
 
 ## Acceptance criteria
-- [ ] Sono e atividades gerais estão utilizáveis antes do início da migração i18n.
+- [ ] Sleep and general activities are usable before the i18n migration starts.
 
-## Fora de escopo
+## Out of scope
 
-- Traduzir interface, conteúdo ou documentação.
+- Translating interface, content, or documentation.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

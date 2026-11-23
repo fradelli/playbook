@@ -6,11 +6,11 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E09-T06, KZ-E09-T07]
 ---
 
-# Validar experiência multilíngue
+# Validate multilingual experience
 
 ## Objective
-Comprovar que produto, conteúdo e operação do repositório funcionam em inglês e
-nos locales adicionais aprovados, com fallback seguro e sem perda histórica.
+Prove that the product, content, and repository operation work in English and
+in the additional approved locales, with safe fallback and no loss of history.
 
 ## Inputs
 - `roadmap/epics/E09-future-evolution/T06-internationalize-product-content.md`
@@ -21,29 +21,29 @@ nos locales adicionais aprovados, com fallback seguro e sem perda histórica.
 - `scripts/validate-data.mjs`
 
 ## Deliverables
-- Matriz automatizada de locales e fallbacks suportados.
-- Validação manual das quatro jornadas em mobile e desktop.
-- Evidência de integridade, acessibilidade, SEO/noindex, rotas e persistência do locale.
-- Runbook para adicionar e revisar um novo idioma.
+- Automated matrix of supported locales and fallbacks.
+- Manual validation of the four journeys on mobile and desktop.
+- Evidence of integrity, accessibility, SEO/noindex, routes, and locale persistence.
+- Runbook to add and review a new language.
 
 ## Subtasks
-- [ ] Testar locale válido, ausente, desconhecido e catálogo incompleto.
-- [ ] Testar treino, alimentação, sono e atividades gerais em cada locale suportado.
-- [ ] Confirmar formatação de data, número, unidade e conteúdo versionado.
-- [ ] Confirmar que a CI bloqueia regressões de idioma sem bloquear IDs preservados.
-- [ ] Revisar bundle, renderização server-side e limites Client.
+- [ ] Test valid, missing, and unknown locales and an incomplete catalog.
+- [ ] Test workouts, nutrition, sleep, and general activities in each supported locale.
+- [ ] Confirm formatting of date, number, unit, and versioned content.
+- [ ] Confirm that CI blocks language regressions without blocking preserved IDs.
+- [ ] Review bundle, server-side rendering, and Client boundaries.
 
 ## Validation
-- Executar gates completos, matriz E2E por locale e auditoria manual de conteúdo.
+- Run the complete gates, an E2E matrix per locale, and a manual content audit.
 
 ## Acceptance criteria
-- [ ] Inglês é completo e funciona como fallback determinístico.
-- [ ] Cada locale declarado cobre as quatro jornadas sem chaves ou textos indevidos.
-- [ ] O processo de adicionar idioma é documentado e reproduzível.
+- [ ] English is complete and works as a deterministic fallback.
+- [ ] Each declared locale covers the four journeys without improper keys or texts.
+- [ ] The process of adding a language is documented and reproducible.
 
-## Fora de escopo
+## Out of scope
 
-- Publicar locale sem revisão humana do conteúdo de treino ou alimentação.
+- Publishing a locale without human review of the workout or nutrition content.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

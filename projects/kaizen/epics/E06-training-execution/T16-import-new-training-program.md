@@ -6,12 +6,12 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T15]
 ---
 
-# Validar e importar a nova programação de treino
+# Validate and import the new training program
 
 ## Objective
-Transformar o novo treino fornecido pelo usuário em definições versionadas e
-programação semanal válidas. Sessões alternativas dependem de aprovação específica;
-as variantes recebidas foram excluídas desta versão por decisão do usuário.
+Turn the new workout provided by the user into valid versioned definitions and
+a valid weekly schedule. Alternative sessions depend on specific approval;
+the variants received were excluded from this version by user decision.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -27,11 +27,11 @@ as variantes recebidas foram excluídas desta versão por decisão do usuário.
 - `src/features/training/ui/components/training-day-page/components/training-activity-form/training-activity-form.tsx`
 
 ## Deliverables
-- Inventário do novo plano: exercícios, sessões, aquecimentos, horários, durações,
-  dias de descanso e opções de reserva; lacunas permanecem explícitas.
-- Nova versão canônica sem sobrescrever nem reutilizar indevidamente a antiga.
-- Variantes reserva não aprovadas ficam fora da ficha ativa; sessões aprovadas podem ser adicionadas manualmente.
-- Validação das referências e prévia de uma semana antes da ativação.
+- Inventory of the new plan: exercises, sessions, warm-ups, times, durations,
+  rest days, and backup options; gaps remain explicit.
+- New canonical version without overwriting or improperly reusing the old one.
+- Unapproved backup variants stay out of the active plan sheet; approved sessions can be added manually.
+- Validation of references and a one-week preview before activation.
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -39,25 +39,25 @@ Not recorded in the original version of this task.
 ## Validation
 Not recorded in the original version of this task.
 
-## Fora de escopo
+## Out of scope
 
-- Inventar exercícios, prescrições ou horários ausentes.
-- Navegação automática entre exercícios combinados, reservada à KZ-E06-T18. Nesta entrega, preservar blocos e membros no banco e exibir `Bloco nA/nB`, com navegação manual.
-- Apagar dados existentes; o reinício controlado anterior é a KZ-E06-T17.
+- Inventing missing exercises, prescriptions, or times.
+- Automatic navigation between combined exercises, reserved for KZ-E06-T18. In this delivery, preserve blocks and members in the database and display `Bloco nA/nB`, with manual navigation.
+- Deleting existing data; the earlier controlled restart is KZ-E06-T17.
 
-## Decisões antes da implementação
+## Decisions before implementation
 
-- Receber o novo treino e confirmar as lacunas, sobretudo o que será sessão reserva.
-- Confirmar ativação após a entrega do novo treino e o reinício autorizado.
+- Receive the new workout and confirm the gaps, especially what will be a backup session.
+- Confirm activation after the delivery of the new workout and the authorized restart.
 
 ## Acceptance criteria
-- [x] O novo plano e a semana passam nas validações de dados e referências.
-- [x] Variantes reserva permanecem fora da ficha ativa conforme decisão do usuário.
-- [x] Fontes históricas versionadas não foram sobrescritas; o reinício local autorizado está registrado na KZ-E06-T17.
+- [x] The new plan and the week pass the data and reference validations.
+- [x] Backup variants stay out of the active plan sheet per the user's decision.
+- [x] Versioned historical sources were not overwritten; the authorized local restart is recorded in KZ-E06-T17.
 
 ## Result
-Plano aprovado recebido em 25/09/2026: T1 terça, T2 quinta e T3 sexta às 17h; futevôlei de segunda a quinta, 12h–13h30. Jogos são manuais. Variantes reserva ficam fora desta versão. Os 40 minutos são uma meta não validada e incluem aquecimento.
+Approved plan received on 25/09/2026: T1 Tuesday, T2 Thursday, and T3 Friday at 5 p.m.; footvolley Monday to Thursday, 12 p.m.–1:30 p.m. Games are manual. Backup variants stay out of this version. The 40 minutes are an unvalidated target and include warm-up.
 
-Definições versionadas, quatro aquecimentos e validação de dados implementados. Fonte commitada localmente e importada após o reinício da KZ-E06-T17: uma versão de treino, sete sessões, 42 prescrições e 34 exercícios distintos. Alimentação preservada; segunda importação retornou no-op. Consulta da terça-feira projetou futevôlei com aquecimento e T1 com Bloco 3A/3B e 4A/4B. Releitura não duplicou registros; consulta além do limite futuro não criou atividades.
+Versioned definitions, four warm-ups, and data validation implemented. Source committed locally and imported after the KZ-E06-T17 restart: one training version, seven sessions, 42 prescriptions, and 34 distinct exercises. Nutrition preserved; the second import returned a no-op. The Tuesday query projected footvolley with warm-up and T1 with Bloco 3A/3B and 4A/4B. Re-reading did not duplicate records; a query beyond the future limit did not create activities.
 
-Validação: 258 testes unitários, 40 integrações PostgreSQL (incluindo repetição dos oito testes de importação após adaptar a agenda do cenário histórico), 33 regressões dos scripts, dados, lint, tipos, estrutura, build e diff. Sem push nem PR. A condução automática dos pares permanece fora do escopo.
+Validation: 258 unit tests, 40 PostgreSQL integrations (including repeating the eight import tests after adapting the schedule of the historical scenario), 33 script regressions, data, lint, types, structure, build, and diff. No push or PR. Automatic guidance of the pairs remains out of scope.

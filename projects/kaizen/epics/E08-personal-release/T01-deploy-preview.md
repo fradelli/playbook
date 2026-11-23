@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T05, KZ-E07-T05]
 ---
 
-# Publicar preview
+# Publish preview
 
 ## Objective
-Conectar o projeto à Vercel e publicar um preview verificável sem promover produção.
+Connect the project to Vercel and publish a verifiable preview without promoting production.
 
 ## Inputs
 - `docs/plans/release/E08.md`
@@ -22,23 +22,23 @@ Conectar o projeto à Vercel e publicar um preview verificável sem promover pro
 - `tests/e2e/`
 
 ## Deliverables
-- Projeto Vercel, variáveis de preview e deploy funcional.
+- Vercel project, preview variables, and a working deploy.
 
 ## Subtasks
-- [ ] Vincular o repositório e definir diretório de build.
-- [ ] Configurar banco e segredos exclusivos de preview.
-- [ ] Associar `staging` ao preview estável.
-- [ ] Executar CI no SHA promovido e confirmar o checkout imutável.
-- [ ] Usar Vercel CLI fixada, build prebuilt e uma única execução de deploy por vez.
-- [ ] Aplicar migrations compatíveis antes do deploy.
-- [ ] Executar smoke público de leitura e mutação no workspace fixo.
-- [ ] Documentar promoção e diagnóstico de falhas.
+- [ ] Link the repository and define the build directory.
+- [ ] Configure a database and secrets exclusive to preview.
+- [ ] Associate `staging` with the stable preview.
+- [ ] Run CI on the promoted SHA and confirm the immutable checkout.
+- [ ] Use a pinned Vercel CLI, a prebuilt build, and a single deploy run at a time.
+- [ ] Apply compatible migrations before the deploy.
+- [ ] Run a public read and mutation smoke test in the fixed workspace.
+- [ ] Document promotion and failure diagnosis.
 
 ## Validation
-- Executar smoke test no endereço de preview.
+- Run a smoke test at the preview address.
 
 ## Acceptance criteria
-- [ ] Preview constrói a partir do Git sem segredo versionado.
+- [ ] Preview builds from Git with no versioned secret.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

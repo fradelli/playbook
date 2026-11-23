@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T04]
 ---
 
-# Validar fluxo de treino
+# Validate the workout flow
 
 ## Objective
-Validar o fluxo completo de consulta e execução de treino antes da publicação.
+Validate the complete flow of viewing and executing a workout before publication.
 
 ## Inputs
 - `docs/history/implementation/E06.md`
@@ -19,20 +19,20 @@ Validar o fluxo completo de consulta e execução de treino antes da publicaçã
 - `tests/`
 
 ## Deliverables
-- Evidências automatizadas e checklist manual do fluxo.
+- Automated evidence and a manual checklist of the flow.
 
 ## Subtasks
-- [ ] Testar atribuição, preparação, séries, carga, descanso, histórico e estados vazios.
-- [ ] Validar acessibilidade básica e navegação móvel.
-- [ ] Confirmar datas, horários, IDs e proveniência.
-- [ ] Confirmar acesso público no workspace fixo, erro de gravação e concorrência.
-- [ ] Registrar limitações conhecidas.
+- [ ] Test assignment, preparation, sets, load, rest, history, and empty states.
+- [ ] Validate basic accessibility and mobile navigation.
+- [ ] Confirm dates, times, IDs, and provenance.
+- [ ] Confirm public access in the fixed workspace, write error, and concurrency.
+- [ ] Record known limitations.
 
 ## Validation
-- Executar todos os gates do repositório.
+- Run all the repository gates.
 
 ## Acceptance criteria
-- [ ] O fluxo principal está íntegro e pronto para preview.
+- [ ] The main flow is sound and ready for preview.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

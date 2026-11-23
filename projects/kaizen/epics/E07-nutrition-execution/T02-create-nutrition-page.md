@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E04-T04, KZ-E07-T01]
 ---
 
-# Criar página de dieta do dia
+# Create the diet page for the day
 
 ## Objective
-Exibir a estrutura da data, permitir escolher o tipo do dia e navegar com boa leitura em celular.
+Show the structure of the date, allow choosing the day type, and navigate with good readability on mobile.
 
 ## Inputs
 - `docs/plans/nutrition/E07.md`
@@ -18,21 +18,21 @@ Exibir a estrutura da data, permitir escolher o tipo do dia e navegar com boa le
 - `src/app/dieta/page.tsx`
 
 ## Deliverables
-- Página server-rendered da dieta do dia com navegação por data.
+- Server-rendered page for the day's diet with date navigation.
 
 ## Subtasks
-- [ ] Organizar refeições na ordem prescrita.
-- [ ] Implementar data anterior, Hoje e data seguinte em `America/Sao_Paulo`.
-- [ ] Exibir horários somente quando confirmados.
-- [ ] Solicitar tipo de dia quando ausente sem inventar faixa ou módulos.
-- [ ] Indicar dados ausentes sem estimá-los.
-- [ ] Implementar estados vazio e de erro.
+- [ ] Organize meals in the prescribed order.
+- [ ] Implement previous date, Today, and next date in `America/Sao_Paulo`.
+- [ ] Show times only when confirmed.
+- [ ] Ask for the day type when missing, without inventing a range or modules.
+- [ ] Indicate missing data without estimating it.
+- [ ] Implement empty and error states.
 
 ## Validation
-- Testar responsividade, semântica e navegação.
+- Test responsiveness, semantics, and navigation.
 
 ## Acceptance criteria
-- [ ] O usuário entende e atribui a estrutura do dia em uma única página.
+- [ ] The user understands and assigns the day's structure on a single page.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

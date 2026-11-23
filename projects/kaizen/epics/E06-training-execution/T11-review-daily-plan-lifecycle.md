@@ -6,14 +6,14 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T03]
 ---
 
-# Revisar o ciclo de vida do plano diário
+# Review the daily plan lifecycle
 
 ## Objective
-Documentar e decidir as regras de geração, navegação e persistência do dia antes de alterar sua implementação.
+Document and decide the rules for generating, navigating, and persisting the day before changing its implementation.
 
-## Contexto conhecido
+## Known context
 
-A KZ-E06-T03 guarda a agenda semanal na versão do plano e materializa somente a data consultada, em transação, de hoje até hoje + 4 dias. Não há entidade denominada `DailyPlan`; a data é composta por atribuição e atividades. A existência prévia de qualquer atividade ou atribuição impede nova materialização. Confirmar o comportamento no código vigente após o merge.
+KZ-E06-T03 stores the weekly schedule in the plan version and materializes only the queried date, in a transaction, from today through today + 4 days. There is no entity named `DailyPlan`; the date is composed of assignment and activities. The prior existence of any activity or assignment prevents a new materialization. Confirm the behavior in the current code after the merge.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -26,7 +26,7 @@ A KZ-E06-T03 guarda a agenda semanal na versão do plano e materializa somente a
 - `src/features/training/data/prisma-training-repository.ts`
 
 ## Deliverables
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Entregáveis e impactos».
+Not recorded in the original version of this task; equivalent content in the section "Deliverables and impacts".
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -34,33 +34,33 @@ Not recorded in the original version of this task.
 ## Validation
 Not recorded in the original version of this task.
 
-## Entregáveis e impactos
+## Deliverables and impacts
 
-- Fluxo atual comprovado: template semanal, acesso ao dia, criação, persistência, proteção contra duplicação e retorno à UI.
-- Decisão entre leitura futura sem persistência, limite de navegação ou outra solução simples; não mudar arbitrariamente o limite atual.
-- Regra para dia parcialmente criado, inclusive atividade manual adicionada antes da primeira materialização, exclusão intencional e descanso.
-- Decisão de feedback de carregamento mobile quando houver geração perceptível.
-- Casos de concorrência, fuso `America/Sao_Paulo`, limites do passado e do futuro.
+- Proven current flow: weekly template, day access, creation, persistence, protection against duplication, and return to the UI.
+- Decision between a future read without persistence, a navigation limit, or another simple solution; do not arbitrarily change the current limit.
+- Rule for a partially created day, including a manual activity added before the first materialization, intentional deletion, and rest.
+- Decision on mobile loading feedback when generation is noticeable.
+- Cases of concurrency, the `America/Sao_Paulo` time zone, and limits of the past and the future.
 
-## Fora de escopo
+## Out of scope
 
-- Implementar outra estratégia antes da aprovação ou pré-gerar mês inteiro.
-- Limpar dados operacionais ou importar uma nova programação semanal.
+- Implement another strategy before approval or pre-generate a whole month.
+- Clean up operational data or import a new weekly schedule.
 
-## Decisões antes da implementação
+## Decisions before implementation
 
-- Aprovar a política de leitura/persistência e o limite futuro; qualquer tarefa de código derivada requer nova análise e aprovação.
+- Approve the read/persistence policy and the future limit; any derived code task requires a new analysis and approval.
 
 ## Acceptance criteria
-- [x] O fluxo real está documentado sem supor um `DailyPlan` inexistente.
-- [x] Decisões de navegação, materialização parcial e feedback estão explícitas.
-- [x] Lacunas foram decompostas para KZ-E06-T12 e KZ-E06-T13 sem implementar código nesta tarefa.
+- [x] The real flow is documented without assuming a nonexistent `DailyPlan`.
+- [x] Decisions on navigation, partial materialization, and feedback are explicit.
+- [x] Gaps were broken down into KZ-E06-T12 and KZ-E06-T13 without implementing code in this task.
 
 ## Result
-Revisão e Decisions approved pelo usuário. O template semanal pertence à versão importada; `getTrainingDay` materializa apenas a data consultada em transação serializável e então projeta a atribuição e as atividades.
+Review and decisions approved by the user. The weekly template belongs to the imported version; `getTrainingDay` materializes only the queried date in a serializable transaction and then projects the assignment and the activities.
 
-- Mantidos hoje até hoje + 4 dias e o fuso `America/Sao_Paulo`; não criar planos passados nem pré-gerar semanas.
-- Qualquer atribuição ou atividade existente, inclusive excluída logicamente, impede nova materialização. Não completar automaticamente um dia parcial nem recriar exclusões intencionais. Refinamentos da edição ficam em KZ-E06-T12.
-- Datas sem entradas no novo formato ficam sem atividades fixas; jogo de sábado só por inclusão manual.
-- Mantido o loading da rota; nenhuma confirmação ou mensagem de gravação durante execução local.
-- Reconciliação de dias futuros após troca de plano permanece em KZ-E06-T13. O reset local autorizado elimina o legado atual, mas não substitui essa regra futura.
+- Kept today through today + 4 days and the `America/Sao_Paulo` time zone; do not create past plans or pre-generate weeks.
+- Any existing assignment or activity, including logically deleted ones, prevents a new materialization. Do not automatically complete a partial day nor recreate intentional deletions. Editing refinements stay in KZ-E06-T12.
+- Dates without entries in the new format have no fixed activities; the Saturday game only by manual inclusion.
+- Kept the route loading; no confirmation or save message during local execution.
+- Reconciliation of future days after a plan change remains in KZ-E06-T13. The authorized local reset eliminates the current legacy data, but does not replace this future rule.

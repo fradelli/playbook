@@ -6,31 +6,31 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E08-T04]
 ---
 
-# Publicar MVP pessoal
+# Release the personal MVP
 
 ## Objective
-Promover a versão validada para produção e encerrar o MVP pessoal de Dieta e Treino.
+Promote the validated version to production and close the personal MVP of Diet and Workout.
 
 ## Inputs
 - `docs/plans/release/E08.md`
 - `docs/decisions/PUBLIC-SINGLE-WORKSPACE-MODE.md`
 - `.github/PULL_REQUEST_TEMPLATE/release-promotion.md`
-- Runbook e evidências aprovados em KZ-E08-T04.
+- Runbook and evidence approved in KZ-E08-T04.
 
 ## Deliverables
-- Produção disponível na URL gerada, com exposição pública aceita e release documentada.
+- Production available at the generated URL, with accepted public exposure and a documented release.
 
 ## Subtasks
-- [ ] Promover mudanças de `staging` para `master` por PR.
-- [ ] Executar migrations e importação aprovadas.
-- [ ] Rodar smoke público de leitura e mutação no workspace fixo.
-- [ ] Registrar versão, data, limitações e próximo marco.
+- [ ] Promote changes from `staging` to `master` through a PR.
+- [ ] Run the approved migrations and import.
+- [ ] Run a public read and mutation smoke test in the fixed workspace.
+- [ ] Record version, date, limitations, and next milestone.
 
 ## Validation
-- Confirmar conteúdo e operações públicas no workspace fixo em treino e alimentação.
+- Confirm public content and operations in the fixed workspace for workouts and nutrition.
 
 ## Acceptance criteria
-- [ ] MVP pessoal funciona conforme o risco público documentado e possui caminho de rollback.
+- [ ] The personal MVP works according to the documented public risk and has a rollback path.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

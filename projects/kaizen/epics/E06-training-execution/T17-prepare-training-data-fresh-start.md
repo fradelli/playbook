@@ -6,11 +6,11 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T11]
 ---
 
-# Preparar reinício controlado dos dados de treino
+# Prepare a controlled restart of the training data
 
 ## Objective
-Planejar e executar, somente após autorização específica, um início operacional
-limpo após preparar a nova programação, sem perder dados fora do escopo aprovado.
+Plan and carry out, only after specific authorization, a clean operational
+start after preparing the new training program, without losing data outside the approved scope.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -20,12 +20,12 @@ limpo após preparar a nova programação, sem perder dados fora do escopo aprov
 - `roadmap/epics/E06-training-execution/T11-review-daily-plan-lifecycle.md`
 
 ## Deliverables
-- Inventário do banco e definição explícita de ambiente, tabelas e registros alvo.
-- Escolha documentada entre reiniciar somente dados operacionais de treino ou
-  também definições/importações e alimentação; nada será presumido.
-- Backup verificável, plano de rollback e confirmação do usuário antes da exclusão.
-- Execução transacional ou procedimento recuperável e verificação do estado vazio.
-  A importação/ativação e a leitura da nova semana pertencem à KZ-E06-T16.
+- Database inventory and an explicit definition of the target environment, tables, and records.
+- Documented choice between restarting only operational training data or
+  also definitions/imports and nutrition; nothing will be assumed.
+- Verifiable backup, rollback plan, and user confirmation before deletion.
+- Transactional execution or recoverable procedure and verification of the empty state.
+  The import/activation and the reading of the new week belong to KZ-E06-T16.
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -33,25 +33,25 @@ Not recorded in the original version of this task.
 ## Validation
 Not recorded in the original version of this task.
 
-## Fora de escopo
+## Out of scope
 
-- Excluir qualquer dado antes de definir escopo, obter backup e aprovação.
-- Apagar ambientes ou volumes inteiros por conveniência.
+- Deleting any data before defining the scope, obtaining a backup, and getting approval.
+- Deleting entire environments or volumes for convenience.
 
-## Decisões antes da implementação
+## Decisions before implementation
 
-- Confirmar com o usuário o banco/ambiente exato e o alcance do reinício.
-- Confirmar política para histórico antigo e dados de alimentação.
+- Confirm with the user the exact database/environment and the reach of the restart.
+- Confirm the policy for old history and nutrition data.
 
 ## Acceptance criteria
-- [x] Alvos de exclusão, backup e recuperação foram comprovados e aprovados.
-- [x] Somente dados explicitamente autorizados foram removidos.
-- [x] O ambiente aprovado fica pronto para receber a nova programação, sem
-      resíduos operacionais fora do escopo decidido.
+- [x] Deletion targets, backup, and recovery were proven and approved.
+- [x] Only explicitly authorized data was removed.
+- [x] The approved environment is ready to receive the new program, with no
+      operational leftovers outside the decided scope.
 
 ## Result
-Autorizada pelo usuário a limpeza de registros operacionais e definições antigas de treino exclusivamente no PostgreSQL local, preservando alimentação, workspace, migrations e histórico no Git. Backup completo atualizado em 26/09, copiado fora do repositório e restaurado com sucesso em banco temporário. SHA-256: `50282d22712ce960ca97219565102c588c16ac48a45f9084d8f760055bb660db`. Banco temporário removido após verificação.
+The user authorized cleaning old operational records and training definitions exclusively in the local PostgreSQL, preserving nutrition, workspace, migrations, and history in Git. Full backup updated on 26/09, copied outside the repository and restored successfully into a temporary database. SHA-256: `50282d22712ce960ca97219565102c588c16ac48a45f9084d8f760055bb660db`. Temporary database removed after verification.
 
-Limpeza concluída em transação, com bloqueio das tabelas-alvo e chaves estrangeiras ativas. Suspensos somente os triggers de proteção de exclusão nas tabelas-alvo, reativados antes do commit. Removidos registros operacionais, ativações e definições/importações de treino; nenhuma tabela de alimentação foi excluída. Conferência antes da importação: zero atividades e versões de treino, uma versão alimentar preservada. A KZ-E06-T16 importou apenas o treino ativo.
+Cleanup completed in a transaction, with the target tables locked and foreign keys active. Only the deletion-protection triggers on the target tables were suspended, and they were re-enabled before the commit. Removed operational records, activations, and training definitions/imports; no nutrition table was deleted. Check before the import: zero training activities and versions, one nutrition version preserved. KZ-E06-T16 imported only the active training.
 
-Rollback: interromper os escritores locais, restaurar o backup completo validado em banco local separado, conferir os dados e só então trocar o banco utilizado. Restaurar depois de novos registros substituiria o estado posterior ao backup; não fazer rollback automático nem apagar o backup.
+Rollback: stop the local writers, restore the validated full backup into a separate local database, check the data, and only then switch the database in use. Restoring after new records exist would replace the state that came after the backup; do not roll back automatically and do not delete the backup.

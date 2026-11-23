@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E03-T05]
 ---
 
-# Modelar treino e alimentação
+# Model workouts and nutrition
 
 ## Objective
-Modelar somente entidades, relações e constraints exigidas pelo P0.
+Model only the entities, relations, and constraints required by P0.
 
 ## Inputs
 - `docs/operations/E05.md`
@@ -37,31 +37,31 @@ Modelar somente entidades, relações e constraints exigidas pelo P0.
 - `docs/architecture/DATA-MODEL.md`
 - `data/training-execution-metadata.json`
 - `schemas/training-execution-metadata.schema.json`
-- Integração dos metadados em `scripts/validate-data.mjs` e suas regressões.
-- Cobertura documentada em `schemas/README.md` e evidência no roadmap/changelog.
+- Integration of the metadata into `scripts/validate-data.mjs` and its regressions.
+- Documented coverage in `schemas/README.md` and evidence in the roadmap/changelog.
 
 ## Subtasks
-- [x] Mapear IDs, versões, status e proveniência.
-- [x] Modelar definições, ativações, atribuições e execuções de treino e alimentação.
-- [x] Modelar rate limit sem armazenar chave de pareamento ou IP bruto.
-- [x] Definir unicidade e integridade referencial.
-- [x] Classificar medição e aplicabilidade de carga de todo exercício usado, sem default por inferência.
-- [x] Excluir domínios futuros.
+- [x] Map IDs, versions, statuses, and provenance.
+- [x] Model workout and nutrition definitions, activations, assignments, and executions.
+- [x] Model rate limiting without storing the pairing key or the raw IP.
+- [x] Define uniqueness and referential integrity.
+- [x] Classify the load measurement and load applicability of every exercise used, with no default by inference.
+- [x] Exclude future domains.
 
 ## Validation
-- Cada campo deriva de dado ou requisito aprovado.
-- Schema estrito, coverage dos dois planos históricos e normalizações explícitas passam em `pnpm data:check`.
-- Regressões cobrem carga, unidade, medição, referências, duplicação e doses não revisadas.
-- Constraints relacionais estão especificadas; sua execução real em PostgreSQL pertence às próximas tarefas.
+- Each field derives from approved data or an approved requirement.
+- The strict schema, coverage of the two historical plans, and explicit normalizations pass in `pnpm data:check`.
+- Regressions cover load, unit, measurement, references, duplication, and unreviewed doses.
+- Relational constraints are specified; their actual execution in PostgreSQL belongs to the next tasks.
 
 ## Acceptance criteria
-- [x] Modelo representa treino e alimentação sem duplicar fontes.
-- [x] As 18 entidades têm colunas, relações, uniques, checks, índices e políticas de exclusão.
-- [x] Todos os 38 exercícios usados nos planos versionados possuem metadados revisados.
-- [x] Nenhuma dependência, banco, migration, endpoint ou Client foi criado.
+- [x] The model represents workouts and nutrition without duplicating sources.
+- [x] The 18 entities have columns, relations, uniques, checks, indexes, and deletion policies.
+- [x] All 38 exercises used in the versioned plans have reviewed metadata.
+- [x] No dependency, database, migration, endpoint, or Client was created.
 
 ## Result
-Implementação concluída: modelo relacional especificado e metadados
-dos 38 exercícios integrados ao validador de dados. Planos e biblioteca permanecem
-intactos. Os gates locais de `pnpm run ci` passaram, incluindo regressões, integridade
-dos dados, build e auditoria de dependências. KZ-E05-T02 está pronta, mas não foi iniciada.
+Implementation complete: the relational model is specified and the metadata
+for the 38 exercises is integrated into the data validator. Plans and library remain
+untouched. The local `pnpm run ci` gates passed, including regressions, data
+integrity, build, and dependency audit. KZ-E05-T02 is ready but was not started.

@@ -6,35 +6,35 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E00-T04]
 ---
 
-# Adaptar governança de PR e CI/CD
+# Adapt PR and CI/CD governance
 
 ## Objective
-Adaptar as regras comprovadas do Sandicts ao fluxo local, sem Jira e com aplicação futura somente em Next.js e banco.
+Adapt the proven Sandicts rules to the local flow, without Jira and with the future application only in Next.js and the database.
 
 ## Inputs
-- Padrões de PR e CI/CD do Sandicts.
-- Branches e roadmap do Kaizen.
+- Sandicts PR and CI/CD standards.
+- Kaizen branches and roadmap.
 
 ## Deliverables
-- Título e template de PR baseados em IDs locais.
-- Template de promoção entre ambientes.
-- Política progressiva de CI/CD.
-- Regras sincronizadas no contrato raiz e nas tarefas futuras.
+- PR title and template based on local IDs.
+- Promotion template between environments.
+- Progressive CI/CD policy.
+- Rules synchronized in the root contract and in future tasks.
 
 ## Subtasks
-- [x] Substituir Jira pelo ID `KZ-E00-T01` sem criar exceção sem rastreamento.
-- [x] Preservar seções de problema, causa, impacto, validação e observações.
-- [x] Adaptar checks ao Next.js e à integridade dos dados pessoais.
-- [x] Separar documentação atual de workflows futuros.
-- [x] Atualizar a PR aberta conforme o padrão.
+- [x] Replace Jira with the ID `KZ-E00-T01` without creating an untracked exception.
+- [x] Preserve the problem, cause, impact, validation, and notes sections.
+- [x] Adapt checks to Next.js and the integrity of personal data.
+- [x] Separate current documentation from future workflows.
+- [x] Update the open PR according to the standard.
 
 ## Validation
-- Conferir links, IDs, dependências, templates e diff.
+- Check links, IDs, dependencies, templates, and the diff.
 
 ## Acceptance criteria
-- [x] Uma PR pode ser compreendida e auditada sem Jira.
-- [x] CI/CD possui direção, gates, ambientes e rollback definidos.
-- [x] Regras não antecipam workflows durante a fase sem código.
+- [x] A PR can be understood and audited without Jira.
+- [x] CI/CD has a defined direction, gates, environments, and rollback.
+- [x] Rules do not anticipate workflows during the phase without code.
 
 ## Result
-Padrões do Sandicts adaptados ao Kaizen com ID de roadmap obrigatório, template de oito seções, matriz de promoção e checks específicos de Next.js e integridade de dados.
+Sandicts standards adapted to Kaizen with a mandatory roadmap ID, an eight-section template, a promotion matrix, and checks specific to Next.js and data integrity.

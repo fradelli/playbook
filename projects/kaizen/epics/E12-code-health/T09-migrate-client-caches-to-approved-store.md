@@ -6,47 +6,47 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E12-T08]
 ---
 
-# Migrar os caches da agenda e o rascunho de treino para a store aprovada
+# Migrate the schedule caches and the workout draft to the approved store
 
 ## Objective
-Substituir os caches de cliente feitos à mão pelo padrão de estado aprovado na KZ-E12-T08, preservando o comportamento de concorrência e de rascunho.
+Replace the hand-built client caches with the state pattern approved in KZ-E12-T08, preserving the concurrency and draft behavior.
 
-## Contexto
+## Context
 
-Os três pontos identificados na auditoria de 2026-11-23 são `use-schedule-entities.ts`, `use-calendar-days.ts` e `use-training-activity-draft.ts`. O rascunho de treino também usa `window.confirm` nativo para pausar outra atividade, fora do design system; a agenda já tem o componente `schedule-confirm`.
+The three places identified in the 2026-11-23 audit are `use-schedule-entities.ts`, `use-calendar-days.ts`, and `use-training-activity-draft.ts`. The workout draft also uses the native `window.confirm` to pause another activity, outside the design system; the schedule already has the `schedule-confirm` component.
 
-Se a KZ-E12-T08 rejeitar Zustand, esta tarefa aplica a alternativa aprovada ou é cancelada com a decisão registrada.
+If KZ-E12-T08 rejects Zustand, this task applies the approved alternative or is cancelled with the decision recorded.
 
 ## Inputs
-- Decisão aprovada pela KZ-E12-T08 em `docs/decisions/`.
-- `docs/architecture/TARGET-ARCHITECTURE.md` — seção "Client Components".
-- `src/features/schedule/ui/components/schedule-workspace/` — contexts e hooks.
+- Decision approved by KZ-E12-T08 in `docs/decisions/`.
+- `docs/architecture/TARGET-ARCHITECTURE.md` — section "Client Components".
+- `src/features/schedule/ui/components/schedule-workspace/` — contexts and hooks.
 - `src/features/schedule/ui/components/calendar-range/hooks/use-calendar-days.ts`.
 - `src/features/training/ui/hooks/use-training-activity-draft/`.
-- `src/features/schedule/ui/components/schedule-confirm/schedule-confirm.tsx` — confirmação existente.
+- `src/features/schedule/ui/components/schedule-confirm/schedule-confirm.tsx` — existing confirmation.
 
 ## Deliverables
-- Store da agenda com seletores, substituindo os três contexts e o `useMemo` agregado.
-- Cache de dias do calendário na mesma abordagem, mantendo épocas e cancelamento.
-- Rascunho de treino com persistência local e sincronização entre abas, sem `CustomEvent` próprio nem varredura manual do localStorage.
-- Confirmação de pausa com diálogo do design system.
+- Schedule store with selectors, replacing the three contexts and the aggregate `useMemo`.
+- Calendar days cache in the same approach, keeping epochs and cancellation.
+- Workout draft with local persistence and cross-tab synchronization, with no custom `CustomEvent` or manual localStorage scan.
+- Pause confirmation with a design system dialog.
 
 ## Subtasks
-- [ ] Instalar a dependência aprovada com versão exata.
-- [ ] Migrar a agenda e remover os contexts.
-- [ ] Migrar o cache do calendário.
-- [ ] Migrar o rascunho de treino e a confirmação.
-- [ ] Manter ou ampliar os testes atuais de regressão.
+- [ ] Install the approved dependency with an exact version.
+- [ ] Migrate the schedule and remove the contexts.
+- [ ] Migrate the calendar cache.
+- [ ] Migrate the workout draft and the confirmation.
+- [ ] Keep or expand the current regression tests.
 
 ## Validation
-- `pnpm test`, `pnpm typecheck` e `pnpm structure:check` passam.
-- Testes cobrem conflito de revisão, rascunho em outra aba e falha de armazenamento.
-- Conferência manual em duas abas mostra a pausa e a retomada sincronizadas.
+- `pnpm test`, `pnpm typecheck`, and `pnpm structure:check` pass.
+- Tests cover revision conflict, a draft in another tab, and storage failure.
+- Manual check in two tabs shows pause and resume in sync.
 
 ## Acceptance criteria
-- [ ] Nenhum cache de cliente usa `useReducer` apenas para forçar renderização.
-- [ ] Nenhum `window.confirm` permanece em código de produto.
-- [ ] O comportamento observável é o mesmo de antes.
+- [ ] No client cache uses `useReducer` only to force rendering.
+- [ ] No `window.confirm` remains in product code.
+- [ ] The observable behavior is the same as before.
 
 ## Result
-Não iniciada.
+Not started.

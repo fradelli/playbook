@@ -6,50 +6,50 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E00-T10]
 ---
 
-# Aplicar o design system à visualização do roadmap
+# Apply the design system to the roadmap view
 
 ## Objective
-Refazer a visualização local do roadmap da KZ-E00-T10 com o design system do Kaizen (`@fradelli/ui`, preset Mira), o logo e as fontes do aplicativo. Ela continua fora do app Next, sem rota nem serviço novo, e só lê as mesmas fontes.
+Rebuild the local roadmap view from KZ-E00-T10 with the Kaizen design system (`@fradelli/ui`, Mira preset), the logo, and the application fonts. It stays outside the Next app, with no new route or service, and only reads the same sources.
 
 ## Inputs
-- `docs/product/telas/guia-de-estilo.md` — tipografia, densidade, tema escuro, cores por intenção e regra de consumir o catálogo do pacote.
-- `src/components/shared/app-shell/components/kaizen-logo/kaizen-logo.tsx` — composição do logo solar.
-- `src/app/layout.tsx` — fontes IBM Plex Sans e Figtree e tema escuro.
-- `roadmap/epics/E00-repository-governance/T10-create-local-roadmap-view.md` — telas, dados e cálculos já entregues.
+- `docs/product/telas/guia-de-estilo.md` — typography, density, dark theme, colors by intent, and the rule to consume the package catalog.
+- `src/components/shared/app-shell/components/kaizen-logo/kaizen-logo.tsx` — composition of the solar logo.
+- `src/app/layout.tsx` — IBM Plex Sans and Figtree fonts and the dark theme.
+- `roadmap/epics/E00-repository-governance/T10-create-local-roadmap-view.md` — screens, data, and calculations already delivered.
 
 ## Deliverables
-- `roadmap/view/` como página React empacotada pelo Vite: `index.html`, `vite.config.mjs` e `src/` (componentes, telas, rotas e renderizador Markdown).
-- Componentes de `@fradelli/ui`: Table (matriz), Progress (progresso dos épicos), Card, Badge, StatusIndicator, NavigationItem, Button, Input, NativeSelect, Switch, Label, Tooltip, Collapsible, Item e Kbd; ícones Lucide.
-- Logo solar do aplicativo, com a mesma folha de estilos do `KaizenLogo`, e o favicon do Kaizen.
-- Table e Progress acrescentados ao design system a partir das receitas oficiais Mira (Base UI) e consumidos pelo pacote local `vendor/fradelli-ui-mira-table-progress.tgz`.
-- `vite` 8.2.4 declarado como devDependency, na versão que o lockfile já tinha pelo Vitest.
-- `pnpm roadmap:view` gera os dados e o build em `roadmap/view/dist/` (fora do Git).
+- `roadmap/view/` as a React page bundled by Vite: `index.html`, `vite.config.mjs`, and `src/` (components, screens, routes, and Markdown renderer).
+- `@fradelli/ui` components: Table (matrix), Progress (epic progress), Card, Badge, StatusIndicator, NavigationItem, Button, Input, NativeSelect, Switch, Label, Tooltip, Collapsible, Item, and Kbd; Lucide icons.
+- Solar logo of the application, with the same stylesheet as `KaizenLogo`, and the Kaizen favicon.
+- Table and Progress added to the design system from the official Mira recipes (Base UI) and consumed through the local package `vendor/fradelli-ui-mira-table-progress.tgz`.
+- `vite` 8.2.4 declared as a devDependency, at the version the lockfile already had through Vitest.
+- `pnpm roadmap:view` generates the data and the build in `roadmap/view/dist/` (outside Git).
 
 ## Subtasks
-- [x] Trocar a página escrita à mão por componentes React do pacote, mantendo as telas e as rotas da KZ-E00-T10.
-- [x] Reproduzir o logo solar e as fontes do aplicativo.
-- [x] Gerar bundle clássico (IIFE) para a página abrir direto do disco.
-- [x] Incluir `roadmap/view/src` no lint e na formatação.
-- [x] Conferir no navegador em desktop, 390 e 320 px.
+- [x] Replace the hand-written page with React components from the package, keeping the screens and routes from KZ-E00-T10.
+- [x] Reproduce the solar logo and the application fonts.
+- [x] Generate a classic bundle (IIFE) so the page opens directly from disk.
+- [x] Include `roadmap/view/src` in lint and formatting.
+- [x] Check in the browser on desktop, 390 px, and 320 px.
 
 ## Validation
-- `tsc --noEmit`, `pnpm format:check`, ESLint dos arquivos alterados, `pnpm test:ci-scripts`, `pnpm docs:check`, `pnpm data:check` e `pnpm structure:check` aprovados.
-- 221 rotas (tarefas, épicos, documentos e telas) renderizadas sem erro nem link interno quebrado.
-- Sem rolagem horizontal da página em 390 e 320 px.
+- `tsc --noEmit`, `pnpm format:check`, ESLint on the changed files, `pnpm test:ci-scripts`, `pnpm docs:check`, `pnpm data:check`, and `pnpm structure:check` approved.
+- 221 routes (tasks, epics, documents, and screens) rendered without errors or broken internal links.
+- No horizontal page scrolling at 390 and 320 px.
 
 ## Acceptance criteria
-- [x] A página usa os componentes, tokens, fontes, tema escuro e logo do Kaizen, sem recriar componentes do pacote.
-- [x] As informações e controles da KZ-E00-T10 continuam: visão geral, épico, matriz onda × status, kanban, tarefa e documentos, com filtros, busca e navegação entre arquivos.
-- [x] Abre do disco depois de `pnpm roadmap:view`, sem servidor; só as fontes vêm do Google Fonts.
-- [x] Nenhum estado é gravado ou duplicado.
+- [x] The page uses the components, tokens, fonts, dark theme, and logo of Kaizen, without recreating package components.
+- [x] The information and controls from KZ-E00-T10 remain: overview, epic, wave × status matrix, kanban, task, and documents, with filters, search, and navigation between files.
+- [x] Opens from disk after `pnpm roadmap:view`, with no server; only the fonts come from Google Fonts.
+- [x] No state is written or duplicated.
 
-## Fora de escopo
+## Out of scope
 
-- App próprio de roadmap e controle de tarefas multiprojeto, planejado para depois.
-- Rota no app Next.
-- Mudar estados pela página.
-- Componente de prosa no design system: o registro Base do shadcn/ui não tem receita de tipografia, prosa ou Markdown; o estilo do texto dos documentos continua local (`roadmap/view/src/styles.css`). A barra empilhada por status também continua local, porque o Progress representa um único valor.
-- Corrigir o `pnpm i18n:check`, que já falhava em `src/` antes desta tarefa (`training-activity-form`, `training-date-navigation` e `app-shell`).
+- Dedicated roadmap app and multi-project task control, planned for later.
+- Route in the Next app.
+- Changing states through the page.
+- Prose component in the design system: the shadcn/ui Base registry has no recipe for typography, prose, or Markdown; the text style of documents stays local (`roadmap/view/src/styles.css`). The stacked bar by status also stays local, because Progress represents a single value.
+- Fixing `pnpm i18n:check`, which already failed in `src/` before this task (`training-activity-form`, `training-date-navigation`, and `app-shell`).
 
 ## Result
-Visualização refeita com `@fradelli/ui` em `roadmap/view/`. Abrir com `pnpm roadmap:view` e o caminho de `roadmap/view/dist/index.html` que o comando imprime. Os componentes ficam em React para servir de base ao app futuro.
+View rebuilt with `@fradelli/ui` in `roadmap/view/`. Open it with `pnpm roadmap:view` and the path of `roadmap/view/dist/index.html` that the command prints. The components stay in React to serve as the basis for the future app.

@@ -6,28 +6,28 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: []
 ---
 
-# Tornar o repositório privado
+# Make the repository private
 
 ## Objective
-Impedir exposição pública dos dados pessoais que serão migrados nos épicos seguintes.
+Prevent public exposure of the personal data that will be migrated in the following epics.
 
 ## Inputs
-- Configuração de visibilidade de `fradelli/kaizen-app` no GitHub.
+- Visibility settings of `fradelli/kaizen-app` on GitHub.
 
 ## Deliverables
-- Repositório com visibilidade `PRIVATE` confirmada.
+- Repository with `PRIVATE` visibility confirmed.
 
 ## Subtasks
-- [ ] Alterar a visibilidade no GitHub.
-- [ ] Confirmar acessos necessários.
-- [ ] Verificar a visibilidade com `gh repo view`.
+- [ ] Change the visibility on GitHub.
+- [ ] Confirm the required access.
+- [ ] Verify the visibility with `gh repo view`.
 
 ## Validation
-- `gh repo view fradelli/kaizen-app --json isPrivate` retorna `true`.
+- `gh repo view fradelli/kaizen-app --json isPrivate` returns `true`.
 
 ## Acceptance criteria
-- [ ] O repositório não é acessível publicamente.
-- [ ] A migração de dados pessoais pode ser desbloqueada.
+- [ ] The repository is not publicly accessible.
+- [ ] The migration of personal data can be unblocked.
 
 ## Result
-Cancelada em 2026-08-31 por decisão do proprietário. O `kaizen-app` permanecerá público para facilitar a governança gratuita de CI/CD e regras no GitHub; a exposição de conteúdo passou a ser controlada por allowlist e classificação por artefato.
+Canceled on 2026-08-31 by the owner's decision. `kaizen-app` will remain public to make free CI/CD governance and GitHub rules easier; content exposure is now controlled by an allowlist and per-artifact classification.

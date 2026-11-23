@@ -6,34 +6,34 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E01-T02]
 ---
 
-# Migrar histórico de treino
+# Migrate training history
 
 ## Objective
-Preservar versões anteriores, revisões e histórico sem transformar artefatos imutáveis, mantendo originais não publicáveis no snapshot privado.
+Preserve previous versions, reviews, and history without transforming immutable artifacts, keeping unpublishable originals in the private snapshot.
 
 ## Inputs
-- Linhas `e01-t03-*` do manifesto, incluindo planos não apontados por `data/active.json`.
+- `e01-t03-*` rows of the manifest, including plans not pointed to by `data/active.json`.
 
 ## Deliverables
-- Histórico público correspondente no Kaizen.
-- Referência auditável aos originais mantidos somente no legado.
-- SHA-256 de cada origem e destino no manifesto.
+- Corresponding public history in Kaizen.
+- Auditable reference to the originals kept only in the legacy.
+- SHA-256 of each source and destination in the manifest.
 
 ## Subtasks
-- [x] Preservar originais byte a byte no legado e copiar somente os autorizados como `PUBLIC`.
-- [x] Preservar versões anteriores sem alterar retroativamente seu status embutido.
-- [x] Migrar revisões mantendo a referência à origem.
-- [x] Migrar resumos históricos com proveniência.
-- [x] Confirmar que nenhum mês foi omitido.
+- [x] Preserve originals byte for byte in the legacy and copy only those authorized as `PUBLIC`.
+- [x] Preserve previous versions without retroactively changing their embedded status.
+- [x] Migrate reviews keeping the reference to the source.
+- [x] Migrate historical summaries with provenance.
+- [x] Confirm that no month was omitted.
 
 ## Validation
-- Hash de cada cópia literal é idêntico.
-- Cada revisão aponta para o artefato de origem no manifesto; o arquivo existe no destino somente quando sua exposição é `PUBLIC`.
-- O ponteiro do plano ativo não é alterado.
+- The hash of each literal copy is identical.
+- Each review points to the source artifact in the manifest; the file exists at the destination only when its exposure is `PUBLIC`.
+- The active plan pointer is not changed.
 
 ## Acceptance criteria
-- [x] Histórico e plano vigente são distinguíveis.
-- [x] O legado continua preservado.
+- [x] History and the current plan are distinguishable.
+- [x] The legacy remains preserved.
 
 ## Result
-O plano v1 foi copiado literalmente com seu `status` histórico, enquanto `data/active.json` permaneceu apontando para a v2. A revisão referencia o original privado pelo `artifact_id`; a análise preserva decisões e contexto agregado sem agenda exata ou questão de saúde. O treino do coach permanece byte a byte no snapshot privado e foi encerrado como `SKIPPED/DO_NOT_PUBLISH`.
+Plan v1 was copied literally with its historical `status`, while `data/active.json` kept pointing to v2. The review references the private original by `artifact_id`; the analysis preserves decisions and aggregate context without the exact schedule or any health matter. The coach workout remains byte for byte in the private snapshot and was closed as `SKIPPED/DO_NOT_PUBLISH`.

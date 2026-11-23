@@ -6,40 +6,40 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E11-T01]
 ---
 
-# Validar a POC de seleção e drag and drop
+# Validate the selection and drag-and-drop POC
 
 ## Objective
-Construir, após autorização de implementação, uma POC local sem escrita no banco para seleção multidia, mover atividades, agendar tarefas, trocar grupos e resize inferior.
+Build, after implementation is authorized, a local POC with no database writes for multi-day selection, moving activities, scheduling tasks, changing groups, and bottom resize.
 
 ## Inputs
-- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/ui/components/calendar-grid/components/calendar-day-column/calendar-day-column.tsx](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/calendar-grid/components/calendar-day-column/calendar-day-column.tsx) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/ui/components/schedule-workspace/schedule-workspace.tsx](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/schedule-workspace/schedule-workspace.tsx) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/ui/components/todo-task-row/todo-task-row.tsx](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/todo-task-row/todo-task-row.tsx) — consultar o contrato ou seção correspondente ao escopo.
+- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consult the contract or section matching the scope.
+- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consult the contract or section matching the scope.
+- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consult the contract or section matching the scope.
+- [src/features/schedule/ui/components/calendar-grid/components/calendar-day-column/calendar-day-column.tsx](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/calendar-grid/components/calendar-day-column/calendar-day-column.tsx) — consult the contract or section matching the scope.
+- [src/features/schedule/ui/components/schedule-workspace/schedule-workspace.tsx](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/schedule-workspace/schedule-workspace.tsx) — consult the contract or section matching the scope.
+- [src/features/schedule/ui/components/todo-task-row/todo-task-row.tsx](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/todo-task-row/todo-task-row.tsx) — consult the contract or section matching the scope.
 
 ## Deliverables
-Resultado verificável descrito nos critérios abaixo, com evidências vinculadas a esta tarefa. Antes de editar código, aplicar as seções pertinentes da [arquitetura](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) e os contratos locais. Não carregar planos históricos inteiros.
+Verifiable result described in the criteria below, with evidence linked to this task. Before editing code, apply the relevant sections of the [architecture](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) and the local contracts. Do not load entire historical plans.
 
 ## Subtasks
-- [ ] Conferir versão e API pública de @dnd-kit/react; definir geometria e política única de snap.
-- [ ] Integrar provider, sensores e prévia local preservando clique, checkbox, foco e rolagem.
-- [ ] Validar seleção multidia e intenções simuladas do primeiro incremento; registrar limitações de toque e teclado.
+- [ ] Check the version and public API of @dnd-kit/react; define the geometry and a single snap policy.
+- [ ] Integrate the provider, sensors, and local preview while preserving click, checkbox, focus, and scrolling.
+- [ ] Validate multi-day selection and the simulated intents of the first increment; record touch and keyboard limitations.
 
 ## Validation
-Conferir links, IDs, dependências e coerência com regras de produto. Quando houver implementação autorizada, executar os gates proporcionais e os cenários do plano; registrar o que foi executado e o que ficou pendente. Testes ainda não executados não contam como evidência.
+Check links, IDs, dependencies, and consistency with product rules. When implementation is authorized, run the proportional gates and the plan's scenarios; record what was run and what remains pending. Tests not yet run do not count as evidence.
 
 ## Acceptance criteria
-- [ ] 21h até 12h do dia seguinte e cinco dias representam um intervalo único com segmentos visuais.
-- [ ] Movimento preserva duração e deslocamento do ponto segurado; resize inferior preserva início.
-- [ ] Cancelamento, destino inválido e operação sem alteração não enviam comandos persistentes.
-- [ ] Autoscroll, grade com dias variáveis e controles internos funcionam sem atualizações globais por pixel.
-- [ ] Alternativa por clique/toque e comportamento mobile são demonstrados ou identificados como impedimento de aprovação.
+- [ ] 21:00 to 12:00 the next day and five days represent a single interval with visual segments.
+- [ ] Movement preserves the duration and the offset of the held point; bottom resize preserves the start.
+- [ ] Cancellation, an invalid target, and an operation with no change do not send persistent commands.
+- [ ] Autoscroll, a grid with variable days, and internal controls work without global per-pixel updates.
+- [ ] The click/touch alternative and mobile behavior are demonstrated or identified as an approval blocker.
 
-## Fora de escopo
+## Out of scope
 
-Nenhuma Server Action de escrita, migration ou rota de demonstração pública. A aprovação dos resultados da POC é gate separado para KZ-E11-T03.
+No write Server Action, migration, or public demo route. Approval of the POC results is a separate gate for KZ-E11-T03.
 
 ## Result
-Backlog registrado em 21/11/2026 durante a reconciliação documental. Nenhuma execução desta tarefa foi iniciada por este registro. O status canônico fica exclusivamente no índice do roadmap.
+Backlog recorded on 21/11/2026 during the documentation reconciliation. No execution of this task was started by this record. Canonical status lives only in the roadmap index.

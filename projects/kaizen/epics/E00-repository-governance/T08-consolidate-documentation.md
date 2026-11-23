@@ -6,21 +6,21 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E00-T07]
 ---
 
-# Consolidar documentação e contexto do Codex
+# Consolidate documentation and Codex context
 
-## Autorização
+## Authorization
 
-Plano documental aprovado pelo proprietário em 12/11/2026. Uso exclusivo do Codex. Preservar migração visual paralela; sem commit, push, publicação, banco ou dependências.
+Documentation plan approved by the owner on 12/11/2026. For Codex use only. Preserve the parallel visual migration; no commit, push, publication, database, or dependencies.
 
 ## Objective
 Not recorded in the original version of this task.
 
 ## Inputs
-- `docs/documentation-review.md` — inventário, critérios e plano aprovado.
-- `AGENTS.md` — roteiro mínimo.
-- `docs/architecture/TARGET-ARCHITECTURE.md` — rotas, componentes e Prisma.
-- `docs/product/telas/guia-de-estilo.md` — direção visual atual.
-- `scripts/validate-governance.mjs` — contrato existente; somente leitura.
+- `docs/documentation-review.md` — inventory, criteria, and approved plan.
+- `AGENTS.md` — minimal route.
+- `docs/architecture/TARGET-ARCHITECTURE.md` — routes, components, and Prisma.
+- `docs/product/telas/guia-de-estilo.md` — current visual direction.
+- `scripts/validate-governance.mjs` — existing contract; read-only.
 
 ## Deliverables
 Not recorded in the original version of this task.
@@ -32,15 +32,15 @@ Not recorded in the original version of this task.
 Not recorded in the original version of this task.
 
 ## Acceptance criteria
-- [x] Fontes normativas, propostas e histórico distinguíveis.
-- [x] Leitura dirigida por tarefa e seção.
-- [x] Consolidações preservam conteúdo exclusivo e origens imutáveis.
-- [x] Links, IDs, dependências e ponteiros validados.
-- [x] Trabalho paralelo preservado; nenhuma publicação.
+- [x] Normative sources, proposals, and history are distinguishable.
+- [x] Reading guided by task and section.
+- [x] Consolidations preserve exclusive content and immutable origins.
+- [x] Links, IDs, dependencies, and pointers validated.
+- [x] Parallel work preserved; no publication.
 
 ## Result
-Consolidação concluída: 12 documentos redundantes removidos com fonte integral em commit imutável e SHA-256; roteiro por seção, guias, rotas, governança e vigência corrigidos. Inventário individual e limites em `docs/documentation-review.md`.
+Consolidation completed: 12 redundant documents removed with the full source kept in an immutable commit and SHA-256; section-based route, guides, routes, governance, and validity corrected. Individual inventory and limits in `docs/documentation-review.md`.
 
-Validação: integridade dos dados aprovada; 26 testes existentes de dados/governança aprovados; roadmap e diff sem erros. Nenhum código, dado, dependência ou configuração da aplicação mudou em relação ao snapshot anterior à edição. Sem commit, push ou publicação.
+Validation: data integrity approved; 26 existing data/governance tests approved; roadmap and diff without errors. No application code, data, dependency, or configuration changed relative to the snapshot before the edit. No commit, push, or publication.
 
-Os corpos dos três documentos visuais em edição paralela foram preservados; receberam notas de vigência. Sua consolidação profunda fica após a migração visual. Skills e 22 junctions permanecem instaladas e ignoradas pelo Git. Estado remoto da PR #76, descoberta de skills pelo host e validação física permanecem não comprovados.
+The bodies of the three visual documents under parallel editing were preserved; they received validity notes. Their deep consolidation comes after the visual migration. Skills and 22 junctions remain installed and ignored by Git. The remote state of PR #76, skill discovery by the host, and physical validation remain unproven.

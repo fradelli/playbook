@@ -6,14 +6,14 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E04-T02, KZ-E04-T03, KZ-E04-T06]
 ---
 
-# Configurar CI mínimo
+# Configure minimal CI
 
 ## Objective
-Implementar os gates estáveis aprovados na governança de CI para pull requests e promoções.
+Implement the stable gates approved in the CI governance for pull requests and promotions.
 
-## Contexto
+## Context
 
-O CI deve proteger a validação de prontidão e a integração do Design System antes do shell. KZ-E04-T08 complementará o workflow com acesso mínimo ao package privado já publicado.
+CI must protect the readiness validation and the Design System integration before the shell. KZ-E04-T08 will extend the workflow with minimal access to the already published private package.
 
 ## Inputs
 - `.github/dependabot.yml`
@@ -51,44 +51,44 @@ O CI deve proteger a validação de prontidão e a integração do Design System
 - `vitest.config.ts`
 
 ## Deliverables
-- Workflow reutilizável de PR.
-- Validação mecânica de branches, títulos, descrições e direção.
-- Rulesets das branches protegidas.
+- Reusable PR workflow.
+- Mechanical validation of branches, titles, descriptions, and direction.
+- Rulesets for the protected branches.
 
-## Fora do escopo
+## Out of scope
 
-- Configurar credencial ou acesso ao GitHub Packages antes de KZ-E04-T08.
-- Instalar `@fradelli/ui`, Tailwind ou fontes.
+- Configuring credentials or access to GitHub Packages before KZ-E04-T08.
+- Installing `@fradelli/ui`, Tailwind, or fonts.
 
 ## Subtasks
-- [x] Executar instalação reproduzível.
-- [x] Criar jobs estáveis `Governance`, `Quality`, `Test`, `Data integrity`, `Build` e `Dependency audit`.
-- [x] Executar lint, tipos, formato, testes, validações documentais, build e audit `moderate`.
-- [x] Validar ID da tarefa, template e matriz `developer -> staging -> master`.
-- [x] Configurar rulesets sem permitir push direto.
-- [x] Configurar cache somente se trouxer benefício medido.
+- [x] Run a reproducible install.
+- [x] Create the stable jobs `Governance`, `Quality`, `Test`, `Data integrity`, `Build`, and `Dependency audit`.
+- [x] Run lint, types, format, tests, documentation validations, build, and `moderate` audit.
+- [x] Validate task ID, template, and the `developer -> staging -> master` matrix.
+- [x] Configure rulesets without allowing direct push.
+- [x] Configure cache only if it brings a measured benefit.
 
 ## Validation
-- Workflow passa e falha deliberadamente em regressão controlada.
-- Implementação local aprovada por `pnpm run ci`; execução remota e rulesets dependem da publicação da PR.
+- The workflow passes and fails deliberately on a controlled regression.
+- Local implementation approved by `pnpm run ci`; remote execution and rulesets depend on publishing the PR.
 
 ## Acceptance criteria
-- [x] As três branches protegidas recebem apenas mudanças que passam nos gates aplicáveis.
+- [x] The three protected branches receive only changes that pass the applicable gates.
 
-## Riscos
+## Risks
 
-- Workflow local e remoto executarem matrizes diferentes.
-- Antecipar autenticação de package sem consumidor real.
+- Local and remote workflows running different matrices.
+- Anticipating package authentication without a real consumer.
 
 ## Rollback
 
-Reverter o workflow defeituoso sem remover ou relaxar os gates locais.
+Revert the defective workflow without removing or relaxing the local gates.
 
 ## Result
-Concluída em 2026-09-10. A PR #27 executou com sucesso os seis gates remotos. Os rulesets `developer-pr-gates` e `promotion-pr-gates` exigem PR e os checks estáveis em `developer`, `staging` e `master`, sem bypass, exclusão ou force push. Tarefas usam squash, promoções usam merge commit e rebase merge está desabilitado.
+Completed on 2026-09-10. PR #27 ran all six remote gates successfully. The rulesets `developer-pr-gates` and `promotion-pr-gates` require a PR and the stable checks on `developer`, `staging`, and `master`, with no bypass, deletion, or force push. Tasks use squash, promotions use merge commit, and rebase merge is disabled.
 
-## Consolidação documental de 12/11/2026
+## Documentation consolidation of 12/11/2026
 
-SHAs iniciais das Actions permanecem na origem. Regras correntes em CI-CD-GOVERNANCE/PULL-REQUEST-STANDARD e no validador.
+The initial Action SHAs remain at the source. Current rules are in CI-CD-GOVERNANCE/PULL-REQUEST-STANDARD and in the validator.
 
-[Pacote original integral](https://github.com/fradelli/nextjs-kaizen-app/blob/fd2269d2eaa7d55cfea724631f12fa6505d37b32/docs/implementation/tasks/E04-T05.md), SHA-256 `ba71abd93960777e303ae6b3e5c3a07083e7f7b3bd7a056231a72e08ec563b7d`. Comandos, critérios, riscos e rollback registram aquela base e não são receita para reinstalar a aplicação atual. Pendências não viraram aprovações nesta consolidação.
+[Full original package](https://github.com/fradelli/nextjs-kaizen-app/blob/fd2269d2eaa7d55cfea724631f12fa6505d37b32/docs/implementation/tasks/E04-T05.md), SHA-256 `ba71abd93960777e303ae6b3e5c3a07083e7f7b3bd7a056231a72e08ec563b7d`. Commands, criteria, risks, and rollback record that baseline and are not a recipe for reinstalling the current application. Open items were not turned into approvals in this consolidation.

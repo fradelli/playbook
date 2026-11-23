@@ -6,14 +6,14 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T03]
 ---
 
-# Exigir medidas aplicáveis antes de avançar a série
+# Require applicable measures before advancing the set
 
 ## Objective
-Alinhar a navegação entre séries aos campos exigidos pelo exercício, preservando a possibilidade de voltar e corrigir séries anteriores.
+Align the navigation between sets with the fields required by the exercise, preserving the ability to go back and correct previous sets.
 
-## Contexto conhecido
+## Known context
 
-Na KZ-E06-T03, o avanço já exige medida positiva da série atual e trata `0` como não realizado, mas não verifica se a carga foi preenchida quando `loadApplicable` é verdadeiro.
+In KZ-E06-T03, advancing already requires a positive measure on the current set and treats `0` as not performed, but it does not check whether the load was filled in when `loadApplicable` is true.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -23,7 +23,7 @@ Na KZ-E06-T03, o avanço já exige medida positiva da série atual e trata `0` c
 - `src/features/training/application/training-dto.ts`
 
 ## Deliverables
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Escopo e impactos».
+Not recorded in the original version of this task; equivalent content in the section "Scope and impacts".
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -31,31 +31,31 @@ Not recorded in the original version of this task.
 ## Validation
 Not recorded in the original version of this task.
 
-## Comportamento esperado
+## Expected behavior
 
-- Repetições ou medidas aplicáveis devem ser positivas para liberar a série seguinte; vazio e `0` não liberam.
-- Quando o exercício usa carga, a carga também precisa ser válida e positiva; exercício sem carga não mostra nem exige o campo.
-- Séries anteriores permanecem acessíveis e editáveis; finalizar o treino ainda pode persistir séries vazias como zero segundo a regra existente.
+- Repetitions or applicable measures must be positive to release the next set; empty and `0` do not release it.
+- When the exercise uses load, the load must also be valid and positive; an exercise without load neither shows nor requires the field.
+- Previous sets remain accessible and editable; finishing the workout can still persist empty sets as zero under the existing rule.
 
-## Escopo e impactos
+## Scope and impacts
 
-- Revisar validação da UI e do servidor para evitar regras divergentes.
-- Cobrir medidas bilaterais, tempo, contatos e direções, sem presumir que todo exercício usa repetições.
-- Testar regressão de preenchimento, avanço e retorno.
+- Review the UI and server validation to avoid divergent rules.
+- Cover bilateral measures, time, contacts, and directions, without assuming that every exercise uses repetitions.
+- Test regression of filling in, advancing, and going back.
 
-## Fora de escopo
+## Out of scope
 
-- Salvar cada série separadamente ou interpretar zero como melhoria de desempenho.
+- Save each set separately or interpret zero as a performance improvement.
 
-## Decisões antes da implementação
+## Decisions before implementation
 
-- Confirmar como cargas assistidas, barra sem anilhas ou outras medidas especiais seriam representadas; não aceitar `0 kg` silenciosamente para avançar no contrato atual.
-- Reanalisar o código vigente, apresentar solução e trade-offs e aguardar aprovação explícita antes de implementar.
+- Confirm how assisted loads, a bar without plates, or other special measures would be represented; do not silently accept `0 kg` to advance under the current contract.
+- Reanalyze the current code, present a solution and trade-offs, and wait for explicit approval before implementing.
 
 ## Acceptance criteria
-- [ ] O avanço respeita todos os campos aplicáveis, inclusive carga quando houver.
-- [ ] Zero e vazio permanecem equivalentes para bloqueio de avanço, sem impedir a finalização com séries zeradas.
-- [ ] Testes cobrem exercícios com e sem carga e doses não convencionais.
+- [ ] Advancing respects all applicable fields, including load when present.
+- [ ] Zero and empty remain equivalent for blocking advancement, without preventing finalization with zeroed sets.
+- [ ] Tests cover exercises with and without load and unconventional doses.
 
 ## Result
-Cancelada pela decisão explícita de edição independente na KZ-E06-T26. Não exigir sequência nem carga positiva como condição nova de avanço; confirmação exige as medidas válidas aplicáveis.
+Canceled by the explicit decision of independent editing in KZ-E06-T26. Do not require sequence or positive load as a new condition for advancing; confirmation requires the valid applicable measures.

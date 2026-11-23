@@ -6,28 +6,28 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E03-T01]
 ---
 
-# Definir transição da fonte de verdade
+# Define source-of-truth transition
 
 ## Objective
-Evitar duas fontes editáveis ao introduzir banco de dados.
+Avoid two editable sources when introducing a database.
 
 ## Inputs
-- Dados versionados e jornadas do P0.
+- Versioned data and P0 journeys.
 
 ## Deliverables
 - `docs/decisions/DATA-SOURCE-TRANSITION.md`
 
 ## Subtasks
-- [x] Definir arquivos como origem da importação inicial.
-- [x] Definir quando o banco vira fonte operacional.
-- [x] Definir exportação, backup e proveniência.
-- [x] Definir política de reimportação e conflito.
+- [x] Define files as the origin of the initial import.
+- [x] Define when the database becomes the operational source.
+- [x] Define export, backup, and provenance.
+- [x] Define the reimport and conflict policy.
 
 ## Validation
-- Para cada fase existe uma única fonte editável.
+- For each phase there is a single editable source.
 
 ## Acceptance criteria
-- [x] Leitura, escrita futura e rollback têm ownership inequívoco.
+- [x] Reading, future writing, and rollback have unambiguous ownership.
 
 ## Result
-Decidido que Git/JSON permanece a única fonte editável das definições no MVP, enquanto o banco é a fonte exclusiva de atribuições e execuções. Importação unidirecional, imutável e idempotente, conflitos, proveniência, exportação, backup, cutover futuro e rollback foram especificados em `docs/decisions/DATA-SOURCE-TRANSITION.md`.
+Decided that Git/JSON remains the only editable source of definitions in the MVP, while the database is the exclusive source of assignments and executions. One-way, immutable, idempotent import, conflicts, provenance, export, backup, future cutover, and rollback were specified in `docs/decisions/DATA-SOURCE-TRANSITION.md`.

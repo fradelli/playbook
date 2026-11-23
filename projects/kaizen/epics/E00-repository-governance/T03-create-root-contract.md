@@ -6,14 +6,14 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E00-T01]
 ---
 
-# Criar contrato raiz
+# Create root contract
 
 ## Objective
-Definir propósito, linguagem, fontes de verdade, fluxo de tarefas, privacidade e branches antes da migração.
+Define purpose, language, sources of truth, task flow, privacy, and branches before the migration.
 
 ## Inputs
-- Estratégia aprovada na conversa.
-- Estado real do repositório e das branches.
+- Strategy approved in the conversation.
+- Actual state of the repository and branches.
 
 ## Deliverables
 - `AGENTS.md`
@@ -23,18 +23,18 @@ Definir propósito, linguagem, fontes de verdade, fluxo de tarefas, privacidade 
 - `docs/migration/README.md`
 
 ## Subtasks
-- [x] Definir leitura mínima para o Codex.
-- [x] Definir status e fonte canônica do trabalho.
-- [x] Registrar privacidade e ausência de código.
-- [x] Documentar branches e limites da Vercel.
+- [x] Define the minimal reading for Codex.
+- [x] Define the status and the canonical source of the work.
+- [x] Record privacy and the absence of code.
+- [x] Document branches and Vercel limits.
 
 ## Validation
-- Todos os arquivos existem e possuem links válidos.
-- Nenhum arquivo declara preview ou produção como já configurados.
+- All files exist and have valid links.
+- No file declares preview or production as already configured.
 
 ## Acceptance criteria
-- [x] Contrato autocontido e em português do Brasil.
-- [x] Nenhuma dependência ou aplicação introduzida.
+- [x] Self-contained contract, written in Brazilian Portuguese.
+- [x] No dependency or application introduced.
 
 ## Result
-Concluída em 2026-08-30 na PR de fundação do roadmap.
+Completed on 2026-08-30 in the roadmap foundation PR.

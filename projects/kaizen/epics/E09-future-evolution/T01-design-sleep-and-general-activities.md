@@ -6,11 +6,11 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E08-T05]
 ---
 
-# Projetar sono e atividades gerais
+# Design sleep and general activities
 
 ## Objective
-Definir jornadas, dados, limites de privacidade e arquitetura mínima para controle
-de sono e atividades gerais antes de criar banco, telas ou integrações.
+Define journeys, data, privacy limits, and minimal architecture for sleep
+and general activity tracking before creating a database, screens, or integrations.
 
 ## Inputs
 - `docs/product/P0.md`
@@ -20,37 +20,37 @@ de sono e atividades gerais antes de criar banco, telas ou integrações.
 - `roadmap/epics/E09-future-evolution/README.md`
 
 ## Deliverables
-- Jornadas e vocabulário de domínio para sono e atividades gerais.
-- Dados obrigatórios, opcionais e deliberadamente não coletados.
-- Decisão sobre entrada manual, importação e integrações externas.
-- Modelo conceitual, ownership, retenção, privacidade e riscos.
-- Decisão de acesso que bloqueie implementação caso os dados sejam classificados
-  como sensíveis antes de existir autenticação adequada.
-- Decomposição revisada das tarefas KZ-E09-T02, KZ-E09-T03 e KZ-E09-T04.
+- Journeys and domain vocabulary for sleep and general activities.
+- Required, optional, and deliberately uncollected data.
+- Decision on manual entry, import, and external integrations.
+- Conceptual model, ownership, retention, privacy, and risks.
+- Access decision that blocks implementation if the data is classified
+  as sensitive before adequate authentication exists.
+- Revised breakdown of tasks KZ-E09-T02, KZ-E09-T03, and KZ-E09-T04.
 
 ## Subtasks
-- [ ] Separar fatos, decisões, inferências e dados ausentes de cada domínio.
-- [ ] Definir quais atividades são gerais e quais permanecem em treino.
-- [ ] Definir métricas de sono sem diagnóstico ou alegação médica.
-- [ ] Avaliar timezone, datas civis, sobreposição e edição histórica.
-- [ ] Classificar a sensibilidade dos dados e decidir o gate de autenticação.
-- [ ] Registrar unknowns de integrações e dispositivos sem antecipar dependências.
+- [ ] Separate facts, decisions, inferences, and missing data for each domain.
+- [ ] Define which activities are general and which remain in workouts.
+- [ ] Define sleep metrics without diagnosis or medical claims.
+- [ ] Evaluate timezone, civil dates, overlap, and historical editing.
+- [ ] Classify the sensitivity of the data and decide the authentication gate.
+- [ ] Record unknowns about integrations and devices without anticipating dependencies.
 
 ## Validation
-- Revisar coerência com workspace fixo, modelo relacional e fronteiras Server/Client.
-- Confirmar que nenhuma entidade ou integração futura foi tratada como requisito já aprovado.
+- Review consistency with the fixed workspace, relational model, and Server/Client boundaries.
+- Confirm that no future entity or integration was treated as an already approved requirement.
 
 ## Acceptance criteria
-- [ ] Sono e atividades gerais possuem escopo distinguível e implementável.
-- [ ] Privacidade, dados ausentes e decisões adiadas estão explícitos.
-- [ ] KZ-E09-T02 e KZ-E09-T03 não podem ficar `READY` sem acesso compatível com a
-      classificação dos dados.
-- [ ] As tarefas de implementação podem ser detalhadas sem inventar requisitos.
+- [ ] Sleep and general activities have a distinguishable, implementable scope.
+- [ ] Privacy, missing data, and deferred decisions are explicit.
+- [ ] KZ-E09-T02 and KZ-E09-T03 cannot become `READY` without access compatible with the
+      classification of the data.
+- [ ] The implementation tasks can be detailed without inventing requirements.
 
-## Fora de escopo
+## Out of scope
 
-- Criar schema, migration, tela, API ou integração.
-- Diagnosticar qualidade do sono, lesão, recuperação ou saúde.
+- Creating a schema, migration, screen, API, or integration.
+- Diagnosing sleep quality, injury, recovery, or health.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

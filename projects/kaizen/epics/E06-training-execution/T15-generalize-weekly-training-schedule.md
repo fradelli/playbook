@@ -6,12 +6,12 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T11]
 ---
 
-# Generalizar a programação semanal de atividades
+# Generalize the weekly activity schedule
 
 ## Objective
-Permitir que a semana planejada descreva sessões estruturadas, práticas esportivas,
-treinos específicos, mobilidade e descanso sem regras fixas de futevôlei ou de jogo
-no fim de semana.
+Allow the planned week to describe structured sessions, sports practice,
+specific workouts, mobility, and rest without fixed footvolley rules or
+weekend-game rules.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -23,15 +23,15 @@ no fim de semana.
 - `prisma/models/training.prisma`
 
 ## Deliverables
-- Modelo de agenda semanal genérico, com tipo, referência ou nome, dia, horário e
-  duração planejada quando aplicável.
-- Materialização somente da data consultada, respeitando as decisões da KZ-E06-T11.
-- Suporte a mais de uma atividade estruturada no mesmo dia e a sessões de reserva
-  definidas no plano, mas sem vínculo obrigatório com um dia da semana.
-- Migração explícita e reversível do formato da agenda atual, preservando versões
-  históricas e IDs estáveis.
-- Validação de esquema, importação e testes de dias com múltiplas atividades,
-  descanso, ausência de horário e referências inválidas.
+- Generic weekly schedule model, with type, reference or name, day, time, and
+  planned duration when applicable.
+- Materialization only of the queried date, respecting the decisions of KZ-E06-T11.
+- Support for more than one structured activity on the same day and for backup
+  sessions defined in the plan, but with no mandatory link to a day of the week.
+- Explicit and reversible migration of the current schedule format, preserving
+  historical versions and stable IDs.
+- Schema validation, import, and tests for days with multiple activities,
+  rest, missing time, and invalid references.
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -39,19 +39,19 @@ Not recorded in the original version of this task.
 ## Validation
 Not recorded in the original version of this task.
 
-## Fora de escopo
+## Out of scope
 
-- Importar o novo treino pessoal, limpar o banco ou criar editor visual de planos.
-- Agrupar exercícios combinados, cuja estrutura é preservada na importação KZ-E06-T16 e cujo fluxo guiado pertence à KZ-E06-T18.
+- Importing the new personal workout, clearing the database, or creating a visual plan editor.
+- Grouping combined exercises, whose structure is preserved in the KZ-E06-T16 import and whose guided flow belongs to KZ-E06-T18.
 
-## Decisões antes da implementação
+## Decisions before implementation
 
-- Reavaliar o formato com o novo plano fornecido pelo usuário e aprovar a migração.
+- Re-evaluate the format with the new plan provided by the user and approve the migration.
 
 ## Acceptance criteria
-- [x] A agenda não depende de esporte, dia de jogo ou duração codificados no aplicativo.
-- [x] Uma sessão de reserva pode existir sem ser materializada automaticamente.
-- [x] Planos históricos e atividades executadas permanecem rastreáveis.
+- [x] The schedule does not depend on a sport, game day, or duration hardcoded in the application.
+- [x] A backup session can exist without being materialized automatically.
+- [x] Historical plans and executed activities remain traceable.
 
 ## Result
-Agenda 2.0 implementada com entradas genéricas, horários e referências de preparação. Leitura histórica 1.0 preservada; sábado e domingo sem atividade fixa. Tipos, lint, validação de dados e testes unitários aprovados. Migração local aplicada após backup; validação integrada final faz parte da importação KZ-E06-T16.
+Schedule 2.0 implemented with generic entries, times, and preparation references. Historical 1.0 reading preserved; Saturday and Sunday with no fixed activity. Types, lint, data validation, and unit tests passed. Local migration applied after a backup; the final integrated validation is part of the KZ-E06-T16 import.

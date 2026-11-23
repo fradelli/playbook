@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T02]
 ---
 
-# Registrar preparação, séries e comentários
+# Record preparation, sets, and comments
 
 ## Objective
-Permitir executar a programação diária definida pelo plano, salvando preparação, séries e comentários em um fluxo progressivo.
+Allow executing the daily schedule defined by the plan, saving preparation, sets, and comments in a progressive flow.
 
 ## Inputs
 - `docs/history/implementation/E06.md`
@@ -114,65 +114,65 @@ Permitir executar a programação diária definida pelo plano, salvando prepara�
 - `tests/integration/persisted-data-integrity.test.ts`
 
 ## Deliverables
-- Agenda diária compacta, gestão unificada em drawer e execução guiada de preparação, séries e atividades.
+- Compact daily schedule, unified management in a drawer, and guided execution of preparation, sets, and activities.
 
 ## Subtasks
-- [x] Exibir séries, repetições, descanso e observações disponíveis.
-- [x] Separar preparação do treino principal.
-- [x] Usar o tipo explícito de medição por série.
-- [x] Exibir e persistir carga somente com `load_applicable=true`.
-- [x] Manter a execução parcialmente preenchida no navegador, detectar conflito e preservar o rascunho em erro de finalização.
-- [x] Materializar séries ainda vazias como zero ao concluir, preservando a possibilidade de corrigi-las depois.
-- [x] Resumir a agenda em badges compactos com atividade, duração ou horário.
-- [x] Incluir a preparação compatível automaticamente e permitir navegar entre aquecimento e atividade sem alterar o registro existente.
-- [x] Iniciar o treino no aquecimento e permitir acessar o treino principal sem bloquear por itens de aquecimento pendentes.
-- [x] Exibir uma série por vez e bloquear avanço enquanto a anterior estiver pendente.
-- [x] Recolher dicas de execução e corrigir a composição visual dos alertas.
-- [x] Substituir a troca especial de programação pela mesma gestão usada para adicionar, editar e remover atividades.
-- [x] Persistir atividades adicionais sem alterar a programação prescrita.
-- [x] Separar tipo estrutural, nome e esporte da atividade.
-- [x] Suportar treino estruturado, prática esportiva, treino específico e mobilidade.
-- [x] Preservar horários planejados; registrar início, pausa e retomada no rascunho local e persistir os intervalos ao finalizar.
-- [x] Registrar intensidade e energia percebidas somente na execução.
-- [x] Vincular preparação de mobilidade às atividades principais e mantê-la visível como etapa opcional.
-- [x] Editar e remover logicamente atividades pelo drawer da agenda.
-- [x] Incluir atividades nos badges e na leitura do dia para futura agregação mensal.
-- [x] Permitir múltiplos treinos estruturados no mesmo dia, inclusive sessões iguais em horários distintos.
-- [x] Manter no máximo um cronômetro ativo por navegador e exigir confirmação para pausar a atividade atual.
-- [x] Excluir o tempo pausado da duração ativa e preservar todos os intervalos para relatórios.
-- [x] Bloquear exclusão de atividade concluída, mantendo correções de avaliação, séries e cargas.
-- [x] Usar toggle acessível no aquecimento, bloqueando sua edição enquanto marcado como feito.
-- [x] Carregar sessões estruturadas dinamicamente do plano ativo persistido, sem catálogo mockado na UI.
-- [x] Salvar exercícios e séries em uma transação ao finalizar a atividade, sem persistência por série ou por toggle durante o treino.
-- [x] Tratar campo vazio e zero como série não realizada e impedir lacunas entre séries.
-- [x] Exibir editor compacto com uma série por vez, comentário recolhível e bloqueio por toggle.
-- [x] Representar prioridade em três níveis com semântica acessível e compatibilidade com o plano legado.
-- [x] Limitar leitura e mutações a no máximo quatro dias no futuro sem prefetch dos dias bloqueados.
-- [x] Versionar a agenda semanal com modelo de sábado e materializar somente a data consultada, sem recriar exclusões.
-- [x] Recolher o exercício ao marcar o switch no cabeçalho e reabri-lo sem perder o rascunho.
-- [x] Exibir prioridade com rótulo e barras neutras; permitir fechar o comentário pelo cabeçalho.
-- [x] Confirmar exclusão em modal sobreposto, destacando a preservação da atividade.
-- [x] Não exibir avisos de salvamento para ações locais de execução.
-- [x] Recuperar atividades já iniciadas em rascunho local sem gravar switches ou pausas até a finalização.
-- [x] Reabrir exercícios recolhidos sem perder valores e sem rótulos visíveis de estado ou contador textual de exercícios.
-- [x] Exibir uma única mensagem direta no modal de exclusão.
-- [x] Usar a mesma cor informativa do switch na borda de todo exercício concluído, inclusive sem repetições; destacar o badge do treino principal sem alterar o da preparação.
-- [x] Remover a interface e os comandos antigos de atribuição e execução que duplicavam o fluxo por atividades.
-- [x] Tratar uma agenda vazia após exclusão como vazia, sem ressuscitar o treino antigo; distinguir exclusão intencional de referência ausente.
-- [x] Manter correções explícitas de exercícios após a conclusão, sem permitir gravações antecipadas no banco.
-- [x] Permitir a fonte de agenda semanal no banco, vinculá-la uma única vez a versões legadas e auditar seu conteúdo sem enfraquecer a imutabilidade das demais definições.
-- [x] Alinhar título e descrição dos avisos sem ícone na mesma coluna para evitar sobreposição em telas estreitas.
+- [x] Show the available sets, repetitions, rest, and notes.
+- [x] Separate preparation from the main workout.
+- [x] Use the explicit measurement type per set.
+- [x] Show and persist load only with `load_applicable=true`.
+- [x] Keep the partially filled execution in the browser, detect conflicts, and preserve the draft on a finalization error.
+- [x] Materialize still-empty sets as zero on completion, preserving the ability to correct them later.
+- [x] Summarize the schedule in compact badges with activity, duration, or time.
+- [x] Include the compatible preparation automatically and allow navigating between warm-up and activity without changing the existing record.
+- [x] Start the workout at the warm-up and allow access to the main workout without blocking on pending warm-up items.
+- [x] Show one set at a time and block advancing while the previous one is pending.
+- [x] Collapse execution tips and fix the visual composition of the alerts.
+- [x] Replace the special schedule switch with the same management used to add, edit, and remove activities.
+- [x] Persist additional activities without changing the prescribed schedule.
+- [x] Separate the structural type, name, and sport of the activity.
+- [x] Support structured workout, sport practice, specific workout, and mobility.
+- [x] Preserve planned times; record start, pause, and resume in the local draft and persist the intervals on finalization.
+- [x] Record perceived intensity and energy only at execution.
+- [x] Link mobility preparation to the main activities and keep it visible as an optional step.
+- [x] Edit and logically remove activities through the schedule drawer.
+- [x] Include activities in the badges and in the day reading for future monthly aggregation.
+- [x] Allow multiple structured workouts on the same day, including identical sessions at different times.
+- [x] Keep at most one active timer per browser and require confirmation to pause the current activity.
+- [x] Exclude paused time from the active duration and preserve all intervals for reports.
+- [x] Block deletion of a completed activity, keeping corrections of rating, sets, and loads.
+- [x] Use an accessible toggle on the warm-up, blocking its editing while marked as done.
+- [x] Load structured sessions dynamically from the persisted active plan, with no mocked catalog in the UI.
+- [x] Save exercises and sets in one transaction when finalizing the activity, with no persistence per set or per toggle during the workout.
+- [x] Treat an empty field and zero as a set not performed and prevent gaps between sets.
+- [x] Show a compact editor with one set at a time, a collapsible comment, and toggle locking.
+- [x] Represent priority in three levels with accessible semantics and compatibility with the legacy plan.
+- [x] Limit reads and mutations to at most four days in the future, with no prefetch of blocked days.
+- [x] Version the weekly schedule with a Saturday model and materialize only the queried date, without recreating deletions.
+- [x] Collapse the exercise when the header switch is checked and reopen it without losing the draft.
+- [x] Show priority with a label and neutral bars; allow closing the comment from the header.
+- [x] Confirm deletion in an overlaid modal, highlighting that the activity is preserved.
+- [x] Do not show save notices for local execution actions.
+- [x] Recover already started activities in a local draft without writing switches or pauses until finalization.
+- [x] Reopen collapsed exercises without losing values and without visible state labels or a textual exercise counter.
+- [x] Show a single direct message in the deletion modal.
+- [x] Use the same informative color as the switch on the border of every completed exercise, including without repetitions; highlight the main workout badge without changing the preparation one.
+- [x] Remove the old assignment and execution interface and commands that duplicated the activity flow.
+- [x] Treat an empty schedule after deletion as empty, without resurrecting the old workout; distinguish intentional deletion from a missing reference.
+- [x] Keep explicit exercise corrections after completion, without allowing early writes to the database.
+- [x] Allow the weekly schedule source in the database, link it only once to legacy versions, and audit its content without weakening the immutability of the other definitions.
+- [x] Align the title and description of notices without an icon in the same column to avoid overlap on narrow screens.
 
 ## Validation
-- Testar transições, pausa e retomada, constraints, séries zeradas, links entre sessão/exercício e autorização.
+- Test transitions, pause and resume, constraints, zeroed sets, links between session/exercise, and authorization.
 
 ## Acceptance criteria
-- [x] A execução real pode ser registrada sem alterar a prescrição.
-- [x] Cronômetro, pausas, aquecimento, séries e avaliação ficam recuperáveis neste navegador até a finalização; então são persistidos juntos no PostgreSQL do workspace fixo.
-- [x] O front-end descobre os treinos estruturados pelo plano ativo salvo no banco, sem mocks operacionais.
+- [x] The real execution can be recorded without changing the prescription.
+- [x] Timer, pauses, warm-up, sets, and rating are recoverable in this browser until finalization; then they are persisted together in the fixed workspace's PostgreSQL.
+- [x] The front end discovers the structured workouts from the active plan saved in the database, with no operational mocks.
 
 ## Result
-Fluxo guiado, agenda diária genérica e registro separado entre planejamento e realização disponíveis localmente. A agenda continua persistida ao ser alterada. Uma nova atividade inicia expandida; cronômetro, pausas, aquecimento, exercícios e comentários permanecem em rascunho neste navegador e são gravados em uma única transação ao finalizar cada atividade. Registros iniciados antes dessa mudança também são recuperados como rascunho local; a finalização preserva os IDs dos intervalos e séries existentes. O modelo semanal com jogo no sábado foi escolhido explicitamente como padrão temporário. O importador vincula uma cópia versionada da agenda à versão ativa do plano, e a leitura cria apenas a data consultada dentro do limite de quatro dias futuros. Os treinos de futevôlei usam 90 minutos planejados provisórios; o jogo de sábado permanece com horário a definir. A interface e os comandos antigos de atribuição/execução foram removidos: excluir a última atividade não reexibe a prescrição histórica, e correções posteriores à conclusão continuam possíveis por ação explícita. A migração permite importar a nova fonte e vincular a agenda uma única vez a versões antigas, sem abrir a edição das demais definições. A auditoria cobre o documento da agenda ativo e seus vínculos históricos. Avisos sem ícone agora alinham título e descrição para evitar sobreposição em telas estreitas.
+Guided flow, generic daily schedule, and separate recording of planning and performance available locally. The schedule remains persisted when changed. A new activity starts expanded; timer, pauses, warm-up, exercises, and comments stay in a draft in this browser and are written in a single transaction when each activity is finalized. Records started before this change are also recovered as a local draft; finalization preserves the IDs of the existing intervals and sets. The weekly model with a game on Saturday was explicitly chosen as the temporary default. The importer links a versioned copy of the schedule to the active plan version, and the read creates only the queried date within the limit of four future days. The footvolley workouts use a provisional 90 planned minutes; the Saturday game stays with a time to be defined. The old assignment/execution interface and commands were removed: deleting the last activity does not show the historical prescription again, and corrections after completion remain possible through an explicit action. The migration allows importing the new source and linking the schedule only once to old versions, without opening editing of the other definitions. The audit covers the active schedule document and its historical links. Notices without an icon now align title and description to avoid overlap on narrow screens.
 
-Integrada em `developer` pela PR #48 (`379413c`). A política futura de geração
-e persistência da data consultada será revisada na KZ-E06-T11, sem reabrir esta entrega.
+Integrated into `developer` by PR #48 (`379413c`). The future policy for generating
+and persisting the queried date will be reviewed in KZ-E06-T11, without reopening this delivery.

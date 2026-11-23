@@ -6,11 +6,11 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E09-T01]
 ---
 
-# Implementar registro de atividades gerais
+# Implement general activity logging
 
 ## Objective
-Permitir registrar e consultar atividades gerais conforme o contrato aprovado na
-KZ-E09-T01, sem duplicar sessões pertencentes ao domínio de treino.
+Allow logging and viewing general activities according to the contract approved in
+KZ-E09-T01, without duplicating sessions that belong to the workout domain.
 
 ## Inputs
 - `roadmap/epics/E09-future-evolution/T01-design-sleep-and-general-activities.md`
@@ -19,28 +19,28 @@ KZ-E09-T01, sem duplicar sessões pertencentes ao domínio de treino.
 - `src/lib/security/workspace.ts`
 
 ## Deliverables
-- Persistência e casos de uso protegidos pelo workspace fixo.
-- Tela acessível e responsiva para os tipos de atividade aprovados.
-- Regras explícitas para data, duração, observações e possível sobreposição.
-- Testes de domínio, integração PostgreSQL, componentes e fluxo crítico.
+- Persistence and use cases protected by the fixed workspace.
+- Accessible, responsive screen for the approved activity types.
+- Explicit rules for date, duration, notes, and possible overlap.
+- Domain, PostgreSQL integration, component, and critical-flow tests.
 
 ## Subtasks
-- [ ] Detalhar a tarefa com os contratos aprovados antes de torná-la `READY`.
-- [ ] Atualizar dependências e implementar autenticação antes desta tarefa se a
-      KZ-E09-T01 classificar os dados como sensíveis.
-- [ ] Impedir duplicação conceitual com treino, mobilidade e descanso.
-- [ ] Validar origem, entrada, ownership e concorrência no servidor.
-- [ ] Preservar valores ausentes sem defaults inventados.
+- [ ] Detail the task with the approved contracts before making it `READY`.
+- [ ] Update dependencies and implement authentication before this task if
+      KZ-E09-T01 classifies the data as sensitive.
+- [ ] Prevent conceptual duplication with workouts, mobility, and rest.
+- [ ] Validate origin, input, ownership, and concurrency on the server.
+- [ ] Preserve missing values without invented defaults.
 
 ## Validation
-- Testar limites entre domínios, ownership, constraints, acessibilidade e build.
+- Test boundaries between domains, ownership, constraints, accessibility, and build.
 
 ## Acceptance criteria
-- [ ] O usuário registra uma atividade aprovada sem alterar treino ou alimentação.
+- [ ] The user logs an approved activity without changing workouts or nutrition.
 
-## Fora de escopo
+## Out of scope
 
-- Agenda composta, notificações ou integração não aprovada na KZ-E09-T01.
+- Composite schedule, notifications, or integration not approved in KZ-E09-T01.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

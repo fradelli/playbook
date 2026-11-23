@@ -6,14 +6,14 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E04-T05, KZ-E04-T06]
 ---
 
-# Validar prontidão técnica para o Design System
+# Validate technical readiness for the Design System
 
 ## Objective
-Determinar, sem instalar o package, se a base técnica do Kaizen está pronta para receber `@fradelli/ui@0.1.0` de forma reproduzível.
+Determine, without installing the package, whether the Kaizen technical base is ready to receive `@fradelli/ui@0.1.0` reproducibly.
 
-## Contexto
+## Context
 
-`@fradelli/ui@0.1.0` já foi publicado de forma privada no GitHub Packages. Node 24.20.0 e React 19.2.8 atendem aos engines e peers do package. KZ-E04-T02 está integrada em `developer`, mas seus gates precisam ser reexecutados com o CI de KZ-E04-T05 antes deste gate; a estratégia segura de autenticação também precisa ser comprovada antes da instalação.
+`@fradelli/ui@0.1.0` has already been published privately on GitHub Packages. Node 24.20.0 and React 19.2.8 meet the package engines and peers. KZ-E04-T02 is integrated into `developer`, but its gates must be rerun with the KZ-E04-T05 CI before this gate; the safe authentication strategy must also be proven before installation.
 
 ## Inputs
 - `docs/decisions/SHARED-DESIGN-SYSTEM-ADOPTION.md`
@@ -24,57 +24,57 @@ Determinar, sem instalar o package, se a base técnica do Kaizen está pronta pa
 - `.github/workflows/ci.yml`
 - `https://github.com/fradelli/design-system/blob/3e0c23f591ff458ab9e3e74dc44bb0cdba068a03/package.json`
 
-## Escopo
+## Scope
 
-- Confirmar versões de Node, pnpm, Next.js, React e React DOM.
-- Confirmar o contrato publicado: versão, engines, peers, exports, CSS público, `dist` e primitives.
-- Verificar que KZ-E04-T02 e KZ-E04-T05 entregaram gates e CI verdes antes da integração visual.
-- Planejar registry e autenticação local/CI sem gravar credenciais.
-- Registrar decisão GO/NO-GO e gaps remanescentes em relatório sanitizado.
+- Confirm the versions of Node, pnpm, Next.js, React, and React DOM.
+- Confirm the published contract: version, engines, peers, exports, public CSS, `dist`, and primitives.
+- Verify that KZ-E04-T02 and KZ-E04-T05 delivered green gates and CI before the visual integration.
+- Plan registry and local/CI authentication without writing credentials.
+- Record the GO/NO-GO decision and remaining gaps in a sanitized report.
 
-## Fora do escopo
+## Out of scope
 
-- Instalar `@fradelli/ui`, Tailwind CSS, PostCSS ou fontes.
-- Alterar `package.json`, lockfile, CSS, root, componentes ou workflow.
-- Implementar shell, calendário ou tela de domínio.
+- Installing `@fradelli/ui`, Tailwind CSS, PostCSS, or fonts.
+- Changing `package.json`, lockfile, CSS, root, components, or workflow.
+- Implementing the shell, calendar, or a domain screen.
 
 ## Deliverables
 - `docs/evidence/design-system/E04-T07-DESIGN-SYSTEM-READINESS.md`
-- Matriz de compatibilidade, checklist dos gates e decisão GO/NO-GO.
+- Compatibility matrix, gate checklist, and GO/NO-GO decision.
 
 ## Subtasks
-- [x] Confirmar runtime, package manager e peer React sem instalar o package.
-- [x] Confirmar gates locais e CI existentes e verdes.
-- [x] Documentar autenticação segura local e no workflow.
-- [x] Registrar contrato público de `@fradelli/ui@0.1.0` e decisão de prontidão.
+- [x] Confirm runtime, package manager, and React peer without installing the package.
+- [x] Confirm existing local gates and CI are green.
+- [x] Document safe authentication locally and in the workflow.
+- [x] Record the public contract of `@fradelli/ui@0.1.0` and the readiness decision.
 
 ## Validation
-- Executar format check, lint, typecheck, testes, cobertura e build já disponíveis.
-- Confirmar React `>=19.2.7 <20` e Node `>=24.20.0 <25`.
-- Confirmar que o workflow possui base para instalação congelada e permissão mínima futura.
-- Confirmar que o diff não contém package, `.tgz`, token, credencial ou configuração autenticada.
+- Run the already available format check, lint, typecheck, tests, coverage, and build.
+- Confirm React `>=19.2.7 <20` and Node `>=24.20.0 <25`.
+- Confirm that the workflow has a basis for frozen install and the future minimal permission.
+- Confirm that the diff contains no package, `.tgz`, token, credential, or authenticated configuration.
 
 ## Acceptance criteria
-- [x] A matriz confirma compatibilidade de runtime e React com `@fradelli/ui@0.1.0`.
-- [x] Formato, lint, typecheck, testes, cobertura e build passam localmente e no CI.
-- [x] O relatório identifica autenticação local ainda ausente ou comprovada sem expor segredo.
-- [x] A decisão GO/NO-GO lista todos os gaps sem instalar ou alterar a aplicação.
+- [x] The matrix confirms runtime and React compatibility with `@fradelli/ui@0.1.0`.
+- [x] Format, lint, typecheck, tests, coverage, and build pass locally and in CI.
+- [x] The report identifies local authentication as still missing or proven without exposing a secret.
+- [x] The GO/NO-GO decision lists all gaps without installing or changing the application.
 
-## Riscos
+## Risks
 
-- Confundir permissão Read concedida ao repositório com autenticação local configurada.
-- Aprovar prontidão apesar de gates ou CI ausentes.
-- Contrato `0.x` mudar sem nova versão exata e nova validação.
+- Confusing Read permission granted to the repository with configured local authentication.
+- Approving readiness despite missing gates or CI.
+- A `0.x` contract changing without a new exact version and new validation.
 
 ## Rollback
 
-Reverter somente o relatório e a atualização de status. Como a tarefa não instala dependências nem altera a aplicação, não há rollback técnico de runtime.
+Revert only the report and the status update. Since the task neither installs dependencies nor changes the application, there is no technical runtime rollback.
 
 ## Result
-Concluída em 2026-09-10 com decisão NO-GO. Runtime, peers, contrato publicado, gates locais, CI remoto e rulesets foram comprovados. A integração permanece bloqueada porque a consulta ao GitHub Packages retornou `401` sem autenticação e a credencial usada pela API não possui `read:packages`. Nenhum package, token ou arquivo da aplicação foi adicionado.
+Completed on 2026-09-10 with a NO-GO decision. Runtime, peers, published contract, local gates, remote CI, and rulesets were proven. The integration remains blocked because the GitHub Packages query returned `401` without authentication and the credential used by the API does not have `read:packages`. No package, token, or application file was added.
 
-## Consolidação documental de 12/11/2026
+## Documentation consolidation of 12/11/2026
 
-Preservadas avaliação sem instalação, NO-GO inicial e GO posterior no relatório original de evidência; isso não aprova releases novos.
+The assessment without installation, the initial NO-GO, and the later GO are preserved in the original evidence report; this does not approve new releases.
 
-[Pacote original integral](https://github.com/fradelli/nextjs-kaizen-app/blob/fd2269d2eaa7d55cfea724631f12fa6505d37b32/docs/implementation/tasks/E04-T07.md), SHA-256 `02f79c4fda7e11d5b54c1ffb48f8b04da72a5465a802845806adea33cab0d427`. Comandos, critérios, riscos e rollback registram aquela base e não são receita para reinstalar a aplicação atual. Pendências não viraram aprovações nesta consolidação.
+[Full original package](https://github.com/fradelli/nextjs-kaizen-app/blob/fd2269d2eaa7d55cfea724631f12fa6505d37b32/docs/implementation/tasks/E04-T07.md), SHA-256 `02f79c4fda7e11d5b54c1ffb48f8b04da72a5465a802845806adea33cab0d427`. Commands, criteria, risks, and rollback record that baseline and are not a recipe for reinstalling the current application. Open items were not turned into approvals in this consolidation.

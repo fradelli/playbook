@@ -1,53 +1,53 @@
-# KZ-E09 — Evolução futura
+# KZ-E09 — Future evolution
 
 ## Expected outcome
-Backlog posterior ao MVP mantido separado do caminho crítico atual.
+Post-MVP backlog kept separate from the current critical path.
 
-## Antecipação aprovada em 29/10/2026
+## Anticipation approved on 29/10/2026
 
-O usuário autorizou antecipar [KZ-E09-T09](T09-localize-current-interface.md), limitada à interface atual em português e inglês com detecção automática. O catálogo novo será integrado separadamente. Espanhol e a política English-first ampla permanecem no backlog. Essa autorização substitui a restrição temporal abaixo somente para KZ-E09-T09.
+The user authorized anticipating [KZ-E09-T09](T09-localize-current-interface.md), limited to the current interface in Portuguese and English with automatic detection. The new catalog will be integrated separately. Spanish and the broad English-first policy remain in the backlog. This authorization overrides the time restriction below only for KZ-E09-T09.
 
-## Regra de criação
+## Creation rule
 
-As tarefas permanecem `PLANNED` até a validação do MVP pessoal. Antes de uma
-tarefa ficar `READY`, seu planejamento deve confirmar problema, dados necessários,
-privacidade, contratos, riscos, entradas exatas e critério de sucesso.
+Tasks remain `PLANNED` until the personal MVP is validated. Before a
+task becomes `READY`, its planning must confirm the problem, required data,
+privacy, contracts, risks, exact inputs, and success criterion.
 
-## Sequência aprovada
+## Approved sequence
 
-| Tarefa  | Depende de                  | Resultado                                                     |
+| Task    | Depends on                  | Outcome                                                       |
 | ------- | --------------------------- | ------------------------------------------------------------- |
-| KZ-E09-T01 | KZ-E08-T05                     | Escopo de sono e atividades gerais projetado                  |
-| KZ-E09-T02 | KZ-E09-T01                     | Controle de sono utilizável                                   |
-| KZ-E09-T03 | KZ-E09-T01                     | Registro de atividades gerais utilizável                      |
-| KZ-E09-T04 | KZ-E09-T02, KZ-E09-T03            | Jornadas de sono e atividades validadas                       |
-| KZ-E09-T05 | KZ-E06-T05, KZ-E07-T05, KZ-E09-T04   | Arquitetura i18n e política English-first aprovadas            |
-| KZ-E09-T06 | KZ-E09-T05                     | Produto e conteúdo canônico internacionalizados               |
-| KZ-E09-T07 | KZ-E09-T05                     | Documentação e fluxo de entrega migrados para inglês          |
-| KZ-E09-T08 | KZ-E09-T06, KZ-E09-T07            | Experiência multilíngue e fallback validados                  |
-| [KZ-E09-T09](T09-localize-current-interface.md) | — | Interface atual internacionalizada em português e inglês (antecipada) |
+| KZ-E09-T01 | KZ-E08-T05                     | Scope for sleep and general activities designed               |
+| KZ-E09-T02 | KZ-E09-T01                     | Usable sleep tracking                                         |
+| KZ-E09-T03 | KZ-E09-T01                     | Usable general activity logging                               |
+| KZ-E09-T04 | KZ-E09-T02, KZ-E09-T03            | Sleep and activity journeys validated                         |
+| KZ-E09-T05 | KZ-E06-T05, KZ-E07-T05, KZ-E09-T04   | i18n architecture and English-first policy approved            |
+| KZ-E09-T06 | KZ-E09-T05                     | Product and canonical content internationalized               |
+| KZ-E09-T07 | KZ-E09-T05                     | Documentation and delivery flow migrated to English           |
+| KZ-E09-T08 | KZ-E09-T06, KZ-E09-T07            | Multilingual experience and fallback validated                |
+| [KZ-E09-T09](T09-localize-current-interface.md) | — | Current interface internationalized in Portuguese and English (anticipated) |
 
-Sono e atividades gerais entram antes do i18n para que as quatro jornadas do
-produto — treino, alimentação, sono e atividades — compartilhem o mesmo contrato
-de localização desde a migração, sem criar uma segunda rodada imediata.
+Sleep and general activities come before i18n so that the four product
+journeys (workouts, nutrition, sleep, and activities) share the same localization
+contract from the migration, without creating an immediate second round.
 
-## Candidatos ainda sem compromisso de escopo
+## Candidates with no scope commitment yet
 
-- Métricas, tendências e histórico interativo.
-- Rotina, hábitos, tarefas, agenda composta, notificações e integrações; domínio e calendário permanecem no Kaizen.
-- Edição assistida, administração e múltiplos usuários.
+- Metrics, trends, and interactive history.
+- Routine, habits, tasks, composite schedule, notifications, and integrations; domain and calendar remain in Kaizen.
+- Assisted editing, administration, and multiple users.
 
-## Fora de escopo agora
+## Out of scope for now
 
-Idiomas iniciais de i18n confirmados em 26/09: português, espanhol e inglês.
-A arquitetura e a implementação amplas continuam futuras; a interface atual foi antecipada pela KZ-E09-T09.
+Initial i18n languages confirmed on 26/09: Portuguese, Spanish, and English.
+The broad architecture and implementation remain future work; the current interface was anticipated by KZ-E09-T09.
 
-- Implementar qualquer tarefa antes do encerramento de KZ-E08.
-- Iniciar i18n antes da validação de treino, alimentação, sono e atividades gerais.
-- Reescrever histórico Git, migrations aplicadas ou IDs estáveis durante a tradução.
+- Implement any task before KZ-E08 is closed.
+- Start i18n before workouts, nutrition, sleep, and general activities are validated.
+- Rewrite Git history, applied migrations, or stable IDs during translation.
 
-## Critérios de entrada
+## Entry criteria
 
-- [ ] MVP pessoal validado em uso real.
-- [ ] Próximo problema priorizado com evidência.
-- [ ] Impacto sobre privacidade e modelo de dados revisado.
+- [ ] Personal MVP validated in real use.
+- [ ] Next problem prioritized with evidence.
+- [ ] Impact on privacy and the data model reviewed.

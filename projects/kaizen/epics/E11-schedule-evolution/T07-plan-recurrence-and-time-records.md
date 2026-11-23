@@ -6,38 +6,38 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: []
 ---
 
-# Detalhar recorrência e registros de tempo
+# Detail recurrence and time records
 
 ## Objective
-Converter o planejamento de recorrência e tempo real em contratos e tarefas implementáveis, distinguindo propostas de Decisions approved. Não assumir que projeção de treino implementa recorrência geral.
+Convert the planning of recurrence and actual time into implementable contracts and tasks, distinguishing proposals from approved decisions. Do not assume that workout projection implements general recurrence.
 
 ## Inputs
-- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/architecture/MODELO-CONCEITUAL-DA-AGENDA.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/MODELO-CONCEITUAL-DA-AGENDA.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/architecture/AGENDA-TABELAS-E-CONSULTAS-PROPOSTAS.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/AGENDA-TABELAS-E-CONSULTAS-PROPOSTAS.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/research/PROMPT-PESQUISA-AGENDA.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/research/PROMPT-PESQUISA-AGENDA.md) — consultar o contrato ou seção correspondente ao escopo.
+- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consult the contract or section matching the scope.
+- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consult the contract or section matching the scope.
+- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consult the contract or section matching the scope.
+- [docs/architecture/MODELO-CONCEITUAL-DA-AGENDA.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/MODELO-CONCEITUAL-DA-AGENDA.md) — consult the contract or section matching the scope.
+- [docs/architecture/AGENDA-TABELAS-E-CONSULTAS-PROPOSTAS.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/AGENDA-TABELAS-E-CONSULTAS-PROPOSTAS.md) — consult the contract or section matching the scope.
+- [docs/research/PROMPT-PESQUISA-AGENDA.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/research/PROMPT-PESQUISA-AGENDA.md) — consult the contract or section matching the scope.
 
 ## Deliverables
-Resultado verificável descrito nos critérios abaixo, com evidências vinculadas a esta tarefa. Antes de editar código, aplicar as seções pertinentes da [arquitetura](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) e os contratos locais. Não carregar planos históricos inteiros.
+Verifiable result described in the criteria below, with evidence linked to this task. Before editing code, apply the relevant sections of the [architecture](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) and the local contracts. Do not load entire historical plans.
 
 ## Subtasks
-- [ ] Reconciliar modelo conceitual, tabelas propostas e schema existente.
-- [ ] Definir alcance de somente esta/esta e próximas, exceções, identidade e histórico.
-- [ ] Separar reserva, conclusão e tempo realizado; registrar perguntas ainda abertas.
+- [ ] Reconcile the conceptual model, proposed tables, and the existing schema.
+- [ ] Define the scope of only this one / this and following, exceptions, identity, and history.
+- [ ] Separate reservation, completion, and actual time; record questions that are still open.
 
 ## Validation
-Conferir links, IDs, dependências e coerência com regras de produto. Quando houver implementação autorizada, executar os gates proporcionais e os cenários do plano; registrar o que foi executado e o que ficou pendente. Testes ainda não executados não contam como evidência.
+Check links, IDs, dependencies, and consistency with product rules. When implementation is authorized, run the proportional gates and the plan's scenarios; record what was run and what remains pending. Tests not yet run do not count as evidence.
 
 ## Acceptance criteria
-- [ ] Plano identifica lacunas de código sem recriar funcionalidades existentes.
-- [ ] Projeção por janela e exceções não exigem materializar todo o futuro.
-- [ ] Novas tarefas de implementação só são propostas com escopo e decisões identificados.
+- [ ] The plan identifies code gaps without recreating existing features.
+- [ ] Window projection and exceptions do not require materializing the whole future.
+- [ ] New implementation tasks are proposed only with identified scope and decisions.
 
-## Fora de escopo
+## Out of scope
 
-Sem migration, agendamento automático ou integração com dieta não especificada.
+No migration, automatic scheduling, or unspecified diet integration.
 
 ## Result
-Backlog registrado em 21/11/2026 durante a reconciliação documental. Nenhuma execução desta tarefa foi iniciada por este registro. O status canônico fica exclusivamente no índice do roadmap.
+Backlog recorded on 21/11/2026 during the documentation reconciliation. No execution of this task was started by this record. Canonical status lives only in the roadmap index.

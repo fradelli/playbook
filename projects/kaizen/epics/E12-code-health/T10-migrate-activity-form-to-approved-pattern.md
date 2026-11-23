@@ -6,41 +6,41 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E12-T04, KZ-E12-T08]
 ---
 
-# Migrar o formulário de atividade para o padrão aprovado
+# Migrate the activity form to the approved pattern
 
 ## Objective
-Reescrever o formulário de inclusão e edição de atividade no padrão de formulários aprovado na KZ-E12-T08, validando com o mesmo schema da Server Action.
+Rewrite the activity create and edit form in the form pattern approved in KZ-E12-T08, validating with the same schema as the Server Action.
 
-## Contexto
+## Context
 
-`training-activity-form.tsx` tem 391 linhas, seis `useState`, validação manual no `onSubmit` e um `useMemo` que monta o snapshot publicado para o editor e o rascunho. Se a KZ-E12-T08 rejeitar React Hook Form, esta tarefa aplica a alternativa aprovada ou é cancelada com a decisão registrada.
+`training-activity-form.tsx` has 391 lines, six `useState` calls, manual validation in `onSubmit`, and a `useMemo` that builds the published snapshot for the editor and the draft. If KZ-E12-T08 rejects React Hook Form, this task applies the approved alternative or is cancelled with the decision recorded.
 
 ## Inputs
-- Decisão aprovada pela KZ-E12-T08 em `docs/decisions/`.
-- Schemas compartilhados entregues pela KZ-E12-T04.
-- `src/features/training/ui/components/training-day-page/components/training-activity-form/` — formulário, hook de agenda, utils e testes.
-- `src/features/training/ui/components/training-day-page/components/training-activity-editor/` — consumidor do snapshot.
-- `docs/product/telas/guia-de-estilo.md` — estados de campo e erro.
+- Decision approved by KZ-E12-T08 in `docs/decisions/`.
+- Shared schemas delivered by KZ-E12-T04.
+- `src/features/training/ui/components/training-day-page/components/training-activity-form/` — form, schedule hook, utils, and tests.
+- `src/features/training/ui/components/training-day-page/components/training-activity-editor/` — snapshot consumer.
+- `docs/product/telas/guia-de-estilo.md` — field and error states.
 
 ## Deliverables
-- Formulário com estado e validação pelo padrão aprovado e o schema compartilhado.
-- Integração com `useActionState` e Server Action preservada, sem confirmação otimista.
-- Rascunho local e snapshot do editor alimentados pelo estado do formulário.
+- Form with state and validation through the approved pattern and the shared schema.
+- Integration with `useActionState` and the Server Action preserved, with no optimistic confirmation.
+- Local draft and editor snapshot fed by the form state.
 
 ## Subtasks
-- [ ] Instalar a dependência aprovada, se houver, com versão exata.
-- [ ] Migrar campos, validação e mensagens de erro.
-- [ ] Manter rascunho, bloqueio de envio duplo e recarga em conflito.
-- [ ] Atualizar testes.
+- [ ] Install the approved dependency, if any, with an exact version.
+- [ ] Migrate fields, validation, and error messages.
+- [ ] Keep the draft, double-submit blocking, and reload on conflict.
+- [ ] Update tests.
 
 ## Validation
-- `pnpm test`, `pnpm typecheck` e `pnpm i18n:check` passam.
-- Conferência manual: criar, editar, conflito e restauração de rascunho.
+- `pnpm test`, `pnpm typecheck`, and `pnpm i18n:check` pass.
+- Manual check: create, edit, conflict, and draft restoration.
 
 ## Acceptance criteria
-- [ ] O formulário não mantém um `useState` por campo.
-- [ ] Cliente e servidor validam com o mesmo schema.
-- [ ] Os testes de comportamento existentes continuam passando.
+- [ ] The form does not keep one `useState` per field.
+- [ ] Client and server validate with the same schema.
+- [ ] The existing behavior tests keep passing.
 
 ## Result
-Não iniciada.
+Not started.

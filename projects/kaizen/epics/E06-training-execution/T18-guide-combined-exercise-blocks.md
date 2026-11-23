@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T16]
 ---
 
-# Guiar a execução dos blocos combinados
+# Guide the execution of combined blocks
 
 ## Objective
-Reanalisar com o usuário e implementar a condução de blocos A/B, usando a composição já preservada na ficha sem alterar as prescrições.
+Re-analyze with the user and implement the guidance of A/B blocks, using the composition already preserved in the plan sheet without changing the prescriptions.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -20,10 +20,10 @@ Reanalisar com o usuário e implementar a condução de blocos A/B, usando a com
 - `src/features/training/ui/hooks/use-training-activity-draft/use-training-activity-draft.utils.ts`
 
 ## Deliverables
-- Fluxo aprovado de A → pausa → B → pausa → próxima rodada, preservando as pausas de cada membro.
-- Rascunho local recuperável, retorno aos membros e persistência apenas na conclusão da atividade.
-- Comportamento explícito para exercícios zerados, interrupção e correção posterior.
-- Testes de ordem, restauração, séries por lado e conclusão parcial.
+- Approved flow of A → rest → B → rest → next round, preserving the rests of each member.
+- Recoverable local draft, return to the members, and persistence only when the activity is completed.
+- Explicit behavior for zeroed exercises, interruption, and later correction.
+- Tests for order, restoration, sets per side, and partial completion.
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -31,15 +31,15 @@ Not recorded in the original version of this task.
 ## Validation
 Not recorded in the original version of this task.
 
-## Fora de escopo
+## Out of scope
 
-- Alterar a ficha ou inventar doses, descansos e progressões.
-- Implementar antes de nova revisão do usuário.
+- Changing the plan sheet or inventing doses, rests, and progressions.
+- Implementing before a new review by the user.
 
 ## Acceptance criteria
-- [ ] UX e regras de avanço aprovadas antes da implementação.
-- [ ] Blocos e membros preservam IDs e prescrições existentes.
-- [ ] Navegação guiada não antecipa gravação no banco.
+- [ ] UX and advance rules approved before implementation.
+- [ ] Blocks and members preserve existing IDs and prescriptions.
+- [ ] Guided navigation does not anticipate writing to the database.
 
 ## Result
-Planejada; a KZ-E06-T16 mantém apenas a navegação manual e os subtítulos dos pares.
+Planned; KZ-E06-T16 keeps only manual navigation and the subtitles of the pairs.

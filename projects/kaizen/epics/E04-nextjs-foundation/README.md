@@ -1,28 +1,28 @@
-# KZ-E04 — Fundação Next.js
+# KZ-E04 — Next.js foundation
 
 ## Expected outcome
-Aplicação Next.js mínima, sem features de negócio, com boundaries, gates de qualidade e Design System compartilhado validado e integrado por versão exata.
+A minimal Next.js application with no business features, with boundaries, quality gates, and the shared Design System validated and integrated at an exact version.
 
 ## Order
-| Tarefa | Depende de | Resultado |
+| Task | Depends on | Outcome |
 | --- | --- | --- |
-| KZ-E04-T01 | KZ-E03-T05, KZ-E00-T07 | Scaffold validado |
-| KZ-E04-T02 | KZ-E04-T01 | Qualidade estática |
-| KZ-E04-T06 | KZ-E04-T02 | Decisão de adoção e arquitetura atualizadas |
-| KZ-E04-T03 | KZ-E04-T02 | Boundary server-only |
-| KZ-E04-T05 | KZ-E04-T02, KZ-E04-T03, KZ-E04-T06 | CI mínimo antes da adoção visual |
-| KZ-E04-T07 | KZ-E04-T05, KZ-E04-T06 | Prontidão técnica decidida sem instalar o package |
-| KZ-E04-T08 | KZ-E04-T07 | `@fradelli/ui@0.1.0` integrado pelo GitHub Packages |
-| KZ-E04-T04 | KZ-E04-T08 | Shell acessível sobre o Design System |
-| KZ-E04-T09 | KZ-E04-T04 | Páginas React e fronteiras Server/Client padronizadas |
+| KZ-E04-T01 | KZ-E03-T05, KZ-E00-T07 | Validated scaffold |
+| KZ-E04-T02 | KZ-E04-T01 | Static quality |
+| KZ-E04-T06 | KZ-E04-T02 | Adoption decision and architecture updated |
+| KZ-E04-T03 | KZ-E04-T02 | Server-only boundary |
+| KZ-E04-T05 | KZ-E04-T02, KZ-E04-T03, KZ-E04-T06 | Minimal CI before visual adoption |
+| KZ-E04-T07 | KZ-E04-T05, KZ-E04-T06 | Technical readiness decided without installing the package |
+| KZ-E04-T08 | KZ-E04-T07 | `@fradelli/ui@0.1.0` integrated through GitHub Packages |
+| KZ-E04-T04 | KZ-E04-T08 | Accessible shell on top of the Design System |
+| KZ-E04-T09 | KZ-E04-T04 | React pages and Server/Client boundaries standardized |
 
 ## Out of scope
-- Regras, páginas finais, banco produtivo ou deploy.
-- Calendário compartilhado, domínio ou componentes específicos do Kaizen no package.
+- Rules, final pages, production database, or deploy.
+- Shared calendar, domain, or Kaizen-specific components in the package.
 
 ## Closing criteria
-- [x] Lint, tipos, testes e build passam.
-- [x] Instalação congelada resolve exatamente `@fradelli/ui@0.1.0`.
-- [x] Inter, dark, CSS público, `@source` e foundations estão validados antes do shell.
-- [x] Não há regra de treino ou alimentação em componentes/rotas.
-- [ ] Páginas existentes seguem a organização por responsabilidade e a menor fronteira Client possível.
+- [x] Lint, types, tests, and build pass.
+- [x] Frozen install resolves exactly `@fradelli/ui@0.1.0`.
+- [x] Inter, dark mode, public CSS, `@source`, and foundations are validated before the shell.
+- [x] There are no workout or nutrition rules in components/routes.
+- [ ] Existing pages follow the organization by responsibility and the smallest possible Client boundary.

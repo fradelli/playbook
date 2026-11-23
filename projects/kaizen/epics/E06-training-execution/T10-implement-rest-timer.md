@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E06-T09]
 ---
 
-# Implementar o contador de descanso aprovado
+# Implement the approved rest timer
 
 ## Objective
-Executar a UX aprovada na KZ-E06-T09 para o descanso prescrito entre séries, sem confundir essa contagem com a duração total da atividade.
+Execute the UX approved in KZ-E06-T09 for the prescribed rest between sets, without confusing this countdown with the total duration of the activity.
 
 ## Inputs
 - `docs/architecture/TARGET-ARCHITECTURE.md`
@@ -20,7 +20,7 @@ Executar a UX aprovada na KZ-E06-T09 para o descanso prescrito entre séries, se
 - `src/features/training/ui/components/training-day-page/components/training-activity-timer/training-activity-timer.tsx`
 
 ## Deliverables
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Escopo e impactos».
+Not recorded in the original version of this task; equivalent content in the section "Scope and impacts".
 
 ## Subtasks
 Not recorded in the original version of this task.
@@ -28,30 +28,30 @@ Not recorded in the original version of this task.
 ## Validation
 Not recorded in the original version of this task.
 
-## Comportamento esperado
+## Expected behavior
 
-- O botão explícito inicia a contagem do descanso prescrito para o exercício.
-- O painel flutuante no topo permite pausar, retomar, reiniciar e fechar sem bloquear a página.
-- Fechar para e descarta a contagem; nenhum comando de descanso salva série ou atividade.
-- Sem descanso prescrito, o botão não sugere uma duração inventada.
+- The explicit button starts the countdown of the rest prescribed for the exercise.
+- The floating panel at the top allows pausing, resuming, restarting, and closing without blocking the page.
+- Closing stops and discards the countdown; no rest command saves a set or activity.
+- Without a prescribed rest, the button does not suggest an invented duration.
 
-## Escopo e impactos
+## Scope and impacts
 
-- Implementar somente o estado e a apresentação necessários à UX aprovada, com teste de temporização e acessibilidade.
-- Verificar timers em abas inativas e limpeza de recursos ao desmontar o componente.
+- Implement only the state and presentation needed by the approved UX, with timing and accessibility tests.
+- Check timers in inactive tabs and resource cleanup when the component unmounts.
 
-## Fora de escopo
+## Out of scope
 
-- Notificações push, áudio ou monitoramento de descanso no banco sem decisão específica.
+- Push notifications, audio, or rest monitoring in the database without a specific decision.
 
-## Decisões antes da implementação
+## Decisions before implementation
 
-- Reanalisar o código vigente e a decisão documentada na KZ-E06-T09; apresentar plano e aguardar aprovação explícita antes de implementar.
+- Reanalyze the current code and the decision documented in KZ-E06-T09; present a plan and wait for explicit approval before implementing.
 
 ## Acceptance criteria
-- [ ] Todos os controles e o fechamento seguem a UX aprovada e não bloqueiam o treino.
-- [ ] O contador é confiável nas condições de navegação explicitamente aprovadas.
-- [ ] Os testes não dependem de espera real do relógio.
+- [ ] All controls and closing follow the approved UX and do not block the workout.
+- [ ] The timer is reliable under the explicitly approved navigation conditions.
+- [ ] Tests do not depend on real clock waiting.
 
 ## Result
-Ainda não iniciada.
+Not yet started.

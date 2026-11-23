@@ -6,31 +6,31 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E02-T05]
 ---
 
-# Validar fundação alimentar
+# Validate nutrition foundation
 
 ## Objective
-Executar o gate final da migração alimentar antes de produto e arquitetura.
+Run the final gate of the nutrition migration before product and architecture.
 
 ## Inputs
-- Todos os entregáveis de KZ-E02.
-- Manifesto atualizado.
+- All KZ-E02 deliverables.
+- Updated manifest.
 
 ## Deliverables
 - `docs/migration/NUTRITION-VALIDATION-REPORT.md`
-- Tag `nutrition-foundation-v1` após aprovação.
+- Tag `nutrition-foundation-v1` after approval.
 
 ## Subtasks
-- [x] Validar JSON, schema, ponteiros, links e proveniência.
-- [x] Confirmar separação entre original, revisão e plano vigente.
-- [x] Confirmar ausência de diagnóstico e dados inventados.
-- [x] Revisar privacidade do conteúdo versionado.
+- [x] Validate JSON, schema, pointers, links, and provenance.
+- [x] Confirm the separation between original, review, and current plan.
+- [x] Confirm the absence of diagnosis and invented data.
+- [x] Review the privacy of the versioned content.
 
 ## Validation
-- Relatório lista comandos, resultados e limitações.
+- The report lists commands, results, and limitations.
 
 ## Acceptance criteria
-- [x] Não há falha aberta que impeça leitura do plano.
-- [x] KZ-E03-T01 pode iniciar.
+- [x] There is no open failure that prevents reading the plan.
+- [x] KZ-E03-T01 can start.
 
 ## Result
-Gate concluído sem falhas bloqueantes. O relatório valida 13 artefatos KZ-E02 na origem, 3 derivados públicos, contratos, ponteiros, referências, links e privacidade; KZ-E03-T01 foi liberada. A tag `nutrition-foundation-v1` é criada no commit mesclado em `developer` e verificada contra o remote.
+Gate completed without blocking failures. The report validates 13 KZ-E02 artifacts at the source, 3 public derivatives, contracts, pointers, references, links, and privacy; KZ-E03-T01 was released. Tag `nutrition-foundation-v1` is created at the commit merged into `developer` and verified against the remote.

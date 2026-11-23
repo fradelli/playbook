@@ -6,29 +6,29 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E03-T04]
 ---
 
-# Aprovar guia de implementação
+# Approve implementation guide
 
 ## Objective
-Transformar produto e arquitetura em um guia arquivo por arquivo antes do primeiro código.
+Turn product and architecture into a file-by-file guide before the first code.
 
 ## Inputs
-- Todos os documentos aprovados de KZ-E03.
+- All approved KZ-E03 documents.
 
 ## Deliverables
 - `docs/implementation/P0-IMPLEMENTATION-GUIDE.md`
 
 ## Subtasks
-- [x] Listar ordem, ações e caminhos exatos.
-- [x] Explicar dependências e impacto de cada arquivo.
-- [x] Definir validações e rollback.
-- [x] Marcar evidências ou decisões ainda bloqueantes.
+- [x] List order, actions, and exact paths.
+- [x] Explain dependencies and impact of each file.
+- [x] Define validations and rollback.
+- [x] Mark evidence or decisions that are still blocking.
 
 ## Validation
-- Nenhum trecho é declarado copiável com placeholder ou evidência ausente.
+- No excerpt is declared copyable with a placeholder or missing evidence.
 
 ## Acceptance criteria
-- [x] Usuário aprova o guia.
-- [x] KZ-E04-T01 muda para `READY` somente depois da aprovação.
+- [x] The user approves the guide.
+- [x] KZ-E04-T01 changes to `READY` only after approval.
 
 ## Result
-Guia de implementação do P0 criado em `docs/implementation/P0-IMPLEMENTATION-GUIDE.md`, com versões pinadas, ordem de KZ-E04 a KZ-E08, conteúdo completo do scaffold inicial, ações por arquivo, gates, validações e rollback. O proprietário aprovou a execução integral em 2026-09-02; KZ-E03 foi encerrado e KZ-E04-T01 foi liberada sem introduzir código, dependências ou workflows nesta tarefa.
+P0 implementation guide created in `docs/implementation/P0-IMPLEMENTATION-GUIDE.md`, with pinned versions, the order from KZ-E04 to KZ-E08, the full content of the initial scaffold, actions per file, gates, validations, and rollback. The owner approved full execution on 2026-09-02; KZ-E03 was closed and KZ-E04-T01 was released without introducing code, dependencies, or workflows in this task.

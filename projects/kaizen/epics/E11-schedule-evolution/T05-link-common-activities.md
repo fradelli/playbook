@@ -6,38 +6,38 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E11-T03]
 ---
 
-# Vincular e desvincular atividades comuns
+# Link and unlink common activities
 
 ## Objective
-Suportar as intenções de colocar uma atividade dentro de outra ou mantê-la independente no mesmo horário, com prévia explícita e preservação da identidade.
+Support the intents of placing an activity inside another or keeping it independent at the same time, with an explicit preview and preservation of identity.
 
 ## Inputs
-- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consultar o contrato ou seção correspondente ao escopo.
-- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/application/schedule-command.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/application/schedule-command.ts) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/data/schedule-writer.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/data/schedule-writer.ts) — consultar o contrato ou seção correspondente ao escopo.
-- [src/features/schedule/ui/components/schedule-card/schedule-card.tsx](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/schedule-card/schedule-card.tsx) — consultar o contrato ou seção correspondente ao escopo.
+- [docs/plans/agenda/RECONCILIATION.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/RECONCILIATION.md) — consult the contract or section matching the scope.
+- [docs/plans/agenda/AGENDA-DRAG-AND-DROP.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/plans/agenda/AGENDA-DRAG-AND-DROP.md) — consult the contract or section matching the scope.
+- [docs/product/telas/agenda-regras-de-produto.md](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/product/telas/agenda-regras-de-produto.md) — consult the contract or section matching the scope.
+- [src/features/schedule/application/schedule-command.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/application/schedule-command.ts) — consult the contract or section matching the scope.
+- [src/features/schedule/data/schedule-writer.ts](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/data/schedule-writer.ts) — consult the contract or section matching the scope.
+- [src/features/schedule/ui/components/schedule-card/schedule-card.tsx](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/src/features/schedule/ui/components/schedule-card/schedule-card.tsx) — consult the contract or section matching the scope.
 
 ## Deliverables
-Resultado verificável descrito nos critérios abaixo, com evidências vinculadas a esta tarefa. Antes de editar código, aplicar as seções pertinentes da [arquitetura](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) e os contratos locais. Não carregar planos históricos inteiros.
+Verifiable result described in the criteria below, with evidence linked to this task. Before editing code, apply the relevant sections of the [architecture](https://github.com/fradelli/nextjs-kaizen-app/blob/developer/docs/architecture/TARGET-ARCHITECTURE.md) and the local contracts. Do not load entire historical plans.
 
 ## Subtasks
-- [ ] Validar a proposta visual de corpo/faixa lateral, sem assumir dimensões aprovadas.
-- [ ] Criar contratos de vínculo e desvínculo, validação de ciclos e concorrência.
-- [ ] Representar atividades internas e aplicar as políticas de movimento do pai.
+- [ ] Validate the visual proposal of body/side strip, without assuming approved dimensions.
+- [ ] Create link and unlink contracts, cycle validation, and concurrency.
+- [ ] Represent internal activities and apply the parent's movement policies.
 
 ## Validation
-Conferir links, IDs, dependências e coerência com regras de produto. Quando houver implementação autorizada, executar os gates proporcionais e os cenários do plano; registrar o que foi executado e o que ficou pendente. Testes ainda não executados não contam como evidência.
+Check links, IDs, dependencies, and consistency with product rules. When implementation is authorized, run the proportional gates and the plan's scenarios; record what was run and what remains pending. Tests not yet run do not count as evidence.
 
 ## Acceptance criteria
-- [ ] Daily entra e sai de Trabalho com um único ID e horário preservado quando só o vínculo muda.
-- [ ] Destino inválido preserva estado anterior; sobreposição independente continua permitida.
-- [ ] Ciclos são rejeitados; limite de profundidade é explícito e não excede o contrato implementado.
+- [ ] Daily enters and leaves Trabalho (Work) with a single ID and preserved time when only the link changes.
+- [ ] An invalid target preserves the previous state; independent overlap remains allowed.
+- [ ] Cycles are rejected; the depth limit is explicit and does not exceed the implemented contract.
 
-## Fora de escopo
+## Out of scope
 
-Árvores profundas e pausas internas exigem decisão própria. Agrupamento +N não equivale a vínculo.
+Deep trees and internal pauses require their own decision. +N grouping is not equivalent to a link.
 
 ## Result
-Backlog registrado em 21/11/2026 durante a reconciliação documental. Nenhuma execução desta tarefa foi iniciada por este registro. O status canônico fica exclusivamente no índice do roadmap.
+Backlog recorded on 21/11/2026 during the documentation reconciliation. No execution of this task was started by this record. Canonical status lives only in the roadmap index.

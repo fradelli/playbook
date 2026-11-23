@@ -6,10 +6,10 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E05-T05]
 ---
 
-# Projetar dieta e execução do dia
+# Project the diet and the day's execution
 
 ## Objective
-Criar projeções server-side separadas do plano público e da dieta operacional da data no workspace fixo.
+Create server-side projections, separate for the public plan and for the operational diet of the date in the fixed workspace.
 
 ## Inputs
 - `docs/plans/nutrition/E07.md`
@@ -22,21 +22,21 @@ Criar projeções server-side separadas do plano público e da dieta operacional
 - `prisma/schema.prisma`
 
 ## Deliverables
-- DTO público do plano e DTO do workspace com tipo de dia, refeições, execuções e revisão.
+- Public plan DTO and workspace DTO with day type, meals, executions, and review.
 
 ## Subtasks
-- [ ] Resolver o ponteiro do plano ativo.
-- [ ] Resolver workspace, data e tipo do dia sem inferir carga ausente.
-- [ ] Preservar ordem, unidades e texto de origem.
-- [ ] Representar alternativas sem equivalências inventadas.
-- [ ] Combinar registros existentes sem expô-los no DTO anônimo.
-- [ ] Cobrir plano ausente e referências inválidas.
+- [ ] Resolve the active plan pointer.
+- [ ] Resolve workspace, date, and day type without inferring a missing load.
+- [ ] Preserve order, units, and source text.
+- [ ] Represent alternatives without invented equivalences.
+- [ ] Combine existing records without exposing them in the anonymous DTO.
+- [ ] Cover a missing plan and invalid references.
 
 ## Validation
-- Comparar a projeção com os dados canônicos.
+- Compare the projection with the canonical data.
 
 ## Acceptance criteria
-- [ ] DTOs contêm somente os dados necessários ao modo anônimo ou pessoal correspondente.
+- [ ] DTOs contain only the data needed by the corresponding anonymous or personal mode.
 
 ## Result
-Ainda não concluída.
+Not yet completed.

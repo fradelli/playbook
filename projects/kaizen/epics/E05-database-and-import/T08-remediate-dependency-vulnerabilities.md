@@ -6,11 +6,11 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E05-T02]
 ---
 
-# Corrigir vulnerabilidades de dependências
+# Fix dependency vulnerabilities
 
 ## Objective
-Corrigir os achados da auditoria de 26/10/2026 em branch separada, comprovar
-compatibilidade e integrar a PR antes da KZ-E06-T19.
+Fix the findings of the 26/10/2026 audit in a separate branch, prove
+compatibility, and merge the PR before KZ-E06-T19.
 
 ## Inputs
 - `package.json`
@@ -26,47 +26,47 @@ Not recorded in the original version of this task.
 Not recorded in the original version of this task.
 
 ## Validation
-Não registrado na versão original desta tarefa; conteúdo equivalente na seção «Validação e integração».
+Not recorded in the original version of this task; equivalent content in the "Validation and integration" section.
 
 ## Acceptance criteria
 Not recorded in the original version of this task.
 
-## Evidência inicial
+## Initial evidence
 
-`pnpm audit --json`: 19 achados, sendo 3 baixos, 10 moderados, 4 altos e 2 críticos.
+`pnpm audit --json`: 19 findings, of which 3 low, 10 moderate, 4 high, and 2 critical.
 
-| Pacote         | Versão detectada | Menor correção informada pelo scanner |
-| -------------- | ---------------- | ------------------------------------- |
-| next           | 16.3.8           | 16.4.1                                |
-| zod            | 4.6.5            | 4.6.6                                 |
-| @vitest/mocker | 4.1.11           | 4.1.12                                |
-| vite           | 8.2.2            | 8.2.4                                 |
-| undici         | 8.10.2           | 8.12.2                                |
-| fast-uri       | 3.1.8            | 3.1.9                                 |
+| Package        | Detected version | Lowest fix reported by the scanner |
+| -------------- | ---------------- | ---------------------------------- |
+| next           | 16.3.8           | 16.4.1                             |
+| zod            | 4.6.5            | 4.6.6                              |
+| @vitest/mocker | 4.1.11           | 4.1.12                             |
+| vite           | 8.2.2            | 8.2.4                              |
+| undici         | 8.10.2           | 8.12.2                             |
+| fast-uri       | 3.1.8            | 3.1.9                              |
 
-## Política
+## Policy
 
-- Atualizar Next.js e eslint-config-next juntos; manter Vitest e coverage-v8 alinhados.
-- Atualizar Zod na mesma linha principal e regenerar resoluções transitivas compatíveis.
-- Não editar o lockfile manualmente nem usar supressões ou reduzir o nível da auditoria.
-- Preservar o fork de braces e os overrides anteriores que não pertencem aos achados atuais.
-- Não incorporar mudanças do Design System ou funcionalidades nesta branch.
+- Update Next.js and eslint-config-next together; keep Vitest and coverage-v8 aligned.
+- Update Zod within the same major line and regenerate compatible transitive resolutions.
+- Do not edit the lockfile manually or use suppressions or lower the audit level.
+- Preserve the braces fork and the earlier overrides that do not belong to the current findings.
+- Do not bring Design System changes or features into this branch.
 
-## Validação e integração
+## Validation and integration
 
-- [x] Instalação congelada e auditoria sem achados.
-- [x] Formato, lint, estrutura, tipos e integridade de dados aprovados.
-- [x] Testes unitários, PostgreSQL, backup/restore e build aprovados.
-- [x] PR de segurança com CI aprovada e merge em developer.
-      A integração da KZ-E06-T19 é a etapa seguinte, após o merge desta correção; não
-      faz parte dos critérios de encerramento da correção de dependências.
+- [x] Frozen install and audit with no findings.
+- [x] Format, lint, structure, types, and data integrity approved.
+- [x] Unit tests, PostgreSQL, backup/restore, and build approved.
+- [x] Security PR with CI approved and merged into developer.
+      The integration of KZ-E06-T19 is the next step, after the merge of this fix; it is not
+      part of the closing criteria of the dependency fix.
 
-## Rastreabilidade dos achados
+## Traceability of the findings
 
-Fonte: relatório inicial de `pnpm audit --json` em 26/10/2026 e advisories primários
-referenciados abaixo. A faixa vulnerável é a informada pelo scanner.
+Source: initial report of `pnpm audit --json` on 26/10/2026 and the primary advisories
+referenced below. The vulnerable range is the one reported by the scanner.
 
-| Advisory                                                                 | Pacote         | Severidade | Faixa vulnerável         | Versão aplicada |
+| Advisory                                                                 | Package        | Severity   | Vulnerable range         | Version applied |
 | ------------------------------------------------------------------------ | -------------- | ---------- | ------------------------ | --------------- |
 | [GHSA-698v-4r3x-3vcv](https://github.com/advisories/GHSA-698v-4r3x-3vcv) | vite           | moderate   | `>=8.2.0 <=8.2.3`        | 8.2.4           |
 | [GHSA-r825-w8mm-5pxw](https://github.com/advisories/GHSA-r825-w8mm-5pxw) | vite           | moderate   | `>=8.2.0 <=8.2.3`        | 8.2.4           |
@@ -88,22 +88,22 @@ referenciados abaixo. A faixa vulnerável é a informada pelo scanner.
 | [GHSA-333x-w4r6-6crp](https://github.com/advisories/GHSA-333x-w4r6-6crp) | fast-uri       | low        | `>=3.0.0 <3.1.9`         | 3.1.9           |
 | [GHSA-xjj6-f33q-929c](https://github.com/advisories/GHSA-xjj6-f33q-929c) | undici         | high       | `>=8.0.0 <8.12.2`        | 8.12.3          |
 
-## Resoluções aplicadas
+## Resolutions applied
 
-- Next.js e eslint-config-next: 16.3.8 → 16.4.2.
-- Zod direto e transitivo de eslint-plugin-react-hooks: 4.6.5 → 4.6.7.
-- Vitest, mocker e coverage-v8: 4.1.11 → 4.1.12.
-- Vite transitivo de Vitest/mocker: 8.2.2 → 8.2.4.
-- Undici transitivo de jsdom: 8.10.2 → 8.12.3.
-- fast-uri transitivo de AJV: 3.1.8 → 3.1.9.
-- O pnpm regenerou as resoluções de peers; não foram mantidos overrides novos
-  nem dependências diretas artificiais. `pnpm install --frozen-lockfile` aprovado.
-- Auditoria final local: zero achados em todas as severidades.
+- Next.js and eslint-config-next: 16.3.8 → 16.4.2.
+- Zod, direct and transitive from eslint-plugin-react-hooks: 4.6.5 → 4.6.7.
+- Vitest, mocker, and coverage-v8: 4.1.11 → 4.1.12.
+- Vite, transitive from Vitest/mocker: 8.2.2 → 8.2.4.
+- Undici, transitive from jsdom: 8.10.2 → 8.12.3.
+- fast-uri, transitive from AJV: 3.1.8 → 3.1.9.
+- pnpm regenerated the peer resolutions; no new overrides
+  or artificial direct dependencies were kept. `pnpm install --frozen-lockfile` approved.
+- Final local audit: zero findings at all severities.
 
 ## Result
-Correções implementadas. `pnpm run ci` aprovado (291 testes unitários, 44
-integrações e 33 testes de validadores), assim como o teste de backup/restore
-PostgreSQL. Auditoria local sem achados; governança local aprovada.
-CI remota aprovada nos sete jobs: Governance, Quality, Test, Data integrity,
-Backup restore, Build e Dependency audit. [PR #68](https://github.com/fradelli/nextjs-kaizen-app/pull/68) integrada por squash
-em developer no commit `410042d`, em 26/10/2026.
+Fixes implemented. `pnpm run ci` approved (291 unit tests, 44
+integrations, and 33 validator tests), as was the PostgreSQL backup/restore
+test. Local audit with no findings; local governance approved.
+Remote CI approved in all seven jobs: Governance, Quality, Test, Data integrity,
+Backup restore, Build, and Dependency audit. [PR #68](https://github.com/fradelli/nextjs-kaizen-app/pull/68) merged by squash
+into developer at commit `410042d`, on 26/10/2026.

@@ -6,30 +6,30 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: [KZ-E01-T06]
 ---
 
-# Inventariar alimentação e unknowns
+# Inventory nutrition and unknowns
 
 ## Objective
-Confirmar quais fontes alimentares existem e quais dados ainda faltam antes de qualquer plano estruturado.
+Confirm which nutrition sources exist and which data is still missing before any structured plan.
 
 ## Inputs
-- Arquivos fornecidos pelo usuário.
-- Perfil, agenda e carga de treino migrados.
+- Files provided by the user.
+- Migrated profile, schedule, and training load.
 
 ## Deliverables
 - `docs/migration/NUTRITION-INPUT-INVENTORY.md`
 
 ## Subtasks
-- [x] Inventariar dieta prescrita e alimentação praticada.
-- [x] Separar fatos, estimativas, hipóteses e decisões profissionais.
-- [x] Listar dados mínimos ainda ausentes.
-- [x] Identificar fontes que não podem ser versionadas.
+- [x] Inventory the prescribed diet and the nutrition actually practiced.
+- [x] Separate facts, estimates, hypotheses, and professional decisions.
+- [x] List the minimum data still missing.
+- [x] Identify sources that cannot be versioned.
 
 ## Validation
-- Nenhum valor nutricional é inferido como fato.
-- Toda ausência aparece em `unknowns` ou pendências.
+- No nutritional value is inferred as fact.
+- Every absence appears in `unknowns` or in open items.
 
 ## Acceptance criteria
-- [x] Está claro o que pode ser preservado e o que bloqueia a revisão.
+- [x] It is clear what can be preserved and what blocks the review.
 
 ## Result
-Uma correção ampliou a descoberta para todas as refs remotas do legado e localizou oito artefatos alimentares no commit privado `138531e4fbca6d744de73274fbb96da39c02bad3`. O inventário registra categorias, tamanhos, hashes, tratamento candidato e exposição padrão sem copiar conteúdo ou revelar caminhos pessoais. Dieta original e alimentação praticada estão disponíveis; `KZ-E02-T02` foi liberada para congelar e preservar a fonte privada.
+A correction widened the discovery to all remote refs of the legacy and located eight nutrition artifacts in the private commit `138531e4fbca6d744de73274fbb96da39c02bad3`. The inventory records categories, sizes, hashes, candidate treatment, and default exposure without copying content or revealing personal paths. The original diet and the practiced nutrition are available; `KZ-E02-T02` was released to freeze and preserve the private source.

@@ -6,33 +6,33 @@ repository: fradelli/nextjs-kaizen-app
 depends_on: []
 ---
 
-# Inicializar repositório e branches
+# Initialize repository and branches
 
 ## Objective
-Criar o clone local, o commit-base e as branches necessárias ao fluxo de promoção.
+Create the local clone, the base commit, and the branches required by the promotion flow.
 
 ## Inputs
 - `https://github.com/fradelli/kaizen-app`
-- Credencial GitHub com permissão administrativa.
+- GitHub credential with administrative permission.
 
 ## Deliverables
-- Clone local criado e vinculado ao remote canônico.
-- Branches remotas `developer`, `staging` e `master`.
-- `developer` como branch padrão.
+- Local clone created and linked to the canonical remote.
+- Remote branches `developer`, `staging`, and `master`.
+- `developer` as the default branch.
 
 ## Subtasks
-- [x] Clonar o repositório vazio.
-- [x] Criar e publicar um commit-base vazio.
-- [x] Criar e publicar as três branches.
-- [x] Definir `developer` como padrão.
+- [x] Clone the empty repository.
+- [x] Create and publish an empty base commit.
+- [x] Create and publish the three branches.
+- [x] Set `developer` as the default.
 
 ## Validation
-- `git branch -a` lista as três branches.
-- `gh repo view` retorna `developer` como branch padrão.
+- `git branch -a` lists the three branches.
+- `gh repo view` returns `developer` as the default branch.
 
 ## Acceptance criteria
-- [x] Branches remotas publicadas no mesmo commit-base.
-- [x] Feature branch criada a partir de `developer`.
+- [x] Remote branches published at the same base commit.
+- [x] Feature branch created from `developer`.
 
 ## Result
-Concluída em 2026-08-30. Commit-base `6fb1f02`; branch de trabalho `codex/roadmap-foundation` criada a partir de `developer`.
+Completed on 2026-08-30. Base commit `6fb1f02`; working branch `codex/roadmap-foundation` created from `developer`.
