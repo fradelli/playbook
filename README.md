@@ -1,65 +1,52 @@
-# Sandicts Shared Docs
+# Fradelli Playbook
 
-This repository owns Sandicts documentation that must be shared by backend,
-frontend, product planning, and AI-assisted work.
+The playbook holds what Fradelli builds and how it is built:
 
-## Purpose
+- **Roadmap:** epics, tasks, status, and the active task of every project.
+- **Standards:** shared architecture, organization, code, documentation, and delivery rules that apply across projects.
 
-Use this repository as the single source of truth for:
+Business rules that belong to a single product stay in that product's repository.
 
-- product context
-- MVP and V2 scope
-- business rules
-- domain glossary
-- cross-app product decisions
-- cross-app deployment, environment, and browser integration decisions
-- cross-repository development workstation onboarding
-- Jira roadmap and issue-writing rules
-- AI routing for shared Sandicts context
+This repository is public. Never commit credentials, unnecessary personal identity, medical context, or personal comments.
 
-Do not put backend-only architecture, frontend-only UX/component rules, secrets,
-or machine-specific credentials and state here.
+Rules for working here: [CLAUDE.md](CLAUDE.md).
 
-## Local Workspace
+## Projects
 
-Recommended sibling layout:
+| Prefix | Project | Repositories | Stack profile | Roadmap | Active task |
+| --- | --- | --- | --- | --- | --- |
+| `DS-` | Design system | `fradelli/design-system` | Component library | [Index](projects/design-system/README.md) | [Active](projects/design-system/ACTIVE.md) |
+| `KZ-` | Kaizen | `fradelli/nextjs-kaizen-app` | Next.js full-stack | [Index](projects/kaizen/README.md) | [Active](projects/kaizen/ACTIVE.md) |
+| `SU-` | Suna | `fradelli/nextjs-suna-app`, `fradelli/nestjs-suna-api` | Next.js + NestJS API | [Index](projects/suna/README.md) | [Active](projects/suna/ACTIVE.md) |
+| `PB-` | Playbook | `fradelli/playbook` | Documentation | [Index](projects/playbook/README.md) | [Active](projects/playbook/ACTIVE.md) |
+
+Stack profiles are planned in [PB-E02](projects/playbook/epics/E02-shared-standards/README.md).
+
+## Layout
 
 ```txt
-sandicts/
-  apps/
-    sandicts-docs/
-    nodejs-sandicts-api/
-    reactjs-sandicts-web/
+CLAUDE.md        rules for this repository
+templates/       epic and task templates
+projects/        one folder per project: index, active task, epics, tasks
+standards/       shared rules (being built, see PB-E02)
+docs/            legacy Suna documentation, being relocated (see PB-E00-T03)
 ```
 
-Backend and frontend repositories should keep short local AI routers and point
-to this repository only when shared product or business context is needed.
+## Local workspace
 
-For a new or existing machine that must continue Sandicts development across
-all repositories, follow:
+Clone this repository next to the project repositories:
 
-- `docs/engineering/development-workstation-onboarding.md`
+```txt
+fradelli/
+  playbook/
+  design-system/
+  kaizen/nextjs-kaizen-app/
+  suna/apps/nextjs-suna-app/
+  suna/apps/nestjs-suna-api/
+```
 
-## AI Entry Point
+Project repositories point agents to this clone for the active task and shared standards.
 
-Start with:
+## History
 
-- `docs/ai/index.md`
-
-Then read only the files selected by its `read-when` routing. Avoid loading
-long roadmap or functional specs unless the task needs their details.
-
-## Documentation Granularity
-
-Simple and stable rules stay in the shared scope and business-rule documents.
-Complex features that have interacting rules, states, examples, or independent
-evolution receive a dedicated document under `docs/product/`.
-
-The full decision is documented in:
-
-- `docs/decisions/shared-documentation-strategy.md`
-
-Current cross-app technical decisions include:
-
-- `docs/decisions/api-contract-governance.md`
-- `docs/decisions/frontend-deployment-target.md`
+This repository was `fradelli/suna-docs` (earlier `sandicts-docs`), the shared documentation of Suna. It was renamed on 2026-11-23 to become the shared playbook for every project. The Suna documents under `docs/` remain until [PB-E00-T03](projects/playbook/epics/E00-repository-foundation/T03-relocate-suna-product-docs.md) moves them.
