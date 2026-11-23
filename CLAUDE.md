@@ -1,6 +1,12 @@
 # Playbook rules
 
-This repository holds the roadmap of every Fradelli project and the standards they share. It is public: never commit credentials, unnecessary personal identity, medical context, or personal comments. All content is in English (en-US).
+This repository holds the roadmap of every Fradelli project and the standards they share. It is public: never commit credentials, unnecessary personal identity, medical context, or personal comments.
+
+## Language
+
+Everything is written in English (en-US), in this repository and in every Fradelli repository: task names and descriptions, epics, documents, standards, code comments, commit messages, branch names, and pull request titles and descriptions.
+
+The only exception is product copy shown to end users, which follows each product's localization (for example, the Portuguese and English messages of Kaizen).
 
 ## Reading order
 

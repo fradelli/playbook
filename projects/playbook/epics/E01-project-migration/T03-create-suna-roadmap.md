@@ -25,6 +25,7 @@ Suna was paused while Kaizen moved ahead. Its planning lived in Jira (`KAN-` key
 
 - `projects/suna/README.md`, `ACTIVE.md`, and `epics/`.
 - A `SU-` task per Suna repository to point its agent instructions to the playbook.
+- `SU-` tasks to translate the remaining Portuguese documentation to English, following `CLAUDE.md` (section "Language"): 13 Markdown files in `fradelli/nextjs-suna-app` and 1 in `fradelli/nestjs-suna-api` on 2026-11-23.
 
 ## Subtasks
 

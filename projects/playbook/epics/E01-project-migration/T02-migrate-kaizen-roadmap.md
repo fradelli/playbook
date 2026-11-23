@@ -23,6 +23,7 @@ Bring the Kaizen roadmap into `projects/kaizen/`, translated to English, with `K
 
 - `projects/kaizen/README.md`, `ACTIVE.md`, `OVERVIEW.md`, and `epics/`.
 - `KZ-` task in `projects/kaizen/` (next free `KZ-E00` ID) for the Kaizen repository: adapt `scripts/validate-governance.mjs` to `[KZ-...]` titles and `claude/` branches, replace the links from `docs/` to `roadmap/`, split `docs:check`, update `AGENTS.md` and `CLAUDE.md`, and only then remove `roadmap/`.
+- `KZ-` task for the Kaizen repository to adopt the English-only rule of `CLAUDE.md` (section "Language"): change the PT-BR rule in `AGENTS.md`, translate the documentation (266 of 277 Markdown files were in Portuguese on 2026-11-23), the pull request template, and script messages. Product copy in `messages/` stays localized.
 
 ## Subtasks
 

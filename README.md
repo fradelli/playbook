@@ -9,6 +9,8 @@ Business rules that belong to a single product stay in that product's repository
 
 This repository is public. Never commit credentials, unnecessary personal identity, medical context, or personal comments.
 
+Everything here, and in every Fradelli repository, is written in English, except product copy shown to end users.
+
 Rules for working here: [CLAUDE.md](CLAUDE.md).
 
 ## Projects
