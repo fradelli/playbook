@@ -26,6 +26,7 @@ Existing components are accessible, consistent, and fully cataloged before and d
 | [DS-E02-T04](T04-add-semantic-pastel-tokens.md)          | —          | ColorSwatch uses semantic tokens only       |
 | [DS-E02-T05](T05-complete-stories-and-naming.md)         | —          | Every component cataloged consistently      |
 | [DS-E02-T06](T06-evaluate-visual-regression.md)          | DS-E02-T05    | Visual regression decision recorded         |
+| [DS-E02-T07](T07-lint-react-hooks-and-accessibility.md) | — | Hook and JSX accessibility rules in lint |
 
 Status lives only in the project `README.md`.
 

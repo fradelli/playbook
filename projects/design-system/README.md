@@ -32,16 +32,20 @@ Imported on 2026-11-23 by [PB-E01-T01](../playbook/epics/E01-project-migration/T
 | DS-E00-T06 | READY | [Streamline the quality gates](epics/E00-repository-governance/T06-streamline-quality-gates.md) | — |
 | DS-E00-T07 | CANCELLED | [Validate the roadmap by script](epics/E00-repository-governance/T07-validate-roadmap-by-script.md) | DS-E00-T01 |
 | DS-E00-T08 | DONE | [Point the repository to the playbook](epics/E00-repository-governance/T08-point-repository-to-playbook.md) | PB-E01-T01 |
+| DS-E00-T09 | READY | [Raise the dependency audit gate to moderate](epics/E00-repository-governance/T09-raise-dependency-audit-gate.md) | — |
+| DS-E00-T10 | READY | [Type-check the repository scripts](epics/E00-repository-governance/T10-type-check-repository-scripts.md) | — |
 | DS-E01-T01 | READY | [Require the Tailwind CSS peer dependency](epics/E01-package-contract/T01-require-tailwind-peer.md) | — |
 | DS-E01-T02 | READY | [Derive export lists from one source](epics/E01-package-contract/T02-derive-export-lists-from-one-source.md) | — |
 | DS-E01-T03 | PLANNED | [Generate the Tailwind theme from tokens](epics/E01-package-contract/T03-generate-theme-from-tokens.md) | DS-E03-T02 |
 | DS-E01-T04 | READY | [Enable coverage with thresholds](epics/E01-package-contract/T04-enable-coverage-thresholds.md) | — |
+| DS-E01-T05 | PLANNED | [Plan the development dependency major upgrades](epics/E01-package-contract/T05-plan-development-dependency-upgrades.md) | DS-E00-T09 |
 | DS-E02-T01 | IN_PROGRESS | [Fix the menu shortcut highlight](epics/E02-component-quality/T01-fix-menu-shortcut-highlight.md) | — |
 | DS-E02-T02 | READY | [Require accessible close labels](epics/E02-component-quality/T02-require-accessible-close-labels.md) | — |
 | DS-E02-T03 | READY | [Resolve the dark variant and CSS layers](epics/E02-component-quality/T03-resolve-dark-variant-and-css-layers.md) | — |
 | DS-E02-T04 | READY | [Add semantic tokens for pastel colors](epics/E02-component-quality/T04-add-semantic-pastel-tokens.md) | — |
 | DS-E02-T05 | READY | [Complete stories and standardize naming](epics/E02-component-quality/T05-complete-stories-and-naming.md) | — |
 | DS-E02-T06 | PLANNED | [Evaluate visual regression testing](epics/E02-component-quality/T06-evaluate-visual-regression.md) | DS-E02-T05 |
+| DS-E02-T07 | READY | [Lint React hooks and JSX accessibility](epics/E02-component-quality/T07-lint-react-hooks-and-accessibility.md) | — |
 | DS-E03-T01 | READY | [Record the Mira-only component decision](epics/E03-mira-adoption/T01-record-mira-only-adr.md) | — |
 | DS-E03-T02 | PLANNED | [Add shadcn token aliases and recipe configuration](epics/E03-mira-adoption/T02-add-shadcn-token-aliases.md) | DS-E03-T01 |
 | DS-E03-T03 | PLANNED | [Migrate overlays to Base UI Mira](epics/E03-mira-adoption/T03-migrate-overlays-to-mira.md) | DS-E03-T01, DS-E03-T02 |
@@ -53,6 +57,7 @@ Imported on 2026-11-23 by [PB-E01-T01](../playbook/epics/E01-project-migration/T
 | DS-E03-T09 | PLANNED | [Replace StatusBadge with Badge variants](epics/E03-mira-adoption/T09-replace-status-badge.md) | DS-E03-T04 |
 | DS-E03-T10 | PLANNED | [Replace NavigationItem with Button rendering a link](epics/E03-mira-adoption/T10-replace-navigation-item.md) | DS-E03-T05 |
 | DS-E03-T11 | PLANNED | [Admit the Drawer, Textarea, InputGroup, and ButtonGroup recipes](epics/E03-mira-adoption/T11-admit-form-and-layout-recipes.md) | DS-E03-T03, DS-E03-T05 |
+| DS-E03-T12 | PLANNED | [Choose a single icon library](epics/E03-mira-adoption/T12-choose-single-icon-library.md) | DS-E03-T01 |
 | DS-E04-T01 | PLANNED | [Publish the consolidated release](epics/E04-consumer-release/T01-publish-consolidated-release.md) | DS-E01-T01, DS-E02-T02, DS-E02-T03, DS-E03-T03, DS-E03-T04, DS-E03-T05, DS-E03-T07, DS-E03-T08, DS-E03-T09, DS-E03-T10, Maintainer merges the version PR |
 | DS-E04-T02 | PLANNED | [Hand off the release to consumers](epics/E04-consumer-release/T02-hand-off-release-to-consumers.md) | DS-E04-T01 |
 | DS-E04-T03 | PLANNED | [Publish a corrective release](epics/E04-consumer-release/T03-publish-corrective-release.md) | DS-E01-T01, DS-E02-T01, DS-E02-T02, Maintainer merges the version PR |

@@ -33,6 +33,7 @@ Every shared component follows an official shadcn/ui Base UI Mira recipe, except
 | [DS-E03-T09](T09-replace-status-badge.md)             | DS-E03-T04                   | StatusBadge replaced                                    |
 | [DS-E03-T10](T10-replace-navigation-item.md)          | DS-E03-T05                   | NavigationItem replaced                                 |
 | [DS-E03-T11](T11-admit-form-and-layout-recipes.md)    | DS-E03-T03, DS-E03-T05          | Drawer, Textarea, InputGroup, and ButtonGroup published |
+| [DS-E03-T12](T12-choose-single-icon-library.md) | DS-E03-T01 | One icon library for components |
 
 Status lives only in the project `README.md`.
 

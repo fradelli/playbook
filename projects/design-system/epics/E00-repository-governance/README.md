@@ -27,6 +27,8 @@ The repository is tracked by its own roadmap, governed for Claude Code only, doc
 | [DS-E00-T06](T06-streamline-quality-gates.md)            | —                | Reliable gates without duplicated checks    |
 | [DS-E00-T07](T07-validate-roadmap-by-script.md)          | DS-E00-T01          | Roadmap consistency checked in CI           |
 | [DS-E00-T08](T08-point-repository-to-playbook.md) | PB-E01-T01 | Agents reach the roadmap through the playbook |
+| [DS-E00-T09](T09-raise-dependency-audit-gate.md) | — | Audit blocks CI at the moderate level |
+| [DS-E00-T10](T10-type-check-repository-scripts.md) | — | Scripts covered by the type check |
 
 Status lives only in the project `README.md`.
 
