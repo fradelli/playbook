@@ -1,9 +1,10 @@
 # Active task
 
-- **Task:** No task selected
-- **Status:** —
-- **Main input:** —
-- **Next action:** sweep the repository for improvements and register each new finding as a `KZ-` task, checking KZ-E00-T13, KZ-E00-T14, and KZ-E12 first. After that, start [KZ-E00-T18](epics/E00-repository-governance/T18-adopt-english-only-rule.md).
+- **Task:** [KZ-E00-T13](epics/E00-repository-governance/T13-remove-unused-repository-artifacts.md) — Remove unused artifacts and files from the repository
+- **Status:** IN_PROGRESS
+- **Branch:** `claude/KZ-E00-T13-remove-unused-artifacts`
+- **Main input:** `epics/E00-repository-governance/T13-remove-unused-repository-artifacts.md`
+- **Next action:** remove the files without a proven consumer, keeping `vendor/fradelli-ui-mira-table-progress.tgz` until KZ-E10-T10 replaces it. After it, start [KZ-E00-T18](epics/E00-repository-governance/T18-adopt-english-only-rule.md), which touches the same `docs/` and `scripts/`.
 
 ## Resumption and parallel work
 

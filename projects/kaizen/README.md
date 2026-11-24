@@ -14,7 +14,7 @@ Migrated on 2026-11-23 by [PB-E01-T02](../playbook/epics/E01-project-migration/T
 
 | ID | Status | Epic | Outcome |
 | --- | --- | --- | --- |
-| KZ-E00 | READY | [Repository governance](epics/E00-repository-governance/README.md) | Public repository governed, context optimized for Claude, and traceable legacy |
+| KZ-E00 | IN_PROGRESS | [Repository governance](epics/E00-repository-governance/README.md) | Public repository governed, context optimized for Claude, and traceable legacy |
 | KZ-E01 | DONE | [Training data migration](epics/E01-training-data-migration/README.md) | Training foundation migrated and validated |
 | KZ-E02 | DONE | [Nutrition data migration](epics/E02-nutrition-data-migration/README.md) | Nutrition plan reviewed, versioned, and validated |
 | KZ-E03 | DONE | [Product and architecture](epics/E03-product-and-architecture/README.md) | P0, architecture, and implementation guide approved |
@@ -44,7 +44,7 @@ Migrated on 2026-11-23 by [PB-E01-T02](../playbook/epics/E01-project-migration/T
 | KZ-E00-T10 | DONE | [Create the local roadmap view](epics/E00-repository-governance/T10-create-local-roadmap-view.md) | KZ-E00-T09 |
 | KZ-E00-T11 | DONE | [Apply the design system to the roadmap view](epics/E00-repository-governance/T11-apply-design-system-to-roadmap-view.md) | KZ-E00-T10 |
 | KZ-E00-T12 | DONE | [Migrate agent governance from Codex to Claude](epics/E00-repository-governance/T12-migrate-agent-governance-to-claude.md) | — |
-| KZ-E00-T13 | READY | [Remove unused artifacts and files from the repository](epics/E00-repository-governance/T13-remove-unused-repository-artifacts.md) | KZ-E00-T12 |
+| KZ-E00-T13 | IN_PROGRESS | [Remove unused artifacts and files from the repository](epics/E00-repository-governance/T13-remove-unused-repository-artifacts.md) | KZ-E00-T12 |
 | KZ-E00-T14 | READY | [Analyze the documentation for use by Claude](epics/E00-repository-governance/T14-analyze-documentation-for-claude.md) | KZ-E00-T12 |
 | KZ-E00-T15 | PLANNED | [Apply the approved documentation reorganization](epics/E00-repository-governance/T15-apply-approved-documentation-reorganization.md) | KZ-E00-T14 |
 | KZ-E00-T16 | DONE | [Strengthen the CI gates](epics/E00-repository-governance/T16-strengthen-ci-gates.md) | — |
