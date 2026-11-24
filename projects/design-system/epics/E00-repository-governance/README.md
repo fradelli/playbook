@@ -29,6 +29,7 @@ The repository is tracked by its own roadmap, governed for Claude Code only, doc
 | [DS-E00-T08](T08-point-repository-to-playbook.md) | PB-E01-T01 | Agents reach the roadmap through the playbook |
 | [DS-E00-T09](T09-raise-dependency-audit-gate.md) | — | Audit blocks CI at the moderate level |
 | [DS-E00-T10](T10-type-check-repository-scripts.md) | — | Scripts covered by the type check |
+| [DS-E00-T11](T11-run-ci-on-version-pull-request.md) | — | CI runs on the version pull request without approval |
 
 Status lives only in the project `README.md`.
 
