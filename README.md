@@ -47,7 +47,7 @@ fradelli/
   suna/apps/nestjs-suna-api/
 ```
 
-Project repositories point agents to this clone for the active task and shared standards.
+Project repositories point agents to this clone for the active task and shared standards, following the [playbook integration standard](standards/general/playbook-integration.md).
 
 ## History
 
