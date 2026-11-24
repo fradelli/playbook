@@ -35,9 +35,9 @@ Make Claude Code the only supported development agent and replace Jira reference
 
 ## Subtasks
 
-- [ ] Decide between moving `AGENTS.md` to `CLAUDE.md` or importing it.
-- [ ] Replace `codex/KAN-123` with `claude/<ID>-description` and Jira keys with task IDs.
-- [ ] Update the PR template and the release workflow texts.
+- [x] Decide between moving `AGENTS.md` to `CLAUDE.md` or importing it.
+- [x] Replace `codex/KAN-123` with `claude/<ID>-description` and Jira keys with task IDs.
+- [x] Update the PR template and the release workflow texts.
 
 ## Validation
 
@@ -46,8 +46,8 @@ Make Claude Code the only supported development agent and replace Jira reference
 
 ## Acceptance criteria
 
-- [ ] `CLAUDE.md` exists at the repository root and contains or imports the repository contract.
-- [ ] The Validation `rg` command finds no current rule that requires Jira keys or the `codex/` prefix.
+- [x] `CLAUDE.md` exists at the repository root and contains or imports the repository contract.
+- [x] The Validation `rg` command finds no current rule that requires Jira keys or the `codex/` prefix.
 
 ## Result
 

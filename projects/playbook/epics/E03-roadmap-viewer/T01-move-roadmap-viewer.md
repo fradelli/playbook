@@ -16,7 +16,7 @@ Move the interactive roadmap viewer from Kaizen to this repository and make it r
 
 - `fradelli/nextjs-kaizen-app: scripts/build-roadmap-view.mjs` and its tests at commit `1c3dd48` — data generator. KZ-E00-T17 removes them from Kaizen.
 - `fradelli/nextjs-kaizen-app: roadmap/view/` at commit `1c3dd48` — React page, Vite config, and Markdown renderer.
-- `fradelli/nextjs-kaizen-app: vendor/fradelli-ui-mira-table-progress.tgz` — design system package used by the page until a published version exists.
+- `fradelli/design-system: package.json` — `@fradelli/ui` is published on GitHub Packages; `0.7.0` already contains the Table and Progress the page uses (the Kaizen tarball has the same `dist/`). Install a published version, not the tarball.
 
 ## Deliverables
 

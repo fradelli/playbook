@@ -29,9 +29,9 @@ The roadmap of this project was planned under `roadmap/` in this repository but 
 
 ## Subtasks
 
-- [ ] Confirm that the playbook holds every epic and task of the local `roadmap/`.
-- [ ] Point the agent instructions to the playbook.
-- [ ] Delete the local `roadmap/` folder and the local branch, which has no commits beyond `main`.
+- [x] Confirm that the playbook holds every epic and task of the local `roadmap/`.
+- [x] Point the agent instructions to the playbook.
+- [x] Delete the local `roadmap/` folder and the local branch, which has no commits beyond `main`.
 
 ## Validation
 
@@ -40,8 +40,8 @@ The roadmap of this project was planned under `roadmap/` in this repository but 
 
 ## Acceptance criteria
 
-- [ ] `AGENTS.md` and `CLAUDE.md` link to `fradelli/playbook: projects/design-system/ACTIVE.md`, and no `roadmap/` folder exists in the clone.
+- [x] `AGENTS.md` and `CLAUDE.md` link to `fradelli/playbook: projects/design-system/ACTIVE.md`, and no `roadmap/` folder exists in the clone.
 
 ## Result
 
-Not started.
+Done with DS-E00-T03 in `fradelli/design-system#23` (`9912651`, merged 2026-11-23): `CLAUDE.md` has a `Playbook` section linking the playbook `CLAUDE.md` and `projects/design-system/ACTIVE.md`, and `AGENTS.md` is a pointer to `CLAUDE.md`. The local `roadmap/` folder and the `claude/E00-T01-create-roadmap-system` branch no longer exist in the clone (checked 2026-11-24). PB-E01-T04 turns this section into the shared integration.

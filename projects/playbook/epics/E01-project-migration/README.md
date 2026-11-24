@@ -9,6 +9,7 @@ The design system, Kaizen, and Suna roadmaps live in `projects/`, in English, wi
 - Import the design system audit tasks.
 - Translate and prefix the Kaizen roadmap.
 - Create the Suna roadmap.
+- Define how project repositories use the playbook.
 
 ## Out of scope
 
@@ -21,6 +22,7 @@ The design system, Kaizen, and Suna roadmaps live in `projects/`, in English, wi
 | PB-E01-T01 | PB-E00-T01 | `projects/design-system/` holds the `DS-` tasks |
 | PB-E01-T02 | PB-E00-T01 | `projects/kaizen/` holds the `KZ-` roadmap in English |
 | PB-E01-T03 | PB-E00-T03 | `projects/suna/` holds the first `SU-` tasks |
+| PB-E01-T04 | PB-E02-T04 | `standards/general/playbook-integration.md` defines how repositories use the playbook |
 
 Status lives only in the project `README.md`.
 
