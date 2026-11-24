@@ -29,9 +29,9 @@ Highlight menu shortcuts when their item is focused, as the Mira recipe intends.
 
 ## Subtasks
 
-- [ ] Align the group name between items and shortcuts.
-- [ ] Cover the focused state in Storybook or a unit test.
-- [ ] Add a patch Changeset.
+- [x] Align the group name between items and shortcuts.
+- [x] Cover the focused state in Storybook or a unit test.
+- [x] Add a patch Changeset.
 
 ## Validation
 
@@ -39,8 +39,12 @@ Highlight menu shortcuts when their item is focused, as the Mira recipe intends.
 
 ## Acceptance criteria
 
-- [ ] A focused menu item shows its shortcut in the foreground color in both menus.
+- [x] A focused menu item shows its shortcut in the foreground color in both menus.
 
 ## Result
 
-Not started.
+- Delivered in `fradelli/design-system` PR #24, squash-merged as `3620791` on 2026-11-24.
+- `DropdownMenuShortcut` and `ContextMenuShortcut` use `group-focus/menu-item` and `group-data-highlighted/menu-item`, the group the items declare.
+- New `Shortcuts` stories in `DropdownMenu.stories.tsx` and `ContextMenu.stories.tsx` (the first ContextMenu story) assert that the highlighted shortcut takes the item color and the other shortcut does not.
+- Regression proof: with the fix reverted, both stories fail; with it, they pass. CI `Validate package` passed; all 12 `npm run ci` gates passed locally.
+- Patch Changeset: `.changeset/menu-shortcut-highlight.md`.

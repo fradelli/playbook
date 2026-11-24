@@ -14,7 +14,7 @@ Migrated on 2026-11-23 by [PB-E01-T02](../playbook/epics/E01-project-migration/T
 
 | ID | Status | Epic | Outcome |
 | --- | --- | --- | --- |
-| KZ-E00 | READY | [Repository governance](epics/E00-repository-governance/README.md) | Public repository governed, context optimized for Claude, and traceable legacy |
+| KZ-E00 | IN_PROGRESS | [Repository governance](epics/E00-repository-governance/README.md) | Public repository governed, context optimized for Claude, and traceable legacy |
 | KZ-E01 | DONE | [Training data migration](epics/E01-training-data-migration/README.md) | Training foundation migrated and validated |
 | KZ-E02 | DONE | [Nutrition data migration](epics/E02-nutrition-data-migration/README.md) | Nutrition plan reviewed, versioned, and validated |
 | KZ-E03 | DONE | [Product and architecture](epics/E03-product-and-architecture/README.md) | P0, architecture, and implementation guide approved |
@@ -48,7 +48,7 @@ Migrated on 2026-11-23 by [PB-E01-T02](../playbook/epics/E01-project-migration/T
 | KZ-E00-T14 | READY | [Analyze the documentation for use by Claude](epics/E00-repository-governance/T14-analyze-documentation-for-claude.md) | KZ-E00-T12 |
 | KZ-E00-T15 | PLANNED | [Apply the approved documentation reorganization](epics/E00-repository-governance/T15-apply-approved-documentation-reorganization.md) | KZ-E00-T14 |
 | KZ-E00-T16 | DONE | [Strengthen the CI gates](epics/E00-repository-governance/T16-strengthen-ci-gates.md) | — |
-| KZ-E00-T17 | PLANNED | [Point the repository to the playbook](epics/E00-repository-governance/T17-point-repository-to-playbook.md) | PB-E01-T02, PB-E01-T04 |
+| KZ-E00-T17 | IN_PROGRESS | [Point the repository to the playbook](epics/E00-repository-governance/T17-point-repository-to-playbook.md) | PB-E01-T02, PB-E01-T04 |
 | KZ-E00-T18 | PLANNED | [Adopt the English-only rule](epics/E00-repository-governance/T18-adopt-english-only-rule.md) | KZ-E00-T17 |
 | KZ-E01-T01 | DONE | [Freeze source snapshot](epics/E01-training-data-migration/T01-freeze-source-snapshot.md) | KZ-E00-T05 |
 | KZ-E01-T02 | DONE | [Migrate canonical training data](epics/E01-training-data-migration/T02-migrate-canonical-training-data.md) | KZ-E01-T01 |
@@ -138,6 +138,7 @@ Migrated on 2026-11-23 by [PB-E01-T02](../playbook/epics/E01-project-migration/T
 | KZ-E10-T07 | DONE | [Fix the findings of the draft review](epics/E10-portfolio-visual-alignment/T07-fix-draft-review.md) | KZ-E10-T06 |
 | KZ-E10-T08 | DONE | [Adjust Today and the app entry](epics/E10-portfolio-visual-alignment/T08-today-navigation.md) | KZ-E10-T07 |
 | KZ-E10-T09 | READY | [Complete the adoption of the Mira design system](epics/E10-portfolio-visual-alignment/T09-complete-mira-adoption.md) | KZ-E10-T08 |
+| KZ-E10-T10 | PLANNED | [Install the published corrective release of `@fradelli/ui`](epics/E10-portfolio-visual-alignment/T10-install-published-ui-release.md) | DS-E04-T03 |
 | KZ-E11-T01 | PLANNED | [Validate the integrated schedule base](epics/E11-schedule-evolution/T01-validate-integrated-schedule.md) | — |
 | KZ-E11-T02 | PLANNED | [Validate the selection and drag-and-drop POC](epics/E11-schedule-evolution/T02-prototype-calendar-interactions.md) | KZ-E11-T01 |
 | KZ-E11-T03 | PLANNED | [Integrate the approved gestures with persistence](epics/E11-schedule-evolution/T03-persist-calendar-interactions.md) | KZ-E11-T02 |

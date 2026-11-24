@@ -16,6 +16,7 @@ it does not authorize recreating generic styles locally when an export is missin
 | KZ-E10-T01 | KZ-E06-T25 | Integrate the visual reference, the icon catalog, and the generic DS states |
 | KZ-E10-T02 | KZ-E10-T01 | Player in the card, consistent hints, and closing in a modal with a draft |
 | KZ-E10-T09 | KZ-E10-T08 | Complete the Mira adoption after the historical deliveries KZ-E10-T01 to KZ-E10-T08 |
+| [KZ-E10-T10](T10-install-published-ui-release.md) | DS-E04-T03 | Kaizen installs the exact published corrective release instead of a local tarball |
 
 ## Limits
 

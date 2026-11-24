@@ -105,7 +105,7 @@ Every repository, this one included, follows the [pull request standard](standar
 
 ## Standards
 
-Shared rules live in `standards/`. A rule that applies to one product only stays in that product's repository. Stack-specific rules are grouped by stack profile so that a full-stack Next.js app and a Next.js app with a separate API can share the common principles. The layout is defined in [PB-E02](projects/playbook/epics/E02-shared-standards/README.md).
+Shared rules live in `standards/`. A rule that applies to one product only stays in that product's repository. How a project repository reads this playbook, where a new rule goes, and how status commits arrive from another repository are defined in the [playbook integration standard](standards/general/playbook-integration.md). Stack-specific rules are grouped by stack profile so that a full-stack Next.js app and a Next.js app with a separate API can share the common principles. The layout is defined in [PB-E02](projects/playbook/epics/E02-shared-standards/README.md).
 
 ## Validation
 

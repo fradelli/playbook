@@ -35,10 +35,10 @@ DS-E00-T08 already pointed the design system to the playbook with its own sectio
 
 ## Subtasks
 
-- [ ] Write the snippet with the relative path from each known repository to the playbook clone.
-- [ ] Write the reading order and the rule placement table.
-- [ ] Write the status flow and the local setup.
-- [ ] Point `CLAUDE.md` and `README.md` to the document.
+- [x] Write the snippet with the relative path from each known repository to the playbook clone.
+- [x] Write the reading order and the rule placement table.
+- [x] Write the status flow and the local setup.
+- [x] Point `CLAUDE.md` and `README.md` to the document.
 
 ## Validation
 
@@ -47,9 +47,9 @@ DS-E00-T08 already pointed the design system to the playbook with its own sectio
 
 ## Acceptance criteria
 
-- [ ] `standards/general/playbook-integration.md` contains a snippet that can be copied unchanged into Kaizen, the design system, and Suna, except for the project folder and the relative path.
-- [ ] The rule placement table gives exactly one destination for a rule that applies to every project, to one stack, and to one product.
-- [ ] The document names the setting and the value that allow reading the playbook clone.
+- [x] `standards/general/playbook-integration.md` contains a snippet that can be copied unchanged into Kaizen, the design system, and Suna, except for the project folder and the relative path.
+- [x] The rule placement table gives exactly one destination for a rule that applies to every project, to one stack, and to one product.
+- [x] The document names the setting and the value that allow reading the playbook clone.
 
 ## Out of scope
 
@@ -57,4 +57,8 @@ DS-E00-T08 already pointed the design system to the playbook with its own sectio
 
 ## Result
 
-Not started.
+- `standards/general/playbook-integration.md`: copyable `## Playbook` section with a value table for the design system, Kaizen, and both Suna repositories; reading order; rule placement table; status flow from another repository; local setup.
+- Local setup names `permissions.additionalDirectories` in `.claude/settings.local.json` with an absolute path. Relative path support is recorded as an unknown, because the Claude Code settings and permissions pages do not state it.
+- `CLAUDE.md`, `README.md`, and `standards/README.md` link to the standard.
+- `npm run roadmap:check` passed (178 tasks); `npm test` passed (27).
+- Open point: the design system section (DS-E00-T08) differs in wording and lacks the clone path; aligning it is a design system task.
