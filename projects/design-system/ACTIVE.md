@@ -1,14 +1,14 @@
 # Active task
 
-- **Task:** No task selected
-- **Status:** —
-- **Main input:** —
-- **Next action:** start [DS-E00-T08](epics/E00-repository-governance/T08-point-repository-to-playbook.md) together with [DS-E00-T03](epics/E00-repository-governance/T03-migrate-agent-governance-to-claude.md), since both change the agent contract of `fradelli/design-system`.
+- **Task:** [DS-E02-T01](epics/E02-component-quality/T01-fix-menu-shortcut-highlight.md) — Fix the menu shortcut highlight
+- **Status:** IN_PROGRESS
+- **Main input:** `epics/E02-component-quality/T01-fix-menu-shortcut-highlight.md`
+- **Next action:** point the dropdown and context menu shortcuts to the `group/menu-item` group declared in `src/lib/menu-styles.ts`, assert the focused color in Storybook, and add a patch Changeset on `claude/DS-E02-T01-fix-menu-shortcut-highlight`.
 
 ## Resumption and parallel work
 
 - Imported on 2026-11-23 from the untracked `roadmap/` of a local `fradelli/design-system` clone (audit at `145bb6e`). Statuses were kept as in the source; "Sandicts" was renamed to "Suna".
 - DS-E00-T01 finished in the playbook form and DS-E00-T07 was cancelled in favor of PB-E00-T04, both on 2026-11-23 by the maintainer.
-- Jira is no longer used. Task IDs replace Jira keys; DS-E00-T03 updates `AGENTS.md`, the PR template, and the Release workflow accordingly.
-- Kaizen migration to a published version is deliberately deferred to DS-E04-T02, after the corrections are published.
-- DS-E00-T08 points the design system repository to the playbook and removes the local untracked `roadmap/` copy.
+- DS-E00-T03 and DS-E00-T08 finished together in `fradelli/design-system` PR #23 (`9912651`).
+- Corrective release path, decided on 2026-11-23 by the maintainer: DS-E02-T01, DS-E01-T01, and DS-E02-T02, then the release task proposed in `fradelli/playbook` PR #24.
+- Kaizen consumes the exact published version through KZ-E10-T09 once the corrective release is out.

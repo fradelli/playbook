@@ -3,7 +3,7 @@ id: DS-E00-T08
 epic: DS-E00
 project: design-system
 repository: fradelli/design-system
-depends_on: [PB-E01-T01, PB-E01-T04]
+depends_on: [PB-E01-T01]
 ---
 
 # Point the repository to the playbook
@@ -21,7 +21,6 @@ The roadmap of this project was planned under `roadmap/` in this repository but 
 - `AGENTS.md` — current agent contract.
 - `CLAUDE.md` — created by DS-E00-T03, if it already exists.
 - `fradelli/playbook: CLAUDE.md` — sections "Reading order" and "Branches, commits, and PRs".
-- `fradelli/playbook: standards/general/playbook-integration.md` — the `Playbook` section, reading order, and local setup to apply.
 
 ## Deliverables
 
@@ -30,9 +29,9 @@ The roadmap of this project was planned under `roadmap/` in this repository but 
 
 ## Subtasks
 
-- [ ] Confirm that the playbook holds every epic and task of the local `roadmap/`.
-- [ ] Point the agent instructions to the playbook.
-- [ ] Delete the local `roadmap/` folder and the local branch, which has no commits beyond `main`.
+- [x] Confirm that the playbook holds every epic and task of the local `roadmap/`.
+- [x] Point the agent instructions to the playbook.
+- [x] Delete the local `roadmap/` folder and the local branch, which has no commits beyond `main`.
 
 ## Validation
 
@@ -41,7 +40,7 @@ The roadmap of this project was planned under `roadmap/` in this repository but 
 
 ## Acceptance criteria
 
-- [ ] `AGENTS.md` and `CLAUDE.md` link to `fradelli/playbook: projects/design-system/ACTIVE.md`, and no `roadmap/` folder exists in the clone.
+- [x] `AGENTS.md` and `CLAUDE.md` link to `fradelli/playbook: projects/design-system/ACTIVE.md`, and no `roadmap/` folder exists in the clone.
 
 ## Result
 

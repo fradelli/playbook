@@ -14,10 +14,11 @@ Write the one integration that every project repository copies to read its roadm
 
 ## Context
 
-No project repository points to the playbook yet. KZ-E00-T17, DS-E00-T08, and the future Suna tasks each need the same reading order, the same place for new rules, and the same local setup, instead of writing their own version.
+DS-E00-T08 already pointed the design system to the playbook with its own section. KZ-E00-T17 and the future Suna tasks need the same reading order, place for new rules, and local setup, so this task turns the design system version into the shared one instead of letting each repository write its own.
 
 ## Inputs
 
+- `fradelli/design-system: CLAUDE.md` and `AGENTS.md` — the playbook section written by DS-E00-T08.
 - `CLAUDE.md` — sections "Reading order", "Changing this repository", and "Standards".
 - `README.md` — section "Local workspace".
 - `standards/general/writing.md` — style of the snippet and the rules.
@@ -52,7 +53,7 @@ No project repository points to the playbook yet. KZ-E00-T17, DS-E00-T08, and th
 
 ## Out of scope
 
-- Changing the project repositories; KZ-E00-T17, DS-E00-T08, and the Suna tasks apply the document.
+- Changing the project repositories; KZ-E00-T17 and the Suna tasks apply the document, and the design system aligns its section if it differs.
 
 ## Result
 
