@@ -28,7 +28,7 @@ Read [CLAUDE.md](../../CLAUDE.md) first, then [ACTIVE.md](ACTIVE.md).
 | PB-E01-T01 | DONE | [Import the design system roadmap](epics/E01-project-migration/T01-import-design-system-roadmap.md) | PB-E00-T01 |
 | PB-E01-T02 | DONE | [Migrate the Kaizen roadmap](epics/E01-project-migration/T02-migrate-kaizen-roadmap.md) | PB-E00-T01 |
 | PB-E01-T03 | PLANNED | [Create the Suna roadmap](epics/E01-project-migration/T03-create-suna-roadmap.md) | PB-E00-T03 |
-| PB-E01-T04 | READY | [Define how project repositories use the playbook](epics/E01-project-migration/T04-define-repository-integration.md) | PB-E02-T04 |
+| PB-E01-T04 | IN_PROGRESS | [Define how project repositories use the playbook](epics/E01-project-migration/T04-define-repository-integration.md) | PB-E02-T04 |
 | PB-E02-T01 | READY | [Inventory the Kaizen rules](epics/E02-shared-standards/T01-inventory-kaizen-rules.md) | PB-E00-T01 |
 | PB-E02-T02 | PLANNED | [Define the stack profiles](epics/E02-shared-standards/T02-define-stack-profiles.md) | PB-E02-T01 |
 | PB-E02-T03 | PLANNED | [Migrate the general standards](epics/E02-shared-standards/T03-migrate-general-standards.md) | PB-E02-T02 |

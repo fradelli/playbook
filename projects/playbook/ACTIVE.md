@@ -1,9 +1,9 @@
 # Active task
 
-- **Task:** No task selected
-- **Status:** —
-- **Main input:** —
-- **Next action:** start [PB-E02-T01](epics/E02-shared-standards/T01-inventory-kaizen-rules.md) to inventory the Kaizen rules. In Kaizen, [KZ-E00-T17](../kaizen/epics/E00-repository-governance/T17-point-repository-to-playbook.md) is ready to point the repository to the playbook.
+- **Task:** [PB-E01-T04](epics/E01-project-migration/T04-define-repository-integration.md) — Define how project repositories use the playbook
+- **Status:** IN_PROGRESS
+- **Main input:** `projects/playbook/epics/E01-project-migration/T04-define-repository-integration.md`
+- **Next action:** write `standards/general/playbook-integration.md` on `claude/PB-E01-T04-define-repository-integration`. KZ-E00-T17 waits for this task.
 
 ## Resumption and parallel work
 
