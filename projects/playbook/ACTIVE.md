@@ -3,7 +3,7 @@
 - **Task:** [PB-E00-T06](epics/E00-repository-foundation/T06-remove-in-progress-limit.md) — Remove the in-progress limit
 - **Status:** IN_PROGRESS
 - **Main input:** `epics/E00-repository-foundation/T06-remove-in-progress-limit.md`
-- **Next action:** merge the pull request, then record `PB-E00-T06: done`. After it, start [PB-E02-T01](epics/E02-shared-standards/T01-inventory-kaizen-rules.md) to inventory the Kaizen rules. KZ-E00-T17 lists the general rules found in Kaizen that are missing here, for the owner to decide.
+- **Next action:** merge the pull request, then record `PB-E00-T06: done` and mark [PB-E00-T07](epics/E00-repository-foundation/T07-batch-daily-status-commits.md) `READY`. After it, start [PB-E02-T01](epics/E02-shared-standards/T01-inventory-kaizen-rules.md) to inventory the Kaizen rules. KZ-E00-T17 lists the general rules found in Kaizen that are missing here, for the owner to decide.
 
 ## Resumption and parallel work
 
