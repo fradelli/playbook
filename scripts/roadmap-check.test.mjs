@@ -189,9 +189,45 @@ describe("sections and files", () => {
 });
 
 describe("IN_PROGRESS and ACTIVE.md", () => {
-  test("rejects two IN_PROGRESS tasks in one project", () => {
-    edit(INDEX, "| PB-E00-T01 | DONE |", "| PB-E00-T01 | IN_PROGRESS |");
-    expectError(/2 tasks IN_PROGRESS/);
+  const T01_ACTIVE = "- **Task:** [PB-E00-T01](epics/E00-foundation/T01-first.md) — First\n- **Status:** IN_PROGRESS\n";
+  const startT01 = () => edit(INDEX, "| PB-E00-T01 | DONE |", "| PB-E00-T01 | IN_PROGRESS |");
+
+  test("accepts two IN_PROGRESS tasks listed in ACTIVE with their branches", () => {
+    startT01();
+    edit(ACTIVE, "- **Status:** IN_PROGRESS\n", "- **Status:** IN_PROGRESS\n- **Branch:** `claude/PB-E00-T02-second`\n\n");
+    write({ [ACTIVE]: readFileSync(join(root, ACTIVE), "utf8") + T01_ACTIVE + "- **Branch:** `claude/PB-E00-T01-first`\n" });
+    assert.deepEqual(errorsOf(), []);
+  });
+
+  test("rejects more IN_PROGRESS tasks than the limit", () => {
+    edit(
+      INDEX,
+      "| PB-E00-T02 | IN_PROGRESS |",
+      "| PB-E00-T08 | IN_PROGRESS | X | — |\n| PB-E00-T09 | IN_PROGRESS | X | — |\n| PB-E00-T07 | IN_PROGRESS | X | — |\n| PB-E00-T02 | IN_PROGRESS |",
+    );
+    expectError(/4 tasks IN_PROGRESS \(.*\), the limit is 3/);
+  });
+
+  test("rejects an IN_PROGRESS task missing from ACTIVE", () => {
+    startT01();
+    expectError(/PB-E00-T01 is IN_PROGRESS but not listed/);
+  });
+
+  test("rejects parallel tasks without a Branch", () => {
+    startT01();
+    write({ [ACTIVE]: readFileSync(join(root, ACTIVE), "utf8") + "\n" + T01_ACTIVE });
+    expectError(/PB-E00-T02 needs a Branch when more than one task is active/);
+  });
+
+  test("rejects a task listed twice in ACTIVE", () => {
+    const text = readFileSync(join(root, ACTIVE), "utf8");
+    write({ [ACTIVE]: text + "\n" + text.split("\n\n")[1] });
+    expectError(/PB-E00-T02 is listed twice/);
+  });
+
+  test("ignores Task fields below the first section heading", () => {
+    write({ [ACTIVE]: readFileSync(join(root, ACTIVE), "utf8") + "\n## Resumption and parallel work\n\n" + T01_ACTIVE });
+    assert.deepEqual(errorsOf(), []);
   });
 
   test("rejects an ACTIVE status that differs from the index", () => {

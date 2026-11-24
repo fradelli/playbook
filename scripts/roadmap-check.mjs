@@ -39,6 +39,9 @@ export const WRITING_RULES = {
   placeholder: 'has a "Not recorded in the original version" placeholder',
 };
 
+// Tasks one project may have IN_PROGRESS at once; the limit is the maintainer's review capacity.
+export const MAX_IN_PROGRESS = 3;
+
 const STATES = new Set(["PLANNED", "READY", "IN_PROGRESS", "BLOCKED", "DONE", "CANCELLED"]);
 const FINAL_STATES = new Set(["DONE", "CANCELLED"]);
 const TASK_ID = /^[A-Z]{2}-E\d{2}-T\d{2}$/;
@@ -90,14 +93,22 @@ function readTables(text) {
     .filter((cells) => cells.length >= 3 && !/^\s*-+\s*$/.test(cells[0]));
 }
 
+// ACTIVE.md lists one block of fields per active task, before the first "## " heading.
 function readActive(text) {
-  const field = (name) => text.match(new RegExp(`^- \\*\\*${name}:\\*\\* (.*)$`, "m"))?.[1]?.trim();
-  const task = field("Task");
-  return {
-    task: task?.match(/\b([A-Z]{2}-E\d{2}-T\d{2})\b/)?.[1] ?? null,
-    noTask: task === "No task selected",
-    status: field("Status"),
-  };
+  const body = text.replace(/\r/g, "").split(/^## /m)[0];
+  return body
+    .split(/^(?=- \*\*Task:\*\* )/m)
+    .slice(1)
+    .map((block) => {
+      const field = (name) => block.match(new RegExp(`^- \\*\\*${name}:\\*\\* (.*)$`, "m"))?.[1]?.trim();
+      const task = field("Task");
+      return {
+        task: task?.match(/\b([A-Z]{2}-E\d{2}-T\d{2})\b/)?.[1] ?? null,
+        noTask: task === "No task selected",
+        status: field("Status"),
+        branch: field("Branch"),
+      };
+    });
 }
 
 export function writingRulesBroken(text) {
@@ -270,30 +281,47 @@ export function checkRoadmap(root) {
   }
   for (const cycle of findCycles(dependencyGraph)) errors.push(`dependency cycle: ${cycle}`);
 
-  // One IN_PROGRESS task per project, and ACTIVE.md aligned with the index.
+  // At most MAX_IN_PROGRESS tasks IN_PROGRESS per project, each listed in ACTIVE.md with the index status.
   for (const project of Object.keys(PROJECT_PREFIXES)) {
     const inProgress = [...index].filter(([, row]) => row.project === project && row.status === "IN_PROGRESS").map(([id]) => id);
-    if (inProgress.length > 1) errors.push(`projects/${project}/README.md: ${inProgress.length} tasks IN_PROGRESS (${inProgress.join(", ")})`);
+    if (inProgress.length > MAX_IN_PROGRESS) {
+      errors.push(`projects/${project}/README.md: ${inProgress.length} tasks IN_PROGRESS (${inProgress.join(", ")}), the limit is ${MAX_IN_PROGRESS}`);
+    }
     const activePath = join(root, "projects", project, "ACTIVE.md");
     if (!existsSync(join(root, "projects", project, "README.md"))) continue;
     if (!existsSync(activePath)) {
       errors.push(`projects/${project}/ACTIVE.md: missing`);
       continue;
     }
-    const active = readActive(readFileSync(activePath, "utf8"));
-    if (active.noTask) {
-      if (inProgress.length > 0) errors.push(`projects/${project}/ACTIVE.md: says no task selected, but ${inProgress.join(", ")} is IN_PROGRESS`);
-    } else if (!active.task) {
+    const entries = readActive(readFileSync(activePath, "utf8"));
+    if (entries.length === 0) {
       errors.push(`projects/${project}/ACTIVE.md: Task must name a task ID or say "No task selected"`);
-    } else {
-      const row = index.get(active.task);
-      if (!row) errors.push(`projects/${project}/ACTIVE.md: ${active.task} is not in the index`);
-      else if (row.status !== active.status) {
-        errors.push(`projects/${project}/ACTIVE.md: ${active.task} is ${active.status} here and ${row.status} in the index`);
+      continue;
+    }
+    if (entries.some((entry) => entry.noTask)) {
+      if (entries.length > 1) errors.push(`projects/${project}/ACTIVE.md: "No task selected" must be the only Task entry`);
+      if (inProgress.length > 0) errors.push(`projects/${project}/ACTIVE.md: says no task selected, but ${inProgress.join(", ")} is IN_PROGRESS`);
+      continue;
+    }
+    const listed = new Set();
+    for (const entry of entries) {
+      if (!entry.task) {
+        errors.push(`projects/${project}/ACTIVE.md: Task must name a task ID or say "No task selected"`);
+        continue;
       }
-      if (inProgress.length === 1 && inProgress[0] !== active.task) {
-        errors.push(`projects/${project}/ACTIVE.md: points to ${active.task}, but ${inProgress[0]} is IN_PROGRESS`);
+      if (listed.has(entry.task)) errors.push(`projects/${project}/ACTIVE.md: ${entry.task} is listed twice`);
+      listed.add(entry.task);
+      const row = index.get(entry.task);
+      if (!row) errors.push(`projects/${project}/ACTIVE.md: ${entry.task} is not in the index`);
+      else if (row.status !== entry.status) {
+        errors.push(`projects/${project}/ACTIVE.md: ${entry.task} is ${entry.status} here and ${row.status} in the index`);
       }
+      if (entries.length > 1 && !entry.branch) {
+        errors.push(`projects/${project}/ACTIVE.md: ${entry.task} needs a Branch when more than one task is active`);
+      }
+    }
+    for (const id of inProgress) {
+      if (!listed.has(id)) errors.push(`projects/${project}/ACTIVE.md: ${id} is IN_PROGRESS but not listed`);
     }
   }
 

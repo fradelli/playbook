@@ -24,6 +24,7 @@ The former Suna docs repository works as the shared Fradelli playbook, with road
 | PB-E00-T02 | PB-E00-T01 | No Jira or Sandicts routing left |
 | PB-E00-T03 | PB-E00-T01, Owner decides the repository for Suna business rules | Suna product documents live with the Suna project |
 | PB-E00-T04 | PB-E00-T01 | `npm run roadmap:check` runs locally and in CI |
+| PB-E00-T05 | PB-E00-T04 | Up to three tasks in progress per project, each listed in `ACTIVE.md` |
 
 Status lives only in the project `README.md`.
 
