@@ -18,6 +18,7 @@ Replace the native and hand-built AlertDialog, Sheet, and Popover with the offic
 - Official class coverage measured in the audit: AlertDialog 18%, Sheet 22%, Popover 14%.
 - The recipes use `@base-ui/react/alert-dialog`, `@base-ui/react/dialog`, and `@base-ui/react/popover`, and add `AlertDialogMedia`, `PopoverHeader`, `PopoverTitle`, and `PopoverDescription`.
 - `SheetOverlay` currently renders `null`.
+- Backdrops differ: `bg-black/80` in `DialogOverlay`, `backdrop:bg-black/70` in AlertDialog and Sheet.
 - Kaizen imports Popover twice and Sheet once; AlertDialog has no Kaizen import.
 
 ## Inputs
@@ -25,6 +26,7 @@ Replace the native and hand-built AlertDialog, Sheet, and Popover with the offic
 - `src/components/alert-dialog/index.tsx`, `src/components/sheet/index.tsx`, `src/components/popover/` — current APIs.
 - `https://ui.shadcn.com/r/styles/base-mira/alert-dialog.json`, `sheet.json`, `popover.json` — official recipes.
 - `src/styles/styles.css` — responsive modal rules for `alert-dialog-content`.
+- `src/components/dialog/index.tsx` — `DialogOverlay` backdrop classes.
 
 ## Deliverables
 
@@ -47,6 +49,7 @@ Replace the native and hand-built AlertDialog, Sheet, and Popover with the offic
 
 - [ ] No `useEffect` in `src/components/alert-dialog/`, `sheet/`, or `popover/` handles focus or positioning.
 - [ ] Consumers have a migration guide for every changed prop.
+- [ ] Dialog, AlertDialog, and Sheet use the same backdrop color and opacity.
 
 ## Result
 

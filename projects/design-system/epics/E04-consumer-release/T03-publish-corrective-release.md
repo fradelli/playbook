@@ -3,7 +3,7 @@ id: DS-E04-T03
 epic: DS-E04
 project: design-system
 repository: fradelli/design-system
-depends_on: [DS-E01-T01, DS-E02-T01, DS-E02-T02]
+depends_on: [DS-E00-T11, DS-E01-T01, DS-E02-T01, DS-E02-T02]
 external: [Maintainer merges the version PR]
 ---
 
