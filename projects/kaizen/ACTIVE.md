@@ -1,12 +1,13 @@
 # Active task
 
-- **Task:** KZ-E10-T09 — Complete the Mira design system adoption
-- **Status:** IN_PROGRESS
-- **Main input:** `roadmap/epics/E10-portfolio-visual-alignment/T09-complete-mira-adoption.md`.
-- **Authorization:** package of executor and dialog adjustments authorized on 13/11/2026. Warm-ups are excluded from the summary, and load is unilateral per side.
-- **Next action:** review the package recorded in `docs/plans/design-system/AJUSTES-DO-EXECUTOR-MIRA.md` and continue the global Mira migration backlog. The build, 64 targeted tests, 18 integration tests, and browser checks at 1440/390/320 px are evidence from the original delivery, not checks redone in this reorganization. KZ-E00-T08 remains done.
+- **Task:** No task selected
+- **Status:** —
+- **Main input:** —
+- **Next action:** start [KZ-E00-T17](epics/E00-repository-governance/T17-point-repository-to-playbook.md) to point the repository to the playbook.
 
 ## Resumption and parallel work
+
+- KZ-E10-T09 paused on 2026-11-24 by owner decision, back to `READY`, so that KZ-E00-T17 can run first. To resume: review the package in `docs/plans/design-system/AJUSTES-DO-EXECUTOR-MIRA.md` and continue the Mira migration backlog. The executor and dialog package was authorized on 2026-11-13; warm-ups are excluded from the summary, and load is unilateral per side.
 
 - Reorganization baseline: `27536ef`, the schedule integration from PR #86; the local history also records the Mira integration in `b37c215` from PR #84. This does not automatically close KZ-E10-T09 or prove a design system release or production.
 - KZ-E00-T08 to KZ-E00-T11 were integrated into `developer` by PRs #87 to #90 (up to `e0834f3`): documentation organization and standardization, and the [local roadmap view](epics/E00-repository-governance/T11-apply-design-system-to-roadmap-view.md), opened with `pnpm roadmap:view`. The documentation reorganization does not start the drag and drop implementation.
