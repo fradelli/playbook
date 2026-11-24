@@ -1,11 +1,5 @@
 # Active task
 
-- **Task:** [DS-E01-T01](epics/E01-package-contract/T01-require-tailwind-peer.md) — Require the Tailwind CSS peer dependency
-- **Status:** IN_PROGRESS
-- **Branch:** `claude/DS-E01-T01-require-tailwind-peer`
-- **Main input:** `epics/E01-package-contract/T01-require-tailwind-peer.md`
-- **Next action:** the maintainer merges `fradelli/design-system` PR #26; then fill `Result` and record `DS-E01-T01: done`.
-
 - **Task:** [DS-E00-T11](epics/E00-repository-governance/T11-run-ci-on-version-pull-request.md) — Run CI on the version pull request without manual approval
 - **Status:** IN_PROGRESS
 - **Branch:** `claude/DS-E00-T11-run-ci-on-version-pr`
@@ -20,6 +14,7 @@
 
 ## Resumption and parallel work
 
+- 2026-11-24: DS-E01-T01 done in `fradelli/design-system` PR #26 (`96d9587`).
 - Imported on 2026-11-23 from the untracked `roadmap/` of a local `fradelli/design-system` clone (audit at `145bb6e`). Statuses were kept as in the source; "Sandicts" was renamed to "Suna".
 - DS-E00-T01 finished in the playbook form and DS-E00-T07 was cancelled in favor of PB-E00-T04, both on 2026-11-23 by the maintainer.
 - DS-E00-T03 and DS-E00-T08 finished together in `fradelli/design-system` PR #23 (`9912651`).

@@ -15,7 +15,7 @@ Imported on 2026-11-23 by [PB-E01-T01](../playbook/epics/E01-project-migration/T
 | ID | Status | Epic | Outcome |
 | --- | --- | --- | --- |
 | DS-E00 | IN_PROGRESS | [Repository governance](epics/E00-repository-governance/README.md) | Roadmap, Claude contract, current documentation, and reliable gates |
-| DS-E01 | IN_PROGRESS | [Package contract](epics/E01-package-contract/README.md) | Real peers, derived checks, generated theme, and coverage |
+| DS-E01 | READY | [Package contract](epics/E01-package-contract/README.md) | Real peers, derived checks, generated theme, and coverage |
 | DS-E02 | IN_PROGRESS | [Component quality](epics/E02-component-quality/README.md) | Accessible, consistent, and cataloged components |
 | DS-E03 | READY | [Mira adoption](epics/E03-mira-adoption/README.md) | Every component follows a Mira recipe or a recorded exception |
 | DS-E04 | PLANNED | [Consumer release](epics/E04-consumer-release/README.md) | One published version adopted by every consumer |
@@ -35,7 +35,7 @@ Imported on 2026-11-23 by [PB-E01-T01](../playbook/epics/E01-project-migration/T
 | DS-E00-T09 | READY | [Raise the dependency audit gate to moderate](epics/E00-repository-governance/T09-raise-dependency-audit-gate.md) | — |
 | DS-E00-T10 | READY | [Type-check the repository scripts](epics/E00-repository-governance/T10-type-check-repository-scripts.md) | — |
 | DS-E00-T11 | IN_PROGRESS | [Run CI on the version pull request without manual approval](epics/E00-repository-governance/T11-run-ci-on-version-pull-request.md) | — |
-| DS-E01-T01 | IN_PROGRESS | [Require the Tailwind CSS peer dependency](epics/E01-package-contract/T01-require-tailwind-peer.md) | — |
+| DS-E01-T01 | DONE | [Require the Tailwind CSS peer dependency](epics/E01-package-contract/T01-require-tailwind-peer.md) | — |
 | DS-E01-T02 | READY | [Derive export lists from one source](epics/E01-package-contract/T02-derive-export-lists-from-one-source.md) | — |
 | DS-E01-T03 | PLANNED | [Generate the Tailwind theme from tokens](epics/E01-package-contract/T03-generate-theme-from-tokens.md) | DS-E03-T02 |
 | DS-E01-T04 | READY | [Enable coverage with thresholds](epics/E01-package-contract/T04-enable-coverage-thresholds.md) | — |

@@ -31,9 +31,9 @@ Declare Tailwind CSS 4 as a required peer dependency, because the package cannot
 
 ## Subtasks
 
-- [ ] Remove `peerDependenciesMeta.tailwindcss`.
-- [ ] Update the README consumer setup.
-- [ ] Add the Changeset.
+- [x] Remove `peerDependenciesMeta.tailwindcss`.
+- [x] Update the README consumer setup.
+- [x] Add the Changeset.
 
 ## Validation
 
@@ -41,8 +41,10 @@ Declare Tailwind CSS 4 as a required peer dependency, because the package cannot
 
 ## Acceptance criteria
 
-- [ ] Installing the package without Tailwind CSS reports a missing peer.
+- [x] Installing the package without Tailwind CSS reports a missing peer.
 
 ## Result
 
-Not started.
+- `fradelli/design-system` PR #26, merged as `96d9587`: `tailwindcss` (`>=4.3.0 <5`) is a required peer, `peerDependenciesMeta` removed, README updated, `minor` Changeset `.changeset/require-tailwind-peer.md`.
+- PR CI `Validate package` passed (`npm run ci`, including `pack:check` and `fixtures:check`).
+- Installing the packed tarball with pnpm and `auto-install-peers=false` reported `missing peer tailwindcss`.
