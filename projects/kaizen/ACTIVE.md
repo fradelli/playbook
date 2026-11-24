@@ -1,9 +1,9 @@
 # Active task
 
-- **Task:** No task selected
-- **Status:** —
-- **Main input:** —
-- **Next action:** start [KZ-E00-T17](epics/E00-repository-governance/T17-point-repository-to-playbook.md) to point the repository to the playbook.
+- **Task:** [KZ-E00-T17](epics/E00-repository-governance/T17-point-repository-to-playbook.md) — Point the repository to the playbook
+- **Status:** IN_PROGRESS
+- **Main input:** `projects/kaizen/epics/E00-repository-governance/T17-point-repository-to-playbook.md`
+- **Next action:** build the change on `claude/KZ-E00-T17-point-repository-to-playbook` in `fradelli/nextjs-kaizen-app`, applying `standards/general/playbook-integration.md`. General rules found in Kaizen and missing from the playbook go to the owner for a decision, not to deletion.
 
 ## Resumption and parallel work
 
