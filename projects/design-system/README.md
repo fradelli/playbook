@@ -55,5 +55,6 @@ Imported on 2026-11-23 by [PB-E01-T01](../playbook/epics/E01-project-migration/T
 | DS-E03-T11 | PLANNED | [Admit the Drawer, Textarea, InputGroup, and ButtonGroup recipes](epics/E03-mira-adoption/T11-admit-form-and-layout-recipes.md) | DS-E03-T03, DS-E03-T05 |
 | DS-E04-T01 | PLANNED | [Publish the consolidated release](epics/E04-consumer-release/T01-publish-consolidated-release.md) | DS-E01-T01, DS-E02-T02, DS-E02-T03, DS-E03-T03, DS-E03-T04, DS-E03-T05, DS-E03-T07, DS-E03-T08, DS-E03-T09, DS-E03-T10, Maintainer merges the version PR |
 | DS-E04-T02 | PLANNED | [Hand off the release to consumers](epics/E04-consumer-release/T02-hand-off-release-to-consumers.md) | DS-E04-T01 |
+| DS-E04-T03 | PLANNED | [Publish a corrective release](epics/E04-consumer-release/T03-publish-corrective-release.md) | DS-E01-T01, DS-E02-T01, DS-E02-T02, Maintainer merges the version PR |
 
 When a public package change lands, the design system repository also needs a Changeset.
