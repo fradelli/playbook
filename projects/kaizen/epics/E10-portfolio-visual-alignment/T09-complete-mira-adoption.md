@@ -44,7 +44,7 @@ Expansion authorized on 2026-11-13: research the official shadcn/ui composition,
 - [ ] Complete the executor, schedule, forms, and common routes in batches.
 - [ ] Remove competing overrides and document the remaining local composition.
 - [ ] Validate complete desktop/mobile journeys and final gates.
-- [ ] After local review and the DS release, consume the exact published version.
+- [ ] After local review and the consolidated DS release (DS-E04-T01), consume that exact version. KZ-E10-T10 installs the earlier corrective release.
 
 ## Validation
 

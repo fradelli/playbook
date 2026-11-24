@@ -28,7 +28,7 @@ Publish a small release with low-risk corrections so Kaizen can replace its loca
 
 - `.changeset/*.md` — Changesets added by the dependency tasks.
 - `docs/governance/releasing.md` — release runbook.
-- `fradelli/playbook: projects/kaizen/epics/E10-portfolio-visual-alignment/T09-complete-mira-adoption.md` — subtask that consumes the exact published version.
+- `fradelli/playbook: projects/kaizen/epics/E10-portfolio-visual-alignment/T10-install-published-ui-release.md` — Kaizen task that installs the exact published version.
 
 ## Deliverables
 
@@ -39,7 +39,7 @@ Publish a small release with low-risk corrections so Kaizen can replace its loca
 
 - [ ] Confirm that `main` has no Changeset outside the three dependency tasks.
 - [ ] Review the version pull request and its SemVer classification.
-- [ ] Record the published version in KZ-E10-T09 through a Kaizen planning change.
+- [ ] Record the published version in KZ-E10-T10 through a Kaizen planning change.
 
 ## Validation
 
@@ -50,7 +50,7 @@ Publish a small release with low-risk corrections so Kaizen can replace its loca
 
 - [ ] A version newer than `0.7.0` is published by the `Release` workflow from `main`.
 - [ ] Its changelog lists the menu shortcut fix, the required Tailwind CSS peer, and the required close labels, and nothing else.
-- [ ] KZ-E10-T09 names that exact version as the one to install.
+- [ ] KZ-E10-T10 names that exact version as the one to install.
 
 ## Risks
 

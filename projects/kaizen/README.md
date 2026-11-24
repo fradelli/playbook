@@ -138,6 +138,7 @@ Migrated on 2026-11-23 by [PB-E01-T02](../playbook/epics/E01-project-migration/T
 | KZ-E10-T07 | DONE | [Fix the findings of the draft review](epics/E10-portfolio-visual-alignment/T07-fix-draft-review.md) | KZ-E10-T06 |
 | KZ-E10-T08 | DONE | [Adjust Today and the app entry](epics/E10-portfolio-visual-alignment/T08-today-navigation.md) | KZ-E10-T07 |
 | KZ-E10-T09 | READY | [Complete the adoption of the Mira design system](epics/E10-portfolio-visual-alignment/T09-complete-mira-adoption.md) | KZ-E10-T08 |
+| KZ-E10-T10 | PLANNED | [Install the published corrective release of `@fradelli/ui`](epics/E10-portfolio-visual-alignment/T10-install-published-ui-release.md) | DS-E04-T03 |
 | KZ-E11-T01 | PLANNED | [Validate the integrated schedule base](epics/E11-schedule-evolution/T01-validate-integrated-schedule.md) | — |
 | KZ-E11-T02 | PLANNED | [Validate the selection and drag-and-drop POC](epics/E11-schedule-evolution/T02-prototype-calendar-interactions.md) | KZ-E11-T01 |
 | KZ-E11-T03 | PLANNED | [Integrate the approved gestures with persistence](epics/E11-schedule-evolution/T03-persist-calendar-interactions.md) | KZ-E11-T02 |
