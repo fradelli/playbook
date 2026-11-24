@@ -1,9 +1,9 @@
 # Active task
 
-- **Task:** No task selected
-- **Status:** —
-- **Main input:** —
-- **Next action:** start [DS-E01-T01](epics/E01-package-contract/T01-require-tailwind-peer.md), the second correction of the corrective release.
+- **Task:** [DS-E01-T01](epics/E01-package-contract/T01-require-tailwind-peer.md) — Require the Tailwind CSS peer dependency
+- **Status:** IN_PROGRESS
+- **Main input:** `epics/E01-package-contract/T01-require-tailwind-peer.md`
+- **Next action:** remove `peerDependenciesMeta.tailwindcss` from `package.json`, state in `README.md` that Tailwind CSS 4 is required, and add a Changeset on `claude/DS-E01-T01-require-tailwind-peer`.
 
 ## Resumption and parallel work
 
