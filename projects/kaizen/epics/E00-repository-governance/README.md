@@ -11,6 +11,7 @@ Public repository with governed branches, documentation, content publication, an
 - Provenance of the legacy repository.
 - Minimal context and an executable roadmap before the MVP.
 - Migration of the development agent to Claude, repository hygiene, and CI gates (audit of 2026-11-23).
+- Local and post-merge CI parity and CI setup reuse (sweep of 2026-11-24).
 
 ## Out of scope
 - Migration of personal data.
@@ -37,6 +38,9 @@ Public repository with governed branches, documentation, content publication, an
 | [KZ-E00-T16](T16-strengthen-ci-gates.md) | — | Remote CI with the same gates as `pnpm run ci` |
 | [KZ-E00-T17](T17-point-repository-to-playbook.md) | PB-E01-T02, PB-E01-T04 | Kaizen uses the playbook as its only roadmap |
 | [KZ-E00-T18](T18-adopt-english-only-rule.md) | KZ-E00-T17 | Repository written in English, except end-user copy |
+| [KZ-E00-T19](T19-make-local-ci-match-remote.md) | — | `pnpm run ci` runs the remote gates and fails early when a prerequisite is missing |
+| [KZ-E00-T20](T20-run-ci-after-merge.md) | — | Merged results on `developer`, `staging`, and `master` are validated by CI |
+| [KZ-E00-T21](T21-extract-ci-setup-action.md) | KZ-E00-T20 | One composite action holds the CI setup used by every job |
 
 Status lives only in the project `README.md`.
 

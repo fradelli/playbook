@@ -9,10 +9,11 @@ Application code aligned with the target architecture, with boundaries, validati
 - Single Zod schemas shared between client and server, and typed errors.
 - Decision on and adoption of global state and form patterns.
 - Strict TypeScript, E2E tests, and folder organization.
+- Findings of the 2026-11-24 sweep: merged coverage, type-aware and accessibility lint, foreign key indexes, oversized components, the foundations route, and dependency triage.
 
 ## Out of scope
 - New product features.
-- Governance, documentation, and CI, handled in tasks KZ-E00-T12 to KZ-E00-T16.
+- Governance, documentation, and CI, handled in KZ-E00.
 - The Mira migration, which continues in KZ-E10-T09.
 
 ## Order
@@ -31,6 +32,14 @@ Application code aligned with the target architecture, with boundaries, validati
 | [KZ-E12-T11](T11-tighten-typescript-strictness.md) | KZ-E12-T07 | Extra strict TypeScript options enabled |
 | [KZ-E12-T12](T12-create-critical-e2e-tests.md) | KZ-E12-T02 | Critical journeys covered by Playwright |
 | [KZ-E12-T13](T13-standardize-imports-and-feature-folders.md) | KZ-E12-T09 | Uniform imports and folder structure |
+| [KZ-E12-T14](T14-report-integration-coverage.md) | — | Coverage counts both suites and the floor reflects it |
+| [KZ-E12-T15](T15-split-schedule-writer.md) | KZ-E12-T03 | One handler per schedule command |
+| [KZ-E12-T16](T16-move-schedule-materialization-to-domain.md) | — | Day materialization rules live in the domain with unit tests |
+| [KZ-E12-T17](T17-enable-typed-and-accessibility-lint.md) | — | Lint catches unhandled promises and common accessibility errors |
+| [KZ-E12-T18](T18-add-foreign-key-indexes.md) | — | Every foreign key has a leading index |
+| [KZ-E12-T19](T19-decide-foundations-route-exposure.md) | — | `/foundations` behaves as the owner decided in each environment |
+| [KZ-E12-T20](T20-split-oversized-training-components.md) | KZ-E12-T13 | The three largest training components are under 200 lines |
+| [KZ-E12-T21](T21-triage-dependency-updates.md) | KZ-E12-T01 | No stale Dependabot pull request and a plan for each major upgrade |
 
 Status lives only in the project `README.md`.
 
