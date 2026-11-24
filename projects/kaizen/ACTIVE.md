@@ -1,11 +1,13 @@
 # Active task
 
-- **Task:** [KZ-E00-T17](epics/E00-repository-governance/T17-point-repository-to-playbook.md) — Point the repository to the playbook
-- **Status:** IN_PROGRESS
-- **Main input:** `projects/kaizen/epics/E00-repository-governance/T17-point-repository-to-playbook.md`
-- **Next action:** build the change on `claude/KZ-E00-T17-point-repository-to-playbook` in `fradelli/nextjs-kaizen-app`, applying `standards/general/playbook-integration.md`. General rules found in Kaizen and missing from the playbook go to the owner for a decision, not to deletion.
+- **Task:** No task selected
+- **Status:** —
+- **Main input:** —
+- **Next action:** sweep the repository for improvements and register each new finding as a `KZ-` task, checking KZ-E00-T13, KZ-E00-T14, and KZ-E12 first. After that, start [KZ-E00-T18](epics/E00-repository-governance/T18-adopt-english-only-rule.md).
 
 ## Resumption and parallel work
+
+- 2026-11-24: KZ-E00-T17 done (PR #98, `67443f0`). Kaizen has no local roadmap; its CI validates `KZ-` IDs against this index.
 
 - KZ-E10-T09 paused on 2026-11-24 by owner decision, back to `READY`, so that KZ-E00-T17 can run first. To resume: review the package in `docs/plans/design-system/AJUSTES-DO-EXECUTOR-MIRA.md` and continue the Mira migration backlog. The executor and dialog package was authorized on 2026-11-13; warm-ups are excluded from the summary, and load is unilateral per side.
 

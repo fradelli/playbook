@@ -39,12 +39,12 @@ The pull request of this task changes the governance check that validates its ow
 
 ## Subtasks
 
-- [ ] Confirm the playbook holds every epic and task of `roadmap/` at the current `developer`; migrate any later change first.
-- [ ] Update the governance check and its tests.
-- [ ] Narrow the documentation checks and their tests.
-- [ ] Replace the links from `docs/` to `roadmap/`.
-- [ ] Update the agent instructions, the PR template, and the PR standard.
-- [ ] Remove `roadmap/`, the viewer, and its scripts, and drop `vite` from `devDependencies` if nothing else uses it.
+- [x] Confirm the playbook holds every epic and task of `roadmap/` at the current `developer`; migrate any later change first.
+- [x] Update the governance check and its tests.
+- [x] Narrow the documentation checks and their tests.
+- [x] Replace the links from `docs/` to `roadmap/`.
+- [x] Update the agent instructions, the PR template, and the PR standard.
+- [x] Remove `roadmap/`, the viewer, and its scripts, and drop `vite` from `devDependencies` if nothing else uses it.
 
 ## Validation
 
@@ -54,9 +54,16 @@ The pull request of this task changes the governance check that validates its ow
 
 ## Acceptance criteria
 
-- [ ] The Kaizen repository has no roadmap of its own, and its CI validates tasks against the playbook.
-- [ ] An agent starting in Kaizen reaches `projects/kaizen/ACTIVE.md` in the playbook.
+- [x] The Kaizen repository has no roadmap of its own, and its CI validates tasks against the playbook.
+- [x] An agent starting in Kaizen reaches `projects/kaizen/ACTIVE.md` in the playbook.
 
 ## Result
 
-Not started.
+Delivered by `fradelli/nextjs-kaizen-app` PR #98, squash-merged into `developer` as `67443f0`.
+
+- No `roadmap/` changes after the freeze at `1c3dd48`; the playbook holds all 125 tasks.
+- `scripts/validate-governance.mjs` accepts `[KZ-...]` titles and `claude/KZ-...` branches and reads IDs from the public playbook index. The PR `Governance` job passed reading the live index; a `[E00-T17]` title from a `codex/` branch fails locally.
+- `docs:check` split into `docs:catalog` and `docs:links`; 224 links in 61 files point to the playbook, and every target exists.
+- `CLAUDE.md` in English with the `Playbook` section; new `AGENTS.md`. `roadmap/`, the view, its scripts, and `vite` removed.
+- `pnpm run ci` passed locally (577 unit, 74 integration, 59 script tests; coverage 61.26% lines); all 7 PR checks passed.
+- Open points: `rg -n "roadmap/"` still finds old paths written as plain text in historical evidence (`docs/evidence/`, `docs/history/`, `docs/documentation-review.md`), kept as history. The PR templates, governance messages, and agent language rule were moved to English here, ahead of KZ-E00-T18. The view favicons stay for KZ-E00-T13.
