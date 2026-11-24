@@ -2,8 +2,9 @@
 
 - **Task:** [DS-E01-T01](epics/E01-package-contract/T01-require-tailwind-peer.md) — Require the Tailwind CSS peer dependency
 - **Status:** IN_PROGRESS
+- **Branch:** `claude/DS-E01-T01-require-tailwind-peer`
 - **Main input:** `epics/E01-package-contract/T01-require-tailwind-peer.md`
-- **Next action:** remove `peerDependenciesMeta.tailwindcss` from `package.json`, state in `README.md` that Tailwind CSS 4 is required, and add a Changeset on `claude/DS-E01-T01-require-tailwind-peer`.
+- **Next action:** the maintainer merges `fradelli/design-system` PR #26; then fill `Result` and record `DS-E01-T01: done`.
 
 ## Resumption and parallel work
 
