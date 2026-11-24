@@ -16,7 +16,7 @@ Imported on 2026-11-23 by [PB-E01-T01](../playbook/epics/E01-project-migration/T
 | --- | --- | --- | --- |
 | DS-E00 | READY | [Repository governance](epics/E00-repository-governance/README.md) | Roadmap, Claude contract, current documentation, and reliable gates |
 | DS-E01 | READY | [Package contract](epics/E01-package-contract/README.md) | Real peers, derived checks, generated theme, and coverage |
-| DS-E02 | IN_PROGRESS | [Component quality](epics/E02-component-quality/README.md) | Accessible, consistent, and cataloged components |
+| DS-E02 | READY | [Component quality](epics/E02-component-quality/README.md) | Accessible, consistent, and cataloged components |
 | DS-E03 | READY | [Mira adoption](epics/E03-mira-adoption/README.md) | Every component follows a Mira recipe or a recorded exception |
 | DS-E04 | PLANNED | [Consumer release](epics/E04-consumer-release/README.md) | One published version adopted by every consumer |
 
@@ -39,7 +39,7 @@ Imported on 2026-11-23 by [PB-E01-T01](../playbook/epics/E01-project-migration/T
 | DS-E01-T03 | PLANNED | [Generate the Tailwind theme from tokens](epics/E01-package-contract/T03-generate-theme-from-tokens.md) | DS-E03-T02 |
 | DS-E01-T04 | READY | [Enable coverage with thresholds](epics/E01-package-contract/T04-enable-coverage-thresholds.md) | — |
 | DS-E01-T05 | PLANNED | [Plan the development dependency major upgrades](epics/E01-package-contract/T05-plan-development-dependency-upgrades.md) | DS-E00-T09 |
-| DS-E02-T01 | IN_PROGRESS | [Fix the menu shortcut highlight](epics/E02-component-quality/T01-fix-menu-shortcut-highlight.md) | — |
+| DS-E02-T01 | DONE | [Fix the menu shortcut highlight](epics/E02-component-quality/T01-fix-menu-shortcut-highlight.md) | — |
 | DS-E02-T02 | READY | [Require accessible close labels](epics/E02-component-quality/T02-require-accessible-close-labels.md) | — |
 | DS-E02-T03 | READY | [Resolve the dark variant and CSS layers](epics/E02-component-quality/T03-resolve-dark-variant-and-css-layers.md) | — |
 | DS-E02-T04 | READY | [Add semantic tokens for pastel colors](epics/E02-component-quality/T04-add-semantic-pastel-tokens.md) | — |
