@@ -26,6 +26,8 @@ Read [CLAUDE.md](../../CLAUDE.md) first, then [ACTIVE.md](ACTIVE.md).
 | PB-E00-T03 | BLOCKED | [Relocate Suna product documentation](epics/E00-repository-foundation/T03-relocate-suna-product-docs.md) | PB-E00-T01, Owner decides the repository for Suna business rules |
 | PB-E00-T04 | DONE | [Create the roadmap check](epics/E00-repository-foundation/T04-create-roadmap-check.md) | PB-E00-T01 |
 | PB-E00-T05 | DONE | [Allow parallel tasks per project](epics/E00-repository-foundation/T05-allow-parallel-tasks.md) | PB-E00-T04 |
+| PB-E00-T06 | IN_PROGRESS | [Remove the in-progress limit](epics/E00-repository-foundation/T06-remove-in-progress-limit.md) | PB-E00-T05 |
+| PB-E00-T07 | PLANNED | [Batch status changes into a daily commit](epics/E00-repository-foundation/T07-batch-daily-status-commits.md) | PB-E00-T06 |
 | PB-E01-T01 | DONE | [Import the design system roadmap](epics/E01-project-migration/T01-import-design-system-roadmap.md) | PB-E00-T01 |
 | PB-E01-T02 | DONE | [Migrate the Kaizen roadmap](epics/E01-project-migration/T02-migrate-kaizen-roadmap.md) | PB-E00-T01 |
 | PB-E01-T03 | PLANNED | [Create the Suna roadmap](epics/E01-project-migration/T03-create-suna-roadmap.md) | PB-E00-T03 |

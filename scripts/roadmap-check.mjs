@@ -39,9 +39,6 @@ export const WRITING_RULES = {
   placeholder: 'has a "Not recorded in the original version" placeholder',
 };
 
-// Tasks one project may have IN_PROGRESS at once; the limit is the maintainer's review capacity.
-export const MAX_IN_PROGRESS = 3;
-
 const STATES = new Set(["PLANNED", "READY", "IN_PROGRESS", "BLOCKED", "DONE", "CANCELLED"]);
 const FINAL_STATES = new Set(["DONE", "CANCELLED"]);
 const TASK_ID = /^[A-Z]{2}-E\d{2}-T\d{2}$/;
@@ -281,12 +278,9 @@ export function checkRoadmap(root) {
   }
   for (const cycle of findCycles(dependencyGraph)) errors.push(`dependency cycle: ${cycle}`);
 
-  // At most MAX_IN_PROGRESS tasks IN_PROGRESS per project, each listed in ACTIVE.md with the index status.
+  // Every IN_PROGRESS task is listed in ACTIVE.md with the index status.
   for (const project of Object.keys(PROJECT_PREFIXES)) {
     const inProgress = [...index].filter(([, row]) => row.project === project && row.status === "IN_PROGRESS").map(([id]) => id);
-    if (inProgress.length > MAX_IN_PROGRESS) {
-      errors.push(`projects/${project}/README.md: ${inProgress.length} tasks IN_PROGRESS (${inProgress.join(", ")}), the limit is ${MAX_IN_PROGRESS}`);
-    }
     const activePath = join(root, "projects", project, "ACTIVE.md");
     if (!existsSync(join(root, "projects", project, "README.md"))) continue;
     if (!existsSync(activePath)) {
