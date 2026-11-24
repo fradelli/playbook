@@ -199,13 +199,20 @@ describe("IN_PROGRESS and ACTIVE.md", () => {
     assert.deepEqual(errorsOf(), []);
   });
 
-  test("rejects more IN_PROGRESS tasks than the limit", () => {
-    edit(
-      INDEX,
-      "| PB-E00-T02 | IN_PROGRESS |",
-      "| PB-E00-T08 | IN_PROGRESS | X | — |\n| PB-E00-T09 | IN_PROGRESS | X | — |\n| PB-E00-T07 | IN_PROGRESS | X | — |\n| PB-E00-T02 | IN_PROGRESS |",
-    );
-    expectError(/4 tasks IN_PROGRESS \(.*\), the limit is 3/);
+  test("accepts four IN_PROGRESS tasks listed in ACTIVE with their branches", () => {
+    startT01();
+    const extra = ["T03", "T04"];
+    for (const task_ of extra) {
+      edit(INDEX, "| PB-E00-T02 | IN_PROGRESS |", `| PB-E00-${task_} | IN_PROGRESS | [X](epics/E00-foundation/${task_}-x.md) | — |\n| PB-E00-T02 | IN_PROGRESS |`);
+      edit("projects/playbook/epics/E00-foundation/README.md", "| PB-E00-T02 |", `| PB-E00-${task_} | — | X |\n| PB-E00-T02 |`);
+      write({ [`projects/playbook/epics/E00-foundation/${task_}-x.md`]: task({ id: `PB-E00-${task_}`, epic: "PB-E00" }) });
+    }
+    edit(ACTIVE, "- **Status:** IN_PROGRESS\n", "- **Status:** IN_PROGRESS\n- **Branch:** `claude/PB-E00-T02-second`\n\n");
+    const blocks = ["T01", ...extra]
+      .map((task) => `- **Task:** PB-E00-${task} — X\n- **Status:** IN_PROGRESS\n- **Branch:** \`claude/PB-E00-${task}-x\`\n\n`)
+      .join("");
+    write({ [ACTIVE]: readFileSync(join(root, ACTIVE), "utf8") + blocks });
+    assert.deepEqual(errorsOf(), []);
   });
 
   test("rejects an IN_PROGRESS task missing from ACTIVE", () => {
