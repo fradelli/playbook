@@ -67,7 +67,8 @@ external: [Maintainer merges the version PR]   # conditions that are not tasks; 
 
 `PLANNED` · `READY` · `IN_PROGRESS` · `BLOCKED` · `DONE` · `CANCELLED`
 
-- At most one `IN_PROGRESS` task per project.
+- At most three `IN_PROGRESS` tasks per project. The limit is the maintainer's capacity to review and merge, not the roadmap format.
+- Tasks in progress at the same time in one repository must not change the same files, and each one has its own branch. When two tasks would touch the same files, finish one first.
 - `READY` only when every dependency is `DONE`.
 - An epic status follows its tasks. An epic may be `READY` when its first task is `READY`.
 - Do not start a task that is not `READY` or `IN_PROGRESS`.
@@ -80,8 +81,10 @@ external: [Maintainer merges the version PR]   # conditions that are not tasks; 
 
 ## ACTIVE (`projects/<project>/ACTIVE.md`)
 
-- Fields: `Task`, `Status`, `Main input`, `Next action`, followed by "Resumption and parallel work".
+- One block of fields per active task: `Task`, `Status`, `Branch`, `Main input`, `Next action`. Blocks are separated by a blank line and come before "Resumption and parallel work".
+- Every `IN_PROGRESS` task has a block. `Branch` is required when more than one block is listed.
 - When no task is in progress, it records "No task selected" and the next candidate.
+- A session resumes the block of the task it was given, or the block whose `Branch` matches its current branch.
 
 ## Changing this repository
 
@@ -116,7 +119,7 @@ The check enforces:
 - IDs unique and with the right prefix for `project`; `epic` and the file name match the ID and the epic folder.
 - Every dependency exists (including across projects) and there are no cycles.
 - Frontmatter, project index, and epic table carry the same dependencies.
-- The seven sections are present and in order, relative links are valid, at most one `IN_PROGRESS` per project, and `ACTIVE.md` matches the index.
+- The seven sections are present and in order, relative links are valid, at most three `IN_PROGRESS` per project, and `ACTIVE.md` lists every `IN_PROGRESS` task with the index status and, when more than one task is listed, a `Branch`.
 - No `READY` task has an open dependency.
 - Open tasks have at least one acceptance criterion, only allowed optional sections, and no "not recorded" placeholder. Known debt is listed in `scripts/writing-baseline.json`, which may only shrink.
 

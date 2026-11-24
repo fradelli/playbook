@@ -50,7 +50,7 @@ When a rule is found in a product repository but applies more widely, move it to
 A session working in a project repository updates the roadmap in the local playbook clone:
 
 1. Run `git -C <path> switch main` and `git -C <path> pull --rebase --autostash`.
-2. Edit the status in `projects/<project>/README.md` and, if it changes, in the epic `README.md`; update `projects/<project>/ACTIVE.md`.
+2. Edit the status in `projects/<project>/README.md` and, if it changes, in the epic `README.md`; update `projects/<project>/ACTIVE.md`. When starting, add a block for the task and keep the blocks of other tasks in progress. When finishing, remove only the block of that task.
 3. Run `npm run roadmap:check` in the clone.
 4. Commit only those files with the subject `<ID>: start` or `<ID>: done`, and push to `main`.
 
