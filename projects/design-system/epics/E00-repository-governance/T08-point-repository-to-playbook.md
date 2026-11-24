@@ -44,4 +44,4 @@ The roadmap of this project was planned under `roadmap/` in this repository but 
 
 ## Result
 
-Not started.
+Done with DS-E00-T03 in `fradelli/design-system#23` (`9912651`, merged 2026-11-23): `CLAUDE.md` has a `Playbook` section linking the playbook `CLAUDE.md` and `projects/design-system/ACTIVE.md`, and `AGENTS.md` is a pointer to `CLAUDE.md`. The local `roadmap/` folder and the `claude/E00-T01-create-roadmap-system` branch no longer exist in the clone (checked 2026-11-24). PB-E01-T04 turns this section into the shared integration.
