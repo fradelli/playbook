@@ -235,4 +235,3 @@ export function render(markdown, options) {
 
   return { headings: headings, html: html };
 }
-
