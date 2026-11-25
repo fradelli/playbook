@@ -50,6 +50,9 @@ Migrated on 2026-11-23 by [PB-E01-T02](../playbook/epics/E01-project-migration/T
 | KZ-E00-T16 | DONE | [Strengthen the CI gates](epics/E00-repository-governance/T16-strengthen-ci-gates.md) | — |
 | KZ-E00-T17 | DONE | [Point the repository to the playbook](epics/E00-repository-governance/T17-point-repository-to-playbook.md) | PB-E01-T02, PB-E01-T04 |
 | KZ-E00-T18 | READY | [Adopt the English-only rule](epics/E00-repository-governance/T18-adopt-english-only-rule.md) | KZ-E00-T17 |
+| KZ-E00-T19 | PLANNED | [Make the local CI command match the remote CI](epics/E00-repository-governance/T19-make-local-ci-match-remote.md) | — |
+| KZ-E00-T20 | PLANNED | [Run CI after merges to the long-lived branches](epics/E00-repository-governance/T20-run-ci-after-merge.md) | — |
+| KZ-E00-T21 | PLANNED | [Extract the repeated CI setup into a composite action](epics/E00-repository-governance/T21-extract-ci-setup-action.md) | KZ-E00-T20 |
 | KZ-E01-T01 | DONE | [Freeze source snapshot](epics/E01-training-data-migration/T01-freeze-source-snapshot.md) | KZ-E00-T05 |
 | KZ-E01-T02 | DONE | [Migrate canonical training data](epics/E01-training-data-migration/T02-migrate-canonical-training-data.md) | KZ-E01-T01 |
 | KZ-E01-T03 | DONE | [Migrate training history](epics/E01-training-data-migration/T03-migrate-training-history.md) | KZ-E01-T02 |
@@ -160,5 +163,13 @@ Migrated on 2026-11-23 by [PB-E01-T02](../playbook/epics/E01-project-migration/T
 | KZ-E12-T11 | PLANNED | [Tighten the strict TypeScript options](epics/E12-code-health/T11-tighten-typescript-strictness.md) | KZ-E12-T07 |
 | KZ-E12-T12 | PLANNED | [Create E2E tests for the critical journeys](epics/E12-code-health/T12-create-critical-e2e-tests.md) | KZ-E12-T02 |
 | KZ-E12-T13 | PLANNED | [Standardize imports and the folder structure of the features](epics/E12-code-health/T13-standardize-imports-and-feature-folders.md) | KZ-E12-T09 |
+| KZ-E12-T14 | PLANNED | [Report integration test coverage and raise the coverage floor](epics/E12-code-health/T14-report-integration-coverage.md) | — |
+| KZ-E12-T15 | PLANNED | [Split the schedule writer into one handler per command](epics/E12-code-health/T15-split-schedule-writer.md) | KZ-E12-T03 |
+| KZ-E12-T16 | PLANNED | [Move the training schedule materialization rules to the domain](epics/E12-code-health/T16-move-schedule-materialization-to-domain.md) | — |
+| KZ-E12-T17 | PLANNED | [Enable type-aware and accessibility lint rules](epics/E12-code-health/T17-enable-typed-and-accessibility-lint.md) | — |
+| KZ-E12-T18 | PLANNED | [Add indexes for foreign keys without one](epics/E12-code-health/T18-add-foreign-key-indexes.md) | — |
+| KZ-E12-T19 | PLANNED | [Decide whether the foundations showcase route ships to production](epics/E12-code-health/T19-decide-foundations-route-exposure.md) | — |
+| KZ-E12-T20 | PLANNED | [Split the oversized training UI components](epics/E12-code-health/T20-split-oversized-training-components.md) | KZ-E12-T13 |
+| KZ-E12-T21 | PLANNED | [Triage the open dependency updates and plan the major upgrades](epics/E12-code-health/T21-triage-dependency-updates.md) | KZ-E12-T01 |
 
 When a task finishes, the Kaizen repository also records it in its `CHANGELOG.md`.
