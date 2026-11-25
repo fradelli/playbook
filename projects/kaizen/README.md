@@ -50,6 +50,7 @@ Migrated on 2026-11-23 by [PB-E01-T02](../playbook/epics/E01-project-migration/T
 | KZ-E00-T16 | DONE | [Strengthen the CI gates](epics/E00-repository-governance/T16-strengthen-ci-gates.md) | — |
 | KZ-E00-T17 | DONE | [Point the repository to the playbook](epics/E00-repository-governance/T17-point-repository-to-playbook.md) | PB-E01-T02, PB-E01-T04 |
 | KZ-E00-T18 | READY | [Adopt the English-only rule](epics/E00-repository-governance/T18-adopt-english-only-rule.md) | KZ-E00-T17 |
+| KZ-E00-T19 | PLANNED | [Reorganize the scripts folder by purpose](epics/E00-repository-governance/T19-reorganize-scripts-by-purpose.md) | KZ-E00-T13, KZ-E00-T18 |
 | KZ-E01-T01 | DONE | [Freeze source snapshot](epics/E01-training-data-migration/T01-freeze-source-snapshot.md) | KZ-E00-T05 |
 | KZ-E01-T02 | DONE | [Migrate canonical training data](epics/E01-training-data-migration/T02-migrate-canonical-training-data.md) | KZ-E01-T01 |
 | KZ-E01-T03 | DONE | [Migrate training history](epics/E01-training-data-migration/T03-migrate-training-history.md) | KZ-E01-T02 |

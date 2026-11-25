@@ -36,14 +36,12 @@ Findings from the audit of 2026-11-23 on `developer` (`364c71f`):
 - A single Node version file, with the consumers (CI, Vercel, documentation) checked.
 - Removal of the four unused `.tgz` files in `vendor/`.
 - Decision for each unused script: remove, integrate into CI, or move the record to history.
-- `scripts/` reorganized by purpose (for example `ci/`, `db/`, `roadmap/`), with `package.json`, CI, and tests updated.
 
 ## Subtasks
 - [ ] Check each item with `git grep` before removing it.
 - [ ] Remove `.azul-engai/`, `.tmp-swc/`, and the duplicate version file.
 - [ ] Remove the orphan `.tgz` files.
 - [ ] Decide and apply the destination of the unused scripts.
-- [ ] Reorganize `scripts/` and update references.
 - [ ] Record the icons used only by the roadmap view.
 
 ## Validation
@@ -55,6 +53,10 @@ Findings from the audit of 2026-11-23 on `developer` (`364c71f`):
 - [ ] No versioned file without a consumer remains in `vendor/`, `scripts/`, or the root.
 - [ ] `.gitignore` covers all known local artifacts.
 - [ ] Each removal has its reason recorded in the PR.
+
+## Out of scope
+
+- Reorganizing `scripts/` by purpose moved to [KZ-E00-T19](T19-reorganize-scripts-by-purpose.md) on 2026-11-24 by the maintainer, so that it runs after KZ-E00-T18, which translates the same files.
 
 ## Result
 Not started.
