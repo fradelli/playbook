@@ -37,6 +37,7 @@ Public repository with governed branches, documentation, content publication, an
 | [KZ-E00-T16](T16-strengthen-ci-gates.md) | — | Remote CI with the same gates as `pnpm run ci` |
 | [KZ-E00-T17](T17-point-repository-to-playbook.md) | PB-E01-T02, PB-E01-T04 | Kaizen uses the playbook as its only roadmap |
 | [KZ-E00-T18](T18-adopt-english-only-rule.md) | KZ-E00-T17 | Repository written in English, except end-user copy |
+| [KZ-E00-T19](T19-reorganize-scripts-by-purpose.md) | KZ-E00-T13, KZ-E00-T18 | Scripts grouped by purpose |
 
 Status lives only in the project `README.md`.
 
