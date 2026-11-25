@@ -38,11 +38,11 @@ Findings from the audit of 2026-11-23 on `developer` (`364c71f`):
 - Decision for each unused script: remove, integrate into CI, or move the record to history.
 
 ## Subtasks
-- [ ] Check each item with `git grep` before removing it.
-- [ ] Remove `.azul-engai/`, `.tmp-swc/`, and the duplicate version file.
-- [ ] Remove the orphan `.tgz` files.
-- [ ] Decide and apply the destination of the unused scripts.
-- [ ] Record the icons used only by the roadmap view.
+- [x] Check each item with `git grep` before removing it.
+- [x] Remove `.azul-engai/`, `.tmp-swc/`, and the duplicate version file.
+- [x] Remove the orphan `.tgz` files.
+- [x] Decide and apply the destination of the unused scripts.
+- [x] Record the icons used only by the roadmap view.
 
 ## Validation
 - `pnpm install --frozen-lockfile` works without the removed packages.
@@ -50,13 +50,15 @@ Findings from the audit of 2026-11-23 on `developer` (`364c71f`):
 - `git grep` returns no reference to a removed file outside the history.
 
 ## Acceptance criteria
-- [ ] No versioned file without a consumer remains in `vendor/`, `scripts/`, or the root.
-- [ ] `.gitignore` covers all known local artifacts.
-- [ ] Each removal has its reason recorded in the PR.
+- [x] No versioned file without a consumer remains in `vendor/`, `scripts/`, or the root.
+- [x] `.gitignore` covers all known local artifacts.
+- [x] Each removal has its reason recorded in the PR.
 
 ## Out of scope
 
 - Reorganizing `scripts/` by purpose moved to [KZ-E00-T19](T19-reorganize-scripts-by-purpose.md) on 2026-11-24 by the maintainer, so that it runs after KZ-E00-T18, which translates the same files.
 
 ## Result
-Not started.
+- `fradelli/nextjs-kaizen-app` PR #100, merged as `1ff0949`: removed `.azul-engai/`, `.node-version` (`.nvmrc` stays), four unused `vendor/` tarballs, `scripts/test-i18n-http.mjs`, and the three roadmap view favicons; `.gitignore` covers `/.tmp-*/` and `/.azul-engai/`.
+- Kept with a recorded consumer: `vendor/fradelli-ui-mira-table-progress.tgz`, `vendor/braces/`, `scripts/validate-data.d.mts`, and `scripts/verify-doc-preservation.mjs`. Each removal's reason and origin commit are in the PR.
+- All 7 CI checks passed; `pnpm install --frozen-lockfile` works without the removed tarballs.

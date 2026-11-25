@@ -1,13 +1,13 @@
 # Active task
 
-- **Task:** [KZ-E00-T13](epics/E00-repository-governance/T13-remove-unused-repository-artifacts.md) — Remove unused artifacts and files from the repository
-- **Status:** IN_PROGRESS
-- **Branch:** `claude/KZ-E00-T13-remove-unused-artifacts`
-- **Main input:** `epics/E00-repository-governance/T13-remove-unused-repository-artifacts.md`
-- **Next action:** remove the files without a proven consumer, keeping `vendor/fradelli-ui-mira-table-progress.tgz` until KZ-E10-T10 replaces it. After it, start [KZ-E00-T18](epics/E00-repository-governance/T18-adopt-english-only-rule.md), which touches the same `docs/` and `scripts/`.
+- **Task:** No task selected
+- **Status:** —
+- **Main input:** —
+- **Next action:** start [KZ-E00-T18](epics/E00-repository-governance/T18-adopt-english-only-rule.md). [KZ-E12-T01](epics/E12-code-health/T01-sanitize-dependencies-and-overrides.md) is also `READY`; it touches `package.json` and `pnpm-workspace.yaml`, not the files KZ-E00-T18 translates.
 
 ## Resumption and parallel work
 
+- 2026-11-24: KZ-E00-T13 done (PR #100, `1ff0949`); the `scripts/` reorganization moved to KZ-E00-T19 (playbook PR #33).
 - 2026-11-24: KZ-E00-T17 done (PR #98, `67443f0`). Kaizen has no local roadmap; its CI validates `KZ-` IDs against this index.
 
 - KZ-E10-T09 paused on 2026-11-24 by owner decision, back to `READY`, so that KZ-E00-T17 can run first. To resume: review the package in `docs/plans/design-system/AJUSTES-DO-EXECUTOR-MIRA.md` and continue the Mira migration backlog. The executor and dialog package was authorized on 2026-11-13; warm-ups are excluded from the summary, and load is unilateral per side.
