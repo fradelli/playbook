@@ -4,7 +4,7 @@
 - **Status:** IN_PROGRESS
 - **Branch:** `claude/DS-E00-T11-run-ci-on-version-pr`
 - **Main input:** `epics/E00-repository-governance/T11-run-ci-on-version-pull-request.md`
-- **Next action:** find the cause of the `action_required` status, apply the fix, and update `docs/governance/releasing.md`. An Actions setting change is the maintainer's to apply.
+- **Next action:** PR #27 is merged. The maintainer sets up the release GitHub App (`RELEASE_APP_CLIENT_ID` variable and `RELEASE_APP_PRIVATE_KEY` secret, steps in `docs/governance/releasing.md`); once a CI run on the version PR starts on attempt 1, fill `Result` and record `DS-E00-T11: done`. Then start DS-E04-T03.
 
 ## Resumption and parallel work
 
