@@ -1,13 +1,13 @@
 # Active task
 
-- **Task:** [PB-E03-T01](epics/E03-roadmap-viewer/T01-move-roadmap-viewer.md) — Move the roadmap viewer
-- **Status:** IN_PROGRESS
-- **Branch:** `claude/PB-E03-T01-move-roadmap-viewer`
-- **Main input:** `epics/E03-roadmap-viewer/T01-move-roadmap-viewer.md`
-- **Next action:** fix the whitespace failure in PR #32, the maintainer merges it, then record `PB-E03-T01: done`. After it, start [PB-E00-T07](epics/E00-repository-foundation/T07-batch-daily-status-commits.md).
+- **Task:** No task selected
+- **Status:** —
+- **Main input:** —
+- **Next action:** start [PB-E00-T07](epics/E00-repository-foundation/T07-batch-daily-status-commits.md). Then [PB-E02-T01](epics/E02-shared-standards/T01-inventory-kaizen-rules.md).
 
 ## Resumption and parallel work
 
+- 2026-11-24: PB-E03-T01 moved the roadmap viewer here (PR #32); run it with `npm run roadmap:view`.
 - 2026-11-24: PB-E00-T06 removed the `IN_PROGRESS` limit (PR #31); the maintainer decides how many tasks run at once.
 - 2026-11-24: PB-E00-T05 raised the limit to three `IN_PROGRESS` tasks per project, one `ACTIVE.md` block each (PR #29).
 - 2026-11-24: PB-E01-T04 defined the [playbook integration standard](../../standards/general/playbook-integration.md) (PR #27); KZ-E00-T17 applies it in Kaizen.
