@@ -31,6 +31,8 @@ CLAUDE.md        rules for this repository
 templates/       epic and task templates
 projects/        one folder per project: index, active task, epics, tasks
 standards/       shared rules (being built, see PB-E02)
+scripts/         roadmap check and viewer data, with their tests
+viewer/          local roadmap viewer (npm run roadmap:view)
 docs/            legacy Suna documentation, being relocated (see PB-E00-T03)
 ```
 
@@ -48,6 +50,12 @@ fradelli/
 ```
 
 Project repositories point agents to this clone for the active task and shared standards, following the [playbook integration standard](standards/general/playbook-integration.md).
+
+## Roadmap viewer
+
+`npm run roadmap:view` serves an interactive roadmap of every project at `http://127.0.0.1:4173/`. It reads `projects/`, `standards/`, and `templates/` from disk and redraws open pages as soon as a file changes, committed or not. It needs Node.js 24 and no installed packages. Pass `-- --port <number>` to change the port.
+
+The page shows an overview with the active tasks, a wave × status matrix, a kanban, every task and epic, and the documents. A project filter limits the overview, matrix, and kanban to one project. A task waiting on another project names that project.
 
 ## History
 

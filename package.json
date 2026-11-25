@@ -8,6 +8,7 @@
   },
   "scripts": {
     "roadmap:check": "node scripts/roadmap-check.mjs",
-    "test": "node --test scripts/roadmap-check.test.mjs"
+    "roadmap:view": "node viewer/server.mjs",
+    "test": "node --test scripts/roadmap-check.test.mjs scripts/build-roadmap-view.test.mjs"
   }
 }
