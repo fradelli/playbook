@@ -32,9 +32,9 @@ Let consumers name every close control in their own language, as Sheet already r
 
 ## Subtasks
 
-- [ ] Add the label prop to Dialog and make the Toast label required.
-- [ ] Remove the English defaults.
-- [ ] Update stories, tests, and the README.
+- [x] Add the label prop to Dialog and make the Toast label required.
+- [x] Remove the English defaults.
+- [x] Update stories, tests, and the README.
 
 ## Validation
 
@@ -43,8 +43,10 @@ Let consumers name every close control in their own language, as Sheet already r
 
 ## Acceptance criteria
 
-- [ ] No close control ships hardcoded English text.
+- [x] No close control ships hardcoded English text.
 
 ## Result
 
-Not started.
+- `fradelli/design-system` PR #28, merged as `ca10a01`: `DialogContent` and `DialogFooter` take a required `closeLabel` when the close control is shown; `Toaster` `closeLabel` and `ToastClose` `aria-label` are required with no English default.
+- Omitting a label is a TypeScript error, covered by `@ts-expect-error` assertions in the unit tests; Dialog and Toast stories and README updated.
+- `minor` Changeset `.changeset/require-close-labels.md` with migration notes; PR CI `Validate package` (`npm run ci`) passed.
