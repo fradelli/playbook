@@ -1,9 +1,10 @@
 # Active task
 
-- **Task:** No task selected
-- **Status:** —
-- **Main input:** —
-- **Next action:** start [PB-E00-T07](epics/E00-repository-foundation/T07-batch-daily-status-commits.md) or [PB-E03-T01](epics/E03-roadmap-viewer/T01-move-roadmap-viewer.md), which the maintainer wants for following the roadmap locally. Then [PB-E02-T01](epics/E02-shared-standards/T01-inventory-kaizen-rules.md).
+- **Task:** [PB-E03-T01](epics/E03-roadmap-viewer/T01-move-roadmap-viewer.md) — Move the roadmap viewer
+- **Status:** IN_PROGRESS
+- **Branch:** `claude/PB-E03-T01-move-roadmap-viewer`
+- **Main input:** `epics/E03-roadmap-viewer/T01-move-roadmap-viewer.md`
+- **Next action:** fix the whitespace failure in PR #32, the maintainer merges it, then record `PB-E03-T01: done`. After it, start [PB-E00-T07](epics/E00-repository-foundation/T07-batch-daily-status-commits.md).
 
 ## Resumption and parallel work
 
