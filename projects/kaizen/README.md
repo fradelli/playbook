@@ -27,6 +27,7 @@ Migrated on 2026-11-23 by [PB-E01-T02](../playbook/epics/E01-project-migration/T
 | KZ-E10 | READY | [Visual alignment with the portfolio](epics/E10-portfolio-visual-alignment/README.md) | Historical base delivered; Mira adoption being completed |
 | KZ-E11 | PLANNED | [Schedule evolution](epics/E11-schedule-evolution/README.md) | Validate the integrated base and evolve interactions while preserving history |
 | KZ-E12 | READY | [Technical code health](epics/E12-code-health/README.md) | Code aligned with the architecture after the technical audit |
+| KZ-E13 | PLANNED | [Installable web app](epics/E13-installable-web-app/README.md) | Transparent browser icon and a mobile hint to add Kaizen to the home screen |
 
 ## Tasks
 
@@ -161,5 +162,7 @@ Migrated on 2026-11-23 by [PB-E01-T02](../playbook/epics/E01-project-migration/T
 | KZ-E12-T11 | PLANNED | [Tighten the strict TypeScript options](epics/E12-code-health/T11-tighten-typescript-strictness.md) | KZ-E12-T07 |
 | KZ-E12-T12 | PLANNED | [Create E2E tests for the critical journeys](epics/E12-code-health/T12-create-critical-e2e-tests.md) | KZ-E12-T02 |
 | KZ-E12-T13 | PLANNED | [Standardize imports and the folder structure of the features](epics/E12-code-health/T13-standardize-imports-and-feature-folders.md) | KZ-E12-T09 |
+| KZ-E13-T01 | PLANNED | [Remove the background from the Kaizen browser icon](epics/E13-installable-web-app/T01-remove-icon-background.md) | Owner sends the Kaizen icon files with a transparent background |
+| KZ-E13-T02 | PLANNED | [Show an install hint on mobile](epics/E13-installable-web-app/T02-show-install-hint-on-mobile.md) | KZ-E13-T01 |
 
 When a task finishes, the Kaizen repository also records it in its `CHANGELOG.md`.
