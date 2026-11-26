@@ -27,6 +27,7 @@ The former Suna docs repository works as the shared Fradelli playbook, with road
 | PB-E00-T05 | PB-E00-T04 | Up to three tasks in progress per project, each listed in `ACTIVE.md` |
 | PB-E00-T06 | PB-E00-T05 | Any number of tasks in progress per project, each listed in `ACTIVE.md` |
 | PB-E00-T07 | PB-E00-T06 | Status changes reach `main` in one daily commit |
+| PB-E00-T08 | PB-E00-T04 | `/update-roadmap` settles a roadmap change before editing and validates it |
 
 Status lives only in the project `README.md`.
 

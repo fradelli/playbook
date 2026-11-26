@@ -90,6 +90,7 @@ external: [Maintainer merges the version PR]   # conditions that are not tasks; 
 
 - Status and `ACTIVE.md` updates go straight to `main` as small commits titled with the task ID, for example `KZ-E10-T09: start` or `KZ-E10-T09: done`. This keeps status independent from the code branch where the task is being built.
 - Planning changes (new epics or tasks, dependencies, scope, standards) go through a pull request with a `claude/<ID>-<description>` branch.
+- Make either kind of change with `/update-roadmap <ID> <what changed>` in Claude Code.
 
 ## Branches, commits, and PRs
 

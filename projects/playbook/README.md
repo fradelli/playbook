@@ -28,6 +28,7 @@ Read [CLAUDE.md](../../CLAUDE.md) first, then [ACTIVE.md](ACTIVE.md).
 | PB-E00-T05 | DONE | [Allow parallel tasks per project](epics/E00-repository-foundation/T05-allow-parallel-tasks.md) | PB-E00-T04 |
 | PB-E00-T06 | DONE | [Remove the in-progress limit](epics/E00-repository-foundation/T06-remove-in-progress-limit.md) | PB-E00-T05 |
 | PB-E00-T07 | READY | [Batch status changes into a daily commit](epics/E00-repository-foundation/T07-batch-daily-status-commits.md) | PB-E00-T06 |
+| PB-E00-T08 | READY | [Add the update-roadmap skill](epics/E00-repository-foundation/T08-add-update-roadmap-skill.md) | PB-E00-T04 |
 | PB-E01-T01 | DONE | [Import the design system roadmap](epics/E01-project-migration/T01-import-design-system-roadmap.md) | PB-E00-T01 |
 | PB-E01-T02 | DONE | [Migrate the Kaizen roadmap](epics/E01-project-migration/T02-migrate-kaizen-roadmap.md) | PB-E00-T01 |
 | PB-E01-T03 | PLANNED | [Create the Suna roadmap](epics/E01-project-migration/T03-create-suna-roadmap.md) | PB-E00-T03 |
