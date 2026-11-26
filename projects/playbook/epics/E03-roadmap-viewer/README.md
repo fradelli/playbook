@@ -8,6 +8,7 @@ The interactive roadmap viewer built in Kaizen (`KZ-E00-T10` and `KZ-E00-T11`) r
 
 - Move the generator and the page from Kaizen.
 - Read `projects/*` and `standards/`.
+- Show the Fradelli logo in the tab and the header.
 
 ## Out of scope
 
@@ -19,6 +20,7 @@ The interactive roadmap viewer built in Kaizen (`KZ-E00-T10` and `KZ-E00-T11`) r
 | Task | Depends on | Outcome |
 | --- | --- | --- |
 | PB-E03-T01 | PB-E01-T01, PB-E01-T02 | `npm run roadmap:view` builds the viewer for every project |
+| PB-E03-T02 | PB-E03-T01 | The viewer shows the Fradelli FDLL logo instead of the Kaizen icons |
 
 Status lives only in the project `README.md`.
 

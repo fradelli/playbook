@@ -15,7 +15,7 @@ Read [CLAUDE.md](../../CLAUDE.md) first, then [ACTIVE.md](ACTIVE.md).
 | PB-E00 | BLOCKED | [Repository foundation](epics/E00-repository-foundation/README.md) | The former Suna docs repository works as the shared playbook |
 | PB-E01 | PLANNED | [Project migration](epics/E01-project-migration/README.md) | Design system, Kaizen, and Suna roadmaps live here |
 | PB-E02 | IN_PROGRESS | [Shared standards](epics/E02-shared-standards/README.md) | Architecture and organization rules shared across projects |
-| PB-E03 | DONE | [Roadmap viewer](epics/E03-roadmap-viewer/README.md) | The interactive viewer reads every project from this repository |
+| PB-E03 | READY | [Roadmap viewer](epics/E03-roadmap-viewer/README.md) | The interactive viewer reads every project from this repository and carries the Fradelli logo |
 
 ## Tasks
 
@@ -38,3 +38,4 @@ Read [CLAUDE.md](../../CLAUDE.md) first, then [ACTIVE.md](ACTIVE.md).
 | PB-E02-T04 | DONE | [Create the writing standard](epics/E02-shared-standards/T04-create-writing-standard.md) | PB-E00-T04 |
 | PB-E02-T05 | DONE | [Apply the writing standard to open tasks](epics/E02-shared-standards/T05-apply-writing-standard-to-open-tasks.md) | PB-E02-T04 |
 | PB-E03-T01 | DONE | [Move the roadmap viewer](epics/E03-roadmap-viewer/T01-move-roadmap-viewer.md) | PB-E01-T01, PB-E01-T02 |
+| PB-E03-T02 | READY | [Apply the Fradelli logo to the roadmap viewer](epics/E03-roadmap-viewer/T02-apply-fradelli-logo.md) | PB-E03-T01 |
